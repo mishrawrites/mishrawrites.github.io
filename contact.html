@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact · Gaurav M.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1A1A1D;
+  --secondary:#4A0E0E;
+  --tertiary:#C9A44C;
+  --quaternary:#B5651D;
+  --white:#FFFFFF;
+  --primary-dim:rgba(26,26,29,0.66);
+  --primary-subtle:rgba(26,26,29,0.4);
+  --white-dim:rgba(255,255,255,0.78);
+  --white-subtle:rgba(255,255,255,0.4);
+  --border:#E4DFD6;
+  --border-dark:rgba(255,255,255,0.16);
+  --card:#FFFFFF;
+  --t-h1:clamp(2.6rem,5.2vw,3.6rem);
+  --t-h2:clamp(1.9rem,3.2vw,2.25rem);
+  --t-h3:clamp(1.3rem,2vw,1.5rem);
+  --t-body:1rem;
+  --t-caption:0.78rem;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--quaternary)}
+
+/* STICKY CTA */
+.sticky-cta{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(90deg) translateX(50%);transform-origin:right center;z-index:199;background:var(--quaternary);color:var(--primary);font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.4rem;text-decoration:none;opacity:0;transition:opacity 0.4s,background 0.2s,color 0.2s;pointer-events:none}
+.sticky-cta.visible{opacity:1;pointer-events:auto}
+.sticky-cta:hover{background:var(--primary);color:var(--white)}
+
+/* TYPE */
+.body-text{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);line-height:1.75}
+.label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
+.label-accent{color:var(--quaternary)}
+.label-dim{color:var(--primary-subtle)}
+.label-dim.on-dark{color:var(--white-subtle)}
+
+/* LAYOUT */
+.wrap-sm{max-width:900px;margin:0 auto;padding:6.5rem 3rem}
+
+/* BTN */
+.btn{display:inline-block;font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2rem;transition:background 0.2s,color 0.2s,border-color 0.2s;border:1px solid transparent;cursor:pointer;border-radius:2px}
+.btn-ghost-invert{border:1px solid var(--white-subtle);color:var(--white);background:transparent}
+.btn-ghost-invert:hover{background:var(--white);color:var(--primary);border-color:var(--white)}
+
+/* FOOTER */
+.site-footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;background:var(--white)}
+.footer-mark{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.05rem;color:var(--primary)}
+
+/* MANIFESTO BLOCK */
+.manifesto-wrap{background:var(--secondary);padding:6.5rem 3rem}
+.manifesto-text{font-family:"Poppins",sans-serif;font-weight:300;font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.6;color:var(--white)}
+.manifesto-text strong{font-weight:700;color:var(--tertiary)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .wrap-sm{padding:3.5rem 1.5rem}
+  .manifesto-wrap{padding:3.5rem 1.5rem}
+  .site-footer{padding:1.5rem;flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.contact-hero{min-height:100svh;display:grid;grid-template-columns:1.1fr 0.9fr;background:var(--secondary)}
+.contact-texture{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 85% 20%,rgba(201,164,76,0.14),transparent 45%),radial-gradient(circle at 15% 85%,rgba(181,101,29,0.16),transparent 40%)}
+.contact-left{padding:7.5rem 3rem 3rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border-dark);position:relative;z-index:2}
+.contact-right{padding:7.5rem 3rem 3rem;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.contact-headline{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.1;color:var(--white);margin-bottom:1rem}
+.contact-headline .accent{color:var(--tertiary)}
+.contact-links{display:grid;gap:0;margin-top:2.5rem}
+.contact-link{display:flex;align-items:center;gap:1.5rem;text-decoration:none;color:var(--white);padding:1.25rem 0;border-bottom:1px solid var(--border-dark);transition:color 0.2s}
+.contact-link:first-child{border-top:1px solid var(--border-dark)}
+.contact-link:hover{color:var(--tertiary)}
+.contact-link-type{font-family:"Montserrat",sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--white-dim);width:72px;flex-shrink:0}
+.contact-link-val{font-size:var(--t-body);font-weight:300}
+.availability-feature{background:rgba(201,164,76,0.1);border:1px solid var(--tertiary);padding:2.5rem;max-width:380px}
+.status-row{display:flex;align-items:center;gap:0.6rem;margin-bottom:1.25rem}
+.status-dot{width:9px;height:9px;border-radius:50%;background:var(--tertiary);box-shadow:0 0 0 4px rgba(201,164,76,0.25)}
+.availability-label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tertiary)}
+.availability-headline{font-family:"Poppins",sans-serif;font-weight:600;font-size:1.4rem;line-height:1.35;color:var(--white);margin-bottom:0.85rem}
+@media(max-width:960px){
+  .contact-hero{grid-template-columns:1fr;min-height:auto}
+  .contact-left{padding:7rem 1.5rem 2.5rem;border-right:none;border-bottom:1px solid var(--border-dark)}
+  .contact-right{padding:2.5rem 1.5rem 3rem}
+}
+</style>
+</head><body>
+<a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
+<nav>
+  <a class="nav-logo" href="index.html">Gaurav M.</a>
+  <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="active">Contact</a></li></ul>
+</nav>
+<div class="contact-hero">
+  <div class="contact-texture" aria-hidden="true"></div>
+  <div class="contact-left">
+    <p class="label label-dim on-dark" style="color:var(--tertiary);margin-bottom:1.5rem">Bengaluru</p>
+    <h1 class="contact-headline">Let's build something <span class="accent">that sticks.</span></h1>
+    <p class="body-text" style="color:var(--white-dim);max-width:420px">For brand, GTM, and growth conversations. Email or LinkedIn is the fastest way to reach me.</p>
+    <div class="contact-links">
+      <a href="mailto:gaurav.mishra124@gmail.com" class="contact-link">
+        <span class="contact-link-type">Email</span>
+        <span class="contact-link-val">gaurav.mishra124@gmail.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/mishrawrites/" target="_blank" rel="noreferrer" class="contact-link">
+        <span class="contact-link-type">LinkedIn</span>
+        <span class="contact-link-val">linkedin.com/in/mishrawrites</span>
+      </a>
+    </div>
+  </div>
+  <div class="contact-right">
+    <div class="availability-feature">
+      <div class="status-row"><span class="status-dot"></span><p class="availability-label">Currently</p></div>
+      <p class="availability-headline">Open to the right conversation</p>
+      <p class="body-text" style="color:var(--white-dim)">Responds within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<div class="manifesto-wrap">
+  <div class="wrap-sm" style="padding-top:0;padding-bottom:0">
+    <p class="label label-dim on-dark" style="color:var(--white-subtle);margin-bottom:2.5rem">What I bring</p>
+    <p class="manifesto-text">The pattern is simple.<br/>Enter a complex growth moment. <strong>Find the strategic lever.</strong><br/>Build the system around it.<br/>Leave behind momentum the business can keep using.<br/><br/>Not campaign theatre. Not awareness for awareness's sake.<br/><strong>Brand strategy that moves commercial numbers.</strong></p>
+    <div style="display:flex;gap:1rem;margin-top:3rem;flex-wrap:wrap">
+      <a class="btn btn-ghost-invert" href="work.html">See the Work</a>
+      <a class="btn btn-ghost-invert" href="about.html">About &amp; Timeline</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span class="footer-mark">Gaurav M.</span>
+  <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
+  <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
+</footer>
+<script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
+</body></html>

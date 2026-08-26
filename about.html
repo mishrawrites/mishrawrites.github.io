@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About · Gaurav M.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1A1A1D;
+  --secondary:#4A0E0E;
+  --tertiary:#C9A44C;
+  --quaternary:#B5651D;
+  --white:#FFFFFF;
+  --primary-dim:rgba(26,26,29,0.66);
+  --primary-subtle:rgba(26,26,29,0.4);
+  --white-dim:rgba(255,255,255,0.78);
+  --white-subtle:rgba(255,255,255,0.4);
+  --border:#E4DFD6;
+  --border-dark:rgba(255,255,255,0.16);
+  --card:#FFFFFF;
+  --t-h1:clamp(2.6rem,5.2vw,3.6rem);
+  --t-h2:clamp(1.9rem,3.2vw,2.25rem);
+  --t-h3:clamp(1.3rem,2vw,1.5rem);
+  --t-body:1rem;
+  --t-caption:0.78rem;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--quaternary)}
+.nav-cta{background:var(--quaternary)!important;color:var(--primary)!important;padding:0.55rem 1.2rem!important;border-radius:2px}
+.nav-cta:hover{background:var(--primary)!important;color:var(--white)!important}
+
+/* STICKY CTA */
+.sticky-cta{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(90deg) translateX(50%);transform-origin:right center;z-index:199;background:var(--quaternary);color:var(--primary);font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.4rem;text-decoration:none;opacity:0;transition:opacity 0.4s,background 0.2s,color 0.2s;pointer-events:none}
+.sticky-cta.visible{opacity:1;pointer-events:auto}
+.sticky-cta:hover{background:var(--primary);color:var(--white)}
+
+/* TYPE */
+.display{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.1;color:var(--primary)}
+.display .accent{color:var(--quaternary)}
+.sec-title{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h2);line-height:1.2;color:var(--primary)}
+.sec-title .accent{color:var(--quaternary)}
+.card-title{font-family:"Montserrat",sans-serif;font-weight:500;font-size:var(--t-h3);line-height:1.3;color:var(--primary)}
+.body-text{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);line-height:1.75}
+.body-text.on-dark{color:var(--white-dim)}
+.label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
+.label-accent{color:var(--quaternary)}
+.label-gold{color:var(--tertiary)}
+.label-dim{color:var(--primary-subtle)}
+.fig-label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary-subtle);margin-bottom:1.5rem}
+.fig-label span{color:var(--quaternary)}
+
+/* LAYOUT */
+.wrap{max-width:1200px;margin:0 auto;padding:6.5rem 3rem}
+.wrap-sm{max-width:900px;margin:0 auto;padding:6.5rem 3rem}
+.sec-border{border-top:1px solid var(--border)}
+
+/* BTN */
+.btn{display:inline-block;font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2rem;transition:background 0.2s,color 0.2s,border-color 0.2s;border:1px solid transparent;cursor:pointer;border-radius:2px}
+.btn-primary{background:var(--quaternary);color:var(--primary)}
+.btn-primary:hover{background:var(--primary);color:var(--white)}
+.btn-ghost{border:1px solid var(--primary);color:var(--primary);background:transparent}
+.btn-ghost:hover{background:var(--primary);color:var(--white)}
+
+/* FOOTER */
+.site-footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;background:var(--white)}
+.footer-mark{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.05rem;color:var(--primary)}
+
+/* MANIFESTO BLOCK */
+.manifesto-wrap{background:var(--secondary);padding:6.5rem 3rem}
+.manifesto-text{font-family:"Poppins",sans-serif;font-weight:300;font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.6;color:var(--white)}
+.manifesto-text strong{font-weight:700;color:var(--tertiary)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .wrap,.wrap-sm{padding:3.5rem 1.5rem}
+  .manifesto-wrap{padding:3.5rem 1.5rem}
+  .site-footer{padding:1.5rem;flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.page-hero{padding:8.5rem 3rem 4rem;border-bottom:1px solid var(--border);background:var(--secondary)}
+.page-hero .fig-label{color:var(--white-subtle)}
+.page-hero .fig-label span{color:var(--tertiary)}
+.page-hero .display{color:var(--white)}
+.page-hero .display .accent{color:var(--tertiary)}
+.sec{padding:6.5rem 3rem;max-width:1200px;margin:0 auto}
+
+/* TIMELINE */
+.tl-wrap{margin-top:3rem}
+.tl-grid{display:grid;grid-template-columns:150px 20px 1fr;gap:0 1.5rem}
+.tl-date{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary-subtle);text-align:right;padding:1.75rem 0 3rem;line-height:1.5}
+.tl-dot{width:10px;height:10px;background:var(--border);border-radius:50%;margin-top:2rem;position:relative;left:-4px;flex-shrink:0;z-index:2}
+.tl-dot.active{background:var(--quaternary);box-shadow:0 0 0 3px rgba(181,101,29,0.2)}
+.tl-spine{width:2px;background:var(--border);flex:1;margin-top:4px}
+.tl-content{padding:1.5rem 0 3rem}
+.tl-logo{height:22px;width:auto;max-width:150px;object-fit:contain;object-position:left center;margin-bottom:0.5rem;display:block}
+.tl-role{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h3);color:var(--primary);margin-bottom:0.35rem}
+.tl-meta{font-family:"Montserrat",sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--primary-subtle)}
+.tl-steps{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);display:grid;gap:0.5rem}
+.tl-step-title{font-size:var(--t-body);font-weight:400;color:var(--primary)}
+.tl-step-period{font-family:"Montserrat",sans-serif;font-size:0.64rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--primary-subtle)}
+.tl-note{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);margin-top:0.75rem;font-style:italic}
+
+/* OPERATING SYSTEM */
+.system-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
+.system-card{background:var(--white);padding:2.5rem}
+.system-num{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--quaternary);margin-bottom:1rem}
+
+/* CREDENTIALS */
+.cred-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3rem}
+.cred-quote{font-family:"Poppins",sans-serif;font-weight:600;font-size:clamp(1.5rem,2.8vw,2.1rem);line-height:1.35;color:var(--primary);border-left:2px solid var(--quaternary);padding-left:2rem}
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border)}
+.cred-item{background:var(--card);padding:2rem}
+.cred-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:2.2rem;color:var(--tertiary);line-height:1;margin-bottom:0.3rem}
+.cred-label{font-family:"Montserrat",sans-serif;font-size:0.68rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--primary-subtle);line-height:1.5}
+
+/* RECOMMENDATIONS */
+.rec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
+.rec-card{background:var(--card);padding:3rem;display:flex;flex-direction:column;gap:1.5rem;position:relative}
+.rec-card::before{content:"“";font-family:"Poppins",sans-serif;font-weight:700;font-size:4rem;line-height:1;color:var(--tertiary);position:absolute;top:1.5rem;left:2.25rem;opacity:0.5}
+.rec-quote{font-family:"Poppins",sans-serif;font-style:italic;font-weight:300;font-size:var(--t-body);line-height:1.8;color:var(--primary);padding-top:2rem}
+.rec-quote strong{font-style:normal;font-weight:600;color:var(--quaternary)}
+.rec-meta{padding-top:1.25rem;border-top:1px solid var(--border);margin-top:auto}
+.rec-name{font-family:"Poppins",sans-serif;font-weight:600;font-size:var(--t-h3);color:var(--primary);margin-bottom:0.3rem}
+.rec-title{font-family:"Montserrat",sans-serif;font-size:0.66rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--primary-subtle);line-height:1.6;margin-bottom:0.3rem}
+.rec-context{font-family:"Montserrat",sans-serif;font-size:0.66rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--quaternary);margin-bottom:0.3rem}
+.rec-link{font-family:"Montserrat",sans-serif;font-size:0.64rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--primary-subtle);text-decoration:none;transition:color 0.2s}
+.rec-link:hover{color:var(--quaternary)}
+
+/* RESPONSIVE ABOUT */
+@media(max-width:960px){
+  .page-hero{padding:7rem 1.5rem 3rem}
+  .sec{padding:3.5rem 1.5rem}
+  .tl-grid{grid-template-columns:90px 16px 1fr;gap:0 1rem}
+  .tl-date{font-size:0.62rem}
+  .system-grid,.rec-grid{grid-template-columns:1fr}
+  .cred-layout{grid-template-columns:1fr;gap:2.5rem}
+  .cred-grid{grid-template-columns:1fr 1fr}
+}
+</style>
+</head><body>
+<a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
+<nav>
+  <a class="nav-logo" href="index.html">Gaurav M.</a>
+  <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="about.html" class="active">About</a></li><li><a href="contact.html" class="">Contact</a></li><li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li></ul>
+</nav>
+<div class="page-hero">
+  <div style="max-width:1200px;margin:0 auto">
+    <p class="fig-label"><span>About</span></p>
+    <h1 class="display">Twelve years, five companies, <span class="accent">one throughline.</span></h1>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<section class="sec sec-border" id="timeline">
+  <p class="fig-label"><span>Fig. 01</span> · Career Timeline</p>
+  <h2 class="sec-title">Where the work was done.</h2>
+  <div class="tl-wrap" id="tlTrack"></div>
+</section>
+
+<!-- OPERATING SYSTEM -->
+<section class="sec sec-border" id="system">
+  <p class="fig-label"><span>Fig. 02</span> · Operating System</p>
+  <h2 class="sec-title">The repeatable parts <span class="accent">behind the visible work.</span></h2>
+  <div class="system-grid">
+    <div class="system-card"><p class="system-num">01</p><p class="card-title" style="margin-bottom:0.75rem">Brand Strategy</p><p class="body-text">Positioning, narrative, architecture, category framing, brand foundations, and voice.</p></div>
+    <div class="system-card"><p class="system-num">02</p><p class="card-title" style="margin-bottom:0.75rem">GTM & Product Marketing</p><p class="body-text">Launch planning, ICP clarity, offer framing, sales collateral, pricing, packaging, and FAQs.</p></div>
+    <div class="system-card"><p class="system-num">03</p><p class="card-title" style="margin-bottom:0.75rem">Community Growth</p><p class="body-text">Identity-led programs, local communities, challenges, creator ecosystems, and user loops.</p></div>
+    <div class="system-card"><p class="system-num">04</p><p class="card-title" style="margin-bottom:0.75rem">Content Engines</p><p class="body-text">SEO libraries, video studios, topic intelligence, contributor systems, and repeatable publishing.</p></div>
+    <div class="system-card"><p class="system-num">05</p><p class="card-title" style="margin-bottom:0.75rem">Revenue-Linked Marketing</p><p class="body-text">MRR, ARR, CAC, acquisition, engagement, retention, pricing migration, and lifecycle signals.</p></div>
+    <div class="system-card"><p class="system-num">06</p><p class="card-title" style="margin-bottom:0.75rem">Teams & Operating Cadence</p><p class="body-text">Teams up to 16, agency orchestration, influencer networks, cross-functional alignment, and process building.</p></div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="sec sec-border" id="credentials">
+  <p class="fig-label"><span>Fig. 03</span> · Credentials</p>
+  <div class="cred-layout">
+    <blockquote class="cred-quote">Clarify the story. Build the system. Make growth easier to repeat.</blockquote>
+    <div class="cred-grid">
+      <div class="cred-item"><div class="cred-num">10+</div><div class="cred-label">Campaign awards across industry forums</div></div>
+      <div class="cred-item"><div class="cred-num">800+</div><div class="cred-label">Strategic alliances managed at H&R Block</div></div>
+      <div class="cred-item"><div class="cred-num">50+</div><div class="cred-label">Influencers managed directly at FITTR</div></div>
+      <div class="cred-item"><div class="cred-num">70+</div><div class="cred-label">Countries touched through community growth</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RECOMMENDATIONS -->
+<section class="sec sec-border" id="recommendations">
+  <p class="fig-label"><span>Fig. 04</span> · Voices from the Work</p>
+  <h2 class="sec-title">What people who built <span class="accent">things with me say.</span></h2>
+  <div class="rec-grid">
+    <div class="rec-card">
+      <p class="rec-quote">"Gaurav is one of the most capable and dynamic Brand/Marketing managers I've ever worked with. I've collaborated closely with him on large-scale projects worth crores of rupees with leading brands, companies, and content creators, both Indian and international, and can personally vouch that he has far-reaching, in-depth domain knowledge and is <strong>highly flexible and motivated</strong>, traits that he works hard to cultivate among his team members as well. He will take on end-to-end ownership of any project and ensure successful delivery regardless of the timeline, scale, medium, budget, or stakeholders. <strong>No challenge will deter him from not only doing his best but driving his team to do the same.</strong>"</p>
+      <div class="rec-meta">
+        <p class="rec-name">Hossein Ashtari</p>
+        <p class="rec-title">Senior Program &amp; Project Manager · AI Transformation &amp; Change Leader · IIM Calcutta</p>
+        <p class="rec-context">Collaborated at FITTR, content professional Gaurav hired and worked cross-functionally with</p>
+        <a class="rec-link" href="https://www.linkedin.com/in/hossein-ashtari/" target="_blank" rel="noreferrer">linkedin.com/in/hossein-ashtari ↗</a>
+      </div>
+    </div>
+    <div class="rec-card">
+      <p class="rec-quote">"Gaurav exhibited a relentless can-do attitude with talent to match. He is highly knowledgeable in his domain space of marketing and can be trusted by his peers as well as those in other departments to give his viewpoints in a manner that will elevate the discussion and improve overall results. He is known to be proactive, taking initiative and keen on follow through of all assigned projects. <strong>From a cultural fit perspective, he is and can be a strong asset to any team through his positive spirit and team-first attitude.</strong>"</p>
+      <div class="rec-meta">
+        <p class="rec-name">Rahul Kohli</p>
+        <p class="rec-title">Native Marketing Leader · Ex-IBM, H&amp;R Block, UAE Exchange · ABM, Demand Generation, GTM, Brand Strategy</p>
+        <p class="rec-context">Senior at H&amp;R Block, gave Gaurav the room to experiment during his formative years</p>
+        <a class="rec-link" href="https://www.linkedin.com/in/kohlirahul/" target="_blank" rel="noreferrer">linkedin.com/in/kohlirahul ↗</a>
+      </div>
+    </div>
+    <div class="rec-card">
+      <p class="rec-quote">"I had the pleasure of working with Gaurav for close to 2 years at H&amp;R Block India. He is highly knowledgeable in his domain space of marketing and can be trusted by his peers as well as those in other departments. He is known to be proactive, taking initiative and keen on follow through of all assigned projects. <strong>From a cultural fit perspective, he is and can be a strong asset to any team through his positive spirit and team-first attitude.</strong>"</p>
+      <div class="rec-meta">
+        <p class="rec-name">Rohan Parikh</p>
+        <p class="rec-title">Delivering Compassionate, Reliable &amp; Personalized Home Care · US-based leader</p>
+        <p class="rec-context">Senior at H&amp;R Block US, global exposure that shaped Gaurav's international marketing lens</p>
+        <a class="rec-link" href="https://www.linkedin.com/in/rohanparikhmba/" target="_blank" rel="noreferrer">linkedin.com/in/rohanparikhmba ↗</a>
+      </div>
+    </div>
+    <div class="rec-card">
+      <p class="rec-quote">"I am delighted to recommend my colleague Gaurav for his outstanding work as a Brand &amp; Marketing Strategist at Fittr. Gaurav consistently demonstrates a <strong>deep understanding of our brand and the market we operate in.</strong> His expertise in market research, analysis, and creative thinking allows us to launch successful campaigns that deliver measurable results. Fittr is fortunate to have Gaurav on our team, and I believe in his expertise and work ethic which places him as a strong candidate and a strategic executor."</p>
+      <div class="rec-meta">
+        <p class="rec-name">Shashank Lalwani</p>
+        <p class="rec-title">Customer Lifecycle Professional · Customer Success · Digital Engagement · Data &amp; Analytics · IIM Calcutta</p>
+        <p class="rec-context">Customer Success Head at FITTR, cross-functional peer, daily collaborator during FITTR's growth phase</p>
+        <a class="rec-link" href="https://www.linkedin.com/in/shashanklalwani/" target="_blank" rel="noreferrer">linkedin.com/in/shashanklalwani ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span class="footer-mark">Gaurav M.</span>
+  <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
+  <span class="label label-dim">Head of Marketing · VP Marketing · Director Brand · Director Product Marketing</span>
+  <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
+</footer>
+<script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
+<script>
+const companyLogos={
+  "TransPerfect Paybooks":"tppaybooks-dark.png",
+  "FITTR":"fittr-dark.png",
+  "Ketto":"ketto-dark.png",
+  "H&R Block":"hrblock-dark.png",
+  "SalesNXT ITES":"salesnxt-dark.png"
+};
+const timelineData=[{company:"TransPerfect Paybooks",role:"Senior Manager, Brand & Marketing",period:"May 2023 – Present",meta:["3 yr+","Bengaluru"],current:true},{company:"FITTR",role:"Brand Manager",period:"Mar 2020 – May 2023",meta:["3 yr 3 mo","Remote"]},{company:"Ketto",role:"Brand Strategy Manager",period:"Sep 2019 – Feb 2020",meta:["6 mo","Mumbai"]},{company:"H&R Block",role:"Associate Manager, Brand & Communications",period:"Mar 2015 – Sep 2019",meta:["4 yr 7 mo","Pune"],steps:[{title:"Associate Manager, Brand & Communications",period:"Oct 2018 – Sep 2019"},{title:"Sr Executive, Brand & Communications",period:"Nov 2017 – Oct 2018"},{title:"Brand & Communications Executive",period:"Jan 2016 – Oct 2017"},{title:"Jr Executive, Marketing",period:"Mar 2015 – Dec 2015"}],note:"Three promotions in 4.5 years."},{company:"SalesNXT ITES",role:"Assistant Marketing Manager",period:"Jul 2014 – Mar 2015",meta:["9 mo","Pune"],note:"Agency-side, Cisco, AT&T, Exotel and more."},{company:"Aditya Birla Group",role:"Trainee, Marketing Communication",period:"Jun 2013 – Aug 2013",meta:["3 mo","Kolkata"],note:"Where it started."}];
+
+function renderTimeline(){
+  const wrap=document.getElementById("tlTrack");if(!wrap)return;
+  let html="";
+  timelineData.forEach((n,i)=>{
+    const isLast=i===timelineData.length-1;
+    const logo=companyLogos[n.company];
+    const companyMark=logo?`<img class="tl-logo" src="${logo}" alt="${n.company}"/>`:`<p class="label label-accent" style="margin-bottom:0.4rem">${n.company}</p>`;
+    html+=`<div style="display:contents">
+      <div class="tl-date">${n.period}</div>
+      <div style="display:flex;flex-direction:column;align-items:center">
+        <div class="tl-dot${n.current?" active":""}"></div>
+        ${!isLast?'<div class="tl-spine"></div>':""}</div>
+      <div class="tl-content">
+        ${companyMark}
+        <p class="tl-role">${n.role}</p>
+        <p class="tl-meta">${(n.meta||[]).join(" · ")}</p>
+        ${n.steps?`<div class="tl-steps">${n.steps.map(s=>`<div><p class="tl-step-title">${s.title}</p><p class="tl-step-period">${s.period}</p></div>`).join("")}</div>`:""}
+        ${n.note?`<p class="tl-note">${n.note}</p>`:""}
+      </div>
+    </div>`;
+  });
+  wrap.innerHTML=`<div class="tl-grid">${html}</div>`;
+}
+renderTimeline();
+</script>
+</body></html>

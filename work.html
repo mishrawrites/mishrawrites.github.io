@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Work · Gaurav M.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1A1A1D;
+  --secondary:#4A0E0E;
+  --tertiary:#C9A44C;
+  --quaternary:#B5651D;
+  --white:#FFFFFF;
+  --primary-dim:rgba(26,26,29,0.66);
+  --primary-subtle:rgba(26,26,29,0.4);
+  --white-dim:rgba(255,255,255,0.78);
+  --white-subtle:rgba(255,255,255,0.4);
+  --border:#E4DFD6;
+  --border-dark:rgba(255,255,255,0.16);
+  --card:#FFFFFF;
+  --t-h1:clamp(2.6rem,5.2vw,3.6rem);
+  --t-h2:clamp(1.9rem,3.2vw,2.25rem);
+  --t-h3:clamp(1.3rem,2vw,1.5rem);
+  --t-body:1rem;
+  --t-caption:0.78rem;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--quaternary)}
+.nav-cta{background:var(--quaternary)!important;color:var(--primary)!important;padding:0.55rem 1.2rem!important;border-radius:2px}
+.nav-cta:hover{background:var(--primary)!important;color:var(--white)!important}
+
+/* STICKY CTA */
+.sticky-cta{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(90deg) translateX(50%);transform-origin:right center;z-index:199;background:var(--quaternary);color:var(--primary);font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.4rem;text-decoration:none;opacity:0;transition:opacity 0.4s,background 0.2s,color 0.2s;pointer-events:none}
+.sticky-cta.visible{opacity:1;pointer-events:auto}
+.sticky-cta:hover{background:var(--primary);color:var(--white)}
+
+/* TYPE */
+.display{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.1;color:var(--primary)}
+.display .accent{color:var(--quaternary)}
+.sec-title{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h2);line-height:1.2;color:var(--primary)}
+.sec-title .accent{color:var(--quaternary)}
+.card-title{font-family:"Montserrat",sans-serif;font-weight:500;font-size:var(--t-h3);line-height:1.3;color:var(--primary)}
+.body-text{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);line-height:1.75}
+.body-text.on-dark{color:var(--white-dim)}
+.label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
+.label-accent{color:var(--quaternary)}
+.label-gold{color:var(--tertiary)}
+.label-dim{color:var(--primary-subtle)}
+.fig-label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary-subtle);margin-bottom:1.5rem}
+.fig-label span{color:var(--quaternary)}
+
+/* LAYOUT */
+.wrap{max-width:1200px;margin:0 auto;padding:6.5rem 3rem}
+.wrap-sm{max-width:900px;margin:0 auto;padding:6.5rem 3rem}
+.sec-border{border-top:1px solid var(--border)}
+
+/* BTN */
+.btn{display:inline-block;font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2rem;transition:background 0.2s,color 0.2s,border-color 0.2s;border:1px solid transparent;cursor:pointer;border-radius:2px}
+.btn-primary{background:var(--quaternary);color:var(--primary)}
+.btn-primary:hover{background:var(--primary);color:var(--white)}
+.btn-ghost{border:1px solid var(--primary);color:var(--primary);background:transparent}
+.btn-ghost:hover{background:var(--primary);color:var(--white)}
+
+/* FOOTER */
+.site-footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;background:var(--white)}
+.footer-mark{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.05rem;color:var(--primary)}
+
+/* MANIFESTO BLOCK */
+.manifesto-wrap{background:var(--secondary);padding:6.5rem 3rem}
+.manifesto-text{font-family:"Poppins",sans-serif;font-weight:300;font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.6;color:var(--white)}
+.manifesto-text strong{font-weight:700;color:var(--tertiary)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .wrap,.wrap-sm{padding:3.5rem 1.5rem}
+  .manifesto-wrap{padding:3.5rem 1.5rem}
+  .site-footer{padding:1.5rem;flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.page-hero{padding:8.5rem 3rem 4rem;border-bottom:1px solid var(--border);background:var(--secondary)}
+.page-hero .fig-label{color:var(--white-subtle)}
+.page-hero .fig-label span{color:var(--tertiary)}
+.page-hero .display{color:var(--white)}
+.page-hero .display .accent{color:var(--tertiary)}
+.sec{padding:6.5rem 3rem;max-width:1200px;margin:0 auto}
+
+/* IMPACT */
+.impact-cards{display:grid;gap:2px;margin-top:3rem}
+.impact-feature{background:var(--secondary);padding:3rem;display:flex;align-items:center;justify-content:space-between;gap:3rem}
+.impact-feature-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:clamp(3.2rem,6.5vw,5.5rem);color:var(--tertiary);line-height:1}
+.impact-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border:1px solid var(--border);border-top:none}
+.impact-stat{background:var(--card);padding:2.5rem;border-bottom:3px solid transparent;transition:border-color 0.2s}
+.impact-stat:hover{border-bottom-color:var(--quaternary)}
+.impact-from-to{display:flex;align-items:baseline;gap:0.6rem;margin:1rem 0 0.4rem}
+.impact-from{font-family:"Montserrat",sans-serif;font-size:0.75rem;color:var(--primary-subtle)}
+.impact-arrow{color:var(--quaternary);font-family:"Montserrat",sans-serif}
+.impact-to{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.5rem;color:var(--primary);line-height:1}
+.impact-delta{font-family:"Montserrat",sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--tertiary)}
+
+/* CASES */
+.case-list{display:grid;gap:2px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
+.case-item{background:var(--card);display:grid;grid-template-columns:60px 1fr 260px;gap:2rem;padding:2.5rem}
+.case-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:2.75rem;color:transparent;-webkit-text-stroke:1.5px var(--quaternary);line-height:1}
+.case-co{height:24px;width:auto;max-width:170px;object-fit:contain;object-position:left center;margin-bottom:0.6rem;display:block}
+.case-co-row{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem}
+.case-co-extra{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--quaternary)}
+.case-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:1.5rem;border:1px solid var(--border)}
+.case-flow-item{background:var(--white);padding:1rem}
+.case-flow-label{font-family:"Montserrat",sans-serif;font-size:0.66rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--quaternary);margin-bottom:0.35rem}
+.case-metrics{display:grid;gap:1px;background:var(--border);border:1px solid var(--border)}
+.case-metric{background:var(--white);padding:1.5rem}
+.case-metric-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.6rem;color:var(--tertiary);line-height:1;margin-bottom:0.3rem}
+.case-metric-label{font-family:"Montserrat",sans-serif;font-size:0.66rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--primary-subtle)}
+
+/* PROJECTS */
+.filter-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:3rem}
+.filter-btn{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.5rem 1rem;border:1px solid var(--border);color:var(--primary-dim);background:transparent;cursor:pointer;transition:all 0.2s}
+.filter-btn.active,.filter-btn:hover{background:var(--quaternary);color:var(--primary);border-color:var(--quaternary)}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.project-card{background:var(--white);padding:2rem;display:grid;align-content:start;gap:0.7rem}
+.project-co{font-family:"Montserrat",sans-serif;font-size:0.66rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--quaternary)}
+.project-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.project-tag{font-family:"Montserrat",sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:0.2rem 0.5rem;border:1px solid var(--border);color:var(--primary-subtle)}
+.project-kpis{display:grid;gap:0.35rem;padding-top:0.75rem;border-top:1px solid var(--border)}
+.project-kpi{font-size:0.8rem;font-weight:400;color:var(--primary);padding-left:0.75rem;border-left:2px solid var(--tertiary);line-height:1.4}
+
+/* BREADTH */
+.breadth-charts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
+.chart-card{background:var(--card);padding:2.5rem}
+.pie-wrap{display:flex;align-items:center;gap:2rem;flex-wrap:wrap;margin-top:1.5rem}
+.pie-legend{display:grid;gap:0.6rem}
+.pie-legend-item{display:flex;align-items:center;gap:0.5rem;cursor:pointer}
+.pie-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.pie-legend-pct{font-family:"Poppins",sans-serif;font-weight:600;font-size:0.85rem;color:var(--primary);margin-left:auto;padding-left:0.75rem}
+
+/* AGENCIES */
+.agency-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);margin-top:2rem;border:1px solid var(--border)}
+.agency-cell{background:var(--card);padding:1.5rem;display:flex;align-items:center;justify-content:center}
+.agency-cell img{height:26px;width:auto;max-width:110px;object-fit:contain;opacity:0.75;transition:opacity 0.25s}
+.agency-cell img:hover{opacity:1}
+.agency-name-text{font-family:"Montserrat",sans-serif;font-size:0.66rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--primary-subtle);text-align:center}
+
+/* RESPONSIVE WORK */
+@media(max-width:960px){
+  .page-hero{padding:7rem 1.5rem 3rem}
+  .sec{padding:3.5rem 1.5rem}
+  .impact-row{grid-template-columns:1fr}
+  .impact-feature{flex-direction:column;align-items:flex-start;gap:1.5rem}
+  .case-item{grid-template-columns:1fr;gap:1.5rem}
+  .case-flow{grid-template-columns:1fr}
+  .project-grid{grid-template-columns:1fr}
+  .breadth-charts{grid-template-columns:1fr}
+  .agency-grid{grid-template-columns:repeat(3,1fr)}
+}
+</style>
+</head><body>
+<a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
+<nav>
+  <a class="nav-logo" href="index.html">Gaurav M.</a>
+  <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="active">Work</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li><li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li></ul>
+</nav>
+<div class="page-hero">
+  <div style="max-width:1200px;margin:0 auto">
+    <p class="fig-label"><span>Fig. 01</span> · Work</p>
+    <h1 class="display">Four arenas where brand strategy <span class="accent">became business movement.</span></h1>
+  </div>
+</div>
+
+<!-- IMPACT -->
+<section class="sec sec-border" id="impact">
+  <p class="fig-label"><span>Fig. 02</span> · Selected Impact</p>
+  <h2 class="sec-title">Commercial movement, <span class="accent">not campaign theatre.</span></h2>
+  <div class="impact-cards">
+    <div class="impact-feature">
+      <div>
+        <p class="label label-dim on-dark" style="color:var(--white-subtle);margin-bottom:0.75rem">TransPerfect Paybooks · ARR Migration</p>
+        <div class="impact-feature-num">INR 8.5 Cr</div>
+      </div>
+      <p class="body-text on-dark" style="max-width:380px">ARR impact from moving legacy clients onto current pricing through segmentation, campaign, and Sales + CS alignment.</p>
+    </div>
+    <div class="impact-row">
+      <div class="impact-stat"><p class="label label-accent">TransPerfect Paybooks</p><p class="body-text" style="margin-top:0.4rem">Upmarket repositioning, pricing, packaging, ICP shift</p><div class="impact-from-to"><span class="impact-from">INR 3,200</span><span class="impact-arrow">→</span><span class="impact-to">INR 12,500</span></div><p class="impact-delta">3.9× jump in MRR</p></div>
+      <div class="impact-stat"><p class="label label-accent">FITTR · ARR</p><p class="body-text" style="margin-top:0.4rem">Brand, campaigns, community &amp; product GTM</p><div class="impact-from-to"><span class="impact-from">INR 20 Cr</span><span class="impact-arrow">→</span><span class="impact-to">INR 100 Cr</span></div><p class="impact-delta">5× growth</p></div>
+      <div class="impact-stat"><p class="label label-accent">H&amp;R Block · Organic</p><p class="body-text" style="margin-top:0.4rem">In-house content &amp; SEO engine, seasonal peak</p><div class="impact-from-to"><span class="impact-from">&lt;50K</span><span class="impact-arrow">→</span><span class="impact-to">30M</span></div><p class="impact-delta">600× growth</p></div>
+    </div>
+    <div class="impact-row">
+      <div class="impact-stat"><p class="label label-accent">Paybooks · CAC</p><p class="body-text" style="margin-top:0.4rem">Sharper positioning and outreach channels</p><div class="impact-from-to"><span class="impact-from">INR 60K</span><span class="impact-arrow">↓</span><span class="impact-to">INR 48K</span></div><p class="impact-delta">20% reduction</p></div>
+      <div class="impact-stat"><p class="label label-accent">FITTR · Engagement</p><p class="body-text" style="margin-top:0.4rem">Campaign + content initiatives</p><div class="impact-from-to"><span class="impact-from">Baseline</span><span class="impact-arrow">→</span><span class="impact-to">340%</span></div><p class="impact-delta">In-app engagement jump</p></div>
+      <div class="impact-stat"><p class="label label-accent">FITTR · Community</p><p class="body-text" style="margin-top:0.4rem">Identity-led programs, challenges, creator ecosystem</p><div class="impact-from-to"><span class="impact-from">200K</span><span class="impact-arrow">→</span><span class="impact-to">800K+</span></div><p class="impact-delta">4× in 3 years</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="sec sec-border" id="cases">
+  <p class="fig-label"><span>Fig. 03</span> · Case Studies</p>
+  <h2 class="sec-title">The work, in depth.</h2>
+  <div class="case-list">
+    <div class="case-item">
+      <div class="case-num">01</div>
+      <div>
+        <img class="case-co" src="tppaybooks-dark.png" alt="TransPerfect Paybooks"/>
+        <p class="card-title">Repositioning a payroll brand into a global people management ecosystem.</p>
+        <p class="body-text" style="margin-top:0.75rem">Led brand transition, architecture, positioning, pricing, packaging, collateral rebuild, and GTM for Global People Solution across HCM, EOR, and multi-country payroll.</p>
+        <div class="case-flow">
+          <div class="case-flow-item"><p class="case-flow-label">Context</p><p class="body-text" style="font-size:0.8rem">Local payroll equity needed to expand into global services.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Move</p><p class="body-text" style="font-size:0.8rem">Shift ICP upmarket and rebuild the story around global people operations.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Execution</p><p class="body-text" style="font-size:0.8rem">Rebrand, pricing system, EOR launch, website, sales collateral, LinkedIn and WhatsApp outreach.</p></div>
+        </div>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="case-metric-num">INR 8.5 Cr</div><div class="case-metric-label">ARR migration impact</div></div>
+        <div class="case-metric"><div class="case-metric-num">43</div><div class="case-metric-label">Countries enabled for EOR</div></div>
+        <div class="case-metric"><div class="case-metric-num">3.9×</div><div class="case-metric-label">MRR, 3,200 to 12,500</div></div>
+      </div>
+    </div>
+    <div class="case-item">
+      <div class="case-num">02</div>
+      <div>
+        <img class="case-co" src="fittr-dark.png" alt="FITTR"/>
+        <p class="card-title">Building an 800K-member fitness community and brand that drove ARR from INR 20 Cr to INR 100 Cr.</p>
+        <p class="body-text" style="margin-top:0.75rem">Owned brand, campaigns, community growth, content infrastructure, product GTM, and the influencer ecosystem during FITTR's primary growth phase.</p>
+        <div class="case-flow">
+          <div class="case-flow-item"><p class="case-flow-label">Context</p><p class="body-text" style="font-size:0.8rem">B2C fitness brand needed community identity beyond paid acquisition.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Move</p><p class="body-text" style="font-size:0.8rem">Lead with transformation stories, challenge rituals, and identity-first community design.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Execution</p><p class="body-text" style="font-size:0.8rem">Challenge series, creator ecosystem, FITTR HART GTM, Fitness Made Forever campaign.</p></div>
+        </div>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="case-metric-num">800K+</div><div class="case-metric-label">Community members</div></div>
+        <div class="case-metric"><div class="case-metric-num">100M+</div><div class="case-metric-label">Flagship campaign reach</div></div>
+        <div class="case-metric"><div class="case-metric-num">340%</div><div class="case-metric-label">In-app engagement jump</div></div>
+      </div>
+    </div>
+    <div class="case-item">
+      <div class="case-num">03</div>
+      <div>
+        <img class="case-co" src="hrblock-dark.png" alt="H&R Block"/>
+        <p class="card-title">Making a low-interest tax category searchable, useful, and memorable.</p>
+        <p class="body-text" style="margin-top:0.75rem">Built content infrastructure, video production, tax education IP, GST communication, alliances, and campaign narratives for India, while supporting global campaign work.</p>
+        <div class="case-flow">
+          <div class="case-flow-item"><p class="case-flow-label">Context</p><p class="body-text" style="font-size:0.8rem">Tax was high-need but low-love, with trust and education gaps.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Move</p><p class="body-text" style="font-size:0.8rem">Convert tax complexity into approachable content and campaign hooks.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Execution</p><p class="body-text" style="font-size:0.8rem">Content Lab, Knowledge Center, GST Made Simple, Find a Flaw, earlyGST, alliance comms.</p></div>
+        </div>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="case-metric-num">30M</div><div class="case-metric-label">Organic traffic per season</div></div>
+        <div class="case-metric"><div class="case-metric-num">500+</div><div class="case-metric-label">Videos produced</div></div>
+        <div class="case-metric"><div class="case-metric-num">3</div><div class="case-metric-label">Promotions in 4.5 years</div></div>
+      </div>
+    </div>
+    <div class="case-item">
+      <div class="case-num">04</div>
+      <div>
+        <div class="case-co-row"><img class="case-co" style="margin-bottom:0" src="ketto-dark.png" alt="Ketto"/><span class="case-co-extra">+ Consulting</span></div>
+        <p class="card-title">Building trust-led brands in categories where the story carries the sale.</p>
+        <p class="body-text" style="margin-top:0.75rem">Produced cause-led storytelling at Ketto and built brand foundations for FAMLI, Mountainor, and Crystal Life across fintech, wellness, beauty, and consumer goods.</p>
+        <div class="case-flow">
+          <div class="case-flow-item"><p class="case-flow-label">Context</p><p class="body-text" style="font-size:0.8rem">Trust-heavy categories need credibility before conversion.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Move</p><p class="body-text" style="font-size:0.8rem">Use human stories, primary research, and category framing to lower hesitation.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Execution</p><p class="body-text" style="font-size:0.8rem">PodcastMD, hospital partnerships, brand foundations, naming, positioning, launch campaigns.</p></div>
+        </div>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="case-metric-num">10M+</div><div class="case-metric-label">PodcastMD streams</div></div>
+        <div class="case-metric"><div class="case-metric-num">1,000+</div><div class="case-metric-label">FAMLI beta users</div></div>
+        <div class="case-metric"><div class="case-metric-num">6 mo</div><div class="case-metric-label">Mountainor mandate</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT LIBRARY -->
+<section class="sec sec-border" id="projects">
+  <p class="fig-label"><span>Fig. 04</span> · Project Library</p>
+  <h2 class="sec-title">Depth across categories, <span class="accent">motions, and company stages.</span></h2>
+  <div class="filter-row" id="filterRow"></div>
+  <div class="project-grid" id="projectGrid"></div>
+</section>
+
+<!-- BREADTH -->
+<section class="sec sec-border" id="breadth">
+  <p class="fig-label"><span>Fig. 05</span> · Portfolio Breadth</p>
+  <h2 class="sec-title">Range across company types, <span class="accent">markets, and mandates.</span></h2>
+  <div class="breadth-charts">
+    <div class="chart-card"><p class="card-title">By Company Type</p><div class="pie-wrap"><svg id="pieType" viewBox="0 0 200 200" width="160" height="160"></svg><div class="pie-legend" id="legendType"></div></div></div>
+    <div class="chart-card"><p class="card-title">By Market</p><div class="pie-wrap"><svg id="pieMarket" viewBox="0 0 200 200" width="160" height="160"></svg><div class="pie-legend" id="legendMarket"></div></div></div>
+    <div class="chart-card"><p class="card-title">By Marketing Budget</p><div class="pie-wrap"><svg id="pieBudget" viewBox="0 0 200 200" width="160" height="160"></svg><div class="pie-legend" id="legendBudget"></div></div></div>
+    <div class="chart-card"><p class="card-title">By Company Revenue Scale</p><div class="pie-wrap"><svg id="pieRevenue" viewBox="0 0 200 200" width="160" height="160"></svg><div class="pie-legend" id="legendRevenue"></div></div><p class="body-text" style="font-size:0.6rem;margin-top:1.5rem;letter-spacing:0.06em;text-transform:uppercase">Reflects each organisation's scale during tenure</p></div>
+  </div>
+  <div style="margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border)">
+    <p class="label label-accent" style="margin-bottom:0.5rem">Agency Partners</p>
+    <p class="card-title" style="margin-bottom:2rem">Agencies briefed, reviewed, and shipped work with as a client.</p>
+    <div class="agency-grid" id="agencyGrid"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span class="footer-mark">Gaurav M.</span>
+  <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
+  <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
+</footer>
+<script>
+const agencyLogos = {
+  "ogilvy": "ogilvy-dark.png",
+  "nielsen": "nielsen-dark.png",
+  "clevertap": "clevertap-dark.png",
+  "lowelintas": "lowelintas-dark.png",
+  "adfactors": "adfactors-dark.png",
+  "kantar": "kantar-dark.png",
+  "madisonworld": "madisonworld-dark.png",
+  "fallon": "fallon-dark.png",
+  "dentsu": "dentsu-dark.png",
+  "fcbulka": "fcbulka-dark.png",
+  "watconsult": "watconsult-dark.png",
+  "iprospect": "iprospect-dark.png",
+};
+
+
+const projects=[{company:"TransPerfect Paybooks",name:"Global People Solution Brand Architecture",description:"Led naming, architecture, positioning, and GTM for an ecosystem spanning HCM, EOR, and multi-country payroll.",tags:["Brand","GTM"],kpis:["43 countries enabled for EOR","Approved global mandate"]},{company:"TransPerfect Paybooks",name:"Pricing & Packaging Repositioning",description:"Moved Paybooks from micro-business pricing into an upmarket model with revised plans, page copy, and sales policy.",tags:["Revenue","GTM"],kpis:["MRR moved from INR 3,200 to INR 12,500","Sharper ICP and enterprise-fit packaging"]},{company:"TransPerfect Paybooks",name:"Legacy Client Migration",description:"Built the business case, segmentation, and conversion campaign for moving legacy clients onto current plans.",tags:["Revenue","GTM"],kpis:["INR 8.5 Cr ARR impact","Cohort-led migration"]},{company:"TransPerfect Paybooks",name:"Employee Storytelling Series",description:"Created a first-person LinkedIn storytelling series strengthening employer-brand presence.",tags:["Brand","Content"],kpis:["50 personal stories, 11 team stories","LinkedIn 1,600 to 16,000+ followers"]},{company:"FITTR",name:"Transformation Challenge Series",description:"Scaled the 12-week health and wellness challenge through content, community rituals, and engagement loops.",tags:["Community","Brand","Revenue"],kpis:["45M+ cumulative reach","2M+ app downloads","20% customer acquisition"]},{company:"FITTR",name:"Fitness Made Forever",description:"Integrated brand campaign distributed across digital, OTT, TV, print, cinema, and billboards.",tags:["Brand","GTM"],kpis:["100M+ reach","340% in-app engagement jump","INR 10 Cr budget"]},{company:"FITTR",name:"Community Boost",description:"Expanded FITTR's community through category extensions, local groups, and creator-led initiatives.",tags:["Community"],kpis:["200K to 800K+ members","Monthly growth rate 15%+"]},{company:"FITTR",name:"FITTR Online PT",description:"Launched training-from-home during COVID and expanded into yoga, physiotherapy, rehab, HIIT, and meditation.",tags:["GTM","Revenue"],kpis:["20%+ revenue contribution","300K+ users added","45% engagement boost"]},{company:"FITTR",name:"Content & Utility Libraries",description:"Built food, recipe, workout, and success-story libraries that gave the community reasons to return.",tags:["Content","Community"],kpis:["1M+ food items","10K+ recipes in 3 months","1,000+ workout videos"]},{company:"FITTR",name:"FITTR HART",description:"Led product input and GTM for FITTR's smart ring, supported by high-visibility creators and athletes.",tags:["GTM","Brand","Revenue"],kpis:["INR 6.6 Cr revenue in year one","7× growth rate"]},{company:"H&R Block",name:"Content Lab",description:"Converted an unused meeting room into a studio and publishing engine for tax education and video production.",tags:["Content"],kpis:["500+ videos produced","Team of 4 plus 20 interns","2-3 videos per day"]},{company:"H&R Block",name:"Knowledge Center",description:"Built long-form SEO infrastructure turning education into a revenue-linked acquisition channel.",tags:["Content","Revenue"],kpis:["30M+ organic traffic per season","500+ articles","50%+ category search share"]},{company:"H&R Block",name:"GST Made Simple & earlyGST",description:"Built GST education and product GTM around India's national tax transition.",tags:["GTM","Content"],kpis:["40+ episode video series","300+ external references"]},{company:"H&R Block",name:"Find a Flaw",description:"Participative content hook around spotting tax mistakes — engagement kept climbing after rewards were removed.",tags:["Brand","Content"],kpis:["Facebook followers up 10-20% MoM","LinkedIn followers up 30% MoM"]},{company:"Ketto",name:"PodcastMD with Kunal Kapoor",description:"Cause-led podcast featuring survivors of life-threatening illness.",tags:["Brand","Content"],kpis:["12 survivor guests","10M+ streams","100+ patient letters"]},{company:"Ketto",name:"Medical Treatment Cost Estimator",description:"Tool for patients to compare treatment costs and move into Ketto's crowdfunding flow.",tags:["GTM","Revenue"],kpis:["100+ critical illnesses covered","30%+ conversion","INR 3 Cr+ raised"]},{company:"Consulting",name:"Crystal Life Podware",description:"Identified a storage-container category opportunity, named Podware and Pod, led positioning.",tags:["Brand","GTM"],kpis:["Primary research across major metros","Category and product naming"]},{company:"Consulting",name:"FAMLI Brand Foundation",description:"Built brand foundation for a fintech app bringing family-office style financial planning to Indian families.",tags:["Brand","GTM"],kpis:["3-month beta","1,000+ active users"]},{company:"Consulting",name:"Mountainor Brand Foundation",description:"Positioning, visual identity, packaging, tone of voice, performance setup, influencer outreach, and WhatsApp resale flows.",tags:["Brand","Revenue"],kpis:["6-month mandate","Resell funnel built on WhatsApp"]}];
+
+const allTags=["All","Brand","GTM","Community","Content","Revenue"];
+function renderProjects(filter="All"){
+  const g=document.getElementById("projectGrid");if(!g)return;
+  const list=filter==="All"?projects:projects.filter(p=>p.tags.includes(filter));
+  g.innerHTML=list.map(p=>`<div class="project-card"><p class="project-co">${p.company}</p><p class="card-title">${p.name}</p><p class="body-text" style="font-size:0.82rem">${p.description}</p><div class="project-tags">${p.tags.map(t=>`<span class="project-tag">${t}</span>`).join("")}</div><div class="project-kpis">${p.kpis.map(k=>`<p class="project-kpi">${k}</p>`).join("")}</div></div>`).join("");
+}
+function renderFilters(){
+  const row=document.getElementById("filterRow");if(!row)return;
+  row.innerHTML=allTags.map(t=>`<button class="filter-btn${t==="All"?" active":""}" data-filter="${t}">${t}</button>`).join("");
+  row.addEventListener("click",e=>{if(!e.target.classList.contains("filter-btn"))return;row.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));e.target.classList.add("active");renderProjects(e.target.dataset.filter);});
+}
+
+const PIE_PALETTE=["#4A0E0E","#B5651D","#C9A44C","#7A3A1A","#8C6A3A","#D9C08A"];
+function makePie(svgId,legendId,segments){
+  const svg=document.getElementById(svgId),leg=document.getElementById(legendId);if(!svg||!leg)return;
+  const total=segments.reduce((s,x)=>s+x.value,0),cx=100,cy=100,r=80,gap=1.5;
+  let angle=-Math.PI/2;const sliceData=[];
+  segments.forEach((s,i)=>{const slice=(s.value/total)*Math.PI*2,a0=angle+gap/r/2,a1=angle+slice-gap/r/2,x0=cx+r*Math.cos(a0),y0=cy+r*Math.sin(a0),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1),large=slice>Math.PI?1:0,pct=Math.round((s.value/total)*100),color=PIE_PALETTE[i%PIE_PALETTE.length];sliceData.push({label:s.label,pct,color,path:`M${cx},${cy} L${x0.toFixed(2)},${y0.toFixed(2)} A${r},${r} 0 ${large},1 ${x1.toFixed(2)},${y1.toFixed(2)} Z`});angle+=slice;});
+  const tip=`<g id="${svgId}-tip" style="display:none"><rect x="25" y="78" width="150" height="44" rx="3" fill="#1A1A1D" stroke="#1A1A1D" stroke-width="1"/><text id="${svgId}-tip-label" x="100" y="96" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" fill="rgba(255,255,255,0.65)"></text><text id="${svgId}-tip-pct" x="100" y="114" text-anchor="middle" font-family="Poppins,sans-serif" font-size="15" font-weight="700" fill="#C9A44C"></text></g>`;
+  svg.innerHTML=sliceData.map((d,i)=>`<path class="pie-slice" data-i="${i}" data-label="${d.label}" data-pct="${d.pct}%" d="${d.path}" fill="${d.color}" opacity="0.9" style="cursor:pointer;transition:opacity 0.15s"/>`).join("")+`<circle cx="${cx}" cy="${cy}" r="36" fill="#FFFFFF" style="pointer-events:none"/>`+tip;
+  svg.querySelectorAll(".pie-slice").forEach(path=>{path.addEventListener("mouseenter",function(){svg.querySelectorAll(".pie-slice").forEach(p=>p.style.opacity="0.35");this.style.opacity="1";const t=document.getElementById(`${svgId}-tip`),l=document.getElementById(`${svgId}-tip-label`),pe=document.getElementById(`${svgId}-tip-pct`);if(t&&l&&pe){l.textContent=this.dataset.label.toUpperCase();pe.textContent=this.dataset.pct;t.style.display="block"}leg.querySelectorAll(".pie-legend-item").forEach((it,j)=>it.style.opacity=j===parseInt(this.dataset.i)?"1":"0.35");});path.addEventListener("mouseleave",function(){svg.querySelectorAll(".pie-slice").forEach(p=>p.style.opacity="0.9");const t=document.getElementById(`${svgId}-tip`);if(t)t.style.display="none";leg.querySelectorAll(".pie-legend-item").forEach(it=>it.style.opacity="1");});});
+  leg.innerHTML=sliceData.map((d,i)=>`<div class="pie-legend-item" data-i="${i}"><div class="pie-dot" style="background:${d.color}"></div><span class="label label-dim" style="font-size:0.55rem">${d.label}</span><span class="pie-legend-pct">${d.pct}%</span></div>`).join("");
+  leg.querySelectorAll(".pie-legend-item").forEach(item=>{item.addEventListener("mouseenter",function(){const i=parseInt(this.dataset.i);svg.querySelectorAll(".pie-slice").forEach((p,j)=>p.style.opacity=j===i?"1":"0.35");leg.querySelectorAll(".pie-legend-item").forEach((it,j)=>it.style.opacity=j===i?"1":"0.35");const t=document.getElementById(`${svgId}-tip`),l=document.getElementById(`${svgId}-tip-label`),pe=document.getElementById(`${svgId}-tip-pct`);if(t&&l&&pe){l.textContent=sliceData[i].label.toUpperCase();pe.textContent=sliceData[i].pct+"%";t.style.display="block"}});item.addEventListener("mouseleave",function(){svg.querySelectorAll(".pie-slice").forEach(p=>p.style.opacity="0.9");leg.querySelectorAll(".pie-legend-item").forEach(it=>it.style.opacity="1");const t=document.getElementById(`${svgId}-tip`);if(t)t.style.display="none"});});
+}
+
+const agencyData=[{name:"Ogilvy",key:"ogilvy"},{name:"Nielsen",key:"nielsen"},{name:"CleverTap",key:"clevertap"},{name:"Lowe Lintas",key:"lowelintas"},{name:"Adfactors PR",key:"adfactors"},{name:"Kantar",key:"kantar"},{name:"Madison World",key:"madisonworld"},{name:"Fallon",key:"fallon"},{name:"Dentsu",key:"dentsu"},{name:"FCB Ulka",key:"fcbulka"},{name:"WATConsult",key:"watconsult"},{name:"iProspect",key:"iprospect"}];
+
+function init(){
+  renderFilters();renderProjects();
+  makePie("pieType","legendType",[{label:"B2C Product",value:11},{label:"B2B Product",value:4},{label:"B2C Service",value:4},{label:"B2B Service",value:3},{label:"Events",value:2}]);
+  makePie("pieMarket","legendMarket",[{label:"Global",value:11},{label:"India",value:10},{label:"USA",value:3}]);
+  makePie("pieBudget","legendBudget",[{label:"< $50K",value:6},{label:"$100K-$1M",value:6},{label:"$1M-$10M",value:5},{label:"$50K-$100K",value:4},{label:"> $10M",value:3}]);
+  makePie("pieRevenue","legendRevenue",[{label:"< $1M",value:1},{label:"$1M-$10M",value:1},{label:"$10M-$100M",value:1},{label:"$100M-$500M",value:1},{label:"> $500M",value:1}]);
+  const g=document.getElementById("agencyGrid");
+  if(g)g.innerHTML=agencyData.map(a=>{const src=agencyLogos[a.key];return src?`<div class="agency-cell"><img src="${src}" alt="${a.name}" title="${a.name}"/></div>`:`<div class="agency-cell"><span class="agency-name-text">${a.name}</span></div>`}).join("");
+}
+init();
+</script>
+</body></html>

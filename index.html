@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Gaurav M., Brand, GTM and Growth Leader. 12+ years building brand systems and marketing engines that move commercial numbers."/>
+<title>Gaurav M. — Brand, GTM & Growth</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* BRAND PALETTE — from brand guidelines, 24 Aug 2026 */
+  --primary:#1A1A1D;      /* wordmark, nav, footer */
+  --secondary:#4A0E0E;    /* dominant surface — hero, storytelling */
+  --tertiary:#C9A44C;     /* proof / credibility — stats, quotes, highlights */
+  --quaternary:#B5651D;   /* motion / action — links, hover, CTAs */
+  --white:#FFFFFF;        /* neutral canvas */
+  --primary-dim:rgba(26,26,29,0.66);
+  --primary-subtle:rgba(26,26,29,0.4);
+  --white-dim:rgba(255,255,255,0.78);
+  --white-subtle:rgba(255,255,255,0.4);
+  --border:#E4DFD6;
+  --border-dark:rgba(255,255,255,0.16);
+  --card:#FFFFFF;
+  /* TYPE SCALE — per brand guidelines */
+  --t-h1:clamp(2.6rem,5.2vw,3.6rem);   /* 48–56px, Poppins Bold */
+  --t-h2:clamp(1.9rem,3.2vw,2.25rem);  /* 32–36px, Montserrat SemiBold */
+  --t-h3:clamp(1.3rem,2vw,1.5rem);     /* 22–24px, Montserrat Medium */
+  --t-body:1rem;                       /* 16px, Poppins Regular/Light */
+  --t-caption:0.78rem;                 /* 12–13px, Montserrat Regular */
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--quaternary)}
+.nav-cta{background:var(--quaternary)!important;color:var(--primary)!important;padding:0.55rem 1.2rem!important;border-radius:2px}
+.nav-cta:hover{background:var(--primary)!important;color:var(--white)!important}
+
+/* STICKY CTA */
+.sticky-cta{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(90deg) translateX(50%);transform-origin:right center;z-index:199;background:var(--quaternary);color:var(--primary);font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.4rem;text-decoration:none;opacity:0;transition:opacity 0.4s,background 0.2s,color 0.2s;pointer-events:none}
+.sticky-cta.visible{opacity:1;pointer-events:auto}
+.sticky-cta:hover{background:var(--primary);color:var(--white)}
+
+/* TYPE */
+.display{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.05;color:var(--white)}
+.sec-title{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h2);line-height:1.2;color:var(--primary)}
+.sec-title .accent{color:var(--quaternary);font-weight:600}
+.sec-title.on-dark{color:var(--white)}
+.sec-title.on-dark .accent{color:var(--tertiary)}
+.card-title{font-family:"Montserrat",sans-serif;font-weight:500;font-size:var(--t-h3);line-height:1.3;color:var(--primary)}
+.body-text{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);line-height:1.75}
+.body-text.on-dark{color:var(--white-dim)}
+.label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
+.label-accent{color:var(--quaternary)}
+.label-gold{color:var(--tertiary)}
+.label-dim{color:var(--primary-subtle)}
+.label-dim.on-dark{color:var(--white-subtle)}
+.fig-label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary-subtle);margin-bottom:1.5rem}
+.fig-label span{color:var(--quaternary)}
+.fig-label.on-dark{color:var(--white-subtle)}
+.fig-label.on-dark span{color:var(--tertiary)}
+
+/* LAYOUT */
+.wrap{max-width:1200px;margin:0 auto;padding:6.5rem 3rem}
+.wrap-sm{max-width:900px;margin:0 auto;padding:6.5rem 3rem}
+
+/* BTN — Primary: quaternary fill, dark text for AA contrast; hover shifts to primary fill, white text */
+.btn{display:inline-block;font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2rem;transition:background 0.2s,color 0.2s,border-color 0.2s;border:1px solid transparent;cursor:pointer;border-radius:2px}
+.btn-primary{background:var(--quaternary);color:var(--primary)}
+.btn-primary:hover{background:var(--primary);color:var(--white)}
+.btn-ghost{border:1px solid var(--primary);color:var(--primary);background:transparent}
+.btn-ghost:hover{background:var(--primary);color:var(--white)}
+.btn-ghost-invert{border:1px solid var(--white-subtle);color:var(--white)}
+.btn-ghost-invert:hover{background:var(--white);color:var(--primary);border-color:var(--white)}
+
+/* FOOTER */
+.site-footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;background:var(--white)}
+.footer-mark{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.05rem;color:var(--primary)}
+
+/* MANIFESTO BLOCK */
+.manifesto-wrap{background:var(--secondary);padding:6.5rem 3rem}
+.manifesto-text{font-family:"Poppins",sans-serif;font-weight:300;font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.6;color:var(--white)}
+.manifesto-text strong{font-weight:700;color:var(--tertiary)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .wrap,.wrap-sm{padding:3.5rem 1.5rem}
+  .manifesto-wrap{padding:3.5rem 1.5rem}
+  .site-footer{padding:1.5rem;flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* HERO — Secondary (maroon) as the single dominant surface, Quaternary as the one accent */
+#hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;background:var(--secondary);position:relative;overflow:hidden}
+.hero-texture{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 82% 15%,rgba(201,164,76,0.14),transparent 45%),radial-gradient(circle at 10% 90%,rgba(181,101,29,0.16),transparent 40%)}
+.hero-left{padding:6.5rem 3rem 3rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border-dark);position:relative;z-index:2}
+.hero-right{padding:6.5rem 2.5rem 3rem;display:flex;flex-direction:column;justify-content:center;gap:0;position:relative;z-index:2}
+.hero-name{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.05;color:var(--white);margin-bottom:0.6rem;white-space:nowrap}
+.hero-role{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--white-dim);margin-bottom:1.75rem}
+.hero-lead{font-size:var(--t-body);font-weight:300;color:var(--white-dim);max-width:440px;margin-bottom:2rem;line-height:1.75}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-photo{width:100%;max-width:300px;height:300px;object-fit:cover;object-position:top center;filter:sepia(18%) saturate(1.05) contrast(1.02);border:1px solid var(--border-dark);display:block;margin:0 auto}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-dark);margin-top:1px;max-width:460px;margin-left:auto;margin-right:auto}
+.stat{background:var(--secondary);padding:1rem 0.75rem}
+.stat-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.4rem;color:var(--tertiary);line-height:1;margin-bottom:0.2rem}
+.stat-label{font-family:"Montserrat",sans-serif;font-size:0.56rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--white-dim);line-height:1.4}
+
+/* TRUST STRIP */
+#trust{background:var(--white);border-bottom:1px solid var(--border);padding:2.5rem 3rem}
+.trust-label{font-family:"Montserrat",sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary-subtle);text-align:center;margin-bottom:1.75rem}
+.trust-logos{display:flex;align-items:center;justify-content:center;gap:3.5rem;flex-wrap:wrap;max-width:1100px;margin:0 auto}
+.trust-logos img{height:22px;width:auto;max-width:130px;object-fit:contain;opacity:0.7;transition:opacity 0.2s}
+.trust-logos img:hover{opacity:1}
+
+/* METHOD — white canvas, one accent (quaternary) for the process numbering */
+#method{background:var(--white)}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
+.method-card{background:var(--white);padding:2.5rem}
+.method-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:2.75rem;color:transparent;-webkit-text-stroke:1.5px var(--quaternary);line-height:1;margin-bottom:1.5rem}
+
+/* IMPACT — Secondary surface for the headline number, Tertiary for proof metrics */
+#impact-preview{background:var(--white)}
+.impact-feature{background:var(--secondary);padding:3rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:3rem}
+.impact-feature-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:clamp(3.2rem,6.5vw,5.5rem);color:var(--tertiary);line-height:1}
+.impact-feature-detail{max-width:380px}
+.impact-triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-top:none}
+.impact-tile{background:var(--card);padding:2.5rem}
+.impact-from-to{display:flex;align-items:baseline;gap:0.6rem;margin:1rem 0 0.4rem}
+.impact-from{font-family:"Montserrat",sans-serif;font-size:0.75rem;color:var(--primary-subtle)}
+.impact-arrow{font-family:"Montserrat",sans-serif;font-size:0.8rem;color:var(--quaternary)}
+.impact-to{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.5rem;color:var(--primary);line-height:1}
+.impact-delta{font-family:"Montserrat",sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--tertiary)}
+
+/* VOICE / TESTIMONIALS — Tertiary is the literal "quotes" use case */
+#voice-preview{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.voice-card{background:var(--card);border:1px solid var(--border);padding:2.5rem;position:relative}
+.voice-card::before{content:"“";font-family:"Poppins",sans-serif;font-weight:700;font-size:3.5rem;line-height:1;color:var(--tertiary);position:absolute;top:1.25rem;left:2rem;opacity:0.5}
+.voice-quote{font-family:"Poppins",sans-serif;font-weight:300;font-style:italic;font-size:var(--t-body);line-height:1.75;color:var(--primary);padding-top:1.5rem}
+.voice-quote strong{font-style:normal;font-weight:600;color:var(--quaternary)}
+.voice-attr{font-family:"Montserrat",sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary-subtle);margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border)}
+.voice-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
+.voice-cta-row{display:flex;justify-content:center;margin-top:3rem}
+
+/* RESPONSIVE INDEX */
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:6rem 1.5rem 2rem;border-right:none;border-bottom:1px solid var(--border-dark)}
+  .hero-right{padding:2rem 1.5rem 2.5rem}
+  .hero-name{white-space:normal}
+  .hero-photo{height:240px;max-width:240px}
+  .hero-stats{grid-template-columns:repeat(2,1fr);max-width:320px}
+  .trust-logos{gap:2rem}
+  .trust-logos img{height:18px}
+  .method-grid,.impact-triptych{grid-template-columns:1fr}
+  .impact-feature{flex-direction:column;align-items:flex-start;gap:1.5rem;padding:2.5rem 1.5rem}
+  .voice-preview-grid{grid-template-columns:1fr}
+}
+</style>
+</head><body>
+<a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
+<nav>
+  <a class="nav-logo" href="index.html">Gaurav M.</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li>
+    <li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li>
+  </ul>
+</nav>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-texture" aria-hidden="true"></div>
+  <div class="hero-left">
+    <p class="label label-gold" style="margin-bottom:1.25rem">Brand · GTM · Growth</p>
+    <h1 class="hero-name">Gaurav M.</h1>
+    <p class="hero-role">Brand, GTM &amp; Growth Leader</p>
+    <p class="hero-lead">I work where positioning, community, content, and revenue need to move together. The work has stayed consistent across 12 years and five companies: clarify the story, build the system, make growth easier to repeat.</p>
+    <div class="hero-btns">
+      <a class="btn btn-primary" href="work.html">See the Work</a>
+      <a class="btn btn-ghost-invert" href="about.html">About &amp; Timeline</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-photo" src="gaurav-profile.jpg" alt="Gaurav M."/>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num" data-target="12" data-suffix="+">0</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-num" data-target="800" data-suffix="K+">0</div><div class="stat-label">Community Scaled</div></div>
+      <div class="stat"><div class="stat-num" data-target="100" data-suffix="M+">0</div><div class="stat-label">Campaign Reach</div></div>
+      <div class="stat"><div class="stat-num" data-target="16" data-suffix="">0</div><div class="stat-label">Largest Team Led</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section id="trust">
+  <p class="trust-label">Brand systems built at</p>
+  <div class="trust-logos">
+    <img src="tppaybooks-dark.png" alt="TransPerfect Paybooks"/>
+    <img src="fittr-dark.png" alt="FITTR"/>
+    <img src="hrblock-dark.png" alt="H&R Block"/>
+    <img src="ketto-dark.png" alt="Ketto"/>
+    <img src="salesnxt-dark.png" alt="SalesNXT"/>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section id="method">
+  <div class="wrap">
+    <p class="fig-label"><span>How I work</span></p>
+    <h2 class="sec-title">When the market gets noisy, <span class="accent">find the signal.</span></h2>
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">01</div>
+        <p class="card-title" style="margin-bottom:0.75rem">Find the lever</p>
+        <p class="body-text">Diagnose what is really blocking growth: positioning confusion, weak category framing, poor ICP clarity, low-trust content, or a broken handoff between brand, sales, and product.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">02</div>
+        <p class="card-title" style="margin-bottom:0.75rem">Build the system</p>
+        <p class="body-text">Convert strategy into repeatable engines: campaign architecture, content labs, community loops, GTM playbooks, pricing narratives, and marketing processes teams can actually run.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">03</div>
+        <p class="card-title" style="margin-bottom:0.75rem">Tie it to business</p>
+        <p class="body-text">Measure brand through commercial movement: MRR, ARR, CAC, organic acquisition, engagement, customer lifespan, conversion, and market expansion.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT PREVIEW -->
+<section id="impact-preview">
+  <div class="wrap" style="padding-bottom:0">
+    <p class="fig-label"><span>Selected Impact</span></p>
+    <h2 class="sec-title">Commercial movement, <span class="accent">not campaign theatre.</span></h2>
+  </div>
+  <div style="padding:3rem 3rem 0;max-width:1200px;margin:0 auto">
+    <div class="impact-feature">
+      <div>
+        <p class="label label-dim on-dark" style="margin-bottom:0.75rem">TransPerfect Paybooks · ARR Migration</p>
+        <div class="impact-feature-num">INR 8.5 Cr</div>
+      </div>
+      <p class="body-text on-dark impact-feature-detail">ARR impact from moving legacy clients onto current pricing through segmentation, campaign, and Sales + CS alignment.</p>
+    </div>
+    <div class="impact-triptych">
+      <div class="impact-tile">
+        <p class="label label-accent">TransPerfect Paybooks · MRR</p>
+        <p class="body-text" style="margin-top:0.5rem">Upmarket repositioning, pricing, packaging, ICP shift</p>
+        <div class="impact-from-to"><span class="impact-from">INR 3,200</span><span class="impact-arrow">→</span><span class="impact-to">INR 12,500</span></div>
+        <p class="impact-delta">3.9× jump</p>
+      </div>
+      <div class="impact-tile">
+        <p class="label label-accent">FITTR · ARR</p>
+        <p class="body-text" style="margin-top:0.5rem">Brand, campaigns, community &amp; product GTM</p>
+        <div class="impact-from-to"><span class="impact-from">INR 20 Cr</span><span class="impact-arrow">→</span><span class="impact-to">INR 100 Cr</span></div>
+        <p class="impact-delta">5× growth</p>
+      </div>
+      <div class="impact-tile">
+        <p class="label label-accent">H&amp;R Block · Organic Traffic</p>
+        <p class="body-text" style="margin-top:0.5rem">In-house content &amp; SEO engine, seasonal peak</p>
+        <div class="impact-from-to"><span class="impact-from">&lt;50K</span><span class="impact-arrow">→</span><span class="impact-to">30M</span></div>
+        <p class="impact-delta">600× growth</p>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;padding:3rem 0">
+      <a class="btn btn-ghost" href="work.html">See all case studies &amp; projects →</a>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE PREVIEW -->
+<section id="voice-preview">
+  <div class="wrap">
+    <p class="fig-label"><span>Voices from the Work</span></p>
+    <h2 class="sec-title">What people who built <span class="accent">things with me say.</span></h2>
+    <div class="voice-preview-grid">
+      <div class="voice-card">
+        <p class="voice-quote">"Gaurav is one of the most capable and dynamic Brand/Marketing managers I've ever worked with. He will take on end-to-end ownership of any project and ensure successful delivery regardless of the timeline, scale, medium, budget, or stakeholders. <strong>No challenge will deter him from not only doing his best but driving his team to do the same.</strong>"</p>
+        <p class="voice-attr">Hossein Ashtari · Senior Program &amp; Project Manager, IIM Calcutta · Colleague at FITTR</p>
+      </div>
+      <div class="voice-card">
+        <p class="voice-quote">"Gaurav exhibited a relentless can-do attitude with talent to match. He is highly knowledgeable in his domain and can be trusted by peers as well as other departments. <strong>From a cultural fit perspective, he is and can be a strong asset to any team through his positive spirit and team-first attitude.</strong>"</p>
+        <p class="voice-attr">Rahul Kohli · Native Marketing Leader · Ex-IBM, H&amp;R Block, UAE Exchange · Senior at H&amp;R Block</p>
+      </div>
+    </div>
+    <div class="voice-cta-row">
+      <a class="btn btn-ghost" href="about.html#recommendations">Read all recommendations →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<div class="manifesto-wrap">
+  <div class="wrap-sm" style="padding-top:0;padding-bottom:0">
+    <p class="label label-dim on-dark" style="margin-bottom:3rem">Throughline</p>
+    <p class="manifesto-text">The pattern is simple.<br/>Enter a complex growth moment. <strong>Find the strategic lever.</strong><br/>Build the system around it.<br/>Leave behind momentum the business can keep using.<br/><br/>Not campaign theatre. Not awareness for awareness's sake.<br/><strong>Brand strategy that moves commercial numbers.</strong></p>
+    <p class="label label-dim on-dark" style="margin-top:3rem">Gaurav M. · linkedin.com/in/mishrawrites · Bengaluru</p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span class="footer-mark">Gaurav M.</span>
+  <span class="label label-dim">Brand, GTM & Growth · Bengaluru</span>
+  <span class="label label-dim">Head of Marketing · VP Marketing · Director Brand · Director Product Marketing</span>
+  <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
+</footer>
+<script>
+// Sticky CTA
+const cta=document.getElementById("stickyCta");
+window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});
+</script>
+<script>
+function animateCounters(){
+  document.querySelectorAll(".stat-num[data-target]").forEach(el=>{
+    const target=parseInt(el.dataset.target),suffix=el.dataset.suffix||"";
+    let s=0;const dur=1200,step=16,inc=target/(dur/step);
+    const t=setInterval(()=>{s=Math.min(s+inc,target);el.textContent=Math.floor(s)+suffix;if(s>=target)clearInterval(t)},step);
+  });
+}
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){animateCounters();io.unobserve(x.target)}})},{threshold:0.3});
+const hero=document.getElementById("hero");if(hero)io.observe(hero);
+setTimeout(animateCounters,500);
+</script>
+</body></html>
