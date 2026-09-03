@@ -123,6 +123,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .case-metric{background:var(--white);padding:1.5rem}
 .case-metric-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.6rem;color:var(--tertiary);line-height:1;margin-bottom:0.3rem}
 .case-metric-label{font-family:"Montserrat",sans-serif;font-size:0.66rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--primary-subtle)}
+.case-role{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border)}
+.case-role-label{font-family:"Montserrat",sans-serif;font-size:0.66rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--quaternary);margin-bottom:0.4rem}
+.case-attribution{margin-top:1px;background:var(--white);padding:1.25rem 1.5rem;border:1px solid var(--border);border-top:none}
+.case-attribution-label{font-family:"Montserrat",sans-serif;font-size:0.62rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--primary-subtle);margin-bottom:0.35rem}
 
 /* PROJECTS */
 .filter-row{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:3rem}
@@ -174,7 +178,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 <div class="page-hero">
   <div style="max-width:1200px;margin:0 auto">
     <p class="fig-label"><span>Fig. 01</span> · Work</p>
-    <h1 class="display">Four arenas where brand strategy <span class="accent">became business movement.</span></h1>
+    <h1 class="display">What I owned, decided, and moved, <span class="accent">with the numbers attached.</span></h1>
   </div>
 </div>
 
@@ -208,15 +212,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   <p class="fig-label"><span>Fig. 03</span> · Case Studies</p>
   <h2 class="sec-title">The work, in depth.</h2>
   <div class="case-list">
-    <div class="case-item">
+    <div class="case-item" id="case-paybooks">
       <div class="case-num">01</div>
       <div>
         <img class="case-co" src="tppaybooks-dark.png" alt="TransPerfect Paybooks"/>
         <p class="card-title">Repositioning a payroll brand into a global people management ecosystem.</p>
         <p class="body-text" style="margin-top:0.75rem">Led brand transition, architecture, positioning, pricing, packaging, collateral rebuild, and GTM for Global People Solution across HCM, EOR, and multi-country payroll.</p>
+        <div class="case-role">
+          <p class="case-role-label">My Role &amp; Ownership</p>
+          <p class="body-text" style="font-size:0.85rem">Wrote the positioning brief, owned pricing architecture end to end, and ran the legacy migration campaign jointly with Sales and Customer Success.</p>
+        </div>
         <div class="case-flow">
-          <div class="case-flow-item"><p class="case-flow-label">Context</p><p class="body-text" style="font-size:0.8rem">Local payroll equity needed to expand into global services.</p></div>
-          <div class="case-flow-item"><p class="case-flow-label">Move</p><p class="body-text" style="font-size:0.8rem">Shift ICP upmarket and rebuild the story around global people operations.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Problem</p><p class="body-text" style="font-size:0.8rem">Local payroll equity needed to expand into global services.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">The Decision &amp; Why</p><p class="body-text" style="font-size:0.8rem">Shift ICP upmarket and rebuild the story around global people operations.</p></div>
           <div class="case-flow-item"><p class="case-flow-label">Execution</p><p class="body-text" style="font-size:0.8rem">Rebrand, pricing system, EOR launch, website, sales collateral, LinkedIn and WhatsApp outreach.</p></div>
         </div>
       </div>
@@ -224,17 +232,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
         <div class="case-metric"><div class="case-metric-num">INR 8.5 Cr</div><div class="case-metric-label">ARR migration impact</div></div>
         <div class="case-metric"><div class="case-metric-num">43</div><div class="case-metric-label">Countries enabled for EOR</div></div>
         <div class="case-metric"><div class="case-metric-num">3.9×</div><div class="case-metric-label">MRR, 3,200 to 12,500</div></div>
+        <div class="case-metric"><div class="case-metric-num">20%</div><div class="case-metric-label">CAC reduction</div></div>
       </div>
     </div>
-    <div class="case-item">
+    <div class="case-attribution" style="grid-column:1/-1"><p class="case-attribution-label">Attribution</p><p class="body-text" style="font-size:0.8rem">The INR 8.5 Cr figure is direct migration-campaign ARR, not whole-company revenue.</p></div>
+    <div class="case-item" id="case-fittr">
       <div class="case-num">02</div>
       <div>
         <img class="case-co" src="fittr-dark.png" alt="FITTR"/>
-        <p class="card-title">Building an 800K-member fitness community and brand that drove ARR from INR 20 Cr to INR 100 Cr.</p>
+        <p class="card-title">Building an 800K-member fitness community and brand alongside ARR growth from INR 20 Cr to INR 100 Cr.</p>
         <p class="body-text" style="margin-top:0.75rem">Owned brand, campaigns, community growth, content infrastructure, product GTM, and the influencer ecosystem during FITTR's primary growth phase.</p>
+        <div class="case-role">
+          <p class="case-role-label">My Role &amp; Ownership</p>
+          <p class="body-text" style="font-size:0.85rem">Built and led a team of 16, owning brand strategy through to product GTM.</p>
+        </div>
         <div class="case-flow">
-          <div class="case-flow-item"><p class="case-flow-label">Context</p><p class="body-text" style="font-size:0.8rem">B2C fitness brand needed community identity beyond paid acquisition.</p></div>
-          <div class="case-flow-item"><p class="case-flow-label">Move</p><p class="body-text" style="font-size:0.8rem">Lead with transformation stories, challenge rituals, and identity-first community design.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Problem</p><p class="body-text" style="font-size:0.8rem">B2C fitness brand needed community identity beyond paid acquisition.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">The Decision &amp; Why</p><p class="body-text" style="font-size:0.8rem">Central insight: transformation identity beats fitness features. Lead with transformation stories, challenge rituals, identity-first design.</p></div>
           <div class="case-flow-item"><p class="case-flow-label">Execution</p><p class="body-text" style="font-size:0.8rem">Challenge series, creator ecosystem, FITTR HART GTM, Fitness Made Forever campaign.</p></div>
         </div>
       </div>
@@ -242,17 +256,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
         <div class="case-metric"><div class="case-metric-num">800K+</div><div class="case-metric-label">Community members</div></div>
         <div class="case-metric"><div class="case-metric-num">100M+</div><div class="case-metric-label">Flagship campaign reach</div></div>
         <div class="case-metric"><div class="case-metric-num">340%</div><div class="case-metric-label">In-app engagement jump</div></div>
+        <div class="case-metric"><div class="case-metric-num">5×</div><div class="case-metric-label">ARR, 20 Cr to 100 Cr</div></div>
       </div>
     </div>
-    <div class="case-item">
+    <div class="case-attribution" style="grid-column:1/-1"><p class="case-attribution-label">Attribution</p><p class="body-text" style="font-size:0.8rem">The 5× ARR growth was whole-org. Marketing's direct contribution was community growth, campaigns, and product GTM; the 340% engagement jump is directly attributable to that work.</p></div>
+    <div class="case-item" id="case-hrblock">
       <div class="case-num">03</div>
       <div>
         <img class="case-co" src="hrblock-dark.png" alt="H&R Block"/>
         <p class="card-title">Making a low-interest tax category searchable, useful, and memorable.</p>
         <p class="body-text" style="margin-top:0.75rem">Built content infrastructure, video production, tax education IP, GST communication, alliances, and campaign narratives for India, while supporting global campaign work.</p>
+        <div class="case-role">
+          <p class="case-role-label">My Role &amp; Ownership</p>
+          <p class="body-text" style="font-size:0.85rem">Built Content Lab from scratch in an empty meeting room, scaling it to a team of 4 plus 20 interns. Three promotions in 4.5 years. Managed 800+ alliance partnerships solo.</p>
+        </div>
         <div class="case-flow">
-          <div class="case-flow-item"><p class="case-flow-label">Context</p><p class="body-text" style="font-size:0.8rem">Tax was high-need but low-love, with trust and education gaps.</p></div>
-          <div class="case-flow-item"><p class="case-flow-label">Move</p><p class="body-text" style="font-size:0.8rem">Convert tax complexity into approachable content and campaign hooks.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Problem</p><p class="body-text" style="font-size:0.8rem">Tax was high-need but low-love, with trust and education gaps.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">The Decision &amp; Why</p><p class="body-text" style="font-size:0.8rem">Convert tax complexity into approachable content and campaign hooks.</p></div>
           <div class="case-flow-item"><p class="case-flow-label">Execution</p><p class="body-text" style="font-size:0.8rem">Content Lab, Knowledge Center, GST Made Simple, Find a Flaw, earlyGST, alliance comms.</p></div>
         </div>
       </div>
@@ -260,17 +280,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
         <div class="case-metric"><div class="case-metric-num">30M</div><div class="case-metric-label">Organic traffic per season</div></div>
         <div class="case-metric"><div class="case-metric-num">500+</div><div class="case-metric-label">Videos produced</div></div>
         <div class="case-metric"><div class="case-metric-num">3</div><div class="case-metric-label">Promotions in 4.5 years</div></div>
+        <div class="case-metric"><div class="case-metric-num">800+</div><div class="case-metric-label">Alliance partnerships</div></div>
       </div>
     </div>
-    <div class="case-item">
+    <div class="case-attribution" style="grid-column:1/-1"><p class="case-attribution-label">Attribution</p><p class="body-text" style="font-size:0.8rem">Organic growth is directly attributable to the Knowledge Center and Content Lab infrastructure built and run in-house.</p></div>
+    <div class="case-item" id="case-ketto">
       <div class="case-num">04</div>
       <div>
         <div class="case-co-row"><img class="case-co" style="margin-bottom:0" src="ketto-dark.png" alt="Ketto"/><span class="case-co-extra">+ Consulting</span></div>
         <p class="card-title">Building trust-led brands in categories where the story carries the sale.</p>
         <p class="body-text" style="margin-top:0.75rem">Produced cause-led storytelling at Ketto and built brand foundations for FAMLI, Mountainor, and Crystal Life across fintech, wellness, beauty, and consumer goods.</p>
+        <div class="case-role">
+          <p class="case-role-label">My Role &amp; Ownership</p>
+          <p class="body-text" style="font-size:0.85rem">PodcastMD was my concept, produced with Kunal Kapoor; hospital partnerships sourced directly. Sole brand strategist across all three consulting brands.</p>
+        </div>
         <div class="case-flow">
-          <div class="case-flow-item"><p class="case-flow-label">Context</p><p class="body-text" style="font-size:0.8rem">Trust-heavy categories need credibility before conversion.</p></div>
-          <div class="case-flow-item"><p class="case-flow-label">Move</p><p class="body-text" style="font-size:0.8rem">Use human stories, primary research, and category framing to lower hesitation.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">Problem</p><p class="body-text" style="font-size:0.8rem">Trust-heavy categories need credibility before conversion.</p></div>
+          <div class="case-flow-item"><p class="case-flow-label">The Decision &amp; Why</p><p class="body-text" style="font-size:0.8rem">Use human stories, primary research, and category framing to lower hesitation.</p></div>
           <div class="case-flow-item"><p class="case-flow-label">Execution</p><p class="body-text" style="font-size:0.8rem">PodcastMD, hospital partnerships, brand foundations, naming, positioning, launch campaigns.</p></div>
         </div>
       </div>
@@ -278,8 +304,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
         <div class="case-metric"><div class="case-metric-num">10M+</div><div class="case-metric-label">PodcastMD streams</div></div>
         <div class="case-metric"><div class="case-metric-num">1,000+</div><div class="case-metric-label">FAMLI beta users</div></div>
         <div class="case-metric"><div class="case-metric-num">6 mo</div><div class="case-metric-label">Mountainor mandate</div></div>
+        <div class="case-metric"><div class="case-metric-num">4</div><div class="case-metric-label">Brands built from zero</div></div>
       </div>
     </div>
+    <div class="case-attribution" style="grid-column:1/-1"><p class="case-attribution-label">Attribution</p><p class="body-text" style="font-size:0.8rem">PodcastMD and hospital partnerships fully owned; consulting brand foundations built solo, start to finish.</p></div>
   </div>
 </section>
 

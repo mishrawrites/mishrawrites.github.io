@@ -115,6 +115,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 /* OPERATING SYSTEM */
 .system-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
 .system-card{background:var(--white);padding:2.5rem}
+.stack-row{display:flex;gap:0.6rem 1rem;flex-wrap:wrap;margin-top:0.75rem}
+.stack-tag{font-family:"Montserrat",sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.02em;padding:0.35rem 0.75rem;border:1px solid var(--border);color:var(--primary-dim)}
 .system-num{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--quaternary);margin-bottom:1rem}
 
 /* CREDENTIALS */
@@ -183,11 +185,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   </div>
 </section>
 
+<!-- AI STACK (condensed) -->
+<section class="sec sec-border" id="ai-stack">
+  <p class="fig-label"><span>Fig. 03</span> · Working With AI</p>
+  <h2 class="sec-title">Marketing built and shipped <span class="accent">with AI, not despite it.</span></h2>
+  <p class="body-text" style="margin-top:1rem;max-width:640px">Four tools in daily use: a landing page calculator, a compliance audit tool, a writing scorecard, and this website, built end to end for INR 667.</p>
+  <div style="margin-top:2rem">
+    <p class="label label-dim" style="margin-bottom:0.5rem">Daily stack</p>
+    <div class="stack-row"><span class="stack-tag">Claude</span><span class="stack-tag">ChatGPT</span><span class="stack-tag">Gemini</span><span class="stack-tag">Perplexity</span><span class="stack-tag">Canva</span><span class="stack-tag">Brevo</span><span class="stack-tag">Codex</span><span class="stack-tag">Monday</span><span class="stack-tag">Pangram</span></div>
+    <p class="label label-dim" style="margin:1.5rem 0 0.5rem">Monthly stack</p>
+    <div class="stack-row"><span class="stack-tag">Semrush</span><span class="stack-tag">Surfer SEO</span><span class="stack-tag">Unbounce</span><span class="stack-tag">Jasper</span><span class="stack-tag">Notion</span><span class="stack-tag">Paradigm AI</span><span class="stack-tag">Browse AI</span><span class="stack-tag">Brand24</span></div>
+  </div>
+</section>
+
 <!-- CREDENTIALS -->
 <section class="sec sec-border" id="credentials">
-  <p class="fig-label"><span>Fig. 03</span> · Credentials</p>
+  <p class="fig-label"><span>Fig. 04</span> · Credentials</p>
   <div class="cred-layout">
-    <blockquote class="cred-quote">Clarify the story. Build the system. Make growth easier to repeat.</blockquote>
+    <blockquote class="cred-quote">The receipts behind the résumé.</blockquote>
     <div class="cred-grid">
       <div class="cred-item"><div class="cred-num">10+</div><div class="cred-label">Campaign awards across industry forums</div></div>
       <div class="cred-item"><div class="cred-num">800+</div><div class="cred-label">Strategic alliances managed at H&R Block</div></div>
@@ -199,7 +214,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 
 <!-- RECOMMENDATIONS -->
 <section class="sec sec-border" id="recommendations">
-  <p class="fig-label"><span>Fig. 04</span> · Voices from the Work</p>
+  <p class="fig-label"><span>Fig. 05</span> · Voices from the Work</p>
   <h2 class="sec-title">What people who built <span class="accent">things with me say.</span></h2>
   <div class="rec-grid">
     <div class="rec-card">
@@ -244,7 +259,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 <footer class="site-footer">
   <span class="footer-mark">Gaurav M.</span>
   <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
-  <span class="label label-dim">Head of Marketing · VP Marketing · Director Brand · Director Product Marketing</span>
+  <span class="label label-dim">Brand Strategy · GTM · Product Marketing · Community Growth · Revenue Marketing</span>
   <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
 </footer>
 <script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>

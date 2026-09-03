@@ -119,11 +119,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .trust-logos img{height:22px;width:auto;max-width:130px;object-fit:contain;opacity:0.7;transition:opacity 0.2s}
 .trust-logos img:hover{opacity:1}
 
-/* METHOD — white canvas, one accent (quaternary) for the process numbering */
-#method{background:var(--white)}
+/* WHAT I SOLVE — white canvas, one accent (quaternary) for the process numbering */
+#solve{background:var(--white)}
 .method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
 .method-card{background:var(--white);padding:2.5rem}
 .method-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:2.75rem;color:transparent;-webkit-text-stroke:1.5px var(--quaternary);line-height:1;margin-bottom:1.5rem}
+
+/* AI OPERATING MODEL */
+#ai-model{background:var(--white)}
+.ai-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
+.ai-card{background:var(--white);padding:2.5rem}
+.ai-metric{font-family:"Montserrat",sans-serif;font-size:0.78rem;font-weight:600;color:var(--quaternary);margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border)}
+.stack-row{display:flex;gap:0.6rem 1rem;flex-wrap:wrap;margin-top:0.75rem}
+.stack-tag{font-family:"Montserrat",sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.02em;padding:0.35rem 0.75rem;border:1px solid var(--border);color:var(--primary-dim)}
 
 /* IMPACT — Secondary surface for the headline number, Tertiary for proof metrics */
 #impact-preview{background:var(--white)}
@@ -158,7 +166,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   .hero-stats{grid-template-columns:repeat(2,1fr);max-width:320px}
   .trust-logos{gap:2rem}
   .trust-logos img{height:18px}
-  .method-grid,.impact-triptych{grid-template-columns:1fr}
+  .method-grid,.impact-triptych,.ai-grid{grid-template-columns:1fr}
   .impact-feature{flex-direction:column;align-items:flex-start;gap:1.5rem;padding:2.5rem 1.5rem}
   .voice-preview-grid{grid-template-columns:1fr}
 }
@@ -176,9 +184,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 <section id="hero">
   <div class="hero-texture" aria-hidden="true"></div>
   <div class="hero-left">
-    <p class="label label-gold" style="margin-bottom:1.25rem">Brand · GTM · Growth</p>
+    <p class="label label-gold" style="margin-bottom:1.25rem">Brand &amp; Product Marketing Leadership</p>
     <h1 class="hero-name">Gaurav M.</h1>
-    <p class="hero-role">Brand, GTM &amp; Growth Leader</p>
+    <p class="hero-role">12+ years · 5 companies · Bengaluru</p>
     <p class="hero-lead">I work where positioning, community, content, and revenue need to move together. The work has stayed consistent across 12 years and five companies: clarify the story, build the system, make growth easier to repeat.</p>
     <div class="hero-btns">
       <a class="btn btn-primary" href="work.html">See the Work</a>
@@ -188,7 +196,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   <div class="hero-right">
     <img class="hero-photo" src="gaurav-profile.jpg" alt="Gaurav M."/>
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num" data-target="12" data-suffix="+">0</div><div class="stat-label">Years Experience</div></div>
+      <div class="stat"><div class="stat-num" data-target="100" data-suffix=" Cr">0</div><div class="stat-label">FITTR ARR, from 20 Cr</div></div>
       <div class="stat"><div class="stat-num" data-target="800" data-suffix="K+">0</div><div class="stat-label">Community Scaled</div></div>
       <div class="stat"><div class="stat-num" data-target="100" data-suffix="M+">0</div><div class="stat-label">Campaign Reach</div></div>
       <div class="stat"><div class="stat-num" data-target="16" data-suffix="">0</div><div class="stat-label">Largest Team Led</div></div>
@@ -208,67 +216,96 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   </div>
 </section>
 
-<!-- METHOD -->
-<section id="method">
+<!-- WHAT I SOLVE -->
+<section id="solve">
   <div class="wrap">
-    <p class="fig-label"><span>How I work</span></p>
-    <h2 class="sec-title">When the market gets noisy, <span class="accent">find the signal.</span></h2>
+    <p class="fig-label"><span>What I Solve</span></p>
+    <h2 class="sec-title">Three problems that show up <span class="accent">on a hiring leader's desk.</span></h2>
     <div class="method-grid">
       <div class="method-card">
         <div class="method-num">01</div>
-        <p class="card-title" style="margin-bottom:0.75rem">Find the lever</p>
-        <p class="body-text">Diagnose what is really blocking growth: positioning confusion, weak category framing, poor ICP clarity, low-trust content, or a broken handoff between brand, sales, and product.</p>
+        <p class="card-title" style="margin-bottom:0.75rem">Positioning that doesn't match how revenue gets made</p>
+        <p class="body-text">The product is strong, the story isn't. ICP is fuzzy, pricing feels apologetic, and sales rewrites the pitch on every call because marketing hasn't given them one that holds.</p>
       </div>
       <div class="method-card">
         <div class="method-num">02</div>
-        <p class="card-title" style="margin-bottom:0.75rem">Build the system</p>
-        <p class="body-text">Convert strategy into repeatable engines: campaign architecture, content labs, community loops, GTM playbooks, pricing narratives, and marketing processes teams can actually run.</p>
+        <p class="card-title" style="margin-bottom:0.75rem">Campaigns nobody can run again</p>
+        <p class="body-text">A campaign ships, it works, and then it's gone: no playbook, no content engine, no process the next hire can pick up. Every quarter starts from zero.</p>
       </div>
       <div class="method-card">
         <div class="method-num">03</div>
-        <p class="card-title" style="margin-bottom:0.75rem">Tie it to business</p>
-        <p class="body-text">Measure brand through commercial movement: MRR, ARR, CAC, organic acquisition, engagement, customer lifespan, conversion, and market expansion.</p>
+        <p class="card-title" style="margin-bottom:0.75rem">Marketing spend with no line to revenue</p>
+        <p class="body-text">Brand work and the P&amp;L live in separate decks. Nobody can point to which content, campaign, or pricing shift actually moved MRR, ARR, or CAC.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- IMPACT PREVIEW -->
+<!-- FEATURED CASES -->
 <section id="impact-preview">
   <div class="wrap" style="padding-bottom:0">
-    <p class="fig-label"><span>Selected Impact</span></p>
+    <p class="fig-label"><span>Featured Cases</span></p>
     <h2 class="sec-title">Commercial movement, <span class="accent">not campaign theatre.</span></h2>
   </div>
   <div style="padding:3rem 3rem 0;max-width:1200px;margin:0 auto">
-    <div class="impact-feature">
-      <div>
-        <p class="label label-dim on-dark" style="margin-bottom:0.75rem">TransPerfect Paybooks · ARR Migration</p>
-        <div class="impact-feature-num">INR 8.5 Cr</div>
-      </div>
-      <p class="body-text on-dark impact-feature-detail">ARR impact from moving legacy clients onto current pricing through segmentation, campaign, and Sales + CS alignment.</p>
-    </div>
     <div class="impact-triptych">
       <div class="impact-tile">
-        <p class="label label-accent">TransPerfect Paybooks · MRR</p>
-        <p class="body-text" style="margin-top:0.5rem">Upmarket repositioning, pricing, packaging, ICP shift</p>
-        <div class="impact-from-to"><span class="impact-from">INR 3,200</span><span class="impact-arrow">→</span><span class="impact-to">INR 12,500</span></div>
-        <p class="impact-delta">3.9× jump</p>
+        <p class="label label-accent">TransPerfect Paybooks</p>
+        <div class="impact-feature-num" style="font-size:clamp(1.8rem,3vw,2.4rem);margin:0.75rem 0">INR 8.5 Cr</div>
+        <p class="body-text">ARR migration impact from moving legacy clients onto current pricing, positioning brief through to Sales + CS rollout.</p>
+        <p style="margin-top:1.25rem"><a class="label label-accent" href="work.html#case-paybooks" style="text-decoration:none">See the case study →</a></p>
       </div>
       <div class="impact-tile">
-        <p class="label label-accent">FITTR · ARR</p>
-        <p class="body-text" style="margin-top:0.5rem">Brand, campaigns, community &amp; product GTM</p>
-        <div class="impact-from-to"><span class="impact-from">INR 20 Cr</span><span class="impact-arrow">→</span><span class="impact-to">INR 100 Cr</span></div>
-        <p class="impact-delta">5× growth</p>
+        <p class="label label-accent">FITTR</p>
+        <div class="impact-feature-num" style="font-size:clamp(1.8rem,3vw,2.4rem);margin:0.75rem 0">5× ARR growth</div>
+        <p class="body-text">Built and led a 16-person team across brand, community, and product GTM through FITTR's core growth phase.</p>
+        <p style="margin-top:1.25rem"><a class="label label-accent" href="work.html#case-fittr" style="text-decoration:none">See the case study →</a></p>
       </div>
       <div class="impact-tile">
-        <p class="label label-accent">H&amp;R Block · Organic Traffic</p>
-        <p class="body-text" style="margin-top:0.5rem">In-house content &amp; SEO engine, seasonal peak</p>
-        <div class="impact-from-to"><span class="impact-from">&lt;50K</span><span class="impact-arrow">→</span><span class="impact-to">30M</span></div>
-        <p class="impact-delta">600× growth</p>
+        <p class="label label-accent">H&amp;R Block</p>
+        <div class="impact-feature-num" style="font-size:clamp(1.8rem,3vw,2.4rem);margin:0.75rem 0">600× traffic</div>
+        <p class="body-text">Built Content Lab and the Knowledge Center from an empty room, turning a low-interest category into a search destination.</p>
+        <p style="margin-top:1.25rem"><a class="label label-accent" href="work.html#case-hrblock" style="text-decoration:none">See the case study →</a></p>
       </div>
     </div>
     <div style="display:flex;justify-content:center;padding:3rem 0">
       <a class="btn btn-ghost" href="work.html">See all case studies &amp; projects →</a>
+    </div>
+  </div>
+</section>
+
+<!-- AI OPERATING MODEL -->
+<section id="ai-model">
+  <div class="wrap">
+    <p class="fig-label"><span>AI Operating Model</span></p>
+    <h2 class="sec-title">Marketing built and shipped <span class="accent">with AI, not despite it.</span></h2>
+    <div class="ai-grid">
+      <div class="ai-card">
+        <p class="card-title" style="margin-bottom:0.75rem">Landing Page Calculator</p>
+        <p class="body-text">Built an interactive cost calculator for a landing page that had stalled, rewriting the flow around the number visitors actually wanted.</p>
+        <p class="ai-metric">Bounce -20% · Conversion 1% → 2.3% · SQL rate 20% → 35%</p>
+      </div>
+      <div class="ai-card">
+        <p class="card-title" style="margin-bottom:0.75rem">Compliance Audit Tool</p>
+        <p class="body-text">Built an internal tool that audits client accounts for compliance gaps before they turn into support tickets, and surfaces cross-sell openings for the account team.</p>
+        <p class="ai-metric">100+ clients audited · NPS +0.5 · 40+ cross-sells surfaced</p>
+      </div>
+      <div class="ai-card">
+        <p class="card-title" style="margin-bottom:0.75rem">Writing Scorecard</p>
+        <p class="body-text">Built a scoring tool that checks copy against brand voice rules before it ships, cutting review cycles across the team.</p>
+        <p class="ai-metric">2× faster delivery · Under 2 weeks concept to launch</p>
+      </div>
+      <div class="ai-card">
+        <p class="card-title" style="margin-bottom:0.75rem">This Website</p>
+        <p class="body-text">Designed, coded, and shipped mishrawrites.com end to end, brand system, copy, and case data included, without hiring a designer or developer.</p>
+        <p class="ai-metric">INR 667 total build cost</p>
+      </div>
+    </div>
+    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)">
+      <p class="label label-dim" style="margin-bottom:0.5rem">Daily stack</p>
+      <div class="stack-row"><span class="stack-tag">Claude</span><span class="stack-tag">ChatGPT</span><span class="stack-tag">Gemini</span><span class="stack-tag">Perplexity</span><span class="stack-tag">Canva</span><span class="stack-tag">Brevo</span><span class="stack-tag">Codex</span><span class="stack-tag">Monday</span><span class="stack-tag">Pangram</span></div>
+      <p class="label label-dim" style="margin:1.5rem 0 0.5rem">Monthly stack</p>
+      <div class="stack-row"><span class="stack-tag">Semrush</span><span class="stack-tag">Surfer SEO</span><span class="stack-tag">Unbounce</span><span class="stack-tag">Jasper</span><span class="stack-tag">Notion</span><span class="stack-tag">Paradigm AI</span><span class="stack-tag">Browse AI</span><span class="stack-tag">Brand24</span></div>
     </div>
   </div>
 </section>
@@ -294,19 +331,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   </div>
 </section>
 
-<!-- MANIFESTO -->
+<!-- MANIFESTO / CTA -->
 <div class="manifesto-wrap">
   <div class="wrap-sm" style="padding-top:0;padding-bottom:0">
-    <p class="label label-dim on-dark" style="margin-bottom:3rem">Throughline</p>
-    <p class="manifesto-text">The pattern is simple.<br/>Enter a complex growth moment. <strong>Find the strategic lever.</strong><br/>Build the system around it.<br/>Leave behind momentum the business can keep using.<br/><br/>Not campaign theatre. Not awareness for awareness's sake.<br/><strong>Brand strategy that moves commercial numbers.</strong></p>
-    <p class="label label-dim on-dark" style="margin-top:3rem">Gaurav M. · linkedin.com/in/mishrawrites · Bengaluru</p>
+    <p class="label label-dim on-dark" style="margin-bottom:3rem">What I'm Hired For</p>
+    <p class="manifesto-text">I don't get hired to run a campaign calendar.<br/>I get hired to own what happens next: which positioning survives contact with sales, what system keeps running once I'm gone, and which metric moves because of the work.<br/><br/><strong>Twelve years of turning brand decisions into commercial ones.</strong></p>
+    <div style="display:flex;gap:1rem;margin-top:3rem;flex-wrap:wrap">
+      <a class="btn btn-ghost-invert" href="contact.html">Let's Talk</a>
+      <a class="btn btn-ghost-invert" href="work.html">See the Work</a>
+    </div>
   </div>
 </div>
 
 <footer class="site-footer">
   <span class="footer-mark">Gaurav M.</span>
-  <span class="label label-dim">Brand, GTM & Growth · Bengaluru</span>
-  <span class="label label-dim">Head of Marketing · VP Marketing · Director Brand · Director Product Marketing</span>
+  <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
+  <span class="label label-dim">Brand Strategy · GTM · Product Marketing · Community Growth · Revenue Marketing</span>
   <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
 </footer>
 <script>
