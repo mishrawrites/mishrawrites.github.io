@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog · Gaurav M.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1A1A1D;
+  --secondary:#4A0E0E;
+  --tertiary:#C9A44C;
+  --quaternary:#B5651D;
+  --white:#FFFFFF;
+  --primary-dim:rgba(26,26,29,0.66);
+  --primary-subtle:rgba(26,26,29,0.4);
+  --white-dim:rgba(255,255,255,0.78);
+  --white-subtle:rgba(255,255,255,0.4);
+  --border:#E4DFD6;
+  --border-dark:rgba(255,255,255,0.16);
+  --card:#FFFFFF;
+  --t-h1:clamp(2.6rem,5.2vw,3.6rem);
+  --t-h2:clamp(1.9rem,3.2vw,2.25rem);
+  --t-h3:clamp(1.3rem,2vw,1.5rem);
+  --t-body:1rem;
+  --t-caption:0.78rem;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--quaternary)}
+.nav-cta{background:var(--quaternary)!important;color:var(--primary)!important;padding:0.55rem 1.2rem!important;border-radius:2px}
+.nav-cta:hover{background:var(--primary)!important;color:var(--white)!important}
+
+/* STICKY CTA */
+.sticky-cta{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(90deg) translateX(50%);transform-origin:right center;z-index:199;background:var(--quaternary);color:var(--primary);font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.4rem;text-decoration:none;opacity:0;transition:opacity 0.4s,background 0.2s,color 0.2s;pointer-events:none}
+.sticky-cta.visible{opacity:1;pointer-events:auto}
+.sticky-cta:hover{background:var(--primary);color:var(--white)}
+
+/* TYPE */
+.display{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.1;color:var(--primary)}
+.display .accent{color:var(--quaternary)}
+.sec-title{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h2);line-height:1.2;color:var(--primary)}
+.sec-title .accent{color:var(--quaternary)}
+.card-title{font-family:"Montserrat",sans-serif;font-weight:500;font-size:var(--t-h3);line-height:1.3;color:var(--primary)}
+.body-text{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);line-height:1.75}
+.body-text.on-dark{color:var(--white-dim)}
+.label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
+.label-accent{color:var(--quaternary)}
+.label-gold{color:var(--tertiary)}
+.label-dim{color:var(--primary-subtle)}
+.fig-label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary-subtle);margin-bottom:1.5rem}
+.fig-label span{color:var(--quaternary)}
+
+/* LAYOUT */
+.wrap{max-width:1200px;margin:0 auto;padding:6.5rem 3rem}
+.wrap-sm{max-width:900px;margin:0 auto;padding:6.5rem 3rem}
+.sec-border{border-top:1px solid var(--border)}
+
+/* BTN */
+.btn{display:inline-block;font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2rem;transition:background 0.2s,color 0.2s,border-color 0.2s;border:1px solid transparent;cursor:pointer;border-radius:2px}
+.btn-primary{background:var(--quaternary);color:var(--primary)}
+.btn-primary:hover{background:var(--primary);color:var(--white)}
+.btn-ghost{border:1px solid var(--primary);color:var(--primary);background:transparent}
+.btn-ghost:hover{background:var(--primary);color:var(--white)}
+
+/* FOOTER */
+.site-footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;background:var(--white)}
+.footer-mark{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.05rem;color:var(--primary)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .wrap,.wrap-sm{padding:3.5rem 1.5rem}
+  .site-footer{padding:1.5rem;flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* BLOG COVER — text + shapes only, no photo */
+.blog-cover{position:relative;padding:9rem 3rem 5rem;background:var(--secondary);overflow:hidden;border-bottom:1px solid var(--border-dark)}
+.blog-cover .fig-label{color:var(--white-subtle)}
+.blog-cover .fig-label span{color:var(--tertiary)}
+.blog-cover .display{color:var(--white);max-width:680px;position:relative;z-index:2}
+.blog-cover .display .accent{color:var(--tertiary)}
+.blog-cover-lead{color:var(--white-dim);font-size:1.05rem;max-width:520px;margin-top:1.25rem;position:relative;z-index:2}
+.shape{position:absolute;z-index:1}
+.shape-ring{width:280px;height:280px;border:1.5px solid var(--border-dark);border-radius:50%;top:-90px;right:6%}
+.shape-ring-2{width:150px;height:150px;border:1.5px solid rgba(201,164,76,0.35);border-radius:50%;bottom:-50px;right:20%}
+.shape-block{width:110px;height:110px;background:var(--quaternary);opacity:0.9;bottom:2rem;right:6%;transform:rotate(8deg)}
+.shape-line{width:220px;height:1.5px;background:rgba(255,255,255,0.18);top:40%;right:2%;transform:rotate(-18deg)}
+@media(max-width:960px){.blog-cover{padding:7.5rem 1.5rem 3.5rem}.shape-ring,.shape-ring-2,.shape-block,.shape-line{display:none}}
+
+/* POST GRID */
+.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:1rem}
+.blog-card{background:var(--white);padding:2.5rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:background 0.2s}
+.blog-card:hover{background:#FAF8F4}
+.blog-card-date{font-family:"Montserrat",sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--quaternary);margin-bottom:0.75rem}
+.blog-card-dek{margin-top:0.75rem}
+.blog-card-more{margin-top:1.5rem;font-family:"Montserrat",sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary)}
+.blog-empty{padding:4rem 2.5rem;text-align:center;border:1px dashed var(--border)}
+@media(max-width:960px){.blog-grid{grid-template-columns:1fr}}
+</style>
+</head><body>
+<a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
+<nav>
+  <a class="nav-logo" href="index.html">Gaurav M.</a>
+  <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="blog.html" class="active">Blog</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li><li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li></ul>
+</nav>
+
+<!-- COVER -->
+<div class="blog-cover">
+  <div class="shape-ring"></div>
+  <div class="shape-ring-2"></div>
+  <div class="shape-block"></div>
+  <div class="shape-line"></div>
+  <p class="fig-label"><span>Blog</span> · Notes on the work</p>
+  <h1 class="display">Brand, growth, and building things <span class="accent">with AI in the room.</span></h1>
+  <p class="blog-cover-lead">No fixed schedule. New posts whenever there's something worth writing down.</p>
+</div>
+
+<!-- POST LIST -->
+<!-- TO ADD A NEW POST: duplicate blog-post-XX.html, edit its content, then copy one .blog-card block below and update the href, date, title, and dek. Newest post goes first. -->
+<section class="wrap">
+  <div class="blog-grid">
+    <a class="blog-card" href="blog-post-01-how-i-built-this-site.html">
+      <p class="blog-card-date">September 2026</p>
+      <p class="card-title">How I built this site for INR 667</p>
+      <p class="body-text blog-card-dek">A walkthrough of the AI stack, the actual cost breakdown, and what I'd do differently.</p>
+      <p class="blog-card-more">Read the post →</p>
+    </a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <span class="footer-mark">Gaurav M.</span>
+  <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
+  <span class="label label-dim">Brand Strategy · GTM · Product Marketing · Community Growth · Revenue Marketing</span>
+  <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
+</footer>
+<script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
+</body></html>

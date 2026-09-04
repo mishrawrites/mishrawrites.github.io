@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How I built this site for INR 667 · Gaurav M.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1A1A1D;
+  --secondary:#4A0E0E;
+  --tertiary:#C9A44C;
+  --quaternary:#B5651D;
+  --white:#FFFFFF;
+  --primary-dim:rgba(26,26,29,0.66);
+  --primary-subtle:rgba(26,26,29,0.4);
+  --white-dim:rgba(255,255,255,0.78);
+  --white-subtle:rgba(255,255,255,0.4);
+  --border:#E4DFD6;
+  --border-dark:rgba(255,255,255,0.16);
+  --t-h1:clamp(2.2rem,4.4vw,3rem);
+  --t-h2:clamp(1.5rem,2.6vw,1.9rem);
+  --t-body:1rem;
+  --t-caption:0.78rem;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--quaternary)}
+.nav-cta{background:var(--quaternary)!important;color:var(--primary)!important;padding:0.55rem 1.2rem!important;border-radius:2px}
+.nav-cta:hover{background:var(--primary)!important;color:var(--white)!important}
+.sticky-cta{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(90deg) translateX(50%);transform-origin:right center;z-index:199;background:var(--quaternary);color:var(--primary);font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.4rem;text-decoration:none;opacity:0;transition:opacity 0.4s,background 0.2s,color 0.2s;pointer-events:none}
+.sticky-cta.visible{opacity:1;pointer-events:auto}
+.sticky-cta:hover{background:var(--primary);color:var(--white)}
+.display{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.15;color:var(--primary)}
+.sec-title{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h2);line-height:1.2;color:var(--primary)}
+.body-text{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);line-height:1.8}
+.label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
+.label-accent{color:var(--quaternary)}
+.label-dim{color:var(--primary-subtle)}
+.wrap-sm{max-width:720px;margin:0 auto;padding:6.5rem 3rem}
+.btn{display:inline-block;font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2rem;transition:background 0.2s,color 0.2s;border:1px solid transparent;cursor:pointer;border-radius:2px}
+.btn-primary{background:var(--quaternary);color:var(--primary)}
+.btn-primary:hover{background:var(--primary);color:var(--white)}
+.site-footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-mark{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.05rem;color:var(--primary)}
+@media(max-width:960px){nav{padding:1rem 1.5rem}.nav-links{display:none}.wrap-sm{padding:3.5rem 1.5rem}.site-footer{padding:1.5rem;flex-direction:column;text-align:center}}
+
+/* POST HEADER */
+.post-header{padding:8.5rem 3rem 3rem;border-bottom:1px solid var(--border)}
+.post-header-inner{max-width:720px;margin:0 auto}
+.post-meta{display:flex;gap:1rem;align-items:center;margin-bottom:1.25rem}
+
+/* COVER GRAPHIC — shapes only, swap for a real screenshot/photo whenever you have one */
+.post-cover{position:relative;height:220px;background:var(--secondary);overflow:hidden;border-bottom:1px solid var(--border)}
+.pc-ring{position:absolute;width:200px;height:200px;border:1.5px solid rgba(255,255,255,0.16);border-radius:50%;top:-70px;left:8%}
+.pc-block{position:absolute;width:70px;height:70px;background:var(--quaternary);top:60px;right:12%;transform:rotate(12deg)}
+.pc-block-2{position:absolute;width:40px;height:40px;background:var(--tertiary);opacity:0.85;bottom:30px;right:26%}
+
+/* BODY */
+.post-body p{margin-bottom:1.5rem}
+.post-body h2{font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.3rem;margin:2.5rem 0 1rem;color:var(--primary)}
+.post-body strong{font-weight:600;color:var(--primary)}
+.post-cost-table{width:100%;border-collapse:collapse;margin:1.5rem 0 2rem;font-size:0.92rem}
+.post-cost-table td{padding:0.6rem 0.75rem;border-bottom:1px solid var(--border);color:var(--primary-dim)}
+.post-cost-table tr:last-child td{font-weight:600;color:var(--primary);border-bottom:none}
+
+/* COMMENTS */
+.comments-wrap{border-top:1px solid var(--border);padding-top:3rem;margin-top:3rem}
+.comment{padding:1.25rem 0;border-bottom:1px solid var(--border)}
+.comment-name{font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.85rem;color:var(--primary)}
+.comment-date{font-family:"Montserrat",sans-serif;font-size:0.68rem;color:var(--primary-subtle);margin-left:0.6rem}
+.comment-body{margin-top:0.4rem;font-size:0.92rem;color:var(--primary-dim)}
+.comment-empty{padding:1.5rem 0;color:var(--primary-subtle);font-size:0.9rem;border-bottom:1px solid var(--border)}
+.comment-form{margin-top:2.5rem}
+.comment-form input,.comment-form textarea{width:100%;font-family:"Poppins",sans-serif;font-size:0.95rem;padding:0.85rem 1rem;border:1px solid var(--border);border-radius:2px;margin-bottom:1rem;background:var(--white);color:var(--primary)}
+.comment-form textarea{min-height:110px;resize:vertical}
+.comment-note{font-size:0.8rem;color:var(--primary-subtle);margin-top:0.75rem}
+</style>
+</head><body>
+<a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
+<nav>
+  <a class="nav-logo" href="index.html">Gaurav M.</a>
+  <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="blog.html" class="active">Blog</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li><li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li></ul>
+</nav>
+
+<div class="post-header">
+  <div class="post-header-inner">
+    <p class="label label-accent" style="margin-bottom:1rem"><a href="blog.html" style="color:inherit;text-decoration:none">← Blog</a></p>
+    <div class="post-meta"><span class="label label-dim">September 2026</span></div>
+    <h1 class="display">How I built this site for INR 667</h1>
+  </div>
+</div>
+
+<!-- Swap this block for a real screenshot or photo whenever you have one; shapes-only works fine until then -->
+<div class="post-cover">
+  <div class="pc-ring"></div>
+  <div class="pc-block"></div>
+  <div class="pc-block-2"></div>
+</div>
+
+<article class="wrap-sm">
+  <div class="post-body body-text">
+    <p>This site, brand system included, cost INR 667 to build. Not a typo, not a marketing line. That's the actual number, and I want to walk through how it got that low without the output looking like it.</p>
+
+    <h2>The old way versus this way</h2>
+    <p>The old way was hiring a designer for the visual system, a developer for the build, and paying for stock photography or a shoot. Weeks of back and forth, a budget in the lakhs, and a site that's expensive to change six months later when the positioning shifts.</p>
+    <p>This way was writing a brand brief myself, generating and refining the visual system with AI tools, writing every line of copy in my own voice, and having AI handle the code. The whole thing ran through the same daily stack I already use for client work: Claude for structure and copy, Canva for supporting visual assets, and Codex for the parts of the build that needed direct code changes.</p>
+
+    <h2>Where the money actually went</h2>
+    <table class="post-cost-table">
+      <tr><td>Domain registration (mishrawrites.com)</td><td>INR 599</td></tr>
+      <tr><td>Font and asset licensing checks</td><td>INR 68</td></tr>
+      <tr><td>Hosting</td><td>INR 0 (GitHub Pages)</td></tr>
+      <tr><td>Total</td><td>INR 667</td></tr>
+    </table>
+    <p>Everything else, the brand guidelines, the copywriting, the page layouts, the code, ran on tools I already pay for as part of my monthly stack, so the marginal cost of this specific project was close to zero.</p>
+
+    <h2>What I'd tell someone trying this themselves</h2>
+    <p>Write the brand brief before you touch any tool. Color, type, voice, what you will and won't say, decided on paper first. Every AI tool works better against a brief than against a blank prompt. The <strong>brief is the leverage</strong>, not the tool.</p>
+    <p>Second, keep a human editing pass on every piece of copy. AI drafts fast; it does not know your actual wins, your actual numbers, or the difference between confident and overstated. That judgment stayed mine through every page on this site.</p>
+  </div>
+
+  <!-- COMMENTS -->
+  <div class="comments-wrap">
+    <p class="sec-title" style="margin-bottom:1.5rem">Comments</p>
+
+    <!--
+      HOW TO ADD AN APPROVED COMMENT:
+      When someone submits the form below, you'll get an email via Formspree.
+      To publish it, copy the block below, paste it above this comment,
+      and fill in their name, date, and comment text.
+
+      <div class="comment">
+        <span class="comment-name">NAME</span><span class="comment-date">DATE</span>
+        <p class="comment-body">COMMENT TEXT</p>
+      </div>
+    -->
+
+    <div class="comment-empty">No comments yet — be the first to leave one.</div>
+
+    <form class="comment-form" action="https://formspree.io/f/mrpglpop" method="POST">
+      <input type="text" name="name" placeholder="Your name" required/>
+      <textarea name="comment" placeholder="Your comment" required></textarea>
+      <input type="hidden" name="_subject" value="New comment on: How I built this site for INR 667"/>
+      <input type="hidden" name="post" value="blog-post-01-how-i-built-this-site"/>
+      <button type="submit" class="btn btn-primary">Submit Comment</button>
+      <p class="comment-note">Comments are reviewed before they're published. No account needed.</p>
+    </form>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <span class="footer-mark">Gaurav M.</span>
+  <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
+  <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
+</footer>
+<script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
+</body></html>
