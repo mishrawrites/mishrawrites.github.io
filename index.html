@@ -38,6 +38,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
 .nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
 .nav-links a:hover,.nav-links a.active{color:var(--quaternary)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.4rem;flex-direction:column;gap:5px;z-index:210;position:relative}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--primary);transition:transform 0.25s,opacity 0.25s}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .nav-cta{background:var(--quaternary)!important;color:var(--primary)!important;padding:0.55rem 1.2rem!important;border-radius:2px}
 .nav-cta:hover{background:var(--primary)!important;color:var(--white)!important}
 
@@ -89,8 +94,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 
 /* RESPONSIVE */
 @media(max-width:960px){
-  nav{padding:1rem 1.5rem}
-  .nav-links{display:none}
+  nav{padding:1rem 1.5rem;backdrop-filter:none;background:var(--white)}
+  .nav-toggle{display:flex}
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--secondary);flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:1.75rem;z-index:205;padding:6.5rem 2rem 2rem}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:1.35rem;text-transform:none;letter-spacing:0;color:var(--white);font-family:"Poppins",sans-serif;font-weight:400}
+  .nav-links a.active{color:var(--tertiary)}
+  .nav-links .nav-cta{margin-top:0.5rem;color:var(--primary)!important;font-size:0.85rem!important}
+  .nav-logo{z-index:206}
+  .nav-toggle.active{z-index:210}
+  .nav-toggle.active span{background:var(--white)}
   .wrap,.wrap-sm{padding:3.5rem 1.5rem}
   .manifesto-wrap{padding:3.5rem 1.5rem}
   .site-footer{padding:1.5rem;flex-direction:column;text-align:center}
@@ -175,10 +188,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 <a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
 <nav>
   <a class="nav-logo" href="index.html">Gaurav M.</a>
-  <ul class="nav-links">
-    <li><a href="index.html" class="active">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="blog.html" class="">Blog</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="blog.html" class="">Monoblog</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li>
     <li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <!-- HERO -->
 <section id="hero">
@@ -299,6 +313,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
         <p class="card-title" style="margin-bottom:0.75rem">This Website</p>
         <p class="body-text">Designed, coded, and shipped mishrawrites.com end to end, brand system, copy, and case data included, without hiring a designer or developer.</p>
         <p class="ai-metric">INR 667 total build cost</p>
+        <p style="margin-top:0.75rem"><a class="label label-accent" href="blog-post-01-how-i-built-this-site.html" style="text-decoration:none">Read the full story on Monoblog →</a></p>
       </div>
     </div>
     <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)">
@@ -353,6 +368,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 // Sticky CTA
 const cta=document.getElementById("stickyCta");
 window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});
+// Mobile nav toggle
+const navToggle=document.getElementById("navToggle"),navLinks=document.getElementById("navLinks");
+if(navToggle){navToggle.addEventListener("click",()=>{navToggle.classList.toggle("active");navLinks.classList.toggle("open")});navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navToggle.classList.remove("active");navLinks.classList.remove("open")}))}
 </script>
 <script>
 function animateCounters(){

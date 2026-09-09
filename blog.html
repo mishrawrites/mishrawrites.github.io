@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Blog · Gaurav M.</title>
+<title>Monoblog · Gaurav M.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -35,6 +35,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
 .nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
 .nav-links a:hover,.nav-links a.active{color:var(--quaternary)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.4rem;flex-direction:column;gap:5px;z-index:210;position:relative}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--primary);transition:transform 0.25s,opacity 0.25s}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .nav-cta{background:var(--quaternary)!important;color:var(--primary)!important;padding:0.55rem 1.2rem!important;border-radius:2px}
 .nav-cta:hover{background:var(--primary)!important;color:var(--white)!important}
 
@@ -76,8 +81,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 
 /* RESPONSIVE */
 @media(max-width:960px){
-  nav{padding:1rem 1.5rem}
-  .nav-links{display:none}
+  nav{padding:1rem 1.5rem;backdrop-filter:none;background:var(--white)}
+  .nav-toggle{display:flex}
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--secondary);flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:1.75rem;z-index:205;padding:6.5rem 2rem 2rem}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:1.35rem;text-transform:none;letter-spacing:0;color:var(--white);font-family:"Poppins",sans-serif;font-weight:400}
+  .nav-links a.active{color:var(--tertiary)}
+  .nav-links .nav-cta{margin-top:0.5rem;color:var(--primary)!important;font-size:0.85rem!important}
+  .nav-logo{z-index:206}
+  .nav-toggle.active span{background:var(--white)}
   .wrap,.wrap-sm{padding:3.5rem 1.5rem}
   .site-footer{padding:1.5rem;flex-direction:column;text-align:center}
 }
@@ -98,20 +110,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 @media(max-width:960px){.blog-cover{padding:7.5rem 1.5rem 3.5rem}.shape-ring,.shape-ring-2,.shape-block,.shape-line{display:none}}
 
 /* POST GRID */
-.blog-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:1rem}
-.blog-card{background:var(--white);padding:2.5rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:background 0.2s}
-.blog-card:hover{background:#FAF8F4}
+.blog-grid{display:flex;flex-direction:column;margin-top:1rem;border-top:1px solid var(--border)}
+.blog-card{padding:2.25rem 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:0.5rem;transition:opacity 0.2s}
+.blog-card:hover{opacity:0.7}
 .blog-card-date{font-family:"Montserrat",sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--quaternary);margin-bottom:0.75rem}
 .blog-card-dek{margin-top:0.75rem}
 .blog-card-more{margin-top:1.5rem;font-family:"Montserrat",sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary)}
 .blog-empty{padding:4rem 2.5rem;text-align:center;border:1px dashed var(--border)}
-@media(max-width:960px){.blog-grid{grid-template-columns:1fr}}
+@media(max-width:960px){.blog-grid{margin-top:0.5rem}}
 </style>
 </head><body>
 <a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
 <nav>
   <a class="nav-logo" href="index.html">Gaurav M.</a>
-  <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="blog.html" class="active">Blog</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li><li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li></ul>
+  <ul class="nav-links" id="navLinks"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="blog.html" class="active">Monoblog</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li><li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li></ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- COVER -->
@@ -120,19 +133,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   <div class="shape shape-ring-2"></div>
   <div class="shape shape-block"></div>
   <div class="shape shape-line"></div>
-  <p class="fig-label"><span>Blog</span> · Kuchh Bhi Likhta Hun <span class="accent">Even I don't know what I'll write next</p>
-  <h1 class="display">Sometimes NEWS, sometimes OPINION <span class="accent">mostly CRAZY.</span></h1>
-  <p class="blog-cover-lead">No fixed schedule. New posts whenever mood swings happen.</p>
+  <p class="fig-label"><span>Monoblog</span> · Things That Matters to Me</p>
+  <h1 class="display">Sometimes <span class="accent">NEWS</span>, Sometimes <span class="accent">OPINION</span>, Mostly <span class="accent">CRAZY.</span></h1>
+  <p class="blog-cover-lead">No fixed schedule. New posts whenever there's something worth writing down.</p>
 </div>
 
 <!-- POST LIST -->
-<!-- TO ADD A NEW POST: duplicate blog-post-XX.html, edit its content, then copy one .blog-card block below and update the href, date, title, and dek. Newest post goes first. -->
+<!-- TO ADD A NEW POST: duplicate blog-post-XX.html, edit its content, then copy one .blog-card block below and update the href, data-date (YYYY-MM-DD, used for sorting), visible date text, title, and dek. Cards sort newest-first automatically — paste it anywhere in the grid.
+     DESIGN RULES: no pagination, ever — this list keeps growing and stays scrollable no matter how many posts exist. No images in the listing — text only, shapes/flowcharts only if genuinely needed. -->
 <section class="wrap">
   <div class="blog-grid">
-    <a class="blog-card" href="blog-post-01-how-i-built-this-site.html">
-      <p class="blog-card-date">September 2026</p>
-      <p class="card-title">How I built this site for INR 667</p>
-      <p class="body-text blog-card-dek">A walkthrough of the AI stack, the actual cost breakdown, and what I'd do differently.</p>
+    <a class="blog-card" href="blog-post-01-how-i-built-this-site.html" data-date="2026-09-06">
+      <p class="blog-card-date">6 September 2026</p>
+      <p class="card-title">A follow-along for building a site like this one</p>
+      <p class="body-text blog-card-dek">Whether you even need a website, finding your voice and visual identity, and the actual deployment steps, domain to GitHub to a free personalized email.</p>
       <p class="blog-card-more">Read the post →</p>
     </a>
   </div>
@@ -145,4 +159,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
 </footer>
 <script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
+<script>
+const navToggle=document.getElementById("navToggle"),navLinks=document.getElementById("navLinks");
+if(navToggle){navToggle.addEventListener("click",()=>{navToggle.classList.toggle("active");navLinks.classList.toggle("open")});navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navToggle.classList.remove("active");navLinks.classList.remove("open")}))}
+</script>
+<script>
+// Keeps post cards ordered newest-to-oldest automatically, based on each card's data-date attribute.
+// You can paste a new .blog-card anywhere in the grid; this sorts it into place on load.
+const grid=document.querySelector(".blog-grid");
+if(grid){
+  const cards=[...grid.querySelectorAll(".blog-card[data-date]")];
+  cards.sort((a,b)=>new Date(b.dataset.date)-new Date(a.dataset.date)).forEach(c=>grid.appendChild(c));
+}
+</script>
 </body></html>
