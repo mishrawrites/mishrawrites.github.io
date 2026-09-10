@@ -92,6 +92,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .comment-form input,.comment-form textarea{width:100%;font-family:"Poppins",sans-serif;font-size:0.95rem;padding:0.85rem 1rem;border:1px solid var(--border);border-radius:2px;margin-bottom:1rem;background:var(--white);color:var(--primary)}
 .comment-form textarea{min-height:110px;resize:vertical}
 .comment-note{font-size:0.8rem;color:var(--primary-subtle);margin-top:0.75rem}
+.comment-reply{margin:1rem 0 0 1.5rem;padding:0.9rem 1.1rem;border-left:2px solid var(--quaternary);background:#FAF8F4}
+.comment-reply .comment-name{color:var(--quaternary)}
 </style>
 </head><body>
 <a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
@@ -215,18 +217,44 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
     <p class="sec-title" style="margin-bottom:1.5rem">Comments</p>
 
     <!--
-      HOW TO ADD AN APPROVED COMMENT:
-      When someone submits the form below, you'll get an email via Formspree.
-      To publish it, copy the block below, paste it above this comment,
-      and fill in their name, date, and comment text.
+      HOW TO HANDLE COMMENTS — do this yourself, no need to ask Claude:
 
-      <div class="comment">
-        <span class="comment-name">NAME</span><span class="comment-date">DATE</span>
-        <p class="comment-body">COMMENT TEXT</p>
-      </div>
+      1. Check for new submissions: either your email inbox (search "New comment on:"),
+         or log in at formspree.io -> your form -> Submissions tab. Either shows you
+         the name and comment text.
+
+      2. To PUBLISH a comment: copy the block below, paste it right above this
+         instructional comment (so new comments stack above "No comments yet" /
+         above older comments, in the order they arrived), and fill in the 3 blanks.
+
+         <div class="comment">
+           <span class="comment-name">NAME</span><span class="comment-date">DATE</span>
+           <p class="comment-body">COMMENT TEXT</p>
+         </div>
+
+      3. To REPLY publicly under their comment (optional): paste this block
+         immediately AFTER their comment block (same 3 blanks, your own reply text):
+
+         <div class="comment comment-reply">
+           <span class="comment-name">Gaurav replied</span><span class="comment-date">DATE</span>
+           <p class="comment-body">YOUR REPLY</p>
+         </div>
+
+      4. Delete the "No comments yet" line below once you've added your first comment.
+
+      5. Save the file and commit to GitHub the usual way (Add file -> Upload files,
+         or edit directly in the repo). That's it — no code changes needed beyond
+         filling in the blanks above.
     -->
 
-    <div class="comment-empty">No comments yet — be the first to leave one.</div>
+    <div class="comment">
+      <span class="comment-name">Aryan</span><span class="comment-date">10 September 2026</span>
+      <p class="comment-body">Your brand guidelines document looks good to begin with. Can I use yours if you don't mind?</p>
+    </div>
+    <div class="comment comment-reply">
+      <span class="comment-name">Gaurav replied</span><span class="comment-date">10 September 2026</span>
+      <p class="comment-body">Use it as inspiration first- see what actually resonates with you. But if it genuinely fits who you are, go ahead and use it as is. I put it out there for exactly this.</p>
+    </div>
 
     <form class="comment-form" action="https://formspree.io/f/mrpglpop" method="POST">
       <input type="text" name="name" placeholder="Your name" required/>
