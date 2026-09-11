@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>WISDOM: Who Created GODs and DEVILs · Gaurav M.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;500;600&family=Noto+Sans+Bengali:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1A1A1D;
+  --secondary:#4A0E0E;
+  --tertiary:#C9A44C;
+  --quaternary:#B5651D;
+  --white:#FFFFFF;
+  --primary-dim:rgba(26,26,29,0.66);
+  --primary-subtle:rgba(26,26,29,0.4);
+  --white-dim:rgba(255,255,255,0.78);
+  --white-subtle:rgba(255,255,255,0.4);
+  --border:#E4DFD6;
+  --border-dark:rgba(255,255,255,0.16);
+  --t-h1:clamp(2.2rem,4.4vw,3rem);
+  --t-h2:clamp(1.5rem,2.6vw,1.9rem);
+  --t-body:1rem;
+  --t-caption:0.78rem;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--quaternary)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.4rem;flex-direction:column;gap:5px;z-index:210;position:relative}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--primary);transition:transform 0.25s,opacity 0.25s}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-cta{background:var(--quaternary)!important;color:var(--primary)!important;padding:0.55rem 1.2rem!important;border-radius:2px}
+.nav-cta:hover{background:var(--primary)!important;color:var(--white)!important}
+.sticky-cta{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(90deg) translateX(50%);transform-origin:right center;z-index:199;background:var(--quaternary);color:var(--primary);font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.4rem;text-decoration:none;opacity:0;transition:opacity 0.4s,background 0.2s,color 0.2s;pointer-events:none}
+.sticky-cta.visible{opacity:1;pointer-events:auto}
+.sticky-cta:hover{background:var(--primary);color:var(--white)}
+.display{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.15;color:var(--primary)}
+.sec-title{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h2);line-height:1.2;color:var(--primary)}
+.body-text{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);line-height:1.8}
+.label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
+.label-accent{color:var(--quaternary)}
+.label-dim{color:var(--primary-subtle)}
+.wrap-sm{max-width:720px;margin:0 auto;padding:6.5rem 3rem}
+.btn{display:inline-block;font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2rem;transition:background 0.2s,color 0.2s;border:1px solid transparent;cursor:pointer;border-radius:2px}
+.btn-primary{background:var(--quaternary);color:var(--primary)}
+.btn-primary:hover{background:var(--primary);color:var(--white)}
+.site-footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-mark{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.05rem;color:var(--primary)}
+@media(max-width:960px){nav{padding:1rem 1.5rem;backdrop-filter:none;background:var(--white)}.nav-toggle{display:flex}.nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--secondary);flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:1.75rem;z-index:205;padding:6.5rem 2rem 2rem}.nav-links.open{display:flex}.nav-links a{font-size:1.35rem;text-transform:none;letter-spacing:0;color:var(--white);font-family:"Poppins",sans-serif;font-weight:400}.nav-links a.active{color:var(--tertiary)}.nav-links .nav-cta{margin-top:0.5rem;color:var(--primary)!important;font-size:0.85rem!important}.nav-logo{z-index:206}.nav-toggle.active span{background:var(--white)}.wrap-sm{padding:3.5rem 1.5rem}.site-footer{padding:1.5rem;flex-direction:column;text-align:center}}
+
+/* POST HEADER */
+.post-header{padding:8rem 3rem 1.5rem}
+.post-header-inner{max-width:720px;margin:0 auto}
+.post-meta{display:flex;gap:1rem;align-items:center;margin-bottom:1.25rem}
+
+/* COVER GRAPHIC — shapes + title */
+.post-cover{position:relative;background:var(--secondary);overflow:hidden;border-bottom:1px solid var(--border);padding:2.75rem 3rem 3.5rem}
+.post-cover-inner{max-width:720px;margin:0 auto;position:relative;z-index:2}
+.post-cover-title{color:var(--white)}
+.pc-ring{position:absolute;width:200px;height:200px;border:1.5px solid rgba(255,255,255,0.16);border-radius:50%;top:-70px;left:8%;z-index:1}
+.pc-block{position:absolute;width:70px;height:70px;background:var(--quaternary);top:16px;right:12%;transform:rotate(12deg);z-index:1}
+.pc-block-2{position:absolute;width:40px;height:40px;background:var(--tertiary);opacity:0.85;bottom:18px;right:26%;z-index:1}
+
+/* BODY */
+.post-body p{margin-bottom:1.5rem}
+.post-body strong{font-weight:600;color:var(--primary)}
+.post-body s{color:var(--primary-subtle)}
+.post-dot{text-align:center;color:var(--primary-subtle);margin-bottom:0.4rem}
+.post-bangla{font-family:"Noto Sans Bengali",sans-serif;font-weight:600;font-size:1.2rem;text-align:center;color:var(--primary);margin-bottom:0.6rem;line-height:2}
+
+/* COMMENTS */
+.comments-wrap{border-top:1px solid var(--border);padding-top:3rem;margin-top:3rem}
+.comment{padding:1.25rem 0;border-bottom:1px solid var(--border)}
+.comment-name{font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.85rem;color:var(--primary)}
+.comment-date{font-family:"Montserrat",sans-serif;font-size:0.68rem;color:var(--primary-subtle);margin-left:0.6rem}
+.comment-body{margin-top:0.4rem;font-size:0.92rem;color:var(--primary-dim)}
+.comment-empty{padding:1.5rem 0;color:var(--primary-subtle);font-size:0.9rem;border-bottom:1px solid var(--border)}
+.comment-form{margin-top:2.5rem}
+.comment-form input,.comment-form textarea{width:100%;font-family:"Poppins",sans-serif;font-size:0.95rem;padding:0.85rem 1rem;border:1px solid var(--border);border-radius:2px;margin-bottom:1rem;background:var(--white);color:var(--primary)}
+.comment-form textarea{min-height:110px;resize:vertical}
+.comment-note{font-size:0.8rem;color:var(--primary-subtle);margin-top:0.75rem}
+.comment-reply{margin:1rem 0 0 1.5rem;padding:0.9rem 1.1rem;border-left:2px solid var(--quaternary);background:#FAF8F4}
+.comment-reply .comment-name{color:var(--quaternary)}
+</style>
+</head><body>
+<a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
+<nav>
+  <a class="nav-logo" href="index.html">Gaurav M.</a>
+  <ul class="nav-links" id="navLinks"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="blog.html" class="active">Monoblog</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li><li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li></ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="post-header">
+  <div class="post-header-inner">
+    <p class="label label-accent" style="margin-bottom:1rem"><a href="blog.html" style="color:inherit;text-decoration:none">← Monoblog</a></p>
+    <div class="post-meta"><span class="label label-dim">11 September 2026</span></div>
+  </div>
+</div>
+
+<!-- Swap the shapes for a real screenshot or photo whenever you have one -->
+<div class="post-cover">
+  <div class="pc-ring"></div>
+  <div class="pc-block"></div>
+  <div class="pc-block-2"></div>
+  <div class="post-cover-inner">
+    <h1 class="display post-cover-title">WISDOM: Who Created GODs and DEVILs</h1>
+  </div>
+</div>
+
+<article class="wrap-sm">
+  <div class="post-body body-text">
+    <p>Long, long, long time ago!</p>
+    <p>There lived a <s>man</s>- sorry!- person</p>
+    <p>A wise person- Let's name <s>her</s> (sorry!)- person. -- WISDOM</p>
+    <p>Wisdom loved other people and wisdom also loved learning new things.</p>
+    <p>Among many things in life wisdom loved talking to strangers and teaching kids.</p>
+    <p>Wisdom would go around villages after villages and more villages... and some more (Yup- in this long long long time ago- there weren't much cities or towns- just villages) to teach people</p>
+    <p>Wisdom would teach about Courage</p>
+    <p>Wisdom would teach about Knowledge</p>
+    <p>Wisdom would teach about Respecting others</p>
+    <p>Wisdom would teach about Loving others</p>
+    <p>Wisdom would teach about Standing up against crime?</p>
+    <p>Wisdom would teach about Perseverance</p>
+    <p>And most importantly</p>
+    <p>Wisdom would teach about being better everyday</p>
+    <p>Wisdom would try a lot- to teach</p>
+    <p>But.... But... But...</p>
+    <p>Every new PIN code he'd visit- people would just be like "Naaaahh Bro"</p>
+    <p>People would exclaim- we've got a good system going here</p>
+    <p>Catch fish- give free fish to the man who says he owns the river. Take rest of the fish home- Let's say 5 medium size (roughly 500g each) rohu- they seem delicious and are also in abundance. Yeah. Rohu.</p>
+    <p>Having 5-member family</p>
+    <p>1 Wife- who gets the honor to clean, cut and cook the fish and as a reward gets half the fish- coz why not?</p>
+    <p>2 Sons- who were playing CS (catch the stone) in their new PS5 (Pot of Stone number 5) all this while- get 1 whole fish each</p>
+    <p>1 daughter- who assisted mother in cleaning, cutting, cooking and also in managing other household chores gets the other half from her mother- she's earned it.</p>
+    <p>And Finally, the protagonist of the "Catch fish to eat fish" story- gets 2 for himself. Coz, ???</p>
+    <p>No reason- He just gets extra for being a MAN. How difficult it is to understand- god damn it- He gets 2.</p>
+    <p>End of story--- But is it, really the end of Wisdom's story?</p>
+    <p>That is far from over.</p>
+    <p>So, wisdom would try to teach all the lessons to all the people just like the fish man. But fail.</p>
+    <p>"Naah man" we've got a system going on already. Why do all the learning, respecting, fighting, loving and sh*t like that?</p>
+    <p>Wisdom had all the answers for them- and yes. The right ones. But.... They were all pointless- coz, nobody would actually listen and then inculcate.</p>
+    <p>The story takes a wild turn.</p>
+    <p>Wisdom notices another man. A man with long hair, long beard, long ass stick in his----.... (hand)- Hand.</p>
+    <p>This stickman goes around houses and asks for food and people are giving him food. Without breaking a sweat. Heck they are touching stickman's feet and also offering him their personal belongings. Without stickman asking for those- AS A GIFT. JUST LIKE THAT.</p>
+    <p>[YELLING IN SILENCE- WHY THE HELL THE WORLD IS LIKE THIS]- Ohh, sorry- there's no concept of hell yet in this time- ooorrrr is there?</p>
+    <p>Nevermind</p>
+    <p>Wisdom notices everything that this stickman does and the way he talks to everyone else.</p>
+    <p>One particular thing about this stickman----</p>
+        <p>He seems like he hasn't bathed in weeks- uff that stench.</p>
+    <p>I promise I'll keep it straight now.</p>
+    <p>Wisdom notices that stickman would gather a few people every evening around a tree or a big stone or a small hill or a specific human being sometimes</p>
+    <p>And declare them.... DRUMROLL PLEASE--- GOD.</p>
+    <p>Stickman, with all his conviction- concocts a story- (Right then and there) and declare the tree a god</p>
+    <p>Declare the big stone- A GOD</p>
+    <p>Declare the Small hill- A GOD</p>
+    <p>Declare that specific human being- <s>A GOD</s>.... SORRYY.. SORRYY.. SORRYY.. A DEVIL</p>
+    <p>You guessed it- that human being who was declared a DEVIL was a woman. A GOD DAMN WOMAN- Who wasn't even really a woman yet- Maybe just a young girl. Who the stickman perhaps had bad intentions about.</p>
+    <p>So, the easiest way for the stickman to access the woman's honor for himself?</p>
+    <p>Declare her- A Ghost or a devil or a witch.</p>
+    <p>-----</p>
+    <p>Wisdom kept watching stickman- following stickman- listening to stickman and noticing a pattern around everything that stickman does.</p>
+    <p>-----</p>
+    <p>Everything the stickman declared "GOD" would all of sudden become very important for the villagers.</p>
+    <p>Everyone the stickman declared ghost/devil would all of a sudden become infamously feared</p>
+    <p>Every god damn lesson this stickman would weave in- would catch wildfire and stick with people for not just days but weeks, months and perhaps years and decades.</p>
+    <p>Eureka!</p>
+    <p>Said Wisdom.</p>
+    <p>An idea struck and --- off <s>he</s> (sorry) they/them goes</p>
+    <p>....</p>
+    <p>He goes to a small study room</p>
+    <p>Wisdom starts writing... and writing... and writing...</p>
+    <p>1 day</p>
+    <p>1 week</p>
+    <p>1 month</p>
+    <p>and then the one fine day</p>
+    <p>Wisdom comes out of the room and exclaims.</p>
+    <p>I HAVE DONE IT.</p>
+    <p>I HAVE WRITTEN A BOOK... A LARGE BOOK ABOUT GODS</p>
+    <p>Its not really a book but a series of stories.</p>
+    <p>series of medium length (say- thousands of pages per story)- YUP, in the age of AI, we call that medium length...</p>
+    <p>Or else, we could easily call them looonnnggg stories.</p>
+    <p>Coming back-</p>
+    <p>1 story about a GOD of wisdom- coz, why not?</p>
+    <p>1 story about a GOD of knowledge</p>
+    <p>1 story about a GOD of strength</p>
+    <p>1 story about a GOD of patience</p>
+    <p>1 story about a GOD of respect</p>
+    <p>1 story about a GOD of love</p>
+    <p>1 story about a GOD of ____</p>
+    <p>and then 1 story about a GOD of all GODS</p>
+    <p>and then another story about a GOD of the GOD of all GODS</p>
+    <p>You get the idea!</p>
+    <p>Wisdom goes on and on and on ---</p>
+    <p>and then he goes around his village and makes door to door announcement.</p>
+    <p>I HAVE FOUND GOD... GODS</p>
+    <p>and I want to tell their stories to all of you.</p>
+    <p>And like anyone, who had been following this story thoroughly would get it instantly.</p>
+    <p>The stickman effect.</p>
+    <p>IT WORKED. IT BLOODY WORKED</p>
+    <p>People gathered that night</p>
+    <p>For the WISDOM to tell the story of the GODS</p>
+    <p>He/They/Them started telling.</p>
+    <p>He/They/Them taught people</p>
+    <p>He/They/Them started with</p>
+    <p>A god of knowledge- this GOD was a woman.</p>
+    <p>This GOD should be respected and all those who look, sound and live like this GOD must be too</p>
+    <p>This god tells us to study, to learn, to educate, to read, to write and to pray....</p>
+    <p>YES! Praying was important--- VERY IMPORTANT!</p>
+    <p>People followed</p>
+    <p>People Listened</p>
+    <p>People praised WISDOM</p>
+    <p>People thanked WISDOM</p>
+    <p>Thanked to have introduced this GOD to them</p>
+    <p>Thanked to tell the lessons</p>
+    <p>and THEN... Something magical happened</p>
+    <p>People started following the messages.</p>
+    <p>WISDOM EXCLAIMED! In secret (of course!)</p>
+    <p>This is working.... OMR (OH MY RIVER) it is working.</p>
+    <p>People began reading, writing, learning and teaching and PRAYING- YES, THAT WAS MOST IMPORTANT.</p>
+    <p>WISDOM continued with this experiment.</p>
+    <p>Wisdom now visited another PIN Code. Another Village, Another Tribe. Then another.</p>
+    <p>Wisdom didn't stop.</p>
+    <p>The words spread. The lessons spread. The teaching spread... Like a WILDFIRE---- Except there was no fire- we're responsible people- You see!</p>
+    <p>There were lessons.</p>
+    <p>Lessons, that made HUMANS--- MORE HUMAN.</p>
+    <p>Lessons that taught us to ask questions, to respect one another, to invest in self-respect and to respect and love one another.</p>
+    <p>WISDOM felt good.... (keep this line in mind) WISDOM felt really good. WISDOM was happy--- Very happy</p>
+    <p>Months passed, Years Passed, Decades Passed.</p>
+    <p>The idea that WISDOM had kept working. Never even once not hitting the bullseye.</p>
+    <p>WISDOM in their entire lifetime had inspired thousands, and educated lakhs of people</p>
+    <p>WISDOM was content with the life he(they/them) had.</p>
+    <p>WISDOM was successful</p>
+    <p>WISDOM was being called for seminars, conferences and workshops. Around the continent, and then around the world (Without crossing the ocean)</p>
+    <p>You get the point.</p>
+    <p>AND THEN, ONE DAY, WISDOM DIED.... like all humans do- WISDOM too was a human after all.</p>
+    <p>THE STORIES...?</p>
+    <p>THE STORIES however, outlived WISDOM</p>
+    <p>The stories of GODS</p>
+    <p>The legends of great women and men</p>
+    <p>The stories about ghosts</p>
+    <p>The stories of the power and the wisdom</p>
+    <p>All of them outlived WISDOM</p>
+    <p>Sounds like a happy story? IT DOES?</p>
+    <p>LOL. Wait till you see the actual ending</p>
+    <p>WISDOM was long gone. Maybe a few decades</p>
+    <p>A young and dynamic and energetic kid was telling one of the stories of WISDOM to another Young and energetic and talented kid</p>
+    <p>The WISDOM preacher kid started with a story- A story about a KING who lived really long- That king was able to talk to animals. The King had 1 wife and 1 girl child. The king was really big and huge- Like an elephant- The King was super powerful- The king was very rich.</p>
+    <p>and somewhere along the line before the WISDOM preacher could come to the point where he was supposed to tell the real lessons from the life of the King who was perceived as another GOD- the other KID asked.</p>
+    <p>A simple question-</p>
+    <p>How can a human being be as big as an elephant?</p>
+    <p>The preacher kid said- Coz, he wasn't really a human being- HE WAS A GOD</p>
+    <p>The other Kid- but I haven't seen or heard of anyone that big.</p>
+    <p>The preacher kid- Because you do not know of my GOD KING</p>
+    <p>The other kid- But have you seen the said GOD KING?</p>
+    <p>The Preacher kid- I've heard of his tales from my parents.</p>
+    <p>The other kid- So, have you parent seen the said GOD KING?</p>
+    <p>The preacher kid- No, they heard of his tales from the village priest. We have a temple for the GOD KING</p>
+    <p>The other kid- That means the priest must have seen the GOD KING himself?</p>
+    <p>The preacher kid- No, he hasn't seen the GOD KING either. It takes immense patience and devotion for one to be able to see the GOD KING</p>
+    <p>The other kid- Is the GOD KING still alive?</p>
+    <p>The preacher kid- Yes, he never dies</p>
+    <p>The other kid- but all things die. even the trees die. the animals (even the elephants) die</p>
+    <p>The preacher kid- but the GOD KING Lives. Forever and ever and ever</p>
+    <p>The other kid- Bullshit</p>
+    <p>The preacher kid- WHAT THE F*CK DID YOU SAY? You don't believe me?</p>
+    <p>The other kid- NO. and I will not believe anything that comes out of your potty mouth.</p>
+    <p>The preacher kid- You disrespect me! You disrespect my GOD KING!</p>
+    <p>The other kid- I simply think that your GOD KING is not real. It's just a lie (The word for imaginary did not exist back then. HaHa- My story- My rules)</p>
+    <p>The preacher kid- I am warning you for the last time- Surrender to my GOD KING or you will face the consequences.</p>
+    <p>The other kid- I just can't fathom this as a reality. I will not believe and thus not pray or respect such a thing/being that can simply not exist. IT'S NOT POSSIBLE.</p>
+    <p>The preacher kid, Out of rage and humiliation picked up a stone and hit the other kid hard on his head.</p>
+    <p>.....THE OTHER KID DIED.....</p>
+    <p>A huge crowd gathered around the dead body of the other kid (his family, friends, his villagers)</p>
+    <p>Everyone asked- What happened to this kid?</p>
+    <p>The preacher kid said- He refused to believe in the GOD KING. SO, I sent him to the GOD KING, SO that he could see for himself.</p>
+    <p>Everyone gasped and lost their mind (This particular village- I must emphasise wasn't touched by the WISDOM and his stories yet)</p>
+    <p>The crowd lost their cool and eventually attacked the preacher kid,</p>
+    <p>Now the preacher kid was dead</p>
+    <p>A lot of blood.</p>
+    <p>Now it was the preacher kid's village who gathered</p>
+    <p>And even they lost their temper</p>
+    <p>Somehow, somewhere, everyone forgot about the 2 kids who had died.</p>
+    <p>But the villagers of the preacher kid only cared for their GOD KING</p>
+    <p>and the other kid's villagers bothered about denying the existence of such a being</p>
+    <p>NOBODY. ABSOLUTELY NOBODY talked about the lessons of the GOD KING.</p>
+    <p><strong>This was the first time in history- The WISDOM's story had failed its true purpose.</strong></p>
+    <p>A riot began and soon swallowed both the villages.</p>
+    <p>But this story of the two villages was also etched in stone and people remembered.</p>
+    <p>The other kid's villagers believed that a human being's purpose is to pray to its food, to sun, to moon to the river and to the land</p>
+    <p>The preacher kid's villagers believed that they should pray to the GOD King</p>
+    <p>This went on and on and the war between the two villages turned into a generational thing.</p>
+    <p>Every new generation. Every family. Every kid.</p>
+    <p>The LESSONS?</p>
+    <p>WHO CARES ABOUT THE LESSONS.</p>
+    <p>Are you here for the story or the lessons?</p>
+    <p>Just read the god damn story and move on to the next one.</p>
+    <p>This one is over.</p>
+    <p>Adios.</p>
+    <p>Until next one.</p>
+    <p class="post-bangla">যদি তোর   ডাক শুনে কেউ না আসে   তবে   একলা চলো রে।</p>
+    <p class="post-bangla">একলা চলো,   একলা চলো,   একলা চলো,   একলা চলো রে ॥</p>
+        <p>IT'S OVER. GO.</p>
+    <p>Maybe leave a comment before you go. But go already!</p>
+  </div>
+
+  <!-- COMMENTS -->
+  <div class="comments-wrap">
+    <p class="sec-title" style="margin-bottom:1.5rem">Comments</p>
+
+    <!--
+      HOW TO HANDLE COMMENTS — do this yourself, no need to ask Claude:
+
+      1. Check for new submissions: either your email inbox (search "New comment on:"),
+         or log in at formspree.io -> your form -> Submissions tab. Either shows you
+         the name and comment text.
+
+      2. To PUBLISH a comment: copy the block below, paste it right above this
+         instructional comment (so new comments stack above "No comments yet" /
+         above older comments, in the order they arrived), and fill in the 3 blanks.
+
+         <div class="comment">
+           <span class="comment-name">NAME</span><span class="comment-date">DATE</span>
+           <p class="comment-body">COMMENT TEXT</p>
+         </div>
+
+      3. To REPLY publicly under their comment (optional): paste this block
+         immediately AFTER their comment block (same 3 blanks, your own reply text):
+
+         <div class="comment comment-reply">
+           <span class="comment-name">Gaurav replied</span><span class="comment-date">DATE</span>
+           <p class="comment-body">YOUR REPLY</p>
+         </div>
+
+      4. Delete the "No comments yet" line below once you've added your first comment.
+
+      5. Save the file and commit to GitHub the usual way (Add file -> Upload files,
+         or edit directly in the repo). That's it — no code changes needed beyond
+         filling in the blanks above.
+    -->
+
+    <div class="comment-empty">No comments yet — be the first to leave one.</div>
+
+    <form class="comment-form" action="https://formspree.io/f/mrpglpop" method="POST">
+      <input type="text" name="name" placeholder="Your name" required/>
+      <textarea name="comment" placeholder="Your comment" required></textarea>
+      <input type="hidden" name="_subject" value="New comment on: WISDOM: Who Created GODs and DEVILs"/>
+      <input type="hidden" name="post" value="blog-post-02-wisdom-who-created-gods-and-devils"/>
+      <button type="submit" class="btn btn-primary">Submit Comment</button>
+      <p class="comment-note">Comments are reviewed before they're published. No account needed.</p>
+    </form>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <span class="footer-mark">Gaurav M.</span>
+  <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
+  <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
+</footer>
+<script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
+<script>
+const navToggle=document.getElementById("navToggle"),navLinks=document.getElementById("navLinks");
+if(navToggle){navToggle.addEventListener("click",()=>{navToggle.classList.toggle("active");navLinks.classList.toggle("open")});navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navToggle.classList.remove("active");navLinks.classList.remove("open")}))}
+</script>
+</body></html>
