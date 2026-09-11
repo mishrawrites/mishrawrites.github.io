@@ -56,15 +56,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 @media(max-width:960px){nav{padding:1rem 1.5rem;backdrop-filter:none;background:var(--white)}.nav-toggle{display:flex}.nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--secondary);flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:1.75rem;z-index:205;padding:6.5rem 2rem 2rem}.nav-links.open{display:flex}.nav-links a{font-size:1.35rem;text-transform:none;letter-spacing:0;color:var(--white);font-family:"Poppins",sans-serif;font-weight:400}.nav-links a.active{color:var(--tertiary)}.nav-links .nav-cta{margin-top:0.5rem;color:var(--primary)!important;font-size:0.85rem!important}.nav-logo{z-index:206}.nav-toggle.active span{background:var(--white)}.wrap-sm{padding:3.5rem 1.5rem}.site-footer{padding:1.5rem;flex-direction:column;text-align:center}}
 
 /* POST HEADER */
-.post-header{padding:8.5rem 3rem 3rem;border-bottom:1px solid var(--border)}
+.post-header{padding:8rem 3rem 1.5rem}
 .post-header-inner{max-width:720px;margin:0 auto}
 .post-meta{display:flex;gap:1rem;align-items:center;margin-bottom:1.25rem}
 
-/* COVER GRAPHIC — shapes only, swap for a real screenshot/photo whenever you have one */
-.post-cover{position:relative;height:220px;background:var(--secondary);overflow:hidden;border-bottom:1px solid var(--border)}
-.pc-ring{position:absolute;width:200px;height:200px;border:1.5px solid rgba(255,255,255,0.16);border-radius:50%;top:-70px;left:8%}
-.pc-block{position:absolute;width:70px;height:70px;background:var(--quaternary);top:60px;right:12%;transform:rotate(12deg)}
-.pc-block-2{position:absolute;width:40px;height:40px;background:var(--tertiary);opacity:0.85;bottom:30px;right:26%}
+/* COVER GRAPHIC — shapes + title, swap shapes for a real screenshot/photo whenever you have one */
+.post-cover{position:relative;background:var(--secondary);overflow:hidden;border-bottom:1px solid var(--border);padding:2.75rem 3rem 3.5rem}
+.post-cover-inner{max-width:720px;margin:0 auto;position:relative;z-index:2}
+.post-cover-title{color:var(--white)}
+.pc-ring{position:absolute;width:200px;height:200px;border:1.5px solid rgba(255,255,255,0.16);border-radius:50%;top:-70px;left:8%;z-index:1}
+.pc-block{position:absolute;width:70px;height:70px;background:var(--quaternary);top:16px;right:12%;transform:rotate(12deg);z-index:1}
+.pc-block-2{position:absolute;width:40px;height:40px;background:var(--tertiary);opacity:0.85;bottom:18px;right:26%;z-index:1}
 
 /* BODY */
 .post-body p{margin-bottom:1.5rem}
@@ -107,15 +109,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   <div class="post-header-inner">
     <p class="label label-accent" style="margin-bottom:1rem"><a href="blog.html" style="color:inherit;text-decoration:none">← Monoblog</a></p>
     <div class="post-meta"><span class="label label-dim">6 September 2026</span></div>
-    <h1 class="display">A Follow Along for How to Build a Site Like This One and How Much Will It Cost?</h1>
   </div>
 </div>
 
-<!-- Swap this block for a real screenshot or photo whenever you have one; shapes-only works fine until then -->
+<!-- Swap the shapes for a real screenshot or photo whenever you have one -->
 <div class="post-cover">
   <div class="pc-ring"></div>
   <div class="pc-block"></div>
   <div class="pc-block-2"></div>
+  <div class="post-cover-inner">
+    <h1 class="display post-cover-title">A Follow Along for How to Build a Site Like This One and How Much Will It Cost?</h1>
+  </div>
 </div>
 
 <article class="wrap-sm">
