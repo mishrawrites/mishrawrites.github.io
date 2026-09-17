@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>I Automated My Own Sales Pipeline. Here's How and What It Cost. · Gaurav M.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --primary:#1A1A1D;
+  --secondary:#4A0E0E;
+  --tertiary:#C9A44C;
+  --quaternary:#B5651D;
+  --white:#FFFFFF;
+  --primary-dim:rgba(26,26,29,0.66);
+  --primary-subtle:rgba(26,26,29,0.4);
+  --white-dim:rgba(255,255,255,0.78);
+  --white-subtle:rgba(255,255,255,0.4);
+  --border:#E4DFD6;
+  --border-dark:rgba(255,255,255,0.16);
+  --t-h1:clamp(2.2rem,4.4vw,3rem);
+  --t-h2:clamp(1.5rem,2.6vw,1.9rem);
+  --t-body:1rem;
+  --t-caption:0.78rem;
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--quaternary)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.4rem;flex-direction:column;gap:5px;z-index:210;position:relative}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--primary);transition:transform 0.25s,opacity 0.25s}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-cta{background:var(--quaternary)!important;color:var(--primary)!important;padding:0.55rem 1.2rem!important;border-radius:2px}
+.nav-cta:hover{background:var(--primary)!important;color:var(--white)!important}
+.sticky-cta{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(90deg) translateX(50%);transform-origin:right center;z-index:199;background:var(--quaternary);color:var(--primary);font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.4rem;text-decoration:none;opacity:0;transition:opacity 0.4s,background 0.2s,color 0.2s;pointer-events:none}
+.sticky-cta.visible{opacity:1;pointer-events:auto}
+.sticky-cta:hover{background:var(--primary);color:var(--white)}
+.display{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.15;color:var(--primary)}
+.sec-title{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h2);line-height:1.2;color:var(--primary)}
+.body-text{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);line-height:1.8}
+.label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
+.label-accent{color:var(--quaternary)}
+.label-dim{color:var(--primary-subtle)}
+.wrap-sm{max-width:720px;margin:0 auto;padding:6.5rem 3rem}
+.btn{display:inline-block;font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2rem;transition:background 0.2s,color 0.2s;border:1px solid transparent;cursor:pointer;border-radius:2px}
+.btn-primary{background:var(--quaternary);color:var(--primary)}
+.btn-primary:hover{background:var(--primary);color:var(--white)}
+.site-footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-mark{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.05rem;color:var(--primary)}
+@media(max-width:960px){nav{padding:1rem 1.5rem;backdrop-filter:none;background:var(--white)}.nav-toggle{display:flex}.nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--secondary);flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:1.75rem;z-index:205;padding:6.5rem 2rem 2rem}.nav-links.open{display:flex}.nav-links a{font-size:1.35rem;text-transform:none;letter-spacing:0;color:var(--white);font-family:"Poppins",sans-serif;font-weight:400}.nav-links a.active{color:var(--tertiary)}.nav-links .nav-cta{margin-top:0.5rem;color:var(--primary)!important;font-size:0.85rem!important}.nav-logo{z-index:206}.nav-toggle.active span{background:var(--white)}.wrap-sm{padding:3.5rem 1.5rem}.site-footer{padding:1.5rem;flex-direction:column;text-align:center}}
+
+/* POST HEADER */
+.post-header{padding:8rem 3rem 1.5rem}
+.post-header-inner{max-width:720px;margin:0 auto}
+.post-meta{display:flex;gap:1rem;align-items:center;margin-bottom:1.25rem}
+
+/* COVER GRAPHIC — shapes + title */
+.post-cover{position:relative;background:var(--secondary);overflow:hidden;border-bottom:1px solid var(--border);padding:2.75rem 3rem 3.5rem}
+.post-cover-inner{max-width:720px;margin:0 auto;position:relative;z-index:2}
+.post-cover-title{color:var(--white)}
+.pc-ring{position:absolute;width:200px;height:200px;border:1.5px solid rgba(255,255,255,0.16);border-radius:50%;top:-70px;left:8%;z-index:1}
+.pc-block{position:absolute;width:70px;height:70px;background:var(--quaternary);top:16px;right:12%;transform:rotate(12deg);z-index:1}
+.pc-block-2{position:absolute;width:40px;height:40px;background:var(--tertiary);opacity:0.85;bottom:18px;right:26%;z-index:1}
+
+/* BODY */
+.post-body h2{font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.3rem;margin:2.5rem 0 1rem;color:var(--primary)}
+.post-body p{margin-bottom:1.5rem}
+.post-body strong{font-weight:600;color:var(--primary)}
+.post-body ul,.post-body ol{margin:0 0 1.5rem 1.3rem;color:var(--primary-dim)}
+.post-body li{margin-bottom:0.6rem;line-height:1.7}
+.post-pullquote{border-left:3px solid var(--tertiary);padding:0.9rem 1.5rem;margin:0.5rem 0 1.75rem;font-style:italic;color:var(--primary);background:#FAF8F4;font-size:1.02rem}
+
+/* SAMPLE EMAIL BLOCK */
+.post-email{border:1px solid var(--border);border-radius:2px;margin:0 0 1.75rem;overflow:hidden}
+.post-email-subject{background:#FAF8F4;padding:0.85rem 1.25rem;font-family:"Montserrat",sans-serif;font-size:0.85rem;font-weight:600;color:var(--primary);border-bottom:1px solid var(--border)}
+.post-email-subject span{font-weight:500;color:var(--primary-subtle);text-transform:uppercase;font-size:0.68rem;letter-spacing:0.08em;display:block;margin-bottom:0.3rem}
+.post-email-body{padding:1.25rem 1.5rem}
+.post-email-body p{font-size:0.92rem;margin-bottom:1rem}
+.post-email-body p:last-child{margin-bottom:0}
+
+/* SNAPSHOT TABLE */
+.post-snapshot{margin:0.5rem 0 2rem;border:1px solid var(--border)}
+.post-snapshot-row{display:flex;justify-content:space-between;align-items:baseline;padding:0.85rem 1.25rem;border-bottom:1px solid var(--border)}
+.post-snapshot-row:last-child{border-bottom:none}
+.post-snapshot-label{font-family:"Montserrat",sans-serif;font-size:0.8rem;color:var(--primary-dim)}
+.post-snapshot-value{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.05rem;color:var(--quaternary);text-align:right}
+
+/* COMMENTS */
+.comments-wrap{border-top:1px solid var(--border);padding-top:3rem;margin-top:3rem}
+.comment{padding:1.25rem 0;border-bottom:1px solid var(--border)}
+.comment-name{font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.85rem;color:var(--primary)}
+.comment-date{font-family:"Montserrat",sans-serif;font-size:0.68rem;color:var(--primary-subtle);margin-left:0.6rem}
+.comment-body{margin-top:0.4rem;font-size:0.92rem;color:var(--primary-dim)}
+.comment-empty{padding:1.5rem 0;color:var(--primary-subtle);font-size:0.9rem;border-bottom:1px solid var(--border)}
+.comment-form{margin-top:2.5rem}
+.comment-form input,.comment-form textarea{width:100%;font-family:"Poppins",sans-serif;font-size:0.95rem;padding:0.85rem 1rem;border:1px solid var(--border);border-radius:2px;margin-bottom:1rem;background:var(--white);color:var(--primary)}
+.comment-form textarea{min-height:110px;resize:vertical}
+.comment-note{font-size:0.8rem;color:var(--primary-subtle);margin-top:0.75rem}
+.comment-reply{margin:1rem 0 0 1.5rem;padding:0.9rem 1.1rem;border-left:2px solid var(--quaternary);background:#FAF8F4}
+.comment-reply .comment-name{color:var(--quaternary)}
+</style>
+</head><body>
+<a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
+<nav>
+  <a class="nav-logo" href="index.html">Gaurav M.</a>
+  <ul class="nav-links" id="navLinks"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="blog.html" class="active">Monoblog</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li><li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li></ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="post-header">
+  <div class="post-header-inner">
+    <p class="label label-accent" style="margin-bottom:1rem"><a href="blog.html" style="color:inherit;text-decoration:none">← Monoblog</a></p>
+    <div class="post-meta"><span class="label label-dim">17 September 2026</span></div>
+  </div>
+</div>
+
+<!-- Swap the shapes for a real screenshot or photo whenever you have one -->
+<div class="post-cover">
+  <div class="pc-ring"></div>
+  <div class="pc-block"></div>
+  <div class="pc-block-2"></div>
+  <div class="post-cover-inner">
+    <h1 class="display post-cover-title">I Automated My Own Sales Pipeline. Here's How and What It Cost.</h1>
+  </div>
+</div>
+
+<article class="wrap-sm">
+  <div class="post-body body-text">
+    <p>Marketing people don't sell. That's the line I've heard my whole career. Brand builds the story, sales closes the deal, and the two of you meet somewhere in the middle at a QBR.</p>
+    <p>I stopped believing that line this month.</p>
+    <p>I lead brand, GTM, and growth. Not sales. But Employer of Record is a category where nobody wakes up looking for you, so someone has to go find them, across seven countries, every single day. I didn't build this because the org lacked a pre-sales team or a budget for one. I built it because I came across Antigravity a few days ago, saw what it could actually do, and realized nobody had proven yet how far one person could take it. I wanted to be the one who did.</p>
+
+    <h2>Why I built this</h2>
+    <p>This wasn't about saving money on a hire. It was about getting closer to the buyer than a marketing role usually allows. Most marketing functions wait for sales to close deals, then reverse-engineer what worked and feed it back as content or campaigns. I wanted to flip that. I wanted marketing to know, in advance, what sales could use, not after the fact, but built into the system before a single conversation happens. That only happens if you build the thing that talks to prospects first, not just the thing that talks about them.</p>
+    <p>The honest reason underneath all of it is simpler. I can, so I must. If a tool exists that lets one person run outbound across seven countries with the judgment of twelve years of buyer psychology behind it, not trying it felt like a bigger risk than building it.</p>
+
+    <h2>What I actually connected</h2>
+    <p>Four pieces, wired together so they run without me.</p>
+    <ol>
+      <li><strong>Apollo</strong> for the prospect data, the actual list of people and companies in the seven markets I'm targeting: US, Canada, Australia, UK, Germany, Japan, Singapore.</li>
+      <li><strong>LinkedIn</strong> for context on each prospect, so the email doesn't read like it was written for a database entry.</li>
+      <li><strong>Microsoft Outlook</strong> to actually send the emails and track what happens after, replies, opens, silence.</li>
+      <li><strong>Gemini, run through Antigravity</strong>, as the layer that ties the first three together, writes the emails, and manages the follow-up cadence on a schedule.</li>
+    </ol>
+    <p>Underneath all of it sits a collateral bank I built myself: EOR enablement e-brochures, case studies from Rodeo FX and WEC.AI, a testimonial from Rodeo FX that I only used because it was earned, not invented. I also fed it the brand and product detailing decks I'd already built in Canva, so the system writes with the same positioning I'd use if I sat down and typed the email myself.</p>
+    <p>I didn't build an AI that sells. I built an AI that sells the way I would.</p>
+
+    <h2>What "the way I would" actually looks like</h2>
+    <p>Here's a sample of the kind of email the system sends, rebuilt here as a dummy for this post since the real ones carry live prospect names.</p>
+
+    <div class="post-email">
+      <div class="post-email-subject"><span>Subject line</span>Hiring in Germany before the entity exists?</div>
+      <div class="post-email-body">
+        <p>Hi [First Name],</p>
+        <p>Saw [Company] is scaling into the DACH region. Most teams find out too late that opening a local entity in Germany takes 8 to 12 weeks, and by then the candidate they wanted has taken another offer.</p>
+        <p>We handle payroll and compliance for teams like yours inside Germany the same week you make an offer, no entity required.</p>
+        <p>Rodeo FX made this exact move into three new markets without opening a single local entity. Happy to send the two-page breakdown if it's useful.</p>
+        <p>Worth 10 minutes this week?</p>
+        <p>[Signature]</p>
+      </div>
+    </div>
+
+    <p>Nothing in that email is generic. The timeline (8 to 12 weeks) is a real, specific cost of doing nothing. The proof point (Rodeo FX) is a named result, not a claim. The ask (10 minutes) is small enough that saying yes costs the reader almost nothing. That's not copywriting instinct the AI invented. That's the same buyer psychology I'd use writing it myself, coded into a system so it fires every time, on schedule, across a hundred inboxes instead of one.</p>
+
+    <h2>What ₹6,000 actually proved</h2>
+    <p class="post-pullquote">"Total spend for the whole setup: ₹6,000 for the Antigravity subscription. Everything else, Apollo, LinkedIn, Outlook, I was already paying for or already had."</p>
+    <p>That number matters less as a cost figure and more as a boundary test. Six thousand rupees and a few days of wiring things together, and here's what one person running it can do:</p>
+    <ul>
+      <li>50-plus emails sent in the first weeks, now running at 10 to 15 a day, on pace to cross 300 in a single month</li>
+      <li>An 8% reply rate</li>
+      <li>A 1% rate of genuine interest, someone writing back to ask for more details instead of deleting the email</li>
+      <li>A 0.3% conversion into an actual e-meet on the calendar</li>
+      <li>5 to 6 hours freed up every single day, hours I used to spend finding prospects, writing emails one at a time, and remembering who I hadn't followed up with yet</li>
+    </ul>
+    <p>The target is more than 100 qualified pipelines in three months, across seven markets, and every number above is still climbing. I didn't set out to prove this was cheap. I set out to prove there's no real ceiling on what one person can build if they're willing to try, and the number just happens to also be small.</p>
+
+    <h2>The snapshot</h2>
+    <div class="post-snapshot">
+      <div class="post-snapshot-row"><span class="post-snapshot-label">Emails sent so far</span><span class="post-snapshot-value">50+, climbing at 10-15/day</span></div>
+      <div class="post-snapshot-row"><span class="post-snapshot-label">Pace this month</span><span class="post-snapshot-value">300+</span></div>
+      <div class="post-snapshot-row"><span class="post-snapshot-label">Reply rate</span><span class="post-snapshot-value">8%</span></div>
+      <div class="post-snapshot-row"><span class="post-snapshot-label">Genuine interest rate</span><span class="post-snapshot-value">1%</span></div>
+      <div class="post-snapshot-row"><span class="post-snapshot-label">Converted to e-meet</span><span class="post-snapshot-value">0.3%</span></div>
+      <div class="post-snapshot-row"><span class="post-snapshot-label">Markets covered</span><span class="post-snapshot-value">7 (US, Canada, Australia, UK, Germany, Japan, Singapore)</span></div>
+      <div class="post-snapshot-row"><span class="post-snapshot-label">Time saved daily</span><span class="post-snapshot-value">5-6 hours</span></div>
+      <div class="post-snapshot-row"><span class="post-snapshot-label">Cost of the build</span><span class="post-snapshot-value">₹6,000 (Antigravity subscription)</span></div>
+      <div class="post-snapshot-row"><span class="post-snapshot-label">Target</span><span class="post-snapshot-value">100+ qualified pipelines in 3 months</span></div>
+    </div>
+
+    <h2>What went wrong, and what I built in because of it</h2>
+    <p>The system isn't the whole answer. Early on it reached for context it didn't need, pulling more from a prospect's LinkedIn history than the email actually required, which meant slower runs and wasted effort for no gain in the output. I scoped it back hard: Apollo for data, LinkedIn for context, Outlook for sending, nothing beyond that. An AI system given open-ended access will happily take more than it needs and burn time and tokens doing it. I set the boundaries once, and I check the outputs regularly instead of assuming the system is still doing exactly what I built it to do.</p>
+    <p>That's the part I'd want a CMO or a founder to notice more than the reply rate. Anyone can turn a tool on. Knowing where to turn it off is the harder skill, and it's the one that scales.</p>
+
+    <h2>Why this matters beyond the numbers</h2>
+    <p>I didn't build this because someone asked me to, and I didn't build it to save the org a hire. I built it because I could, and because a marketing function that only reacts to what sales already learned is always a step behind. Now the insight runs the other way. Every email this system sends is built on the same understanding of buyer behavior I've spent twelve years developing, why a specific timeline creates urgency, why a named result beats a claim, why a ten-minute ask gets a yes a thirty-minute one won't. The AI executes it at a scale one person never could. The judgment behind it is still mine, and proving that judgment scales is the actual point of this whole exercise.</p>
+    <p>Full build breakdown, including the collateral bank and the exact prompts, is written up as a case study here: <a href="work.html#case-gtm-engine" class="label-accent" style="text-decoration:none">the AI GTM Engine case study →</a></p>
+  </div>
+
+  <!-- COMMENTS -->
+  <div class="comments-wrap">
+    <p class="sec-title" style="margin-bottom:1.5rem">Comments</p>
+
+    <!--
+      HOW TO HANDLE COMMENTS — do this yourself, no need to ask Claude:
+
+      1. Check for new submissions: either your email inbox (search "New comment on:"),
+         or log in at formspree.io -> your form -> Submissions tab. Either shows you
+         the name and comment text.
+
+      2. To PUBLISH a comment: copy the block below, paste it right above this
+         instructional comment (so new comments stack above "No comments yet" /
+         above older comments, in the order they arrived), and fill in the 3 blanks.
+
+         <div class="comment">
+           <span class="comment-name">NAME</span><span class="comment-date">DATE</span>
+           <p class="comment-body">COMMENT TEXT</p>
+         </div>
+
+      3. To REPLY publicly under their comment (optional): paste this block
+         immediately AFTER their comment block (same 3 blanks, your own reply text):
+
+         <div class="comment comment-reply">
+           <span class="comment-name">Gaurav replied</span><span class="comment-date">DATE</span>
+           <p class="comment-body">YOUR REPLY</p>
+         </div>
+
+      4. Delete the "No comments yet" line below once you've added your first comment.
+
+      5. Save the file and commit to GitHub the usual way (Add file -> Upload files,
+         or edit directly in the repo). That's it — no code changes needed beyond
+         filling in the blanks above.
+    -->
+
+    <div class="comment-empty">No comments yet — be the first to leave one.</div>
+
+    <form class="comment-form" action="https://formspree.io/f/mrpglpop" method="POST">
+      <input type="text" name="name" placeholder="Your name" required/>
+      <textarea name="comment" placeholder="Your comment" required></textarea>
+      <input type="hidden" name="_subject" value="New comment on: I Automated My Own Sales Pipeline"/>
+      <input type="hidden" name="post" value="blog-post-03-i-automated-my-own-sales-pipeline"/>
+      <button type="submit" class="btn btn-primary">Submit Comment</button>
+      <p class="comment-note">Comments are reviewed before they're published. No account needed.</p>
+    </form>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <span class="footer-mark">Gaurav M.</span>
+  <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
+  <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
+</footer>
+<script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
+<script>
+const navToggle=document.getElementById("navToggle"),navLinks=document.getElementById("navLinks");
+if(navToggle){navToggle.addEventListener("click",()=>{navToggle.classList.toggle("active");navLinks.classList.toggle("open")});navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navToggle.classList.remove("active");navLinks.classList.remove("open")}))}
+</script>
+</body></html>
