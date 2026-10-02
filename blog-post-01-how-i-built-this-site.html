@@ -35,20 +35,20 @@
   --tertiary:#C9A44C;
   --quaternary:#B5651D;
   --white:#FFFFFF;
-  --primary-dim:rgba(26,26,29,0.66);
-  --primary-subtle:rgba(26,26,29,0.4);
-  --white-dim:rgba(255,255,255,0.78);
-  --white-subtle:rgba(255,255,255,0.4);
-  --border:#E4DFD6;
-  --border-dark:rgba(255,255,255,0.16);
+  --primary-dim:#1A1A1D;
+  --primary-subtle:#1A1A1D;
+  --white-dim:#FFFFFF;
+  --white-subtle:#C9A44C;
+  --border:#C9A44C;
+  --border-dark:#C9A44C;
   --t-h1:clamp(2.2rem,4.4vw,3rem);
   --t-h2:clamp(1.5rem,2.6vw,1.9rem);
   --t-body:1rem;
   --t-caption:0.78rem;
 }
 html{scroll-behavior:smooth}
-body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:400;font-size:16px;line-height:1.6;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:#FFFFFF;backdrop-filter:none;border-bottom:1px solid var(--border)}
 .nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
 .nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
@@ -65,7 +65,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .sticky-cta:hover{background:var(--primary);color:var(--white)}
 .display{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.15;color:var(--primary)}
 .sec-title{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h2);line-height:1.2;color:var(--primary)}
-.body-text{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);line-height:1.8}
+.body-text{font-size:var(--t-body);font-weight:400;color:var(--primary-dim);line-height:1.6}
 .label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
 .label-accent{color:var(--quaternary)}
 .label-dim{color:var(--primary-subtle)}
@@ -86,9 +86,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .post-cover{position:relative;background:var(--secondary);overflow:hidden;border-bottom:1px solid var(--border);padding:2.75rem 3rem 3.5rem}
 .post-cover-inner{max-width:720px;margin:0 auto;position:relative;z-index:2}
 .post-cover-title{color:var(--white)}
-.pc-ring{position:absolute;width:200px;height:200px;border:1.5px solid rgba(255,255,255,0.16);border-radius:50%;top:-70px;left:8%;z-index:1}
+.pc-ring{position:absolute;width:200px;height:200px;border:1.5px solid #C9A44C;border-radius:50%;top:-70px;left:8%;z-index:1}
 .pc-block{position:absolute;width:70px;height:70px;background:var(--quaternary);top:16px;right:12%;transform:rotate(12deg);z-index:1}
-.pc-block-2{position:absolute;width:40px;height:40px;background:var(--tertiary);opacity:0.85;bottom:18px;right:26%;z-index:1}
+.pc-block-2{position:absolute;width:40px;height:40px;background:var(--tertiary);opacity:1;bottom:18px;right:26%;z-index:1}
 
 /* BODY */
 .post-body p{margin-bottom:1.5rem}
@@ -103,7 +103,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .post-questions li{font-style:italic;color:var(--primary-dim);margin-bottom:0.5rem}
 .post-download{display:inline-flex;align-items:center;gap:0.5rem;margin:0.25rem 0 1.5rem;padding:0.75rem 1.25rem;border:1px solid var(--border);text-decoration:none;color:var(--primary);font-family:"Montserrat",sans-serif;font-size:0.85rem;font-weight:500;transition:border-color 0.2s,color 0.2s}
 .post-download:hover{border-color:var(--quaternary);color:var(--quaternary)}
-.post-pullquote{border-left:3px solid var(--tertiary);padding:0.9rem 1.5rem;margin:0.5rem 0 1.75rem;font-style:italic;color:var(--primary);background:#FAF8F4;font-size:1.02rem}
+.post-pullquote{border-left:3px solid var(--tertiary);padding:0.9rem 1.5rem;margin:0.5rem 0 1.75rem;font-style:italic;color:var(--primary);background:#FFFFFF;font-size:1.02rem}
 
 /* COMMENTS */
 .comments-wrap{border-top:1px solid var(--border);padding-top:3rem;margin-top:3rem}
@@ -116,21 +116,58 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .comment-form input,.comment-form textarea{width:100%;font-family:"Poppins",sans-serif;font-size:0.95rem;padding:0.85rem 1rem;border:1px solid var(--border);border-radius:2px;margin-bottom:1rem;background:var(--white);color:var(--primary)}
 .comment-form textarea{min-height:110px;resize:vertical}
 .comment-note{font-size:0.8rem;color:var(--primary-subtle);margin-top:0.75rem}
-.comment-reply{margin:1rem 0 0 1.5rem;padding:0.9rem 1.1rem;border-left:2px solid var(--quaternary);background:#FAF8F4}
+.comment-reply{margin:1rem 0 0 1.5rem;padding:0.9rem 1.1rem;border-left:2px solid var(--quaternary);background:#FFFFFF}
 .comment-reply .comment-name{color:var(--quaternary)}
+</style>
+
+<style id="mw-common">
+/* Brand Guidelines V3.1, strict palette: #1A1A1D #4A0E0E #C9A44C #B5651D #FFFFFF */
+:root{--primary:#1A1A1D;--secondary:#4A0E0E;--tertiary:#C9A44C;--quaternary:#B5651D;--white:#FFFFFF;
+--primary-dim:#1A1A1D;--primary-subtle:#1A1A1D;--white-dim:#FFFFFF;--white-subtle:#C9A44C;--border:#C9A44C;--border-dark:#C9A44C;--card:#FFFFFF}
+body{font-family:"Montserrat",sans-serif;font-weight:400;line-height:1.6}
+:focus-visible{outline:2px solid #B5651D;outline-offset:3px}
+nav{background:#FFFFFF!important}
+.nav-cta{background:#B5651D!important;color:#1A1A1D!important}
+.nav-cta:hover{background:#1A1A1D!important;color:#FFFFFF!important}
+/* Body is never bold: emphasis becomes a gold underline */
+.post-body strong,.blog-body strong,.body-text strong,.rec-quote strong,.voice-quote strong,.cs-body strong{font-weight:400;text-decoration:underline;text-decoration-color:#C9A44C;text-decoration-thickness:2px;text-underline-offset:3px}
+/* In-text links: dark ink with an orange underline (orange text fails AA at body size) */
+.mw-link,.post-body a:not(.btn),.cs-body a:not(.btn):not(.cs-card){color:#1A1A1D;text-decoration:underline;text-decoration-color:#B5651D;text-decoration-thickness:2px;text-underline-offset:3px}
+.mw-link:hover,.post-body a:not(.btn):hover,.cs-body a:not(.btn):not(.cs-card):hover{background:#B5651D;color:#1A1A1D}
+/* Voice marks (Blog guide slides 15-17) */
+.v-loud{background:#B5651D;color:#1A1A1D;padding:.05em .18em;border-radius:2px;letter-spacing:.02em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.v-heckle{font-style:italic;color:#4A0E0E}
+.v-lang{color:#4A0E0E;text-decoration:underline dotted #C9A44C 2px;text-underline-offset:4px}
+.v-key{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.8rem;color:#1A1A1D;margin-top:1rem}
+/* Footer */
+.mw-footer{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.25rem;padding:2.25rem 3rem;border-top:1px solid #C9A44C;background:#FFFFFF}
+.mw-foot-id{display:flex;flex-direction:column;gap:.25rem}
+.mw-foot-line{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D}
+.mw-foot-nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;position:static!important;padding:0!important;border:0!important;background:none!important;backdrop-filter:none!important}
+.mw-foot-nav a{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D;text-decoration:underline;text-decoration-color:#B5651D;text-underline-offset:3px}
+/* Related block (interlinking) */
+.mw-related{max-width:1200px;margin:0 auto;padding:3.5rem 3rem 4.5rem;border-top:1px solid #C9A44C}
+.mw-related h2{font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.5rem;color:#1A1A1D;margin-bottom:1.5rem}
+.mw-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.mw-related a{display:block;border:1px solid #1A1A1D;padding:1.25rem 1.4rem;text-decoration:none;color:#1A1A1D;background:#FFFFFF}
+.mw-related a:hover{background:#1A1A1D;color:#FFFFFF}
+.mw-related .k{display:block;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.74rem;letter-spacing:.06em;margin-bottom:.4rem}
+.mw-related .t{display:block;font-family:"Poppins",sans-serif;font-weight:400;font-size:1.05rem;line-height:1.35}
+@media(max-width:768px){.mw-footer{padding:1.75rem 1.5rem}.mw-related{padding:3rem 1.5rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head><body>
 <a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
 <nav>
   <a class="nav-logo" href="index.html">Gaurav M.</a>
-  <ul class="nav-links" id="navLinks"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="blog.html" class="active">Monoblog</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li><li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li></ul>
+  <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="blog.html" class="active" aria-current="page">Monoblog</a></li><li><a href="about.html">About</a></li><li><a class="nav-cta" href="contact.html">Let's Talk</a></li></ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="post-header">
   <div class="post-header-inner">
     <p class="label label-accent" style="margin-bottom:1rem"><a href="blog.html" style="color:inherit;text-decoration:none">← Monoblog</a></p>
-    <div class="post-meta"><span class="label label-dim">6 September 2026</span></div>
+    <div class="post-meta"><span class="label label-dim">6 September 2026</span></div><div class="v-key" aria-label="Reading key"><span><span class="v-loud">LOUD</span> said out loud</span><span><span class="v-heckle">(the heckler)</span> the voice in my head</span><span><span class="v-lang">Bhai</span> where English runs out</span></div>
   </div>
 </div>
 
@@ -146,158 +183,107 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 
 <article class="wrap-sm">
   <div class="post-body body-text">
-    <p>First of all, do you even need a website?</p>
-    <p>Why?</p>
-    <p>What will the website do?</p>
-    <p>What passion do you have that can be fulfilled by a website?</p>
-    <p>Can your short term goals be achieved without one?</p>
-    <p>If the answers you have for the questions above, make sense to you- follow along.</p>
-
-    <p>I didn't want to build a site; I needed a portfolio- and I had a damn good portfolio on Canva- I wonder if this website will ever be as sharp and impactful as my Canva portfolio was.</p>
-    <p>Sometimes, I feel I traded the impact for ground to cover.</p>
-    <p>However, it is your call and if you are convinced you want to build one, just follow what I did.</p>
-    <p>I started with collating all the information I had from years of work- the most important one was the portfolio presentation in itself.</p>
-    <p>Then came the challenge of sifting through a lot more information to find the right ones that deserve a place on my website.</p>
-    <p>I had at least 100 pages (MS Word) or roughly 8000 words of raw content- yes- it will feel like a lot but more the merrier.</p>
-    <p>2nd part is to know, realise, refine and then document your own voice- not a voice recording- a simple statement that defines your personality when you talk to someone- it is important to look and sound the same way. Pen them down.</p>
-    <p>3rd part is similar to the voice and style that we've just covered above- it's the colors, shapes and visual identity. The colors that look good to you, may not be the right colors that represent you- it may be but it's not always the case- find your own color. Find your own style.</p>
-    <p>4th part is to discuss with your friends, colleagues and mentors if they think - your style, tone, color and narrative resonates with what they think about you.</p>
-    <p>If needed, meet strangers and talk to them for few minutes and then ask them open ended questions- if they need clues, hints- give them some and then collect information.</p>
-    <p>After you've nailed these down- make a document. A bible where you're Jesus. A Gita where you're Krishna.</p>
-    <p>And then refine things- use AI if you have to- but keep reminding the AI on the core belief systems and do not let the AI get deviated (It is typical of AI systems to overpower your philosophy and make something new altogether and you wouldn't even notice).</p>
-    <p>It is also very important to define guardrails/boundaries of WHO YOU'RE NOT.</p>
-    <p>After you've made your own brand guidelines- read it a few times and confirm that IT IS YOU. You're halfway there – actually, almost there.</p>
-    <p>You can see mine if it helps- attached here.</p>
-    <a class="post-download" href="gaurav-brand-guidelines.pdf" target="_blank">↓ My Brand Guidelines (PDF)</a>
-
-    <p class="post-pullquote">"Total spend for the whole thing: ₹667. Everything past that, including the email, was free."</p>
-
-    <p>You now have the following:</p>
-    <ol>
-      <li>A purpose statement- why do you need a website</li>
-      <li>Few testimonies from friends, colleagues and mentors</li>
-      <li>A ton of data which talks about your work, projects, achievements, testimonials, skills etc</li>
-      <li>Your own brand guidelines</li>
-    </ol>
-
-    <p>Next step- tell your AI about your intentions (you can use Claude or Codex) and just make it understand the project.</p>
-    <p>And the final step before having your site with you.</p>
-    <p>Validate. Validate. Validate.</p>
-    <p>Keep validating it from what can improve.</p>
-    <p>Keep stress testing it from what all you see around the world.</p>
-    <p>It may take a few days before you're happy.</p>
-
-    <p class="post-pullquote">"I spent roughly 30-45 minutes a day for 3 days and I was ready to deploy. Keep in mind the data and page copy that goes on the website was already present before I even began with this exercise."</p>
-
-    <p>But, don't be in a hurry to deploy. Sleep over it (not for too long- it can be a couple of days but not a couple of weeks).</p>
-    <p>There are few ideas which strike a bit late.</p>
-
-    <p>Now to the actual deployment part if you have your HTML website ready.</p>
-    <p>This is how I did it.</p>
-    <p>The domain name idea has been sitting in my mind for quite some time- so it was easy for me. Find something that resonates with you- feel good about it too.</p>
-    <p>You can buy it from anywhere. I bought mine from Namecheap and it only cost me 667 (including taxes and everything) for the first year.</p>
-    <p>Do not buy anything. Just the name.</p>
-    <p>Build everything on GitHub.</p>
-    <ol>
-      <li>Create a repo named exactly yourusername.github.io — this alone turns on GitHub Pages, no separate setup needed.</li>
-      <li>Click "Add file" → "Upload files" and drag in your HTML files and images.</li>
-      <li>Scroll down, add a commit message, and hit "Commit changes" directly to main.</li>
-      <li>Add a CNAME file with just your domain name in it, so GitHub knows to serve your custom domain.</li>
-      <li>Point your domain's DNS at GitHub (A records for the root, a CNAME record for www), then wait for it to propagate.</li>
-      <li>Every time you want to update the site, repeat steps 2 and 3 with just the files that changed.</li>
-    </ol>
-
-    <p>You might want to add your personalized email id- don't buy it. I didn't buy it- I just created a cover of a personalized email onto my Gmail id.</p>
-    <ol>
-      <li>Added mishrawrites.com to Cloudflare (free account).</li>
-      <li>Switched nameservers on Namecheap from their default to Cloudflare's two nameservers.</li>
-      <li>Inside Cloudflare — Email → Email Routing — created the rule: gaurav@mishrawrites.com → forward to my Gmail address.</li>
-      <li>Deleted the old Namecheap MX records and the SPF TXT record that were blocking activation.</li>
-      <li>Cloudflare added its own MX records automatically — Email Routing went active.</li>
-      <li>In Gmail — Settings → Accounts and Import → Send mail as — added gaurav@mishrawrites.com via SMTP with an App Password.</li>
-      <li>Set gaurav@mishrawrites.com as the default sender.</li>
-    </ol>
-
-    <p>Voilà- You have a site of your own. A blog too – included- where people can even comment- you can build a community, newsletter kind of thing too.</p>
-
-    <p>Here's how the comments actually work- no login, no cost:</p>
-    <ol>
-      <li>Signed up for a free Formspree account and created a form- got a unique endpoint for it.</li>
-      <li>Added a simple form to the bottom of each post: just a name field and a comment box, no account needed to submit.</li>
-      <li>Every submission gets emailed straight to me- nothing publishes automatically.</li>
-      <li>I read each one and copy the ones worth keeping directly into the post's code, styled to match the page.</li>
-    </ol>
-    <p>No database, no monthly fee, no third-party widget slowing the page down. Just a free form and a few minutes of my own time whenever something comes in.</p>
-
-    <p>So, you built a website?</p>
-    <p>Don't worry about anyone asking this question- answer something to yourself first.</p>
-    <p>Did you know how to do all this before?</p>
-    <p>Have you ever done this before?</p>
-    <p>If the answers were 'NO'- then it's worth everything.</p>
-    <p>Just have fun. Keep learning and keep exploring.</p>
-    <p>Got any questions? Ask away in the comments section.</p>
+<p>First of all, do you even need a website?</p>
+<p>Why?</p>
+<p>What will the website do?</p>
+<p>What passion do you have that can be fulfilled by a website?</p>
+<p>Can your short term goals be achieved without one?</p>
+<p>If the answers you have for the questions above, make sense to you- follow along.</p>
+<p>I didn't want to build a site; I needed a portfolio- and I had a damn good portfolio on Canva- I wonder if this website will ever be as sharp and impactful as my Canva portfolio was.</p>
+<p>Sometimes, I feel I traded the impact for ground to cover.</p>
+<p>However, it is your call and if you are convinced you want to build one, just follow what I did.</p>
+<p>I started with collating all the information I had from years of work- the most important one was the portfolio presentation in itself.</p>
+<p>Then came the challenge of sifting through a lot more information to find the right ones that deserve a place on my website.</p>
+<p>I had at least 100 pages (MS Word) or roughly 8000 words of raw content- yes- it will feel like a lot but more the merrier.</p>
+<p>2nd part is to know, realise, refine and then document your own voice- not a voice recording- a simple statement that defines your personality when you talk to someone- it is important to look and sound the same way. Pen them down.</p>
+<p>3rd part is similar to the voice and style that we've just covered above- it's the colors, shapes and visual identity. The colors that look good to you, may not be the right colors that represent you- it may be but it's not always the case- find your own color. Find your own style.</p>
+<p>4th part is to discuss with your friends, colleagues and mentors if they think - your style, tone, color and narrative resonates with what they think about you.</p>
+<p>If needed, meet strangers and talk to them for few minutes and then ask them open ended questions- if they need clues, hints- give them some and then collect information.</p>
+<p>After you've nailed these down- make a document. A bible where you're Jesus. A Gita where you're Krishna.</p>
+<p>And then refine things- use AI if you have to- but keep reminding the AI on the core belief systems and do not let the AI get deviated <span class="v-heckle">(It is typical of AI systems to overpower your philosophy and make something new altogether and you wouldn't even notice)</span>.</p>
+<p>It is also very important to define guardrails/boundaries of <span class="v-loud">WHO YOU'RE NOT</span>.</p>
+<p>After you've made your own brand guidelines- read it a few times and confirm that <span class="v-loud">IT IS YOU</span>. You're halfway there – actually, almost there.</p>
+<p>You can see mine if it helps- attached here.</p>
+<a class="post-download" href="gaurav-brand-guidelines.pdf" target="_blank">↓ My Brand Guidelines (PDF)</a>
+<p class="post-pullquote">"Total spend for the whole thing: ₹667. Everything past that, including the email, was free."</p>
+<p>You now have the following:</p>
+<ol>
+<li>A purpose statement- why do you need a website</li>
+<li>Few testimonies from friends, colleagues and mentors</li>
+<li>A ton of data which talks about your work, projects, achievements, testimonials, skills etc</li>
+<li>Your own brand guidelines</li>
+</ol>
+<p>Next step- tell your AI about your intentions (you can use Claude or Codex) and just make it understand the project.</p>
+<p>And the final step before having your site with you.</p>
+<p>Validate. Validate. Validate.</p>
+<p>Keep validating it from what can improve.</p>
+<p>Keep stress testing it from what all you see around the world.</p>
+<p>It may take a few days before you're happy.</p>
+<p class="post-pullquote">"I spent roughly 30-45 minutes a day for 3 days and I was ready to deploy. Keep in mind the data and page copy that goes on the website was already present before I even began with this exercise."</p>
+<p>But, don't be in a hurry to deploy. Sleep over it <span class="v-heckle">(not for too long- it can be a couple of days but not a couple of weeks)</span>.</p>
+<p>There are few ideas which strike a bit late.</p>
+<p>Now to the actual deployment part if you have your HTML website ready.</p>
+<p>This is how I did it.</p>
+<p>The domain name idea has been sitting in my mind for quite some time- so it was easy for me. Find something that resonates with you- feel good about it too.</p>
+<p>You can buy it from anywhere. I bought mine from Namecheap and it only cost me 667 (including taxes and everything) for the first year.</p>
+<p>Do not buy anything. Just the name.</p>
+<p>Build everything on GitHub.</p>
+<ol>
+<li>Create a repo named exactly yourusername.github.io — this alone turns on GitHub Pages, no separate setup needed.</li>
+<li>Click "Add file" → "Upload files" and drag in your HTML files and images.</li>
+<li>Scroll down, add a commit message, and hit "Commit changes" directly to main.</li>
+<li>Add a CNAME file with just your domain name in it, so GitHub knows to serve your custom domain.</li>
+<li>Point your domain's DNS at GitHub (A records for the root, a CNAME record for www), then wait for it to propagate.</li>
+<li>Every time you want to update the site, repeat steps 2 and 3 with just the files that changed.</li>
+</ol>
+<p>You might want to add your personalized email id- don't buy it. I didn't buy it- I just created a cover of a personalized email onto my Gmail id.</p>
+<ol>
+<li>Added mishrawrites.com to Cloudflare (free account).</li>
+<li>Switched nameservers on Namecheap from their default to Cloudflare's two nameservers.</li>
+<li>Inside Cloudflare — Email → Email Routing — created the rule: gaurav@mishrawrites.com → forward to my Gmail address.</li>
+<li>Deleted the old Namecheap MX records and the SPF TXT record that were blocking activation.</li>
+<li>Cloudflare added its own MX records automatically — Email Routing went active.</li>
+<li>In Gmail — Settings → Accounts and Import → Send mail as — added gaurav@mishrawrites.com via SMTP with an App Password.</li>
+<li>Set gaurav@mishrawrites.com as the default sender.</li>
+</ol>
+<p>Voilà- You have a site of your own. A blog too – included- where people can even comment- you can build a community, newsletter kind of thing too.</p>
+<p>Here's how the comments actually work- no login, no cost:</p>
+<ol>
+<li>Signed up for a free Formspree account and created a form- got a unique endpoint for it.</li>
+<li>Added a simple form to the bottom of each post: just a name field and a comment box, no account needed to submit.</li>
+<li>Every submission gets emailed straight to me- nothing publishes automatically.</li>
+<li>I read each one and copy the ones worth keeping directly into the post's code, styled to match the page.</li>
+</ol>
+<p>No database, no monthly fee, no third-party widget slowing the page down. Just a free form and a few minutes of my own time whenever something comes in.</p>
+<p>So, you built a website?</p>
+<p>Don't worry about anyone asking this question- answer something to yourself first.</p>
+<p>Did you know how to do all this before?</p>
+<p>Have you ever done this before?</p>
+<p>If the answers were '<span class="v-loud">NO</span>'- then it's worth everything.</p>
+<p>Just have fun. Keep learning and keep exploring.</p>
+<p>Got any questions? Ask away in the comments section.</p>
   </div>
 
   <!-- COMMENTS -->
   <div class="comments-wrap">
     <p class="sec-title" style="margin-bottom:1.5rem">Comments</p>
-
-    <!--
-      HOW TO HANDLE COMMENTS — do this yourself, no need to ask Claude:
-
-      1. Check for new submissions: either your email inbox (search "New comment on:"),
-         or log in at formspree.io -> your form -> Submissions tab. Either shows you
-         the name and comment text.
-
-      2. To PUBLISH a comment: copy the block below, paste it right above this
-         instructional comment (so new comments stack above "No comments yet" /
-         above older comments, in the order they arrived), and fill in the 3 blanks.
-
-         <div class="comment">
-           <span class="comment-name">NAME</span><span class="comment-date">DATE</span>
-           <p class="comment-body">COMMENT TEXT</p>
-         </div>
-
-      3. To REPLY publicly under their comment (optional): paste this block
-         immediately AFTER their comment block (same 3 blanks, your own reply text):
-
-         <div class="comment comment-reply">
-           <span class="comment-name">Gaurav replied</span><span class="comment-date">DATE</span>
-           <p class="comment-body">YOUR REPLY</p>
-         </div>
-
-      4. Delete the "No comments yet" line below once you've added your first comment.
-
-      5. Save the file and commit to GitHub the usual way (Add file -> Upload files,
-         or edit directly in the repo). That's it — no code changes needed beyond
-         filling in the blanks above.
-    -->
-
+    <p class="label label-dim" style="margin-bottom:.5rem">Earlier comments</p>
     <div class="comment">
-      <span class="comment-name">Aryan</span><span class="comment-date">10 September 2026</span>
-      <p class="comment-body">Your brand guidelines document looks good to begin with. Can I use yours if you don't mind?</p>
-    </div>
-    <div class="comment comment-reply">
-      <span class="comment-name">Gaurav replied</span><span class="comment-date">10 September 2026</span>
-      <p class="comment-body">Use it as inspiration first- see what actually resonates with you. But if it genuinely fits who you are, go ahead and use it as is. I put it out there for exactly this.</p>
-    </div>
-
-    <form class="comment-form" action="https://formspree.io/f/mrpglpop" method="POST">
-      <input type="text" name="name" placeholder="Your name" required/>
-      <textarea name="comment" placeholder="Your comment" required></textarea>
-      <input type="hidden" name="_subject" value="New comment on: A follow-along for building a site like this one"/>
-      <input type="hidden" name="post" value="blog-post-01-how-i-built-this-site"/>
-      <button type="submit" class="btn btn-primary">Submit Comment</button>
-      <p class="comment-note">Comments are reviewed before they're published. No account needed.</p>
-    </form>
+<span class="comment-name">Aryan</span><span class="comment-date">10 September 2026</span>
+<p class="comment-body">Your brand guidelines document looks good to begin with. Can I use yours if you don't mind?</p>
+</div><div class="comment comment-reply">
+<span class="comment-name">Gaurav replied</span><span class="comment-date">10 September 2026</span>
+<p class="comment-body">Use it as inspiration first- see what actually resonates with you. But if it genuinely fits who you are, go ahead and use it as is. I put it out there for exactly this.</p>
+</div>
+    <!-- Comments run on Giscus (GitHub Discussions). Moderate them in the repo's Discussions tab. Setup lives in comments.js. -->
+    <div class="giscus" style="margin-top:1.5rem"></div>
+    <p class="comment-note">Comments use GitHub. Sign in with a free GitHub account to join in.</p>
+    <script src="comments.js" defer></script>
   </div>
 </article>
 
-<footer class="site-footer">
-  <span class="footer-mark">Gaurav M.</span>
-  <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
-  <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
-</footer>
+<section class="mw-related" aria-label="Keep reading"><h2>Keep reading</h2><div class="mw-related-grid"><a href="case-studies.html"><span class="k">Case studies</span><span class="t">See what this site was built to hold</span></a><a href="blog-post-03-i-automated-my-own-sales-pipeline.html"><span class="k">Monoblog</span><span class="t">I Automated My Own Sales Pipeline</span></a><a href="about.html"><span class="k">About</span><span class="t">Who&#x27;s behind the build</span></a></div></section>
+<footer class="site-footer mw-footer"><div class="mw-foot-id"><span class="footer-mark">Gaurav M.</span><span class="mw-foot-line">Brand, GTM &amp; Growth, Bengaluru</span></div><nav class="mw-foot-nav" aria-label="Footer"><a href="work.html">Work</a><a href="case-studies.html">Case Studies</a><a href="blog.html">Monoblog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="mailto:gaurav@mishrawrites.com">gaurav@mishrawrites.com</a><a href="https://www.linkedin.com/in/mishrawrites/" target="_blank" rel="noreferrer">LinkedIn</a></nav></footer>
 <script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
 <script>
 const navToggle=document.getElementById("navToggle"),navLinks=document.getElementById("navLinks");

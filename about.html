@@ -18,14 +18,14 @@
 <meta name="twitter:image" content="https://mishrawrites.com/gaurav-profile.jpg"/>
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Gaurav M.",
-  "url": "https://mishrawrites.com/",
-  "image": "https://mishrawrites.com/gaurav-profile.jpg",
-  "jobTitle": "Brand, GTM & Growth Leader",
-  "address": {"@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN"},
-  "sameAs": ["https://www.linkedin.com/in/mishrawrites/"]
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Gaurav M.",
+ "url": "https://mishrawrites.com/",
+ "image": "https://mishrawrites.com/gaurav-profile.jpg",
+ "jobTitle": "Brand, GTM & Growth Leader",
+ "address": {"@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN"},
+ "sameAs": ["https://www.linkedin.com/in/mishrawrites/"]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
@@ -37,24 +37,25 @@
   --tertiary:#C9A44C;
   --quaternary:#B5651D;
   --white:#FFFFFF;
-  --primary-dim:rgba(26,26,29,0.66);
-  --primary-subtle:rgba(26,26,29,0.4);
-  --white-dim:rgba(255,255,255,0.78);
-  --white-subtle:rgba(255,255,255,0.4);
-  --border:#E4DFD6;
-  --border-dark:rgba(255,255,255,0.16);
+  --primary-dim:#1A1A1D;
+  --primary-subtle:#1A1A1D;
+  --white-dim:#FFFFFF;
+  --white-subtle:#C9A44C;
+  --border:#C9A44C;
+  --border-dark:#C9A44C;
   --card:#FFFFFF;
-  --t-h1:clamp(2.6rem,5.2vw,3.6rem);
-  --t-h2:clamp(1.9rem,3.2vw,2.25rem);
-  --t-h3:clamp(1.3rem,2vw,1.5rem);
-  --t-body:1rem;
-  --t-caption:0.78rem;
+  /* TYPE SCALE — per brand guidelines */
+  --t-h1:clamp(2.6rem,5.2vw,3.5rem); /* 48–56px, Poppins Bold */
+  --t-h2:clamp(1.9rem,3.2vw,2.25rem); /* 32–36px, Montserrat SemiBold */
+  --t-h3:clamp(1.3rem,2vw,1.5rem); /* 22–24px, Poppins Regular/Light */
+  --t-body:1rem; /* 16px, Montserrat Regular */
+  --t-caption:0.78rem; /* 12–13px, Montserrat Regular */
 }
 html{scroll-behavior:smooth}
-body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+body{background:var(--white);color:var(--primary);font-family:"Montserrat",sans-serif;font-weight:400;font-size:16px;line-height:1.6;overflow-x:hidden}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:#FFFFFF;backdrop-filter:none;border-bottom:1px solid var(--border)}
 .nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
 .nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
@@ -77,10 +78,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .display .accent{color:var(--quaternary)}
 .sec-title{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h2);line-height:1.2;color:var(--primary)}
 .sec-title .accent{color:var(--quaternary)}
-.card-title{font-family:"Montserrat",sans-serif;font-weight:500;font-size:var(--t-h3);line-height:1.3;color:var(--primary)}
-.body-text{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);line-height:1.75}
+.card-title{font-family:"Poppins",sans-serif;font-weight:300;font-size:var(--t-h3);line-height:1.3;color:var(--primary)}
+.body-text{font-size:var(--t-body);font-weight:400;color:var(--primary-dim);line-height:1.75}
 .body-text.on-dark{color:var(--white-dim)}
-.label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
+.label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;letter-spacing:0.14em;text-transform:uppercase}
 .label-accent{color:var(--quaternary)}
 .label-gold{color:var(--tertiary)}
 .label-dim{color:var(--primary-subtle)}
@@ -93,9 +94,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .sec-border{border-top:1px solid var(--border)}
 
 /* BTN */
-.btn{display:inline-block;font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2rem;transition:background 0.2s,color 0.2s,border-color 0.2s;border:1px solid transparent;cursor:pointer;border-radius:2px}
+.btn{display:inline-block;font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2rem;transition:background 0.2s,color 0.2s,border-color 0.2s,filter 0.2s;border:1px solid transparent;cursor:pointer;border-radius:2px}
 .btn-primary{background:var(--quaternary);color:var(--primary)}
-.btn-primary:hover{background:var(--primary);color:var(--white)}
+.btn-primary:hover{filter:brightness(0.9);color:var(--primary)}
 .btn-ghost{border:1px solid var(--primary);color:var(--primary);background:transparent}
 .btn-ghost:hover{background:var(--primary);color:var(--white)}
 
@@ -110,18 +111,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 
 /* RESPONSIVE */
 @media(max-width:960px){
-  nav{padding:1rem 1.5rem;backdrop-filter:none;background:var(--white)}
-  .nav-toggle{display:flex}
-  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--secondary);flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:1.75rem;z-index:205;padding:6.5rem 2rem 2rem}
-  .nav-links.open{display:flex}
-  .nav-links a{font-size:1.35rem;text-transform:none;letter-spacing:0;color:var(--white);font-family:"Poppins",sans-serif;font-weight:400}
-  .nav-links a.active{color:var(--tertiary)}
-  .nav-links .nav-cta{margin-top:0.5rem;color:var(--primary)!important;font-size:0.85rem!important}
-  .nav-logo{z-index:206}
-  .nav-toggle.active span{background:var(--white)}
-  .wrap,.wrap-sm{padding:3.5rem 1.5rem}
-  .manifesto-wrap{padding:3.5rem 1.5rem}
-  .site-footer{padding:1.5rem;flex-direction:column;text-align:center}
+ nav{padding:1rem 1.5rem;backdrop-filter:none;background:var(--white)}
+ .nav-toggle{display:flex}
+ .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--secondary);flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:1.75rem;z-index:205;padding:6.5rem 2rem 2rem}
+ .nav-links.open{display:flex}
+ .nav-links a{font-size:1.35rem;text-transform:none;letter-spacing:0;color:var(--white);font-family:"Poppins",sans-serif;font-weight:400}
+ .nav-links a.active{color:var(--tertiary)}
+ .nav-links .nav-cta{margin-top:0.5rem;color:var(--primary)!important;font-size:0.85rem!important}
+ .nav-logo{z-index:206}
+ .nav-toggle.active span{background:var(--white)}
+ .wrap,.wrap-sm{padding:3.5rem 1.5rem}
+ .manifesto-wrap{padding:3.5rem 1.5rem}
+ .site-footer{padding:1.5rem;flex-direction:column;text-align:center}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
@@ -137,7 +138,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .tl-grid{display:grid;grid-template-columns:150px 20px 1fr;gap:0 1.5rem}
 .tl-date{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary-subtle);text-align:right;padding:1.75rem 0 3rem;line-height:1.5}
 .tl-dot{width:10px;height:10px;background:var(--border);border-radius:50%;margin-top:2rem;position:relative;left:-4px;flex-shrink:0;z-index:2}
-.tl-dot.active{background:var(--quaternary);box-shadow:0 0 0 3px rgba(181,101,29,0.2)}
+.tl-dot.active{background:var(--quaternary);box-shadow:0 0 0 3px #B5651D}
 .tl-spine{width:2px;background:var(--border);flex:1;margin-top:4px}
 .tl-content{padding:1.5rem 0 3rem}
 .tl-logo{height:22px;width:auto;max-width:150px;object-fit:contain;object-position:left center;margin-bottom:0.5rem;display:block}
@@ -166,7 +167,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 /* RECOMMENDATIONS */
 .rec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
 .rec-card{background:var(--card);padding:3rem;display:flex;flex-direction:column;gap:1.5rem;position:relative}
-.rec-card::before{content:"“";font-family:"Poppins",sans-serif;font-weight:700;font-size:4rem;line-height:1;color:var(--tertiary);position:absolute;top:1.5rem;left:2.25rem;opacity:0.5}
+.rec-card::before{content:"“";font-family:"Poppins",sans-serif;font-weight:700;font-size:4rem;line-height:1;color:var(--tertiary);position:absolute;top:1.5rem;left:2.25rem;opacity:1}
 .rec-quote{font-family:"Poppins",sans-serif;font-style:italic;font-weight:300;font-size:var(--t-body);line-height:1.8;color:var(--primary);padding-top:2rem}
 .rec-quote strong{font-style:normal;font-weight:600;color:var(--quaternary)}
 .rec-meta{padding-top:1.25rem;border-top:1px solid var(--border);margin-top:auto}
@@ -178,136 +179,200 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 
 /* RESPONSIVE ABOUT */
 @media(max-width:960px){
-  .page-hero{padding:7rem 1.5rem 3rem}
-  .sec{padding:3.5rem 1.5rem}
-  .tl-grid{grid-template-columns:90px 16px 1fr;gap:0 1rem}
-  .tl-date{font-size:0.62rem}
-  .system-grid,.rec-grid{grid-template-columns:1fr}
-  .cred-layout{grid-template-columns:1fr;gap:2.5rem}
-  .cred-grid{grid-template-columns:1fr 1fr}
+ .page-hero{padding:7rem 1.5rem 3rem}
+ .sec{padding:3.5rem 1.5rem}
+ .tl-grid{grid-template-columns:90px 16px 1fr;gap:0 1rem}
+ .tl-date{font-size:0.62rem}
+ .system-grid,.rec-grid{grid-template-columns:1fr}
+ .cred-layout{grid-template-columns:1fr;gap:2.5rem}
+ .cred-grid{grid-template-columns:1fr 1fr}
 }
+</style>
+
+<style id="mw-common">
+/* Brand Guidelines V3.1, strict palette: #1A1A1D #4A0E0E #C9A44C #B5651D #FFFFFF */
+:root{--primary:#1A1A1D;--secondary:#4A0E0E;--tertiary:#C9A44C;--quaternary:#B5651D;--white:#FFFFFF;
+--primary-dim:#1A1A1D;--primary-subtle:#1A1A1D;--white-dim:#FFFFFF;--white-subtle:#C9A44C;--border:#C9A44C;--border-dark:#C9A44C;--card:#FFFFFF}
+body{font-family:"Montserrat",sans-serif;font-weight:400;line-height:1.6}
+:focus-visible{outline:2px solid #B5651D;outline-offset:3px}
+nav{background:#FFFFFF!important}
+.nav-cta{background:#B5651D!important;color:#1A1A1D!important}
+.nav-cta:hover{background:#1A1A1D!important;color:#FFFFFF!important}
+/* Body is never bold: emphasis becomes a gold underline */
+.post-body strong,.blog-body strong,.body-text strong,.rec-quote strong,.voice-quote strong,.cs-body strong{font-weight:400;text-decoration:underline;text-decoration-color:#C9A44C;text-decoration-thickness:2px;text-underline-offset:3px}
+/* In-text links: dark ink with an orange underline (orange text fails AA at body size) */
+.mw-link,.post-body a:not(.btn),.cs-body a:not(.btn):not(.cs-card){color:#1A1A1D;text-decoration:underline;text-decoration-color:#B5651D;text-decoration-thickness:2px;text-underline-offset:3px}
+.mw-link:hover,.post-body a:not(.btn):hover,.cs-body a:not(.btn):not(.cs-card):hover{background:#B5651D;color:#1A1A1D}
+/* Voice marks (Blog guide slides 15-17) */
+.v-loud{background:#B5651D;color:#1A1A1D;padding:.05em .18em;border-radius:2px;letter-spacing:.02em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.v-heckle{font-style:italic;color:#4A0E0E}
+.v-lang{color:#4A0E0E;text-decoration:underline dotted #C9A44C 2px;text-underline-offset:4px}
+.v-key{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.8rem;color:#1A1A1D;margin-top:1rem}
+/* Footer */
+.mw-footer{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.25rem;padding:2.25rem 3rem;border-top:1px solid #C9A44C;background:#FFFFFF}
+.mw-foot-id{display:flex;flex-direction:column;gap:.25rem}
+.mw-foot-line{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D}
+.mw-foot-nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;position:static!important;padding:0!important;border:0!important;background:none!important;backdrop-filter:none!important}
+.mw-foot-nav a{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D;text-decoration:underline;text-decoration-color:#B5651D;text-underline-offset:3px}
+/* Related block (interlinking) */
+.mw-related{max-width:1200px;margin:0 auto;padding:3.5rem 3rem 4.5rem;border-top:1px solid #C9A44C}
+.mw-related h2{font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.5rem;color:#1A1A1D;margin-bottom:1.5rem}
+.mw-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.mw-related a{display:block;border:1px solid #1A1A1D;padding:1.25rem 1.4rem;text-decoration:none;color:#1A1A1D;background:#FFFFFF}
+.mw-related a:hover{background:#1A1A1D;color:#FFFFFF}
+.mw-related .k{display:block;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.74rem;letter-spacing:.06em;margin-bottom:.4rem}
+.mw-related .t{display:block;font-family:"Poppins",sans-serif;font-weight:400;font-size:1.05rem;line-height:1.35}
+@media(max-width:768px){.mw-footer{padding:1.75rem 1.5rem}.mw-related{padding:3rem 1.5rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head><body>
 <a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
 <nav>
-  <a class="nav-logo" href="index.html">Gaurav M.</a>
-  <ul class="nav-links" id="navLinks"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="blog.html" class="">Monoblog</a></li><li><a href="about.html" class="active">About</a></li><li><a href="contact.html" class="">Contact</a></li><li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li></ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+ <a class="nav-logo" href="index.html">Gaurav M.</a>
+ <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="blog.html">Monoblog</a></li><li><a href="about.html" class="active" aria-current="page">About</a></li><li><a class="nav-cta" href="contact.html">Let's Talk</a></li></ul>
+ <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="page-hero">
-  <div style="max-width:1200px;margin:0 auto">
-    <p class="fig-label"><span>About</span></p>
-    <h1 class="display">Twelve years, five companies, <span class="accent">one throughline.</span></h1>
-  </div>
+ <div style="max-width:1200px;margin:0 auto">
+  <p class="fig-label"><span>About</span></p>
+  <h1 class="display">Twelve years, five companies, <span class="accent">one throughline.</span></h1>
+ </div>
 </div>
 
-<!-- ABOUT ME — DRAFT, NEEDS YOUR REVIEW: these two paragraphs speak in your voice about your own
-     thinking and motivations. Claude drafted them from your case studies and known philosophy, but
-     they are not your actual words yet. Read both carefully, rewrite in your own voice, or replace
-     entirely before treating this as final. -->
 <section class="sec sec-border">
-  <p class="body-text" style="max-width:760px;margin-bottom:1.5rem">The problem I keep getting hired to solve is the same one wearing a different company's logo: leadership already knows the product is good, but the story around it doesn't match how customers actually decide to buy. Five companies, five categories, one repeated gap between what the business believes and what the customer is actually weighing before they say yes. I go in, find that gap, and rebuild the positioning and the system around it.</p>
-  <p class="body-text" style="max-width:760px">Before I touch a brief, I go looking for the actual decision a customer is making, and what's making it hard for them, not the demographic, the decision. Support tickets, sales call notes, churn reasons, and the comments under a competitor's ad tell me more than a persona slide ever will. The system comes after the story is right, never before.</p>
+ <p class="body-text" style="max-width:760px;margin-bottom:1.5rem">The problem I keep getting hired to solve is the same one wearing a different company's logo. Leadership already knows the product is good, but the story around it rarely matches how customers actually decide to buy. Across five companies and categories, I've solved one repeated gap between what the business believes and what the customer actually weighs before saying yes. I go in, find that gap, and rebuild the positioning and the system around it.</p>
+ <p class="body-text" style="max-width:760px">Before I touch a brief, I go looking for the actual decision a customer is making and what's making it hard for them. Support tickets, sales call notes, churn reasons, and the comments under a competitor's ad tell me more than a persona slide ever will. The system comes after the story is right, never before.</p>
 </section>
 
 <!-- TIMELINE -->
 <section class="sec sec-border" id="timeline">
-  <p class="fig-label"><span>Fig. 01</span> · Career Timeline</p>
-  <h2 class="sec-title">Where the work was done.</h2>
-  <div class="tl-wrap" id="tlTrack"></div>
+ <p class="fig-label"><span>Fig. 01</span> · Career Timeline</p>
+ <h2 class="sec-title">Where the work was done.</h2>
+ <div class="tl-wrap" id="tlTrack"></div>
 </section>
 
 <!-- OPERATING SYSTEM -->
 <section class="sec sec-border" id="system">
-  <p class="fig-label"><span>Fig. 02</span> · Operating System</p>
-  <h2 class="sec-title">The repeatable parts <span class="accent">behind the visible work.</span></h2>
-  <div class="system-grid">
-    <div class="system-card"><p class="system-num">01</p><p class="card-title" style="margin-bottom:0.75rem">Brand Strategy</p><p class="body-text">Positioning, narrative, architecture, category framing, brand foundations, and voice.</p></div>
-    <div class="system-card"><p class="system-num">02</p><p class="card-title" style="margin-bottom:0.75rem">GTM & Product Marketing</p><p class="body-text">Launch planning, ICP clarity, offer framing, sales collateral, pricing, packaging, and FAQs.</p></div>
-    <div class="system-card"><p class="system-num">03</p><p class="card-title" style="margin-bottom:0.75rem">Community Growth</p><p class="body-text">Identity-led programs, local communities, challenges, creator ecosystems, and user loops.</p></div>
-    <div class="system-card"><p class="system-num">04</p><p class="card-title" style="margin-bottom:0.75rem">Content Engines</p><p class="body-text">SEO libraries, video studios, topic intelligence, contributor systems, and repeatable publishing.</p></div>
-    <div class="system-card"><p class="system-num">05</p><p class="card-title" style="margin-bottom:0.75rem">Revenue-Linked Marketing</p><p class="body-text">MRR, ARR, CAC, acquisition, engagement, retention, pricing migration, and lifecycle signals.</p></div>
-    <div class="system-card"><p class="system-num">06</p><p class="card-title" style="margin-bottom:0.75rem">Teams & Operating Cadence</p><p class="body-text">Teams up to 16, agency orchestration, influencer networks, cross-functional alignment, and process building.</p></div>
-  </div>
+ <p class="fig-label"><span>Fig. 02</span> · Operating System</p>
+ <h2 class="sec-title">The repeatable parts <span class="accent">behind the visible work.</span></h2>
+ <div class="system-grid">
+  <div class="system-card"><p class="system-num">01</p><p class="card-title" style="margin-bottom:0.75rem">Brand Strategy</p><p class="body-text">Positioning, narrative, architecture, category framing, brand foundations, and voice.</p></div>
+  <div class="system-card"><p class="system-num">02</p><p class="card-title" style="margin-bottom:0.75rem">GTM &amp; Product Marketing</p><p class="body-text">Launch planning, ICP clarity, offer framing, sales collateral, pricing, packaging, and FAQs.</p></div>
+  <div class="system-card"><p class="system-num">03</p><p class="card-title" style="margin-bottom:0.75rem">Community Growth</p><p class="body-text">Identity-led programs, local communities, challenges, creator ecosystems, and user loops.</p></div>
+  <div class="system-card"><p class="system-num">04</p><p class="card-title" style="margin-bottom:0.75rem">Content Engines</p><p class="body-text">SEO libraries, video studios, topic intelligence, contributor systems, and repeatable publishing.</p></div>
+  <div class="system-card"><p class="system-num">05</p><p class="card-title" style="margin-bottom:0.75rem">Revenue-Linked Marketing</p><p class="body-text">MRR, ARR, CAC, acquisition, engagement, retention, pricing migration, and lifecycle signals.</p></div>
+  <div class="system-card"><p class="system-num">06</p><p class="card-title" style="margin-bottom:0.75rem">Teams &amp; Operating Cadence</p><p class="body-text">Teams up to 16, agency orchestration, influencer networks, cross-functional alignment, and process building.</p></div>
+ </div>
 </section>
 
 <!-- AI STACK (condensed) -->
 <section class="sec sec-border" id="ai-stack">
-  <p class="fig-label"><span>Fig. 03</span> · Working With AI</p>
-  <h2 class="sec-title">Marketing built and shipped <span class="accent">with AI, not despite it.</span></h2>
-  <p class="body-text" style="margin-top:1rem;max-width:640px">Four tools in daily use: a landing page calculator, a compliance audit tool, a writing scorecard, and this website, built end to end for INR 667.</p>
-  <div style="margin-top:2rem">
-    <p class="label label-dim" style="margin-bottom:0.5rem">Daily stack</p>
-    <div class="stack-row"><span class="stack-tag">Claude</span><span class="stack-tag">ChatGPT</span><span class="stack-tag">Gemini</span><span class="stack-tag">Perplexity</span><span class="stack-tag">Canva</span><span class="stack-tag">Brevo</span><span class="stack-tag">Codex</span><span class="stack-tag">Monday</span><span class="stack-tag">Pangram</span></div>
-    <p class="label label-dim" style="margin:1.5rem 0 0.5rem">Monthly stack</p>
-    <div class="stack-row"><span class="stack-tag">Semrush</span><span class="stack-tag">Surfer SEO</span><span class="stack-tag">Unbounce</span><span class="stack-tag">Jasper</span><span class="stack-tag">Notion</span><span class="stack-tag">Paradigm AI</span><span class="stack-tag">Browse AI</span><span class="stack-tag">Brand24</span></div>
-  </div>
+ <p class="fig-label"><span>Fig. 03</span> · Working With AI</p>
+ <h2 class="sec-title">Marketing built and shipped <span class="accent">with AI, on purpose.</span></h2>
+ <p class="body-text" style="margin-top:1rem;max-width:640px">Four tools in daily use: a landing page calculator, a compliance audit tool, a writing scorecard, and this website, built end to end for $7.</p>
+ <div style="margin-top:2rem">
+  <p class="label label-dim" style="margin-bottom:0.5rem">Daily stack</p>
+  <div class="stack-row"><span class="stack-tag">Claude</span><span class="stack-tag">ChatGPT</span><span class="stack-tag">Gemini</span><span class="stack-tag">Perplexity</span><span class="stack-tag">Canva</span><span class="stack-tag">Brevo</span><span class="stack-tag">Codex</span><span class="stack-tag">Monday</span><span class="stack-tag">Pangram</span></div>
+  <p class="label label-dim" style="margin:1.5rem 0 0.5rem">Monthly stack</p>
+  <div class="stack-row"><span class="stack-tag">Semrush</span><span class="stack-tag">Surfer SEO</span><span class="stack-tag">Unbounce</span><span class="stack-tag">Jasper</span><span class="stack-tag">Notion</span><span class="stack-tag">Paradigm AI</span><span class="stack-tag">Browse AI</span><span class="stack-tag">Brand24</span></div>
+ </div>
 </section>
 
 <!-- CREDENTIALS -->
 <section class="sec sec-border" id="credentials">
-  <p class="fig-label"><span>Fig. 04</span> · Credentials</p>
-  <div class="cred-layout">
-    <blockquote class="cred-quote">The receipts behind the résumé.</blockquote>
-    <div class="cred-grid">
-      <div class="cred-item"><div class="cred-num">10+</div><div class="cred-label">Campaign awards across industry forums</div></div>
-      <div class="cred-item"><div class="cred-num">800+</div><div class="cred-label">Strategic alliances managed at H&R Block</div></div>
-      <div class="cred-item"><div class="cred-num">50+</div><div class="cred-label">Influencers managed directly at FITTR</div></div>
-      <div class="cred-item"><div class="cred-num">70+</div><div class="cred-label">Countries touched through community growth</div></div>
-    </div>
+ <p class="fig-label"><span>Fig. 04</span> · Credentials</p>
+ <div class="cred-layout">
+  <blockquote class="cred-quote">The receipts behind the résumé.</blockquote>
+  <div class="cred-grid">
+   <div class="cred-item"><div class="cred-num">10+</div><div class="cred-label">Campaign awards across industry forums</div></div>
+   <div class="cred-item"><div class="cred-num">800+</div><div class="cred-label">Strategic alliances managed at H&amp;R Block</div></div>
+   <div class="cred-item"><div class="cred-num">50+</div><div class="cred-label">Influencers managed directly at FITTR</div></div>
+   <div class="cred-item"><div class="cred-num">70+</div><div class="cred-label">Countries touched through community growth</div></div>
   </div>
+ </div>
 </section>
 
 <!-- RECOMMENDATIONS -->
 <section class="sec sec-border" id="recommendations">
-  <p class="fig-label"><span>Fig. 05</span> · Voices from the Work</p>
-  <h2 class="sec-title">What people who built <span class="accent">things with me say.</span></h2>
-  <div class="rec-grid">
-    <div class="rec-card">
-      <p class="rec-quote">"Gaurav exhibited a relentless can-do attitude with talent to match. He is highly knowledgeable in his domain space of marketing and can be trusted by his peers as well as those in other departments to give his viewpoints in a manner that will elevate the discussion and improve overall results. He is known to be proactive, taking initiative and keen on follow through of all assigned projects. <strong>From a cultural fit perspective, he is and can be a strong asset to any team through his positive spirit and team-first attitude.</strong>"</p>
-      <div class="rec-meta">
-        <p class="rec-name">Rahul Kohli</p>
-        <p class="rec-title">Native Marketing Leader · Ex-IBM, H&amp;R Block, UAE Exchange · ABM, Demand Generation, GTM, Brand Strategy</p>
-        <p class="rec-context">Direct manager at H&amp;R Block</p>
-        <a class="rec-link" href="https://www.linkedin.com/in/kohlirahul/" target="_blank" rel="noreferrer">linkedin.com/in/kohlirahul ↗</a>
-      </div>
-    </div>
-    <div class="rec-card">
-      <p class="rec-quote">"I had the pleasure of working with Gaurav for close to 2 years at H&amp;R Block India. He is highly knowledgeable in his domain space of marketing and can be trusted by his peers as well as those in other departments. He is known to be proactive, taking initiative and keen on follow through of all assigned projects. <strong>From a cultural fit perspective, he is and can be a strong asset to any team through his positive spirit and team-first attitude.</strong>"</p>
-      <div class="rec-meta">
-        <p class="rec-name">Rohan Parikh</p>
-        <p class="rec-title">Delivering Compassionate, Reliable &amp; Personalized Home Care · US-based leader</p>
-        <p class="rec-context">Skip-level reporting manager at H&amp;R Block</p>
-        <a class="rec-link" href="https://www.linkedin.com/in/rohanparikhmba/" target="_blank" rel="noreferrer">linkedin.com/in/rohanparikhmba ↗</a>
-      </div>
-    </div>
-    <div class="rec-card">
-      <p class="rec-quote">"I am delighted to recommend my colleague Gaurav for his outstanding work as a Brand &amp; Marketing Strategist at Fittr. Gaurav consistently demonstrates a <strong>deep understanding of our brand and the market we operate in.</strong> His expertise in market research, analysis, and creative thinking allows us to launch successful campaigns that deliver measurable results. Fittr is fortunate to have Gaurav on our team, and I believe in his expertise and work ethic which places him as a strong candidate and a strategic executor."</p>
-      <div class="rec-meta">
-        <p class="rec-name">Shashank Lalwani</p>
-        <p class="rec-title">Customer Lifecycle Professional · Customer Success · Digital Engagement · Data &amp; Analytics · IIM Calcutta</p>
-        <p class="rec-context">Parallel departmental head at FITTR, worked alongside Gaurav</p>
-        <a class="rec-link" href="https://www.linkedin.com/in/shashanklalwani/" target="_blank" rel="noreferrer">linkedin.com/in/shashanklalwani ↗</a>
-      </div>
-    </div>
-    <div class="rec-card">
-      <p class="rec-quote">"Gaurav is one of the most capable and dynamic Brand/Marketing managers I've ever worked with. I've collaborated closely with him on large-scale projects worth crores of rupees with leading brands, companies, and content creators, both Indian and international, and can personally vouch that he has far-reaching, in-depth domain knowledge and is <strong>highly flexible and motivated</strong>, traits that he works hard to cultivate among his team members as well. He will take on end-to-end ownership of any project and ensure successful delivery regardless of the timeline, scale, medium, budget, or stakeholders. <strong>No challenge will deter him from not only doing his best but driving his team to do the same.</strong>"</p>
-      <div class="rec-meta">
-        <p class="rec-name">Hossein Ashtari</p>
-        <p class="rec-title">Senior Program &amp; Project Manager · AI Transformation &amp; Change Leader · IIM Calcutta</p>
-        <p class="rec-context">Hired and managed by Gaurav at FITTR</p>
-        <a class="rec-link" href="https://www.linkedin.com/in/hossein-ashtari/" target="_blank" rel="noreferrer">linkedin.com/in/hossein-ashtari ↗</a>
-      </div>
-    </div>
+ <p class="fig-label"><span>Fig. 05</span> · Voices from the Work</p>
+ <h2 class="sec-title">What people who built <span class="accent">things with me say.</span></h2>
+ <div class="rec-grid">
+  <div class="rec-card">
+   <p class="rec-quote">"Gaurav is one of the most versatile and hard working executive I have come across. At H&amp;R Block he was thrown in a manner of speaking to the wolves having to design solutions and execute campaigns without much support, but rather than shying away from it, <strong>he took the onus of getting it done and got the tag - Doer attached to him.</strong> He has grown phenomenally in terms of his knowledge on media buying, events, social media, branding and has served as a tremendous asset to me and the marketing team. I am sure he will grow by leaps and bounds in his career."</p>
+   <div class="rec-meta">
+    <p class="rec-name">Rahul Kohli</p>
+    <p class="rec-title">AI Native Marketing Leader · Ex - IBM, H&amp;R Block, UAE Exchange · 10x Fintech &amp; SAAS Growth across US, APAC, Middle East, Europe</p>
+    <p class="rec-context">Direct manager at H&amp;R Block · Nov 2017</p>
+    <a class="rec-link" href="https://www.linkedin.com/in/kohlirahul/" target="_blank" rel="noreferrer">linkedin.com/in/kohlirahul ↗</a>
+   </div>
   </div>
+  <div class="rec-card">
+   <p class="rec-quote">"Gaurav is a skilled marketing professional with a solid understanding of how to grow a brand sustainably using a mix of data, content and media in his approach.<br/><br/>During my time at Fittr, I have seen him as <strong>a proactive, hands-on professional</strong>, managing integrated marketing campaigns with multiple stakeholders and vendors without compromising on quality and timely delivery.<br/><br/>Aside from a very strong operational understanding of the nuances of top funnel marketing, his constant hustle and pursuit of excellence in every project he works on is an asset to any organization.<br/><br/>Would recommend him to anybody wanting a sound brand marketing professional with multiple areas of functional expertise."</p>
+   <div class="rec-meta">
+    <p class="rec-name">Lionel Gurjao</p>
+    <p class="rec-title">Brand &amp; Product Strategy</p>
+    <p class="rec-context">Direct manager at FITTR · Dec 2023</p>
+    <a class="rec-link" href="https://www.linkedin.com/in/lionelgurjao/" target="_blank" rel="noreferrer">linkedin.com/in/lionelgurjao ↗</a>
+   </div>
+  </div>
+  <div class="rec-card">
+   <p class="rec-quote">"A super active, dedicated, creative, hardworking &amp; a smart professional! Keen on learning &amp; exploring every possibility is his USP...<strong>Any company you work with is lucky to have you!</strong> I will always look forward to working with a professional with such high integrity!"</p>
+   <div class="rec-meta">
+    <p class="rec-name">Shalini Rastogii</p>
+    <p class="rec-title">Nutrition &amp; Well-being Coach at Aadyanta - The Science of Life</p>
+    <p class="rec-context">Direct manager at H&amp;R Block · Mar 2018</p>
+    <a class="rec-link" href="https://www.linkedin.com/in/shalini-rastogii-8a25206b/" target="_blank" rel="noreferrer">linkedin.com/in/shalini-rastogii-8a25206b ↗</a>
+   </div>
+  </div>
+  <div class="rec-card">
+   <p class="rec-quote">"I had the pleasure of working with Gaurav for close to 2 years at H&amp;R Block India. Gaurav exhibited a relentless can do attitude with talent to match. He is highly knowledgeable in his domain space of marketing and can be trusted by his peers as well as those in other departments to give his viewpoints in a manner that will elevate the discussion and improve overall results. He is known to be proactive, taking initiative and keen on follow through of all assigned projects. From a cultural fit perspective, <strong>he is and can be a strong asset to any team through his positive spirit and team first attitude.</strong>"</p>
+   <div class="rec-meta">
+    <p class="rec-name">Rohan Parikh</p>
+    <p class="rec-title">Delivering Compassionate, Reliable, and Personalized Home Care</p>
+    <p class="rec-context">Skip-level manager at H&amp;R Block · Nov 2017</p>
+    <a class="rec-link" href="https://www.linkedin.com/in/rohanparikhmba/" target="_blank" rel="noreferrer">linkedin.com/in/rohanparikhmba ↗</a>
+   </div>
+  </div>
+  <div class="rec-card">
+   <p class="rec-quote">"Gaurav is a high energy marketing professional.<br/><br/>At H&amp;R Block he wore multiple hats within the marketing team and lead social media marketing, media buying (radio, print, digital, outdoor), and marketing agency/vendor management, and certain parts of content marketing.<br/><br/>Gaurav's role required him to collaborate with cross-functional teams which he did very effectively and with ease. Gaurav often came up with simple ideas for seemingly complex marketing challenges.<br/><br/>Overall, Gaurav was a go-getter, <strong>a brilliant executionist maturing into a seasoned marketing strategist</strong>, and he is that team member who has the infectious zeal, enthusiasm and positivity!<br/><br/>Highly recommended!"</p>
+   <div class="rec-meta">
+    <p class="rec-name">Vaibhav Sankla</p>
+    <p class="rec-title">Building Billion BaseCamp</p>
+    <p class="rec-context">Senior colleague at H&amp;R Block, no direct reporting line · Dec 2019</p>
+    <a class="rec-link" href="https://www.linkedin.com/in/vaibhavsanklabillionbasecamp/" target="_blank" rel="noreferrer">linkedin.com/in/vaibhavsanklabillionbasecamp ↗</a>
+   </div>
+  </div>
+  <div class="rec-card">
+   <p class="rec-quote">"I am delighted to recommend my colleague Gaurav for his outstanding work as a Brand &amp; Marketing Strategist at Fittr. Gaurav consistently demonstrates <strong>a deep understanding of our brand and the market we operate in.</strong><br/><br/>Gaurav's attention to detail and strategic thinking help us increase brand awareness and engagement with our target audience. His expertise in market research, analysis, and creative thinking allows us to launch successful campaigns that deliver measurable results.<br/><br/>Aside from his professional abilities, Gaurav is a great team player and is always willing to help his colleagues. He has a positive attitude that makes him a pleasure to work with, and he consistently demonstrates a high level of professionalism and dedication.<br/><br/>Fittr is fortunate to have Gaurav on our team, and I believe in his expertise and work ethic which places him as a strong candidate and a strategic executor. Wishing him all the best in his endeavors"</p>
+   <div class="rec-meta">
+    <p class="rec-name">Shashank Lalwani</p>
+    <p class="rec-title">Growth, Retention &amp; Customer Lifecycle Professional · Customer Success · Former Founder's Office, FITTR · IIM Calcutta</p>
+    <p class="rec-context">Parallel leader at FITTR · Apr 2023</p>
+    <a class="rec-link" href="https://www.linkedin.com/in/shashanklalwani/" target="_blank" rel="noreferrer">linkedin.com/in/shashanklalwani ↗</a>
+   </div>
+  </div>
+  <div class="rec-card">
+   <p class="rec-quote">"I had the pleasure of working with Mr. Gaurav Mishra for ~2 yrs. He is Master in mass communication carries Can Do attitude and most importantly never short of Ideas. Other side of the story he is <strong>second to none and most loved/respected in office.</strong> I wish him all the very best in his future endeavor.<br/><br/>P.S. - If you happen to meet him don't forget to ask Egg or Chicken first?"</p>
+   <div class="rec-meta">
+    <p class="rec-name">Gourab Das</p>
+    <p class="rec-title">Principal Customer Success Manager · Revenue Growth &amp; Commercial Accountability · Enterprise B2B SaaS</p>
+    <p class="rec-context">Same team at H&amp;R Block · Mar 2019</p>
+    <a class="rec-link" href="https://www.linkedin.com/in/dasgourab/" target="_blank" rel="noreferrer">linkedin.com/in/dasgourab ↗</a>
+   </div>
+  </div>
+  <div class="rec-card">
+   <p class="rec-quote">"Gaurav is one of the most capable and dynamic Brand/Marketing managers I've ever worked with.<br/><br/>I've collaborated closely with him on large-scale projects worth crores of rupees with leading brands, companies, and content creators, both Indian &amp; international, and can personally vouch for the fact that he has far-reaching, in-depth domain knowledge and is highly flexible and motivated—traits that he works hard to cultivate among his team members as well.<br/><br/>He will take on end-to-end ownership of any project and ensure successful delivery regardless of the timeline, scale, medium, budget, team capacity, internal/external stakeholders, or other factors.<br/><br/><strong>No challenge will deter him from not only doing his best but driving his team to do the same.</strong><br/><br/>HIGHLY recommended for any role that calls for leadership, in-depth brand and marketing domain expertise, flexibility, and project management."</p>
+   <div class="rec-meta">
+    <p class="rec-name">Hossein Ashtari</p>
+    <p class="rec-title">Senior Program and Project Manager · AI Transformation &amp; Change Leader · Release Train Engineer (RTE)</p>
+    <p class="rec-context">Hired by Gaurav at FITTR, no direct reporting line · Apr 2023</p>
+    <a class="rec-link" href="https://www.linkedin.com/in/hossein-ashtari/" target="_blank" rel="noreferrer">linkedin.com/in/hossein-ashtari ↗</a>
+   </div>
+  </div>
+ </div>
 </section>
 
-<footer class="site-footer">
-  <span class="footer-mark">Gaurav M.</span>
-  <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
-  <span class="label label-dim">Brand Strategy · GTM · Product Marketing · Community Growth · Revenue Marketing</span>
-  <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
-</footer>
+<footer class="site-footer mw-footer"><div class="mw-foot-id"><span class="footer-mark">Gaurav M.</span><span class="mw-foot-line">Brand, GTM &amp; Growth, Bengaluru</span></div><nav class="mw-foot-nav" aria-label="Footer"><a href="work.html">Work</a><a href="case-studies.html">Case Studies</a><a href="blog.html">Monoblog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="mailto:gaurav@mishrawrites.com">gaurav@mishrawrites.com</a><a href="https://www.linkedin.com/in/mishrawrites/" target="_blank" rel="noreferrer">LinkedIn</a></nav></footer>
 <script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
 <script>
 const navToggle=document.getElementById("navToggle"),navLinks=document.getElementById("navLinks");
@@ -315,36 +380,36 @@ if(navToggle){navToggle.addEventListener("click",()=>{navToggle.classList.toggle
 </script>
 <script>
 const companyLogos={
-  "TransPerfect Paybooks":"tppaybooks-dark.png",
-  "FITTR":"fittr-dark.png",
-  "Ketto":"ketto-dark.png",
-  "H&R Block":"hrblock-dark.png",
-  "SalesNXT ITES":"salesnxt-dark.png"
+ "TransPerfect Paybooks":"tppaybooks-dark.png",
+ "FITTR":"fittr-dark.png",
+ "Ketto":"ketto-dark.png",
+ "H&R Block":"hrblock-dark.png",
+ "SalesNXT ITES":"salesnxt-dark.png"
 };
-const timelineData=[{company:"TransPerfect Paybooks",role:"Senior Manager, Brand & Marketing",period:"May 2023 – Present",meta:["3 yr+","Bengaluru"],current:true},{company:"FITTR",role:"Brand Manager",period:"Mar 2020 – May 2023",meta:["3 yr 3 mo","Remote"]},{company:"Ketto",role:"Brand Strategy Manager",period:"Sep 2019 – Feb 2020",meta:["6 mo","Mumbai"]},{company:"H&R Block",role:"Associate Manager, Brand & Communications",period:"Mar 2015 – Sep 2019",meta:["4 yr 7 mo","Pune"],steps:[{title:"Associate Manager, Brand & Communications",period:"Oct 2018 – Sep 2019"},{title:"Sr Executive, Brand & Communications",period:"Nov 2017 – Oct 2018"},{title:"Brand & Communications Executive",period:"Jan 2016 – Oct 2017"},{title:"Jr Executive, Marketing",period:"Mar 2015 – Dec 2015"}],note:"Three promotions in 4.5 years."},{company:"SalesNXT ITES",role:"Assistant Marketing Manager",period:"Jul 2014 – Mar 2015",meta:["9 mo","Pune"],note:"Agency-side, Cisco, AT&T, Exotel and more."},{company:"Aditya Birla Group",role:"Trainee, Marketing Communication",period:"Jun 2013 – Aug 2013",meta:["3 mo","Kolkata"],note:"Where it started."}];
+const timelineData=[{company:"TransPerfect Paybooks",link:"case-study-paybooks.html",linkText:"Read the Paybooks case study",role:"Senior Manager, Brand & Marketing",period:"May 2023 – Present",meta:["3 yr+","Bengaluru"],current:true},{company:"FITTR",link:"case-study-fittr-growth.html",linkText:"Read the FITTR case studies",role:"Brand Manager",period:"Mar 2020 – May 2023",meta:["3 yr 3 mo","Remote"]},{company:"Ketto",link:"case-study-ketto.html",linkText:"Read the Ketto case study",role:"Brand Strategy Manager",period:"Sep 2019 – Feb 2020",meta:["6 mo","Mumbai"]},{company:"H&R Block",link:"case-study-hrblock-content.html",linkText:"Read the H&R Block case studies",role:"Associate Manager, Brand & Communications",period:"Mar 2015 – Sep 2019",meta:["4 yr 7 mo","Pune"],steps:[{title:"Associate Manager, Brand & Communications",period:"Oct 2018 – Sep 2019"},{title:"Sr Executive, Brand & Communications",period:"Nov 2017 – Oct 2018"},{title:"Brand & Communications Executive",period:"Jan 2016 – Oct 2017"},{title:"Jr Executive, Marketing",period:"Mar 2015 – Dec 2015"}],note:"Three promotions in 4.5 years."},{company:"SalesNXT ITES",role:"Assistant Marketing Manager",period:"Jul 2014 – Mar 2015",meta:["9 mo","Pune"],note:"Agency-side, Cisco, AT&T, Exotel and more."},{company:"Aditya Birla Group",role:"Trainee, Marketing Communication",period:"Jun 2013 – Aug 2013",meta:["3 mo","Kolkata"],note:"Where it started."}];
 
 function renderTimeline(){
-  const wrap=document.getElementById("tlTrack");if(!wrap)return;
-  let html="";
-  timelineData.forEach((n,i)=>{
-    const isLast=i===timelineData.length-1;
-    const logo=companyLogos[n.company];
-    const companyMark=logo?`<img class="tl-logo" src="${logo}" alt="${n.company}"/>`:`<p class="label label-accent" style="margin-bottom:0.4rem">${n.company}</p>`;
-    html+=`<div style="display:contents">
-      <div class="tl-date">${n.period}</div>
-      <div style="display:flex;flex-direction:column;align-items:center">
-        <div class="tl-dot${n.current?" active":""}"></div>
-        ${!isLast?'<div class="tl-spine"></div>':""}</div>
-      <div class="tl-content">
-        ${companyMark}
-        <p class="tl-role">${n.role}</p>
-        <p class="tl-meta">${(n.meta||[]).join(" · ")}</p>
-        ${n.steps?`<div class="tl-steps">${n.steps.map(s=>`<div><p class="tl-step-title">${s.title}</p><p class="tl-step-period">${s.period}</p></div>`).join("")}</div>`:""}
-        ${n.note?`<p class="tl-note">${n.note}</p>`:""}
-      </div>
-    </div>`;
-  });
-  wrap.innerHTML=`<div class="tl-grid">${html}</div>`;
+ const wrap=document.getElementById("tlTrack");if(!wrap)return;
+ let html="";
+ timelineData.forEach((n,i)=>{
+  const isLast=i===timelineData.length-1;
+  const logo=companyLogos[n.company];
+  const companyMark=logo?`<img class="tl-logo" src="${logo}" alt="${n.company}"/>`:`<p class="label label-accent" style="margin-bottom:0.4rem">${n.company}</p>`;
+  html+=`<div style="display:contents">
+   <div class="tl-date">${n.period}</div>
+   <div style="display:flex;flex-direction:column;align-items:center">
+    <div class="tl-dot${n.current?" active":""}"></div>
+    ${!isLast?'<div class="tl-spine"></div>':""}</div>
+   <div class="tl-content">
+    ${companyMark}
+    <p class="tl-role">${n.role}</p>${n.link?`<p><a class="mw-link" href="${n.link}">${n.linkText}</a></p>`:""}
+    <p class="tl-meta">${(n.meta||[]).join(" · ")}</p>
+    ${n.steps?`<div class="tl-steps">${n.steps.map(s=>`<div><p class="tl-step-title">${s.title}</p><p class="tl-step-period">${s.period}</p></div>`).join("")}</div>`:""}
+    ${n.note?`<p class="tl-note">${n.note}</p>`:""}
+   </div>
+  </div>`;
+ });
+ wrap.innerHTML=`<div class="tl-grid">${html}</div>`;
 }
 renderTimeline();
 </script>

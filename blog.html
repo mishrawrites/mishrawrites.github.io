@@ -33,24 +33,24 @@
   --tertiary:#C9A44C;
   --quaternary:#B5651D;
   --white:#FFFFFF;
-  --primary-dim:rgba(26,26,29,0.66);
-  --primary-subtle:rgba(26,26,29,0.4);
-  --white-dim:rgba(255,255,255,0.78);
-  --white-subtle:rgba(255,255,255,0.4);
-  --border:#E4DFD6;
-  --border-dark:rgba(255,255,255,0.16);
+  --primary-dim:#1A1A1D;
+  --primary-subtle:#1A1A1D;
+  --white-dim:#FFFFFF;
+  --white-subtle:#C9A44C;
+  --border:#C9A44C;
+  --border-dark:#C9A44C;
   --card:#FFFFFF;
-  --t-h1:clamp(2.6rem,5.2vw,3.6rem);
+  --t-h1:clamp(2.6rem,5.2vw,3.5rem);
   --t-h2:clamp(1.9rem,3.2vw,2.25rem);
   --t-h3:clamp(1.3rem,2vw,1.5rem);
   --t-body:1rem;
   --t-caption:0.78rem;
 }
 html{scroll-behavior:smooth}
-body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:300;font-size:16px;line-height:1.6;overflow-x:hidden}
+body{background:var(--white);color:var(--primary);font-family:"Poppins",sans-serif;font-weight:400;font-size:16px;line-height:1.6;overflow-x:hidden}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:#FFFFFF;backdrop-filter:none;border-bottom:1px solid var(--border)}
 .nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
 .nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
@@ -74,7 +74,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .sec-title{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h2);line-height:1.2;color:var(--primary)}
 .sec-title .accent{color:var(--quaternary)}
 .card-title{font-family:"Montserrat",sans-serif;font-weight:500;font-size:var(--t-h3);line-height:1.3;color:var(--primary)}
-.body-text{font-size:var(--t-body);font-weight:300;color:var(--primary-dim);line-height:1.75}
+.body-text{font-size:var(--t-body);font-weight:400;color:var(--primary-dim);line-height:1.75}
 .body-text.on-dark{color:var(--white-dim)}
 .label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase}
 .label-accent{color:var(--quaternary)}
@@ -115,7 +115,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
-/* BLOG COVER — text + shapes only, no photo */
+/* BLOG COVER - text + shapes only, no photo */
 .blog-cover{position:relative;padding:9rem 3rem 5rem;background:var(--secondary);overflow:hidden;border-bottom:1px solid var(--border-dark)}
 .blog-cover .fig-label{color:var(--white-subtle)}
 .blog-cover .fig-label span{color:var(--tertiary)}
@@ -124,26 +124,65 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .blog-cover-lead{color:var(--white-dim);font-size:1.05rem;max-width:520px;margin-top:1.25rem;position:relative;z-index:2}
 .shape{position:absolute;z-index:1}
 .shape-ring{width:280px;height:280px;border:1.5px solid var(--border-dark);border-radius:50%;top:-90px;right:6%}
-.shape-ring-2{width:150px;height:150px;border:1.5px solid rgba(201,164,76,0.35);border-radius:50%;bottom:-50px;right:20%}
-.shape-block{width:110px;height:110px;background:var(--quaternary);opacity:0.9;bottom:2rem;right:6%;transform:rotate(8deg)}
-.shape-line{width:220px;height:1.5px;background:rgba(255,255,255,0.18);top:40%;right:2%;transform:rotate(-18deg)}
+.shape-ring-2{width:150px;height:150px;border:1.5px solid #FFFFFF;border-radius:50%;bottom:-50px;right:20%}
+.shape-block{width:110px;height:110px;background:var(--quaternary);opacity:1;bottom:2rem;right:6%;transform:rotate(8deg)}
+.shape-line{width:220px;height:1.5px;background:#C9A44C;top:40%;right:2%;transform:rotate(-18deg)}
 @media(max-width:960px){.blog-cover{padding:7.5rem 1.5rem 3.5rem}.shape-ring,.shape-ring-2,.shape-block,.shape-line{display:none}}
 
 /* POST GRID */
 .blog-grid{display:flex;flex-direction:column;margin-top:1rem;border-top:1px solid var(--border)}
 .blog-card{padding:2.25rem 0;border-bottom:1px solid var(--border);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:0.5rem;transition:opacity 0.2s}
-.blog-card:hover{opacity:0.7}
+.blog-card:hover{opacity:1}
 .blog-card-date{font-family:"Montserrat",sans-serif;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--quaternary);margin-bottom:0.75rem}
 .blog-card-dek{margin-top:0.75rem}
 .blog-card-more{margin-top:1.5rem;font-family:"Montserrat",sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary)}
 .blog-empty{padding:4rem 2.5rem;text-align:center;border:1px dashed var(--border)}
 @media(max-width:960px){.blog-grid{margin-top:0.5rem}}
+.v-key.v-key-dark{color:#FFFFFF;margin-top:1.5rem}.v-key.v-key-dark .v-heckle{color:#C9A44C}.v-key.v-key-dark .v-lang{color:#FFFFFF}
+.blog-card:hover{opacity:1}.blog-card:hover .card-title{text-decoration:underline;text-decoration-color:#B5651D;text-decoration-thickness:2px;text-underline-offset:4px}
 </style>
-</head><body>
+
+<style id="mw-common">
+/* Brand Guidelines V3.1, strict palette: #1A1A1D #4A0E0E #C9A44C #B5651D #FFFFFF */
+:root{--primary:#1A1A1D;--secondary:#4A0E0E;--tertiary:#C9A44C;--quaternary:#B5651D;--white:#FFFFFF;
+--primary-dim:#1A1A1D;--primary-subtle:#1A1A1D;--white-dim:#FFFFFF;--white-subtle:#C9A44C;--border:#C9A44C;--border-dark:#C9A44C;--card:#FFFFFF}
+body{font-family:"Montserrat",sans-serif;font-weight:400;line-height:1.6}
+:focus-visible{outline:2px solid #B5651D;outline-offset:3px}
+nav{background:#FFFFFF!important}
+.nav-cta{background:#B5651D!important;color:#1A1A1D!important}
+.nav-cta:hover{background:#1A1A1D!important;color:#FFFFFF!important}
+/* Body is never bold: emphasis becomes a gold underline */
+.post-body strong,.blog-body strong,.body-text strong,.rec-quote strong,.voice-quote strong,.cs-body strong{font-weight:400;text-decoration:underline;text-decoration-color:#C9A44C;text-decoration-thickness:2px;text-underline-offset:3px}
+/* In-text links: dark ink with an orange underline (orange text fails AA at body size) */
+.mw-link,.post-body a:not(.btn),.cs-body a:not(.btn):not(.cs-card){color:#1A1A1D;text-decoration:underline;text-decoration-color:#B5651D;text-decoration-thickness:2px;text-underline-offset:3px}
+.mw-link:hover,.post-body a:not(.btn):hover,.cs-body a:not(.btn):not(.cs-card):hover{background:#B5651D;color:#1A1A1D}
+/* Voice marks (Blog guide slides 15-17) */
+.v-loud{background:#B5651D;color:#1A1A1D;padding:.05em .18em;border-radius:2px;letter-spacing:.02em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.v-heckle{font-style:italic;color:#4A0E0E}
+.v-lang{color:#4A0E0E;text-decoration:underline dotted #C9A44C 2px;text-underline-offset:4px}
+.v-key{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.8rem;color:#1A1A1D;margin-top:1rem}
+/* Footer */
+.mw-footer{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.25rem;padding:2.25rem 3rem;border-top:1px solid #C9A44C;background:#FFFFFF}
+.mw-foot-id{display:flex;flex-direction:column;gap:.25rem}
+.mw-foot-line{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D}
+.mw-foot-nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;position:static!important;padding:0!important;border:0!important;background:none!important;backdrop-filter:none!important}
+.mw-foot-nav a{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D;text-decoration:underline;text-decoration-color:#B5651D;text-underline-offset:3px}
+/* Related block (interlinking) */
+.mw-related{max-width:1200px;margin:0 auto;padding:3.5rem 3rem 4.5rem;border-top:1px solid #C9A44C}
+.mw-related h2{font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.5rem;color:#1A1A1D;margin-bottom:1.5rem}
+.mw-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.mw-related a{display:block;border:1px solid #1A1A1D;padding:1.25rem 1.4rem;text-decoration:none;color:#1A1A1D;background:#FFFFFF}
+.mw-related a:hover{background:#1A1A1D;color:#FFFFFF}
+.mw-related .k{display:block;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.74rem;letter-spacing:.06em;margin-bottom:.4rem}
+.mw-related .t{display:block;font-family:"Poppins",sans-serif;font-weight:400;font-size:1.05rem;line-height:1.35}
+@media(max-width:768px){.mw-footer{padding:1.75rem 1.5rem}.mw-related{padding:3rem 1.5rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<style>.v-key.v-key-dark{color:#FFFFFF}.v-key.v-key-dark .v-heckle{color:#C9A44C}.v-key.v-key-dark .v-lang{color:#FFFFFF}</style></head><body>
 <a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
 <nav>
   <a class="nav-logo" href="index.html">Gaurav M.</a>
-  <ul class="nav-links" id="navLinks"><li><a href="index.html" class="">Home</a></li><li><a href="work.html" class="">Work</a></li><li><a href="blog.html" class="active">Monoblog</a></li><li><a href="about.html" class="">About</a></li><li><a href="contact.html" class="">Contact</a></li><li><a class="nav-cta btn" href="contact.html">Let's Talk</a></li></ul>
+  <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="blog.html" class="active" aria-current="page">Monoblog</a></li><li><a href="about.html">About</a></li><li><a class="nav-cta" href="contact.html">Let's Talk</a></li></ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
@@ -156,13 +195,32 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   <p class="fig-label"><span>Monoblog</span> · Things That Matters to Me</p>
   <h1 class="display">Sometimes <span class="accent">NEWS</span>, Sometimes <span class="accent">OPINION</span>, Mostly <span class="accent">CRAZY.</span></h1>
   <p class="blog-cover-lead">No fixed schedule. New posts whenever there's something worth writing down.</p>
+  <div class="v-key v-key-dark" aria-label="Reading key"><span><span class="v-loud">LOUD</span> said out loud</span><span><span class="v-heckle">(the heckler)</span> the voice in my head</span><span><span class="v-lang">Bhai</span> where English runs out</span></div>
 </div>
 
 <!-- POST LIST -->
-<!-- TO ADD A NEW POST: duplicate blog-post-XX.html, edit its content, then copy one .blog-card block below and update the href, data-date (YYYY-MM-DD, used for sorting), visible date text, title, and dek. Cards sort newest-first automatically — paste it anywhere in the grid.
-     DESIGN RULES: no pagination, ever — this list keeps growing and stays scrollable no matter how many posts exist. No images in the listing — text only, shapes/flowcharts only if genuinely needed. -->
+<!-- TO ADD A NEW POST: duplicate blog-post-XX.html, edit its content, then copy one .blog-card block below and update the href, data-date (YYYY-MM-DD, used for sorting), visible date text, title, and dek. Cards sort newest-first automatically - paste it anywhere in the grid.
+     DESIGN RULES: no pagination, ever - this list keeps growing and stays scrollable no matter how many posts exist. No images in the listing - text only, shapes/flowcharts only if genuinely needed. -->
 <section class="wrap">
   <div class="blog-grid">
+    <a class="blog-card" href="blog-post-06-complan-buoy.html" data-date="2026-10-02">
+      <p class="blog-card-date">2 October 2026</p>
+      <p class="card-title">I&#x27;m A Complan Buoy- How to kill a thriving brand for saving 50 P on packaging</p>
+      <p class="body-text blog-card-dek">Let me tell you about a formulation that actually worked.</p>
+      <p class="blog-card-more">Read the post →</p>
+    </a>
+    <a class="blog-card" href="blog-post-05-fitness-and-wellness.html" data-date="2026-10-02">
+      <p class="blog-card-date">2 October 2026</p>
+      <p class="card-title">The problems with the fitness and wellness industry</p>
+      <p class="body-text blog-card-dek">Everyone in this industry is selling a body. Almost nobody is selling the life that body was supposed to earn back.</p>
+      <p class="blog-card-more">Read the post →</p>
+    </a>
+    <a class="blog-card" href="blog-post-04-lies-about-marketing.html" data-date="2026-10-02">
+      <p class="blog-card-date">2 October 2026</p>
+      <p class="card-title">The lies about Marketing that the marketeers tell others (Including the founders)</p>
+      <p class="body-text blog-card-dek">Chapter-01: The lie about the marketing funnel and customer stickiness.</p>
+      <p class="blog-card-more">Read the post →</p>
+    </a>
     <a class="blog-card" href="blog-post-03-i-automated-my-own-sales-pipeline.html" data-date="2026-09-17">
       <p class="blog-card-date">17 September 2026</p>
       <p class="card-title">I Automated My Own Sales Pipeline. Here's How and What It Cost.</p>
@@ -184,12 +242,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   </div>
 </section>
 
-<footer class="site-footer">
-  <span class="footer-mark">Gaurav M.</span>
-  <span class="label label-dim">Brand, GTM &amp; Growth · Bengaluru</span>
-  <span class="label label-dim">Brand Strategy · GTM · Product Marketing · Community Growth · Revenue Marketing</span>
-  <a href="https://www.linkedin.com/in/mishrawrites/" class="label label-dim" target="_blank" rel="noreferrer" style="text-decoration:none">linkedin.com/in/mishrawrites</a>
-</footer>
+<section class="mw-related" aria-label="The work behind the writing"><h2>The work behind the writing</h2><div class="mw-related-grid"><a href="case-studies.html"><span class="k">Case studies</span><span class="t">Eight pieces of work, numbers attached</span></a><a href="work.html"><span class="k">Work</span><span class="t">Every project and market</span></a><a href="about.html"><span class="k">About</span><span class="t">Who&#x27;s writing</span></a></div></section>
+<footer class="site-footer mw-footer"><div class="mw-foot-id"><span class="footer-mark">Gaurav M.</span><span class="mw-foot-line">Brand, GTM &amp; Growth, Bengaluru</span></div><nav class="mw-foot-nav" aria-label="Footer"><a href="work.html">Work</a><a href="case-studies.html">Case Studies</a><a href="blog.html">Monoblog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="mailto:gaurav@mishrawrites.com">gaurav@mishrawrites.com</a><a href="https://www.linkedin.com/in/mishrawrites/" target="_blank" rel="noreferrer">LinkedIn</a></nav></footer>
 <script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
 <script>
 const navToggle=document.getElementById("navToggle"),navLinks=document.getElementById("navLinks");
