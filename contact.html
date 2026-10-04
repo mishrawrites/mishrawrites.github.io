@@ -31,7 +31,7 @@
   --primary:#1A1A1D;
   --secondary:#4A0E0E;
   --tertiary:#C9A44C;
-  --quaternary:#B5651D;
+  --quaternary:#AE611C;
   --white:#FFFFFF;
   --primary-dim:#1A1A1D;
   --primary-subtle:#1A1A1D;
@@ -131,21 +131,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 </style>
 
 <style id="mw-common">
-/* Brand Guidelines V3.1, strict palette: #1A1A1D #4A0E0E #C9A44C #B5651D #FFFFFF */
-:root{--primary:#1A1A1D;--secondary:#4A0E0E;--tertiary:#C9A44C;--quaternary:#B5651D;--white:#FFFFFF;
+/* Brand Guidelines V3.1, strict palette: #1A1A1D #4A0E0E #C9A44C #AE611C #FFFFFF */
+:root{--primary:#1A1A1D;--secondary:#4A0E0E;--tertiary:#C9A44C;--quaternary:#AE611C;--white:#FFFFFF;
 --primary-dim:#1A1A1D;--primary-subtle:#1A1A1D;--white-dim:#FFFFFF;--white-subtle:#C9A44C;--border:#C9A44C;--border-dark:#C9A44C;--card:#FFFFFF}
 body{font-family:"Montserrat",sans-serif;font-weight:400;line-height:1.6}
-:focus-visible{outline:2px solid #B5651D;outline-offset:3px}
+:focus-visible{outline:2px solid #AE611C;outline-offset:3px}
 nav{background:#FFFFFF!important}
-.nav-cta{background:#B5651D!important;color:#1A1A1D!important;display:inline-block;padding:.6rem 1.2rem!important;border-radius:3px;text-decoration:none!important;line-height:1.2}
+.nav-cta{background:#AE611C!important;color:#FFFFFF!important;display:inline-block;padding:.6rem 1.2rem!important;border-radius:3px;text-decoration:none!important;line-height:1.2}
 .nav-cta:hover{background:#1A1A1D!important;color:#FFFFFF!important}
 /* Body is never bold: emphasis becomes a gold underline */
 .post-body strong,.blog-body strong,.body-text strong,.rec-quote strong,.voice-quote strong,.cs-body strong{font-weight:400;text-decoration:underline;text-decoration-color:#C9A44C;text-decoration-thickness:2px;text-underline-offset:3px}
 /* In-text links: dark ink with an orange underline (orange text fails AA at body size) */
-.mw-link,.post-body a:not(.btn),.cs-body a:not(.btn):not(.cs-card){color:#1A1A1D;text-decoration:underline;text-decoration-color:#B5651D;text-decoration-thickness:2px;text-underline-offset:3px}
-.mw-link:hover,.post-body a:not(.btn):hover,.cs-body a:not(.btn):not(.cs-card):hover{background:#B5651D;color:#1A1A1D}
+.mw-link,.post-body a:not(.btn),.cs-body a:not(.btn):not(.cs-card){color:#1A1A1D;text-decoration:underline;text-decoration-color:#AE611C;text-decoration-thickness:2px;text-underline-offset:3px}
+.mw-link:hover,.post-body a:not(.btn):hover,.cs-body a:not(.btn):not(.cs-card):hover{background:#AE611C;color:#1A1A1D}
 /* Voice marks (Blog guide slides 15-17) */
-.v-loud{background:#B5651D;color:#1A1A1D;padding:.05em .18em;border-radius:2px;letter-spacing:.02em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.v-loud{background:#AE611C;color:#FFFFFF;padding:.05em .18em;border-radius:2px;letter-spacing:.02em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .v-heckle{font-style:italic;color:#4A0E0E}
 .v-lang{color:#4A0E0E;text-decoration:underline dotted #C9A44C 2px;text-underline-offset:4px}
 .v-key{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.8rem;color:#1A1A1D;margin-top:1rem}
@@ -154,7 +154,7 @@ nav{background:#FFFFFF!important}
 .mw-foot-id{display:flex;flex-direction:column;gap:.25rem}
 .mw-foot-line{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D}
 .mw-foot-nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;position:static!important;padding:0!important;border:0!important;background:none!important;backdrop-filter:none!important}
-.mw-foot-nav a{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D;text-decoration:underline;text-decoration-color:#B5651D;text-underline-offset:3px}
+.mw-foot-nav a{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D;text-decoration:underline;text-decoration-color:#AE611C;text-underline-offset:3px}
 /* Related block (interlinking) */
 .mw-related{max-width:1200px;margin:0 auto;padding:3.5rem 3rem 4.5rem;border-top:1px solid #C9A44C}
 .mw-related h2{font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.5rem;color:#1A1A1D;margin-bottom:1.5rem}
@@ -164,25 +164,57 @@ nav{background:#FFFFFF!important}
 .mw-related .k{display:block;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.74rem;letter-spacing:.06em;margin-bottom:.4rem}
 .mw-related .t{display:block;font-family:"Poppins",sans-serif;font-weight:400;font-size:1.05rem;line-height:1.35}
 @media(max-width:768px){.mw-footer{padding:1.75rem 1.5rem}.mw-related{padding:3rem 1.5rem}}
+.btn-primary,.sticky-cta,.lead .go,.vid .play{color:#FFFFFF!important}
+.btn-primary:hover,.lead:hover .go{background:#9C5719!important}
+.cred-num{color:#4A0E0E!important}
+.impact-delta{color:#4A0E0E!important;font-size:.75rem!important}
+.filter-btn.active,.filter-btn[aria-pressed="true"]{color:#FFFFFF!important}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:400;background:#1A1A1D;color:#FFFFFF;padding:.75rem 1.25rem;font-family:"Montserrat",sans-serif;font-weight:600;font-size:.9rem}
+.skip-link:focus{left:1rem;top:1rem}
+.nav-toggle span{transition:transform .2s ease,opacity .2s ease}
+nav.menu-open .nav-logo{color:#FFFFFF!important;position:relative;z-index:211}
+nav.menu-open .nav-toggle{position:relative;z-index:211}
+nav.menu-open .nav-toggle span{background:#FFFFFF!important}
+nav .nav-links .nav-cta,nav .nav-links.open .nav-cta{color:#FFFFFF!important}
+@media(max-width:960px){nav .nav-links.open a.active:not(.nav-cta){color:#C9A44C!important;text-decoration:none!important}}
+.nav-toggle[aria-expanded="true"]{gap:5px}
+.nav-toggle[aria-expanded="true"] span{height:2px}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.agency-cell,.rec-card,.tl-content,.tl-item,.contact-left,.contact-right,.lead .txt,.cs-body figure{min-width:0}
+.rec-card a,.contact-left a,.contact-right a,.tl-content{overflow-wrap:anywhere}
+.rec-clamp .rec-quote{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.rec-more{align-self:flex-start;background:none;border:0;padding:0;font-family:"Montserrat",sans-serif;font-weight:600;font-size:.82rem;color:#1A1A1D;text-decoration:underline;text-decoration-color:#AE611C;text-decoration-thickness:2px;text-underline-offset:3px;cursor:pointer}
+@media(max-width:960px){.rec-grid{grid-template-columns:minmax(0,1fr)!important}}
+@media(max-width:768px){.sticky-cta{display:none!important}.agency-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.agency-cell{padding:1.1rem .75rem!important}
+.cred-layout{grid-template-columns:minmax(0,1fr)!important}.cred-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.cred-item{padding:1.25rem!important;min-width:0}.cred-num{font-size:1.8rem!important}.rec-card{padding:2.25rem 1.5rem!important}.rec-card::before{left:1.5rem!important}.lead{grid-template-columns:minmax(0,1fr)!important}.lead .txt{padding:2rem 1.5rem!important}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
-</head><body>
+<style>.mw-prompt{color:#FFFFFF;max-width:420px;margin-top:.75rem}.mw-copy{align-self:flex-start;justify-self:start;width:auto;display:inline-block;margin:.25rem 0 1rem;background:none;border:1px solid #C9A44C;color:#FFFFFF;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.8rem;padding:.45rem .9rem;border-radius:3px;cursor:pointer}.mw-copy:hover{background:#FFFFFF;color:#1A1A1D}</style></head><body><a class="skip-link" href="#main">Skip to content</a>
 <a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
 <nav>
   <a class="nav-logo" href="index.html">Gaurav M.</a>
   <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="blog.html">Monoblog</a></li><li><a href="about.html">About</a></li><li><a class="nav-cta" href="contact.html">Let's Talk</a></li></ul>
   <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+<main id="main">
 <div class="contact-hero">
   <div class="contact-texture" aria-hidden="true"></div>
   <div class="contact-left">
     <p class="label label-dim on-dark" style="color:var(--tertiary);margin-bottom:1.5rem">Bengaluru</p>
     <h1 class="contact-headline">Let's build something <span class="accent">that sticks.</span></h1>
     <p class="body-text" style="color:var(--white-dim);max-width:420px">For brand and product strategy, creative and growth conversations. Email or LinkedIn is the fastest way to reach me.</p>
+    <p class="body-text mw-prompt">Tell me about the brand and the challenge in front of you.</p>
     <div class="contact-links">
       <a href="mailto:gaurav@mishrawrites.com" class="contact-link">
         <span class="contact-link-type">Email</span>
         <span class="contact-link-val">gaurav@mishrawrites.com</span>
+      </a>
+      <button type="button" class="mw-copy" id="copyEmail">Copy email address</button>
+      <a href="261004_Resume_GauravM_GM.pdf" class="contact-link" download>
+        <span class="contact-link-type">CV</span>
+        <span class="contact-link-val">Download my CV (PDF)</span>
       </a>
       <a href="https://www.linkedin.com/in/mishrawrites/" target="_blank" rel="noreferrer" class="contact-link">
         <span class="contact-link-type">LinkedIn</span>
@@ -210,10 +242,20 @@ nav{background:#FFFFFF!important}
   </div>
 </div>
 
+</main>
 <footer class="site-footer mw-footer"><div class="mw-foot-id"><span class="footer-mark">Gaurav M.</span><span class="mw-foot-line">Brand &amp; Product Strategy, Bengaluru</span></div><nav class="mw-foot-nav" aria-label="Footer"><a href="work.html">Work</a><a href="case-studies.html">Case Studies</a><a href="blog.html">Monoblog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="mailto:gaurav@mishrawrites.com">gaurav@mishrawrites.com</a><a href="https://www.linkedin.com/in/mishrawrites/" target="_blank" rel="noreferrer">LinkedIn</a></nav></footer>
 <script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
 <script>
 const navToggle=document.getElementById("navToggle"),navLinks=document.getElementById("navLinks");
 if(navToggle){navToggle.addEventListener("click",()=>{navToggle.classList.toggle("active");navLinks.classList.toggle("open")});navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navToggle.classList.remove("active");navLinks.classList.remove("open")}))}
 </script>
+<script id="mw-menu">(function(){var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(!t||!l)return;
+var n=t.cloneNode(true);t.parentNode.replaceChild(n,t);t=n;t.setAttribute('aria-controls','navLinks');
+function set(o){var nv=t.closest('nav');if(nv)nv.classList.toggle('menu-open',o);l.classList.toggle('open',o);t.classList.toggle('active',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}
+set(false);t.addEventListener('click',function(){set(!l.classList.contains('open'))});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){set(false);t.focus();}});
+l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});})();</script>
+<script>(function(){var b=document.getElementById("copyEmail");if(!b)return;var a="gaurav@mishrawrites.com";
+b.addEventListener("click",function(){function done(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy email address"},2000)}
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(a).then(done)}else{var t=document.createElement("textarea");t.value=a;document.body.appendChild(t);t.select();try{document.execCommand("copy");done()}catch(e){}t.remove()}});})();</script>
 </body></html>

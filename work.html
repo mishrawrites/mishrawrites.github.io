@@ -31,7 +31,7 @@
   --primary:#1A1A1D;
   --secondary:#4A0E0E;
   --tertiary:#C9A44C;
-  --quaternary:#B5651D;
+  --quaternary:#AE611C;
   --white:#FFFFFF;
   --primary-dim:#1A1A1D;
   --primary-subtle:#1A1A1D;
@@ -177,21 +177,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 </style>
 
 <style id="mw-common">
-/* Brand Guidelines V3.1, strict palette: #1A1A1D #4A0E0E #C9A44C #B5651D #FFFFFF */
-:root{--primary:#1A1A1D;--secondary:#4A0E0E;--tertiary:#C9A44C;--quaternary:#B5651D;--white:#FFFFFF;
+/* Brand Guidelines V3.1, strict palette: #1A1A1D #4A0E0E #C9A44C #AE611C #FFFFFF */
+:root{--primary:#1A1A1D;--secondary:#4A0E0E;--tertiary:#C9A44C;--quaternary:#AE611C;--white:#FFFFFF;
 --primary-dim:#1A1A1D;--primary-subtle:#1A1A1D;--white-dim:#FFFFFF;--white-subtle:#C9A44C;--border:#C9A44C;--border-dark:#C9A44C;--card:#FFFFFF}
 body{font-family:"Montserrat",sans-serif;font-weight:400;line-height:1.6}
-:focus-visible{outline:2px solid #B5651D;outline-offset:3px}
+:focus-visible{outline:2px solid #AE611C;outline-offset:3px}
 nav{background:#FFFFFF!important}
-.nav-cta{background:#B5651D!important;color:#1A1A1D!important;display:inline-block;padding:.6rem 1.2rem!important;border-radius:3px;text-decoration:none!important;line-height:1.2}
+.nav-cta{background:#AE611C!important;color:#FFFFFF!important;display:inline-block;padding:.6rem 1.2rem!important;border-radius:3px;text-decoration:none!important;line-height:1.2}
 .nav-cta:hover{background:#1A1A1D!important;color:#FFFFFF!important}
 /* Body is never bold: emphasis becomes a gold underline */
 .post-body strong,.blog-body strong,.body-text strong,.rec-quote strong,.voice-quote strong,.cs-body strong{font-weight:400;text-decoration:underline;text-decoration-color:#C9A44C;text-decoration-thickness:2px;text-underline-offset:3px}
 /* In-text links: dark ink with an orange underline (orange text fails AA at body size) */
-.mw-link,.post-body a:not(.btn),.cs-body a:not(.btn):not(.cs-card){color:#1A1A1D;text-decoration:underline;text-decoration-color:#B5651D;text-decoration-thickness:2px;text-underline-offset:3px}
-.mw-link:hover,.post-body a:not(.btn):hover,.cs-body a:not(.btn):not(.cs-card):hover{background:#B5651D;color:#1A1A1D}
+.mw-link,.post-body a:not(.btn),.cs-body a:not(.btn):not(.cs-card){color:#1A1A1D;text-decoration:underline;text-decoration-color:#AE611C;text-decoration-thickness:2px;text-underline-offset:3px}
+.mw-link:hover,.post-body a:not(.btn):hover,.cs-body a:not(.btn):not(.cs-card):hover{background:#AE611C;color:#1A1A1D}
 /* Voice marks (Blog guide slides 15-17) */
-.v-loud{background:#B5651D;color:#1A1A1D;padding:.05em .18em;border-radius:2px;letter-spacing:.02em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.v-loud{background:#AE611C;color:#FFFFFF;padding:.05em .18em;border-radius:2px;letter-spacing:.02em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .v-heckle{font-style:italic;color:#4A0E0E}
 .v-lang{color:#4A0E0E;text-decoration:underline dotted #C9A44C 2px;text-underline-offset:4px}
 .v-key{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.8rem;color:#1A1A1D;margin-top:1rem}
@@ -200,7 +200,7 @@ nav{background:#FFFFFF!important}
 .mw-foot-id{display:flex;flex-direction:column;gap:.25rem}
 .mw-foot-line{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D}
 .mw-foot-nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;position:static!important;padding:0!important;border:0!important;background:none!important;backdrop-filter:none!important}
-.mw-foot-nav a{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D;text-decoration:underline;text-decoration-color:#B5651D;text-underline-offset:3px}
+.mw-foot-nav a{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D;text-decoration:underline;text-decoration-color:#AE611C;text-underline-offset:3px}
 /* Related block (interlinking) */
 .mw-related{max-width:1200px;margin:0 auto;padding:3.5rem 3rem 4.5rem;border-top:1px solid #C9A44C}
 .mw-related h2{font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.5rem;color:#1A1A1D;margin-bottom:1.5rem}
@@ -210,15 +210,41 @@ nav{background:#FFFFFF!important}
 .mw-related .k{display:block;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.74rem;letter-spacing:.06em;margin-bottom:.4rem}
 .mw-related .t{display:block;font-family:"Poppins",sans-serif;font-weight:400;font-size:1.05rem;line-height:1.35}
 @media(max-width:768px){.mw-footer{padding:1.75rem 1.5rem}.mw-related{padding:3rem 1.5rem}}
+.btn-primary,.sticky-cta,.lead .go,.vid .play{color:#FFFFFF!important}
+.btn-primary:hover,.lead:hover .go{background:#9C5719!important}
+.cred-num{color:#4A0E0E!important}
+.impact-delta{color:#4A0E0E!important;font-size:.75rem!important}
+.filter-btn.active,.filter-btn[aria-pressed="true"]{color:#FFFFFF!important}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:400;background:#1A1A1D;color:#FFFFFF;padding:.75rem 1.25rem;font-family:"Montserrat",sans-serif;font-weight:600;font-size:.9rem}
+.skip-link:focus{left:1rem;top:1rem}
+.nav-toggle span{transition:transform .2s ease,opacity .2s ease}
+nav.menu-open .nav-logo{color:#FFFFFF!important;position:relative;z-index:211}
+nav.menu-open .nav-toggle{position:relative;z-index:211}
+nav.menu-open .nav-toggle span{background:#FFFFFF!important}
+nav .nav-links .nav-cta,nav .nav-links.open .nav-cta{color:#FFFFFF!important}
+@media(max-width:960px){nav .nav-links.open a.active:not(.nav-cta){color:#C9A44C!important;text-decoration:none!important}}
+.nav-toggle[aria-expanded="true"]{gap:5px}
+.nav-toggle[aria-expanded="true"] span{height:2px}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.agency-cell,.rec-card,.tl-content,.tl-item,.contact-left,.contact-right,.lead .txt,.cs-body figure{min-width:0}
+.rec-card a,.contact-left a,.contact-right a,.tl-content{overflow-wrap:anywhere}
+.rec-clamp .rec-quote{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.rec-more{align-self:flex-start;background:none;border:0;padding:0;font-family:"Montserrat",sans-serif;font-weight:600;font-size:.82rem;color:#1A1A1D;text-decoration:underline;text-decoration-color:#AE611C;text-decoration-thickness:2px;text-underline-offset:3px;cursor:pointer}
+@media(max-width:960px){.rec-grid{grid-template-columns:minmax(0,1fr)!important}}
+@media(max-width:768px){.sticky-cta{display:none!important}.agency-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.agency-cell{padding:1.1rem .75rem!important}
+.cred-layout{grid-template-columns:minmax(0,1fr)!important}.cred-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.cred-item{padding:1.25rem!important;min-width:0}.cred-num{font-size:1.8rem!important}.rec-card{padding:2.25rem 1.5rem!important}.rec-card::before{left:1.5rem!important}.lead{grid-template-columns:minmax(0,1fr)!important}.lead .txt{padding:2rem 1.5rem!important}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
-</head><body>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
 <a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
 <nav>
  <a class="nav-logo" href="index.html">Gaurav M.</a>
  <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="work.html" class="active" aria-current="page">Work</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="blog.html">Monoblog</a></li><li><a href="about.html">About</a></li><li><a class="nav-cta" href="contact.html">Let's Talk</a></li></ul>
  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+<main id="main">
 <div class="page-hero">
  <div style="max-width:1200px;margin:0 auto">
   <p class="fig-label"><span>Fig. 01</span> · Work</p>
@@ -242,12 +268,12 @@ nav{background:#FFFFFF!important}
 
 
 
-<div class="impact-stat"><p class="label label-accent">FITTR · Community</p><p class="body-text" style="margin-top:0.4rem">Identity-led programs, challenges, creator ecosystem</p><div class="impact-from-to"><span class="impact-from">200K</span><span class="impact-arrow">→</span><span class="impact-to">800K+</span></div><p class="impact-delta">4× in 3 years</p></div><div class="impact-stat"><p class="label label-accent">FITTR · ARR</p><p class="body-text" style="margin-top:0.4rem">Brand, campaigns, community &amp; product GTM</p><div class="impact-from-to"><span class="impact-from">$2.65M</span><span class="impact-arrow">→</span><span class="impact-to">$13.5M</span></div><p class="impact-delta">5× growth</p></div><div class="impact-stat"><p class="label label-accent">H&amp;R Block · Organic</p><p class="body-text" style="margin-top:0.4rem">In-house content &amp; SEO engine, seasonal peak</p><div class="impact-from-to"><span class="impact-from">&lt;50K</span><span class="impact-arrow">→</span><span class="impact-to">30M</span></div><p class="impact-delta">600× growth</p></div></div>
+<div class="impact-stat"><p class="label label-accent">FITTR · Community</p><p class="body-text" style="margin-top:0.4rem">Identity-led programs, challenges, creator ecosystem</p><div class="impact-from-to"><span class="impact-from">200K</span><span class="impact-arrow">→</span><span class="impact-to">800K+</span></div><p class="impact-delta">4× in 3 years</p></div><div class="impact-stat"><p class="label label-accent">FITTR · ARR</p><p class="body-text" style="margin-top:0.4rem">Whole-company ARR during my tenure</p><div class="impact-from-to"><span class="impact-from">$2.65M</span><span class="impact-arrow">→</span><span class="impact-to">$13.5M</span></div><p class="impact-delta">5× growth</p></div><div class="impact-stat"><p class="label label-accent">H&amp;R Block · Organic</p><p class="body-text" style="margin-top:0.4rem">In-house content &amp; SEO engine, seasonal peak</p><div class="impact-from-to"><span class="impact-from">&lt;50K</span><span class="impact-arrow">→</span><span class="impact-to">30M</span></div><p class="impact-delta">600× growth in organic traffic per tax season (Google Analytics)</p></div></div>
 <div class="impact-row">
 
 
 
-<div class="impact-stat"><p class="label label-accent">FITTR · Engagement</p><p class="body-text" style="margin-top:0.4rem">Campaign and content initiatives</p><div class="impact-from-to"><span class="impact-from">Baseline</span><span class="impact-arrow">→</span><span class="impact-to">340%</span></div><p class="impact-delta">In-app engagement jump</p></div><div class="impact-stat"><p class="label label-accent">TransPerfect Paybooks</p><p class="body-text" style="margin-top:0.4rem">Upmarket repositioning, pricing, packaging, ICP shift</p><div class="impact-from-to"><span class="impact-from">$37</span><span class="impact-arrow">→</span><span class="impact-to">$143</span></div><p class="impact-delta">3.9× MRR per new India client</p></div><div class="impact-stat"><p class="label label-accent">Paybooks · CAC</p><p class="body-text" style="margin-top:0.4rem">Sharper positioning and outreach channels</p><div class="impact-from-to"><span class="impact-from">$680</span><span class="impact-arrow">↓</span><span class="impact-to">$545</span></div><p class="impact-delta">20% reduction, India CAC</p></div></div>
+<div class="impact-stat"><p class="label label-accent">FITTR · Engagement</p><p class="body-text" style="margin-top:0.4rem">Campaign and content initiatives</p><div class="impact-from-to"><span class="impact-to">+340%</span></div><p class="impact-delta">In-app engagement: time spent, clicks and diet plan downloads</p></div><div class="impact-stat"><p class="label label-accent">TransPerfect Paybooks</p><p class="body-text" style="margin-top:0.4rem">Upmarket repositioning, pricing, packaging, ICP shift</p><div class="impact-from-to"><span class="impact-from">$37</span><span class="impact-arrow">→</span><span class="impact-to">$143</span></div><p class="impact-delta">3.9× MRR per new India client</p></div><div class="impact-stat"><p class="label label-accent">Paybooks · CAC</p><p class="body-text" style="margin-top:0.4rem">Sharper positioning and outreach channels</p><div class="impact-from-to"><span class="impact-from">$680</span><span class="impact-arrow">↓</span><span class="impact-to">$545</span></div><p class="impact-delta">20% reduction, India CAC</p></div></div>
 </div>
 <div style="display:flex;justify-content:center;margin-top:3rem">
 <a class="btn btn-primary" href="case-studies.html">Read the full Case Studies</a>
@@ -279,6 +305,7 @@ nav{background:#FFFFFF!important}
  </div>
 </section>
 
+</main>
 <footer class="site-footer mw-footer"><div class="mw-foot-id"><span class="footer-mark">Gaurav M.</span><span class="mw-foot-line">Brand &amp; Product Strategy, Bengaluru</span></div><nav class="mw-foot-nav" aria-label="Footer"><a href="work.html">Work</a><a href="case-studies.html">Case Studies</a><a href="blog.html">Monoblog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="mailto:gaurav@mishrawrites.com">gaurav@mishrawrites.com</a><a href="https://www.linkedin.com/in/mishrawrites/" target="_blank" rel="noreferrer">LinkedIn</a></nav></footer>
 <script>
 const navToggle=document.getElementById("navToggle"),navLinks=document.getElementById("navLinks");
@@ -300,7 +327,7 @@ const agencyLogos = {
  "iprospect": "iprospect-dark.png",
 };
 
-const projects=[{company:"TransPerfect Paybooks",name:"Global People Solution Brand Architecture",description:"Led naming, architecture, positioning, and GTM for a global payroll ecosystem.",tags:["Brand","GTM"],kpis:["43 countries enabled for EOR","Approved global mandate"]},{company:"TransPerfect Paybooks",name:"Pricing & Packaging Repositioning",description:"Moved Paybooks into an upmarket model with revised plans and sales policy.",tags:["Revenue","GTM"],kpis:["MRR per new India client from $37 to $143","Sharper ICP and enterprise-fit packaging"]},{company:"TransPerfect Paybooks",name:"Legacy Client Migration",description:"Built the business case and conversion campaign for moving legacy clients onto current plans.",tags:["Revenue","GTM"],kpis:["$1M ARR from 290 India clients","Cohort-led migration"]},{company:"TransPerfect Paybooks",name:"Employee Storytelling Series",description:"Created a first-person LinkedIn storytelling series strengthening employer-brand presence.",tags:["Brand","Content"],kpis:["50 personal stories, 11 team stories","LinkedIn 1,600 to 16,000+ followers"]},{company:"FITTR",name:"Transformation Challenge Series",description:"Scaled the 12-week health challenge through content and community rituals.",tags:["Community","Brand","Revenue"],kpis:["45M+ cumulative reach","2M+ app downloads","20% customer acquisition"]},{company:"FITTR",name:"Fitness Made Forever",description:"Integrated brand campaign distributed across multiple offline and digital channels.",tags:["Brand","GTM"],kpis:["100M+ reach","340% in-app engagement jump","$1.3M budget"]},{company:"FITTR",name:"Community Boost",description:"Expanded FITTR's community through local groups and creator-led initiatives.",tags:["Community"],kpis:["200K to 800K+ members","Monthly growth rate 15%+"]},{company:"FITTR",name:"FITTR Online PT",description:"Launched training-from-home during COVID and expanded into varied wellness routines.",tags:["GTM","Revenue"],kpis:["20%+ revenue contribution","300K+ users added","45% engagement boost"]},{company:"FITTR",name:"Content & Utility Libraries",description:"Built resource libraries that gave the community direct reasons to return.",tags:["Content","Community"],kpis:["1M+ food items","10K+ recipes in 3 months","1,000+ workout videos"]},{company:"FITTR",name:"FITTR HART",description:"Led product input and GTM for FITTR's smart ring.",tags:["GTM","Brand","Revenue"],kpis:["$900K revenue in year one","7× growth rate"]},{company:"H&R Block",name:"Content Lab",description:"Converted an unused meeting room into a studio and publishing engine.",tags:["Content"],kpis:["500+ videos produced","Team of 4 plus 20 interns","2-3 videos per day"]},{company:"H&R Block",name:"Knowledge Center",description:"Built long-form SEO infrastructure turning education into a revenue-linked acquisition channel.",tags:["Content","Revenue"],kpis:["30M+ organic traffic per season","500+ articles","50%+ category search share"]},{company:"H&R Block",name:"GST Made Simple & earlyGST",description:"Built GST education and product GTM around India's national tax transition.",tags:["GTM","Content"],kpis:["40+ episode video series","300+ external references"]},{company:"H&R Block",name:"Find a Flaw",description:"Participative content hook around spotting tax mistakes.",tags:["Brand","Content"],kpis:["Facebook followers up 10-20% MoM","LinkedIn followers up 30% MoM"]},{company:"Ketto",name:"PodcastMD with Kunal Kapoor",description:"Cause-led podcast featuring survivors of life-threatening illness.",tags:["Brand","Content"],kpis:["12 survivor guests","10M+ streams","100+ patient letters"]},{company:"Ketto",name:"Medical Treatment Cost Estimator",description:"Tool for patients to compare treatment costs and move into Ketto's crowdfunding flow.",tags:["GTM","Revenue"],kpis:["100+ critical illnesses covered","30% asked to start a campaign","$430K+ raised in 3 months"]},{company:"Consulting",name:"Crystal Life Podware",description:"Identified a storage-container category opportunity, named Podware and Pod, led positioning.",tags:["Brand","GTM"],kpis:["Primary research across major metros","Category and product naming"]},{company:"Consulting",name:"FAMLI Brand Foundation",description:"Built brand foundation for a fintech app bringing family-office style financial planning to Indian families.",tags:["Brand","GTM"],kpis:["3-month beta","1,000+ active users"]},{company:"Consulting",name:"Mountainor Brand Foundation",description:"Owned positioning, visual identity, packaging, tone of voice, and WhatsApp resale flows.",tags:["Brand","Revenue"],kpis:["6-month mandate","Resell funnel built on WhatsApp"]}];
+const projects=[{company:"TransPerfect Paybooks",name:"Global People Solution Brand Architecture",description:"Led naming, architecture, positioning, and GTM for a global payroll ecosystem.",tags:["Brand","GTM"],kpis:["43 countries enabled for EOR","Approved global mandate"]},{company:"TransPerfect Paybooks",name:"Pricing & Packaging Repositioning",description:"Moved Paybooks into an upmarket model with revised plans and sales policy.",tags:["Revenue","GTM"],kpis:["MRR per new India client from $37 to $143","Sharper ICP and enterprise-fit packaging"]},{company:"TransPerfect Paybooks",name:"Legacy Client Migration",description:"Built the business case and conversion campaign for moving legacy clients onto current plans.",tags:["Revenue","GTM"],kpis:["$1M ARR from 290 India clients","Cohort-led migration"]},{company:"TransPerfect Paybooks",name:"Employee Storytelling Series",description:"Created a first-person LinkedIn storytelling series strengthening employer-brand presence.",tags:["Brand","Content"],kpis:["50 personal stories, 11 team stories","LinkedIn 1,600 to 16,000+ followers"]},{company:"FITTR",name:"Transformation Challenge Series",description:"Scaled the 12-week health challenge through content and community rituals.",tags:["Community","Brand","Revenue"],kpis:["45M+ cumulative reach","2M+ app downloads","20% customer acquisition"]},{company:"FITTR",name:"Fitness Made Forever",description:"Integrated brand campaign distributed across multiple offline and digital channels.",tags:["Brand","GTM"],kpis:["100M+ reach","340% in-app engagement jump","$1.3M budget"]},{company:"FITTR",name:"Community Boost",description:"Expanded FITTR's community through local groups and creator-led initiatives.",tags:["Community"],kpis:["200K to 800K+ members"]},{company:"FITTR",name:"FITTR Online PT",description:"Launched training-from-home during COVID and expanded into varied wellness routines.",tags:["GTM","Revenue"],kpis:["20%+ revenue contribution","300K+ users added","45% engagement boost"]},{company:"FITTR",name:"Content & Utility Libraries",description:"Built resource libraries that gave the community direct reasons to return.",tags:["Content","Community"],kpis:["1M+ food items","10K+ recipes in 3 months","1,000+ workout videos"]},{company:"FITTR",name:"FITTR HART",description:"Led product input and GTM for FITTR's smart ring.",tags:["GTM","Brand","Revenue"],kpis:["$900K revenue in year one","7× growth rate"]},{company:"H&R Block",name:"Content Lab",description:"Converted an unused meeting room into a studio and publishing engine.",tags:["Content"],kpis:["500+ videos produced","Team of 4 plus 20 interns","2-3 videos per day"]},{company:"H&R Block",name:"Knowledge Center",description:"Built long-form SEO infrastructure turning education into a revenue-linked acquisition channel.",tags:["Content","Revenue"],kpis:["30M+ organic traffic per season","500+ articles","50%+ category search share"]},{company:"H&R Block",name:"GST Made Simple & earlyGST",description:"Built GST education and product GTM around India's national tax transition.",tags:["GTM","Content"],kpis:["40+ episode video series","300+ external references"]},{company:"H&R Block",name:"Find a Flaw",description:"Participative content hook around spotting tax mistakes.",tags:["Brand","Content"],kpis:["Facebook followers up 10-20% MoM","LinkedIn followers up 30% MoM"]},{company:"Ketto",name:"PodcastMD with Kunal Kapoor",description:"Cause-led podcast featuring survivors of life-threatening illness.",tags:["Brand","Content"],kpis:["12 survivor guests","10M+ streams","100+ patient letters"]},{company:"Ketto",name:"Medical Treatment Cost Estimator",description:"Tool for patients to compare treatment costs and move into Ketto's crowdfunding flow.",tags:["GTM","Revenue"],kpis:["100+ critical illnesses covered","30% asked to start a campaign","$430K+ raised in 3 months"]},{company:"Consulting",name:"Crystal Life Podware",description:"Identified a storage-container category opportunity, named Podware and Pod, led positioning.",tags:["Brand","GTM"],kpis:["Primary research across major metros","Category and product naming"]},{company:"Consulting",name:"FAMLI Brand Foundation",description:"Built brand foundation for a fintech app bringing family-office style financial planning to Indian families.",tags:["Brand","GTM"],kpis:["3-month beta","1,000+ active users"]},{company:"Consulting",name:"Mountainor Brand Foundation",description:"Owned positioning, visual identity, packaging, tone of voice, and WhatsApp resale flows.",tags:["Brand","Revenue"],kpis:["6-month mandate","Resell funnel built on WhatsApp"]}];
 
 const allTags=["All","Brand","GTM","Community","Content","Revenue"];
 function caseLink(p){if(p.company==="FITTR")return"case-study-fittr-growth.html";if(p.company==="TransPerfect Paybooks")return"case-study-paybooks.html";if(p.company==="Ketto")return"case-study-ketto.html";if(p.company==="Consulting")return"case-study-consulting.html";if(p.company==="H&R Block")return /GST/.test(p.name)?"case-study-hrblock-gst.html":"case-study-hrblock-content.html";return"case-studies.html"}
@@ -315,7 +342,7 @@ function renderFilters(){
  row.addEventListener("click",e=>{if(!e.target.classList.contains("filter-btn"))return;row.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));e.target.classList.add("active");renderProjects(e.target.dataset.filter);});
 }
 
-const PIE_PALETTE=["#4A0E0E","#B5651D","#C9A44C","#1A1A1D","#FFFFFF"];
+const PIE_PALETTE=["#4A0E0E","#AE611C","#C9A44C","#1A1A1D","#FFFFFF"];
 function makePie(svgId,legendId,segments){
  const svg=document.getElementById(svgId),leg=document.getElementById(legendId);if(!svg||!leg)return;
  const total=segments.reduce((s,x)=>s+x.value,0),cx=100,cy=100,r=80,gap=1.5;
@@ -341,4 +368,10 @@ function init(){
 }
 init();
 </script>
+<script id="mw-menu">(function(){var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(!t||!l)return;
+var n=t.cloneNode(true);t.parentNode.replaceChild(n,t);t=n;t.setAttribute('aria-controls','navLinks');
+function set(o){var nv=t.closest('nav');if(nv)nv.classList.toggle('menu-open',o);l.classList.toggle('open',o);t.classList.toggle('active',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}
+set(false);t.addEventListener('click',function(){set(!l.classList.contains('open'))});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){set(false);t.focus();}});
+l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});})();</script>
 </body></html>

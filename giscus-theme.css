@@ -1,5 +1,5 @@
 /* Giscus theme for mishrawrites.com, Brand Guidelines V3.1 palette only:
-   #1A1A1D #4A0E0E #C9A44C #B5651D #FFFFFF (hover darkens Quaternary ~10%, per the CTA rule) */
+   #1A1A1D #4A0E0E #C9A44C #AE611C #FFFFFF (V3.2: Quaternary #AE611C with white text; hover #9C5719) */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@700&display=swap");
 @import url("https://giscus.app/themes/light.css");
 
@@ -29,12 +29,12 @@ main {
   --color-btn-hover-border: #1A1A1D;
   --color-btn-active-bg: #1A1A1D;
   --color-btn-selected-bg: #FFFFFF;
-  --color-btn-primary-text: #1A1A1D;
-  --color-btn-primary-bg: #B5651D;
-  --color-btn-primary-border: #B5651D;
-  --color-btn-primary-hover-bg: #9A5618;
-  --color-btn-primary-hover-border: #9A5618;
-  --color-btn-primary-selected-bg: #9A5618;
+  --color-btn-primary-text: #FFFFFF;
+  --color-btn-primary-bg: #AE611C;
+  --color-btn-primary-border: #AE611C;
+  --color-btn-primary-hover-bg: #9C5719;
+  --color-btn-primary-hover-border: #9C5719;
+  --color-btn-primary-selected-bg: #9C5719;
   --color-btn-primary-disabled-text: #1A1A1D;
   --color-btn-primary-disabled-bg: #C9A44C;
   --color-btn-primary-disabled-border: #C9A44C;
@@ -48,4 +48,4 @@ main {
 }
 main .btn:hover:not(.btn-primary) { color: #FFFFFF; }
 main .gsc-comment-author, main .gsc-reactions-count { font-weight: 600; }
-main a { text-decoration-color: #B5651D; }
+main a { text-decoration-color: #AE611C; }
