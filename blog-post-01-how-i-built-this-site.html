@@ -1,21 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="How to build a portfolio site like mishrawrites.com for under a thousand rupees: finding your voice, your visual identity, and the real deployment steps."/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="How to build a portfolio site like mishrawrites.com for under a thousand rupees: finding your voice, your visual identity, and the real deployment steps." name="description"/>
 <title>A Follow Along for How to Build a Site Like This One and How Much Will It Cost? · Gaurav M.</title>
-<link rel="canonical" href="https://mishrawrites.com/blog-post-01-how-i-built-this-site.html"/>
-<meta property="og:type" content="article"/>
-<meta property="og:site_name" content="Gaurav M."/>
-<meta property="og:title" content="A Follow Along for How to Build a Site Like This One and How Much Will It Cost?"/>
-<meta property="og:description" content="How to build a portfolio site like mishrawrites.com for under a thousand rupees: finding your voice, your visual identity, and the real deployment steps."/>
-<meta property="og:url" content="https://mishrawrites.com/blog-post-01-how-i-built-this-site.html"/>
-<meta property="og:image" content="https://mishrawrites.com/gaurav-profile.jpg"/>
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="A Follow Along for How to Build a Site Like This One and How Much Will It Cost?"/>
-<meta name="twitter:description" content="How to build a portfolio site like mishrawrites.com for under a thousand rupees: finding your voice, your visual identity, and the real deployment steps."/>
-<meta name="twitter:image" content="https://mishrawrites.com/gaurav-profile.jpg"/>
+<link href="https://mishrawrites.com/blog-post-01-how-i-built-this-site.html" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Gaurav M." property="og:site_name"/>
+<meta content="A Follow Along for How to Build a Site Like This One and How Much Will It Cost?" property="og:title"/>
+<meta content="How to build a portfolio site like mishrawrites.com for under a thousand rupees: finding your voice, your visual identity, and the real deployment steps." property="og:description"/>
+<meta content="https://mishrawrites.com/blog-post-01-how-i-built-this-site.html" property="og:url"/>
+<meta content="https://mishrawrites.com/gaurav-profile.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="A Follow Along for How to Build a Site Like This One and How Much Will It Cost?" name="twitter:title"/>
+<meta content="How to build a portfolio site like mishrawrites.com for under a thousand rupees: finding your voice, your visual identity, and the real deployment steps." name="twitter:description"/>
+<meta content="https://mishrawrites.com/gaurav-profile.jpg" name="twitter:image"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -26,7 +27,7 @@
   "url": "https://mishrawrites.com/blog-post-01-how-i-built-this-site.html"
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -119,7 +120,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .comment-reply{margin:1rem 0 0 1.5rem;padding:0.9rem 1.1rem;border-left:2px solid var(--quaternary);background:#FFFFFF}
 .comment-reply .comment-name{color:var(--quaternary)}
 </style>
-
 <style id="mw-common">
 /* Brand Guidelines V3.1, strict palette: #1A1A1D #4A0E0E #C9A44C #AE611C #FFFFFF */
 :root{--primary:#1A1A1D;--secondary:#4A0E0E;--tertiary:#C9A44C;--quaternary:#AE611C;--white:#FFFFFF;
@@ -181,34 +181,31 @@ nav .nav-links .nav-cta,nav .nav-links.open .nav-cta{color:#FFFFFF!important}
 .cred-layout{grid-template-columns:minmax(0,1fr)!important}.cred-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.cred-item{padding:1.25rem!important;min-width:0}.cred-num{font-size:1.8rem!important}.rec-card{padding:2.25rem 1.5rem!important}.rec-card::before{left:1.5rem!important}.lead{grid-template-columns:minmax(0,1fr)!important}.lead .txt{padding:2rem 1.5rem!important}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
-</head><body><a class="skip-link" href="#main">Skip to content</a>
+<link href="/favicon.ico" rel="icon" sizes="any"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/apple-touch-icon.png" rel="apple-touch-icon"/></head><body><a class="skip-link" href="#main">Skip to content</a>
 <a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
 <nav>
-  <a class="nav-logo" href="index.html">Gaurav M.</a>
-  <ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="blog.html" class="active" aria-current="page">Monoblog</a></li><li><a href="about.html">About</a></li><li><a class="nav-cta" href="contact.html">Let's Talk</a></li></ul>
-  <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+<a class="nav-logo" href="index.html">Gaurav M.</a>
+<ul class="nav-links" id="navLinks"><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a aria-current="page" class="active" href="blog.html">Monoblog</a></li><li><a href="about.html">About</a></li><li><a class="nav-cta" href="contact.html">Let's Talk</a></li></ul>
+<button aria-label="Menu" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
 </nav>
 <main id="main">
-
 <div class="post-header">
-  <div class="post-header-inner">
-    <p class="label label-accent" style="margin-bottom:1rem"><a href="blog.html" style="color:inherit;text-decoration:none">← Monoblog</a></p>
-    <div class="post-meta"><span class="label label-dim">6 September 2026</span></div><div class="v-key" aria-label="Reading key"><span><span class="v-loud">LOUD</span> said out loud</span><span><span class="v-heckle">(the heckler)</span> the voice in my head</span><span><span class="v-lang">Bhai</span> where English runs out</span></div>
-  </div>
+<div class="post-header-inner">
+<p class="label label-accent" style="margin-bottom:1rem"><a href="blog.html" style="color:inherit;text-decoration:none">← Monoblog</a></p>
+<div class="post-meta"><span class="label label-dim">6 September 2026</span></div><div aria-label="Reading key" class="v-key"><span><span class="v-loud">LOUD</span> said out loud</span><span><span class="v-heckle">(the heckler)</span> the voice in my head</span><span><span class="v-lang">Bhai</span> where English runs out</span></div>
 </div>
-
+</div>
 <!-- Swap the shapes for a real screenshot or photo whenever you have one -->
 <div class="post-cover">
-  <div class="pc-ring"></div>
-  <div class="pc-block"></div>
-  <div class="pc-block-2"></div>
-  <div class="post-cover-inner">
-    <h1 class="display post-cover-title">A Follow Along for How to Build a Site Like This One and How Much Will It Cost?</h1>
-  </div>
+<div class="pc-ring"></div>
+<div class="pc-block"></div>
+<div class="pc-block-2"></div>
+<div class="post-cover-inner">
+<h1 class="display post-cover-title">A Follow Along for How to Build a Site Like This One and How Much Will It Cost?</h1>
 </div>
-
+</div>
 <article class="wrap-sm">
-  <div class="post-body body-text">
+<div class="post-body body-text">
 <p>First of all, do you even need a website?</p>
 <p>Why?</p>
 <p>What will the website do?</p>
@@ -230,7 +227,7 @@ nav .nav-links .nav-cta,nav .nav-links.open .nav-cta{color:#FFFFFF!important}
 <p>It is also very important to define guardrails/boundaries of <span class="v-loud">WHO YOU'RE NOT</span>.</p>
 <p>After you've made your own brand guidelines- read it a few times and confirm that <span class="v-loud">IT IS YOU</span>. You're halfway there – actually, almost there.</p>
 <p>You can see mine if it helps- attached here.</p>
-<a class="post-download" href="gaurav-brand-guidelines.pdf" target="_blank">↓ My Brand Guidelines (PDF)</a>
+<a class="post-download" href="https://canva.link/2a217cdstfm0bli" rel="noopener noreferrer" target="_blank">View my Brand Guidelines ↗</a>
 <p class="post-pullquote">"Total spend for the whole thing: ₹667. Everything past that, including the email, was free."</p>
 <p>You now have the following:</p>
 <ol>
@@ -288,30 +285,28 @@ nav .nav-links .nav-cta,nav .nav-links.open .nav-cta{color:#FFFFFF!important}
 <p>If the answers were '<span class="v-loud">NO</span>'- then it's worth everything.</p>
 <p>Just have fun. Keep learning and keep exploring.</p>
 <p>Got any questions? Ask away in the comments section.</p>
-  </div>
-
-  <!-- COMMENTS -->
-  <div class="comments-wrap">
-    <p class="sec-title" style="margin-bottom:1.5rem">Comments</p>
-    <p class="label label-dim" style="margin-bottom:.5rem">Earlier comments</p>
-    <div class="comment">
+</div>
+<!-- COMMENTS -->
+<div class="comments-wrap">
+<p class="sec-title" style="margin-bottom:1.5rem">Comments</p>
+<p class="label label-dim" style="margin-bottom:.5rem">Earlier comments</p>
+<div class="comment">
 <span class="comment-name">Aryan</span><span class="comment-date">10 September 2026</span>
 <p class="comment-body">Your brand guidelines document looks good to begin with. Can I use yours if you don't mind?</p>
 </div><div class="comment comment-reply">
 <span class="comment-name">Gaurav replied</span><span class="comment-date">10 September 2026</span>
 <p class="comment-body">Use it as inspiration first- see what actually resonates with you. But if it genuinely fits who you are, go ahead and use it as is. I put it out there for exactly this.</p>
 </div>
-    <!-- Comments run on Giscus (GitHub Discussions). Moderate them in the repo's Discussions tab. Setup lives in comments.js. -->
-    <p class="comment-note">Site note, 4 October 2026: comments now run on GitHub Discussions through Giscus, which replaced the Formspree setup described in this post.</p>
-    <div class="giscus" style="margin-top:1.5rem"></div>
-    <p class="comment-note">Comments use GitHub. Sign in with a free GitHub account to join in.</p>
-    <script src="comments.js" defer></script>
-  </div>
+<!-- Comments run on Giscus (GitHub Discussions). Moderate them in the repo's Discussions tab. Setup lives in comments.js. -->
+<p class="comment-note">Site note, 4 October 2026: comments now run on GitHub Discussions through Giscus, which replaced the Formspree setup described in this post.</p>
+<div class="giscus" style="margin-top:1.5rem"></div>
+<p class="comment-note">Comments use GitHub. Sign in with a free GitHub account to join in.</p>
+<script defer="" src="comments.js"></script>
+</div>
 </article>
-
-<section class="mw-related" aria-label="Keep reading"><h2>Keep reading</h2><div class="mw-related-grid"><a href="case-studies.html"><span class="k">Case studies</span><span class="t">See what this site was built to hold</span></a><a href="blog-post-03-i-automated-my-own-sales-pipeline.html"><span class="k">Monoblog</span><span class="t">I Automated My Own Sales Pipeline</span></a><a href="about.html"><span class="k">About</span><span class="t">Who&#x27;s behind the build</span></a></div></section>
+<section aria-label="Keep reading" class="mw-related"><h2>Keep reading</h2><div class="mw-related-grid"><a href="case-studies.html"><span class="k">Case studies</span><span class="t">See what this site was built to hold</span></a><a href="blog-post-03-i-automated-my-own-sales-pipeline.html"><span class="k">Monoblog</span><span class="t">I Automated My Own Sales Pipeline</span></a><a href="about.html"><span class="k">About</span><span class="t">Who's behind the build</span></a></div></section>
 </main>
-<footer class="site-footer mw-footer"><div class="mw-foot-id"><span class="footer-mark">Gaurav M.</span><span class="mw-foot-line">Brand &amp; Product Strategy, Bengaluru</span></div><nav class="mw-foot-nav" aria-label="Footer"><a href="work.html">Work</a><a href="case-studies.html">Case Studies</a><a href="blog.html">Monoblog</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="mailto:gaurav@mishrawrites.com">gaurav@mishrawrites.com</a><a href="https://www.linkedin.com/in/mishrawrites/" target="_blank" rel="noreferrer">LinkedIn</a></nav></footer>
+<footer class="site-footer mw-footer"><div class="mw-foot-id"><span class="footer-mark">Gaurav M.</span><span class="mw-foot-line">Brand &amp; Product Strategy, Bengaluru</span></div><nav aria-label="Footer" class="mw-foot-nav"><a href="work.html">Work</a><a href="case-studies.html">Case Studies</a><a href="blog.html">Monoblog</a><a href="about.html">About</a><a href="brand-kit.html">Brand Kit</a><a href="contact.html">Contact</a><a href="mailto:gaurav@mishrawrites.com">gaurav@mishrawrites.com</a><a href="https://www.linkedin.com/in/mishrawrites/" rel="noreferrer" target="_blank">LinkedIn</a></nav></footer>
 <script>const cta=document.getElementById("stickyCta");window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});</script>
 <script>
 const navToggle=document.getElementById("navToggle"),navLinks=document.getElementById("navLinks");
@@ -323,4 +318,4 @@ function set(o){var nv=t.closest('nav');if(nv)nv.classList.toggle('menu-open',o)
 set(false);t.addEventListener('click',function(){set(!l.classList.contains('open'))});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){set(false);t.focus();}});
 l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});})();</script>
-</body></html>
+<script async="" data-goatcounter="https://mishrawrites.goatcounter.com/count" src="//gc.zgo.at/count.js"></script></body></html>
