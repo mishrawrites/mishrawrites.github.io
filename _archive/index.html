@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Gaurav M., Brand &amp; Product Strategy. Twelve years of turning what people really think of a brand into insight, creative, content and growth at FITTR, H&amp;R Block, Ketto and TransPerfect Paybooks." name="description"/>
+<title>Gaurav M. · Brand &amp; Product Strategy</title>
+<link href="https://mishrawrites.com/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Gaurav M." property="og:site_name"/>
+<meta content="Gaurav M. · Brand &amp; Product Strategy" property="og:title"/>
+<meta content="Gaurav M., Brand &amp; Product Strategy. Twelve years of turning what people really think of a brand into insight, creative, content and growth at FITTR, H&amp;R Block, Ketto and TransPerfect Paybooks." property="og:description"/>
+<meta content="https://mishrawrites.com/" property="og:url"/>
+<meta content="https://mishrawrites.com/gaurav-profile.jpg" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Gaurav M. · Brand &amp; Product Strategy" name="twitter:title"/>
+<meta content="Gaurav M., Brand &amp; Product Strategy. Twelve years of turning what people really think of a brand into insight, creative, content and growth at FITTR, H&amp;R Block, Ketto and TransPerfect Paybooks." name="twitter:description"/>
+<meta content="https://mishrawrites.com/gaurav-profile.jpg" name="twitter:image"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Gaurav M.",
+  "url": "https://mishrawrites.com/",
+  "image": "https://mishrawrites.com/gaurav-profile.jpg",
+  "jobTitle": "Brand & Product Strategy",
+  "address": {"@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN"},
+  "sameAs": ["https://www.linkedin.com/in/mishrawrites/"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Gaurav M.",
+  "url": "https://mishrawrites.com/"
+}
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&amp;family=Montserrat:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  /* BRAND PALETTE — per Brand Guidelines V3, 21 Sep 2026. Secondary 30% / Quaternary 15%, a deliberate 2:1 split, never equal weight in one viewport. */
+  --primary:#1A1A1D; /* wordmark, nav, footer */
+  --secondary:#4A0E0E; /* dominant surface — hero, storytelling */
+  --tertiary:#C9A44C; /* proof / credibility — stats, quotes, highlights */
+  --quaternary:#AE611C; /* motion / action — links, hover, CTAs */
+  --white:#FFFFFF; /* neutral canvas */
+  --primary-dim:#1A1A1D;
+  --primary-subtle:#1A1A1D;
+  --white-dim:#FFFFFF;
+  --white-subtle:#C9A44C;
+  --border:#C9A44C;
+  --border-dark:#C9A44C;
+  --card:#FFFFFF;
+  
+  /* TYPE SCALE — per brand guidelines */
+  --t-h1:clamp(2.6rem,5.2vw,3.5rem); /* 48–56px, Poppins Bold */
+  --t-h2:clamp(1.9rem,3.2vw,2.25rem); /* 32–36px, Montserrat SemiBold */
+  --t-h3:clamp(1.3rem,2vw,1.5rem); /* 22–24px, Poppins Regular/Light */
+  --t-body:1rem; /* 16px, Montserrat Regular */
+  --t-caption:0.78rem; /* 12–13px, Montserrat Regular */
+}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--primary);font-family:"Montserrat",sans-serif;font-weight:400;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.25rem 3rem;background:#FFFFFF;backdrop-filter:none;border-bottom:1px solid var(--border)}
+.nav-logo{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.15rem;color:var(--primary);letter-spacing:0.01em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;color:var(--primary);text-decoration:none;letter-spacing:0.1em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:var(--quaternary)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:0.4rem;flex-direction:column;gap:5px;z-index:210;position:relative}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--primary);transition:transform 0.25s,opacity 0.25s}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-cta{background:var(--quaternary)!important;color:var(--primary)!important;padding:0.55rem 1.2rem!important;border-radius:2px}
+.nav-cta:hover{background:var(--primary)!important;color:var(--white)!important}
+
+/* STICKY CTA */
+.sticky-cta{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(90deg) translateX(50%);transform-origin:right center;z-index:199;background:var(--quaternary);color:var(--primary);font-family:"Montserrat",sans-serif;font-weight:600;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.6rem 1.4rem;text-decoration:none;opacity:0;transition:opacity 0.4s,background 0.2s,color 0.2s;pointer-events:none}
+.sticky-cta.visible{opacity:1;pointer-events:auto}
+.sticky-cta:hover{background:var(--primary);color:var(--white)}
+
+/* TYPE */
+.display{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.05;color:var(--white)}
+.sec-title{font-family:"Montserrat",sans-serif;font-weight:600;font-size:var(--t-h2);line-height:1.2;color:var(--primary)}
+.sec-title .accent{color:var(--quaternary);font-weight:600}
+.sec-title.on-dark{color:var(--white)}
+.sec-title.on-dark .accent{color:var(--tertiary)}
+.card-title{font-family:"Poppins",sans-serif;font-weight:300;font-size:var(--t-h3);line-height:1.3;color:var(--primary)}
+.body-text{font-size:var(--t-body);font-weight:400;color:var(--primary-dim);line-height:1.75}
+.body-text.on-dark{color:var(--white-dim)}
+.label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;letter-spacing:0.14em;text-transform:uppercase}
+.label-accent{color:var(--quaternary)}
+.label-gold{color:var(--tertiary)}
+.label-dim{color:var(--primary-subtle)}
+.label-dim.on-dark{color:var(--white-subtle)}
+.fig-label{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--primary-subtle);margin-bottom:1.5rem}
+.fig-label span{color:var(--quaternary)}
+.fig-label.on-dark{color:var(--white-subtle)}
+.fig-label.on-dark span{color:var(--tertiary)}
+
+/* LAYOUT */
+.wrap{max-width:1200px;margin:0 auto;padding:6.5rem 3rem}
+.wrap-sm{max-width:900px;margin:0 auto;padding:6.5rem 3rem}
+
+/* BTN — Primary: quaternary fill, dark text for AA contrast; hover shifts to primary fill, white text */
+.btn{display:inline-block;font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;padding:0.9rem 2rem;transition:background 0.2s,color 0.2s,border-color 0.2s,filter 0.2s;border:1px solid transparent;cursor:pointer;border-radius:2px}
+.btn-primary{background:var(--quaternary);color:var(--primary)}
+.btn-primary:hover{filter:brightness(0.9);color:var(--primary)}
+.btn-ghost{border:1px solid var(--primary);color:var(--primary);background:transparent}
+.btn-ghost:hover{background:var(--primary);color:var(--white)}
+.btn-ghost-invert{border:1px solid var(--white-subtle);color:var(--white)}
+.btn-ghost-invert:hover{background:var(--white);color:var(--primary);border-color:var(--white)}
+
+/* FOOTER */
+.site-footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;background:var(--white)}
+.footer-mark{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.05rem;color:var(--primary)}
+
+/* MANIFESTO BLOCK */
+.manifesto-wrap{background:var(--secondary);padding:6.5rem 3rem}
+.manifesto-text{font-family:"Poppins",sans-serif;font-weight:300;font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.6;color:var(--white)}
+.manifesto-text strong{font-weight:700;color:var(--tertiary)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:1rem 1.5rem;backdrop-filter:none;background:var(--white)}
+  .nav-toggle{display:flex}
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--secondary);flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:1.75rem;z-index:205;padding:6.5rem 2rem 2rem}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:1.35rem;text-transform:none;letter-spacing:0;color:var(--white);font-family:"Poppins",sans-serif;font-weight:400}
+  .nav-links a.active{color:var(--tertiary)}
+  .nav-links .nav-cta{margin-top:0.5rem;color:var(--primary)!important;font-size:0.85rem!important}
+  .nav-logo{z-index:206}
+  .nav-toggle.active{z-index:210}
+  .nav-toggle.active span{background:var(--white)}
+  .wrap,.wrap-sm{padding:3.5rem 1.5rem}
+  .manifesto-wrap{padding:3.5rem 1.5rem}
+  .site-footer{padding:1.5rem;flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* HERO — Secondary (maroon) as the single dominant surface, Quaternary as the one accent */
+#hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;background:var(--secondary);position:relative;overflow:hidden}
+.hero-texture{position:absolute;inset:0;pointer-events:none;background:var(--secondary)}
+.hero-left{padding:6.5rem 3rem 3rem;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border-dark);position:relative;z-index:2}
+.hero-right{padding:6.5rem 2.5rem 3rem;display:flex;flex-direction:column;justify-content:center;gap:0;position:relative;z-index:2}
+.hero-name{font-family:"Poppins",sans-serif;font-weight:700;font-size:var(--t-h1);line-height:1.05;color:var(--white);margin-bottom:0.6rem;white-space:nowrap}
+.hero-role{font-family:"Montserrat",sans-serif;font-size:var(--t-caption);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--white-dim);margin-bottom:1.75rem}
+.hero-lead{font-size:var(--t-body);font-weight:300;color:var(--white-dim);max-width:440px;margin-bottom:2rem;line-height:1.75}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.hero-photo{width:100%;max-width:300px;height:300px;object-fit:cover;object-position:top center;filter:sepia(18%) saturate(1.05) contrast(1.02);border:1px solid var(--border-dark);display:block;margin:0 auto}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border-dark);margin-top:1px;max-width:460px;margin-left:auto;margin-right:auto}
+.stat{background:var(--secondary);padding:1rem 0.75rem}
+.stat-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.4rem;color:var(--tertiary);line-height:1;margin-bottom:0.2rem}
+.stat-label{font-family:"Montserrat",sans-serif;font-size:0.75rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--white-dim);line-height:1.4}
+
+/* TRUST STRIP */
+#trust{background:var(--white);border-bottom:1px solid var(--border);padding:2.5rem 3rem}
+.trust-label{font-family:"Montserrat",sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--primary-subtle);text-align:center;margin-bottom:1.75rem}
+.trust-logos{display:flex;align-items:center;justify-content:center;gap:3.5rem;flex-wrap:wrap;max-width:1100px;margin:0 auto}
+.trust-logos img{height:22px;width:auto;max-width:130px;object-fit:contain;opacity:1;transition:opacity 0.2s}
+.trust-logos img:hover{opacity:1}
+
+/* IDENTITY ANCHOR */
+.identity-anchor{background:var(--white);padding:2.5rem 3rem 0;text-align:center}
+.identity-anchor p{max-width:640px;margin:0 auto;font-family:"Poppins",sans-serif;font-weight:300;font-style:italic;font-size:1.05rem;color:var(--primary-dim);line-height:1.6}
+
+/* WHAT I SOLVE — white canvas, one accent (quaternary) for the process numbering */
+#solve{background:var(--white)}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
+.method-card{background:var(--white);padding:2.5rem}
+.method-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:2.75rem;color:transparent;-webkit-text-stroke:1.5px var(--quaternary);line-height:1;margin-bottom:1.5rem}
+
+/* AI OPERATING MODEL */
+#ai-model{background:var(--white)}
+.ai-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
+.ai-card{background:var(--white);padding:2.5rem}
+.ai-metric{font-family:"Montserrat",sans-serif;font-size:0.78rem;font-weight:600;color:var(--quaternary);margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border)}
+.stack-row{display:flex;gap:0.6rem 1rem;flex-wrap:wrap;margin-top:0.75rem}
+.stack-tag{font-family:"Montserrat",sans-serif;font-size:0.7rem;font-weight:500;letter-spacing:0.02em;padding:0.35rem 0.75rem;border:1px solid var(--border);color:var(--primary-dim)}
+
+/* IMPACT — Secondary surface for the headline number, Tertiary for proof metrics */
+#impact-preview{background:var(--white)}
+.impact-feature{background:var(--secondary);padding:3rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:3rem}
+.impact-feature-num{font-family:"Poppins",sans-serif;font-weight:700;font-size:clamp(3.2rem,6.5vw,5.5rem);color:var(--tertiary);line-height:1}
+.impact-feature-detail{max-width:380px}
+.impact-triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.impact-tile{background:var(--card);padding:2.5rem}
+.impact-from-to{display:flex;align-items:baseline;gap:0.6rem;margin:1rem 0 0.4rem}
+.impact-from{font-family:"Montserrat",sans-serif;font-size:0.75rem;color:var(--primary-subtle)}
+.impact-arrow{font-family:"Montserrat",sans-serif;font-size:0.8rem;color:var(--quaternary)}
+.impact-to{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.5rem;color:var(--primary);line-height:1}
+.impact-delta{font-family:"Montserrat",sans-serif;font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--tertiary)}
+
+/* VOICE / TESTIMONIALS — Tertiary is the literal "quotes" use case */
+#voice-preview{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.voice-card{background:var(--card);border:1px solid var(--border);padding:2.5rem;position:relative}
+.voice-card::before{content:"“";font-family:"Poppins",sans-serif;font-weight:700;font-size:3.5rem;line-height:1;color:var(--tertiary);position:absolute;top:1.25rem;left:2rem;opacity:1}
+.voice-quote{font-family:"Poppins",sans-serif;font-weight:300;font-style:italic;font-size:var(--t-body);line-height:1.75;color:var(--primary);padding-top:1.5rem}
+.voice-quote strong{font-style:normal;font-weight:600;color:var(--quaternary)}
+.voice-attr{font-family:"Montserrat",sans-serif;font-size:0.62rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--primary-subtle);margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border)}
+.voice-preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:3rem;border:1px solid var(--border)}
+.voice-attr a{color:var(--primary-subtle);text-decoration:none;border-bottom:1px solid var(--border);transition:color 0.2s}
+.voice-attr a:hover{color:var(--quaternary)}
+.voice-cta-row{display:flex;justify-content:center;margin-top:3rem}
+
+/* RESPONSIVE INDEX */
+@media(max-width:960px){
+  #hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:6rem 1.5rem 2rem;border-right:none;border-bottom:1px solid var(--border-dark)}
+  .hero-right{padding:2rem 1.5rem 2.5rem}
+  .hero-name{white-space:normal}
+  .hero-photo{height:240px;max-width:240px}
+  .hero-stats{grid-template-columns:repeat(2,1fr);max-width:320px}
+  .trust-logos{gap:2rem}
+  .trust-logos img{height:18px}
+  .method-grid,.impact-triptych,.ai-grid{grid-template-columns:1fr}
+  .impact-feature{flex-direction:column;align-items:flex-start;gap:1.5rem;padding:2.5rem 1.5rem}
+  .voice-preview-grid{grid-template-columns:1fr}
+}
+
+a.stat{display:block;text-decoration:none;outline:2px solid transparent;outline-offset:-2px;transition:outline-color .2s}a.stat:hover,a.stat:focus-visible{outline-color:var(--tertiary)}a.stat .stat-label::after{content:' \2192';color:var(--tertiary)}
+</style>
+<style id="mw-common">
+/* Brand Guidelines V3.1, strict palette: #1A1A1D #4A0E0E #C9A44C #AE611C #FFFFFF */
+:root{--primary:#1A1A1D;--secondary:#4A0E0E;--tertiary:#C9A44C;--quaternary:#AE611C;--white:#FFFFFF;
+--primary-dim:#1A1A1D;--primary-subtle:#1A1A1D;--white-dim:#FFFFFF;--white-subtle:#C9A44C;--border:#C9A44C;--border-dark:#C9A44C;--card:#FFFFFF}
+body{font-family:"Montserrat",sans-serif;font-weight:400;line-height:1.6}
+:focus-visible{outline:2px solid #AE611C;outline-offset:3px}
+nav{background:#FFFFFF!important}
+.nav-cta{background:#AE611C!important;color:#FFFFFF!important;display:inline-block;padding:.6rem 1.2rem!important;border-radius:3px;text-decoration:none!important;line-height:1.2}
+.nav-cta:hover{background:#1A1A1D!important;color:#FFFFFF!important}
+/* Body is never bold: emphasis becomes a gold underline */
+.post-body strong,.blog-body strong,.body-text strong,.rec-quote strong,.voice-quote strong,.cs-body strong{font-weight:400;text-decoration:underline;text-decoration-color:#C9A44C;text-decoration-thickness:2px;text-underline-offset:3px}
+/* In-text links: dark ink with an orange underline (orange text fails AA at body size) */
+.mw-link,.post-body a:not(.btn),.cs-body a:not(.btn):not(.cs-card){color:#1A1A1D;text-decoration:underline;text-decoration-color:#AE611C;text-decoration-thickness:2px;text-underline-offset:3px}
+.mw-link:hover,.post-body a:not(.btn):hover,.cs-body a:not(.btn):not(.cs-card):hover{background:#AE611C;color:#1A1A1D}
+/* Voice marks (Blog guide slides 15-17) */
+.v-loud{background:#AE611C;color:#FFFFFF;padding:.05em .18em;border-radius:2px;letter-spacing:.02em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.v-heckle{font-style:italic;color:#4A0E0E}
+.v-lang{color:#4A0E0E;text-decoration:underline dotted #C9A44C 2px;text-underline-offset:4px}
+.v-key{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.8rem;color:#1A1A1D;margin-top:1rem}
+/* Footer */
+.mw-footer{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.25rem;padding:2.25rem 3rem;border-top:1px solid #C9A44C;background:#FFFFFF}
+.mw-foot-id{display:flex;flex-direction:column;gap:.25rem}
+.mw-foot-line{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D}
+.mw-foot-nav{display:flex;flex-wrap:wrap;gap:.6rem 1.4rem;position:static!important;padding:0!important;border:0!important;background:none!important;backdrop-filter:none!important}
+.mw-foot-nav a{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.78rem;color:#1A1A1D;text-decoration:underline;text-decoration-color:#AE611C;text-underline-offset:3px}
+/* Related block (interlinking) */
+.mw-related{max-width:1200px;margin:0 auto;padding:3.5rem 3rem 4.5rem;border-top:1px solid #C9A44C}
+.mw-related h2{font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.5rem;color:#1A1A1D;margin-bottom:1.5rem}
+.mw-related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.mw-related a{display:block;border:1px solid #1A1A1D;padding:1.25rem 1.4rem;text-decoration:none;color:#1A1A1D;background:#FFFFFF}
+.mw-related a:hover{background:#1A1A1D;color:#FFFFFF}
+.mw-related .k{display:block;font-family:"Montserrat",sans-serif;font-weight:500;font-size:.74rem;letter-spacing:.06em;margin-bottom:.4rem}
+.mw-related .t{display:block;font-family:"Poppins",sans-serif;font-weight:400;font-size:1.05rem;line-height:1.35}
+@media(max-width:768px){.mw-footer{padding:1.75rem 1.5rem}.mw-related{padding:3rem 1.5rem}}
+.btn-primary,.sticky-cta,.lead .go,.vid .play{color:#FFFFFF!important}
+.btn-primary:hover,.lead:hover .go{background:#9C5719!important}
+.cred-num{color:#4A0E0E!important}
+.impact-delta{color:#4A0E0E!important;font-size:.75rem!important}
+.filter-btn.active,.filter-btn[aria-pressed="true"]{color:#FFFFFF!important}
+.skip-link{position:absolute;left:-9999px;top:0;z-index:400;background:#1A1A1D;color:#FFFFFF;padding:.75rem 1.25rem;font-family:"Montserrat",sans-serif;font-weight:600;font-size:.9rem}
+.skip-link:focus{left:1rem;top:1rem}
+.nav-toggle span{transition:transform .2s ease,opacity .2s ease}
+nav.menu-open .nav-logo{color:#FFFFFF!important;position:relative;z-index:211}
+nav.menu-open .nav-toggle{position:relative;z-index:211}
+nav.menu-open .nav-toggle span{background:#FFFFFF!important}
+nav .nav-links .nav-cta,nav .nav-links.open .nav-cta{color:#FFFFFF!important}
+@media(max-width:960px){nav .nav-links.open a.active:not(.nav-cta){color:#C9A44C!important;text-decoration:none!important}}
+.nav-toggle[aria-expanded="true"]{gap:5px}
+.nav-toggle[aria-expanded="true"] span{height:2px}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.agency-cell,.rec-card,.tl-content,.tl-item,.contact-left,.contact-right,.lead .txt,.cs-body figure{min-width:0}
+.rec-card a,.contact-left a,.contact-right a,.tl-content{overflow-wrap:anywhere}
+.rec-clamp .rec-quote{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden}
+.rec-more{align-self:flex-start;background:none;border:0;padding:0;font-family:"Montserrat",sans-serif;font-weight:600;font-size:.82rem;color:#1A1A1D;text-decoration:underline;text-decoration-color:#AE611C;text-decoration-thickness:2px;text-underline-offset:3px;cursor:pointer}
+@media(max-width:960px){.rec-grid{grid-template-columns:minmax(0,1fr)!important}}
+@media(max-width:768px){.sticky-cta{display:none!important}.agency-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.agency-cell{padding:1.1rem .75rem!important}
+.cred-layout{grid-template-columns:minmax(0,1fr)!important}.cred-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.cred-item{padding:1.25rem!important;min-width:0}.cred-num{font-size:1.8rem!important}.rec-card{padding:2.25rem 1.5rem!important}.rec-card::before{left:1.5rem!important}.lead{grid-template-columns:minmax(0,1fr)!important}.lead .txt{padding:2rem 1.5rem!important}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+<style>.mw-mandate{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.95rem;color:#C9A44C;margin:-.5rem 0 2rem;max-width:460px}</style><link href="/favicon.ico" rel="icon" sizes="any"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/apple-touch-icon.png" rel="apple-touch-icon"/></head><body><a class="skip-link" href="#main">Skip to content</a>
+<a class="sticky-cta" href="contact.html" id="stickyCta">Let's Talk</a>
+<nav>
+<a class="nav-logo" href="index.html">Gaurav M.</a>
+<ul class="nav-links" id="navLinks"><li><a aria-current="page" class="active" href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="blog.html">Monoblog</a></li><li><a href="about.html">About</a></li><li><a class="nav-cta" href="contact.html">Let's Talk</a></li></ul>
+<button aria-label="Menu" class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</nav>
+<main id="main">
+<!-- HERO -->
+<section id="hero">
+<div aria-hidden="true" class="hero-texture"></div>
+<div class="hero-left">
+<p class="label label-gold" style="margin-bottom:1.25rem">Brand &amp; Product Strategy</p>
+<h1 class="hero-name">Gaurav M.</h1>
+<p class="hero-role">12+ years · 5 companies · Bengaluru</p>
+<p class="hero-lead">I find the gap between how a brand sees itself and how people see it, then close it with creative that scales.</p>
+<p class="mw-mandate">For consumer brands that need sharper positioning and community-led growth.</p>
+<div class="hero-btns">
+<a class="btn btn-primary" href="case-studies.html">See the Work</a>
+<a class="btn btn-ghost-invert" href="about.html">About &amp; Timeline</a>
+</div>
+</div>
+<div class="hero-right">
+<img alt="Gaurav M." class="hero-photo" decoding="async" fetchpriority="high" height="1080" src="gaurav-profile.webp" width="1080"/>
+<div class="hero-stats">
+<a class="stat" href="case-study-hrblock-content.html"><div class="stat-num">200M+</div><div class="stat-label">People reached, H&amp;R Block India</div></a>
+<a class="stat" href="case-study-fittr-growth.html"><div class="stat-num">800K+</div><div class="stat-label">Community built, FITTR</div></a>
+<a class="stat" href="case-study-fittr-brand.html#the-brand-film-fitness-made-forever"><div class="stat-num">100M+</div><div class="stat-label">Brand film reach, FITTR</div></a>
+<a class="stat" href="case-study-fittr-growth.html#the-team-i-built"><div class="stat-num">16</div><div class="stat-label">People I hired at FITTR</div></a>
+</div>
+</div>
+</section>
+<div class="identity-anchor">
+<p>Every case study below starts with research: what people really think of the brand, and what that means for the creative.</p>
+</div>
+<!-- TRUST STRIP -->
+<section id="trust">
+<p class="trust-label">Where the work was done</p>
+<div class="trust-logos">
+<img alt="FITTR" src="fittr-dark.png"/>
+<img alt="H&amp;R Block" src="hrblock-dark.png"/>
+<img alt="Ketto" src="ketto-dark.png"/>
+<img alt="TransPerfect Paybooks" src="tppaybooks-dark.png"/>
+<img alt="SalesNXT" src="salesnxt-dark.png"/>
+</div>
+</section>
+<!-- WHAT I SOLVE -->
+<section id="solve">
+<div class="wrap">
+<p class="fig-label"><span>What I Solve</span></p>
+<h2 class="sec-title">Three problems I'm <span class="accent">brought in to fix.</span></h2>
+<div class="method-grid">
+<div class="method-card">
+<div class="method-num">01</div>
+<p class="card-title" style="margin-bottom:0.75rem">A brand people see differently from its founders</p>
+<p class="body-text">The product is strong, and the story has drifted from it. Founders describe one brand and buyers describe another. I start with research that names that gap, then build the insight the brand can own. At FITTR, that turned a six-pack brand into preventive health and wellbeing for everyone.</p>
+</div>
+<div class="method-card">
+<div class="method-num">02</div>
+<p class="card-title" style="margin-bottom:0.75rem">Creative that needs a sharper brief</p>
+<p class="body-text">Films, ads and posts ship, and the audience scrolls on. I map every design and copy choice to what the audience actually needs, so the insight carries through performance ads, brand films, TV, OTT, cinema, billboards and the street.</p>
+</div>
+<div class="method-card">
+<div class="method-num">03</div>
+<p class="card-title" style="margin-bottom:0.75rem">Growth that leans on paid media</p>
+<p class="body-text">Paid reach gets expensive fast. I build the social, content and community engines that keep acquiring at a fraction of the cost. At FITTR, community acquired users at $6 each, against $47 on paid performance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURED CASES -->
+<section id="impact-preview">
+<div class="wrap" style="padding-bottom:0">
+<p class="fig-label"><span>Featured Cases</span></p>
+<h2 class="sec-title">Brand work, <span class="accent">backed by the numbers.</span></h2>
+</div>
+<div style="padding:3rem 3rem 0;max-width:1200px;margin:0 auto">
+<div class="impact-triptych">
+<div class="impact-tile">
+<p class="label label-accent">FITTR</p>
+<div class="impact-feature-num" style="font-size:clamp(1.8rem,3vw,2.4rem);margin:0.75rem 0;color:var(--secondary)">100M+ reach</div>
+<p class="body-text">Repositioned FITTR from a six-pack brand to preventive health and wellbeing for everyone, carried by the brand film Fitness Made Forever.</p>
+<p style="margin-top:1.25rem"><a class="label label-accent" href="case-study-fittr-brand.html" style="text-decoration:none">See the case study →</a></p>
+</div>
+<div class="impact-tile">
+<p class="label label-accent">FITTR</p>
+<div class="impact-feature-num" style="font-size:clamp(1.8rem,3vw,2.4rem);margin:0.75rem 0;color:var(--secondary)">200K → 800K+</div>
+<p class="body-text">Grew the community across 70+ countries with 16 hires, and acquired users through it at $6 each against $47 on paid performance.</p>
+<p style="margin-top:1.25rem"><a class="label label-accent" href="case-study-fittr-growth.html" style="text-decoration:none">See the case study →</a></p>
+</div>
+<div class="impact-tile">
+<p class="label label-accent">H&amp;R Block</p>
+<div class="impact-feature-num" style="font-size:clamp(1.8rem,3vw,2.4rem);margin:0.75rem 0;color:var(--secondary)">200M+ reached</div>
+<p class="body-text">Built the Content Lab and Knowledge Center from an empty room, and ran India campaigns that reached 200M+ people over nearly five years.</p>
+<p style="margin-top:1.25rem"><a class="label label-accent" href="case-study-hrblock-content.html" style="text-decoration:none">See the case study →</a></p>
+</div>
+</div>
+<div style="display:flex;justify-content:center;padding:3rem 0">
+<a class="btn btn-ghost" href="case-studies.html">See all case studies →</a>
+</div>
+</div>
+</section>
+<!-- AI OPERATING MODEL -->
+<section id="ai-model">
+<div class="wrap">
+<p class="fig-label"><span>AI Operating Model</span></p>
+<h2 class="sec-title">Marketing built and shipped <span class="accent">with AI, on purpose.</span></h2>
+<div class="ai-grid">
+<div class="ai-card">
+<p class="card-title" style="margin-bottom:0.75rem">Landing Page Calculator</p>
+<p class="body-text">Built an interactive cost calculator for a landing page that had stalled, rewriting the flow around the number visitors actually wanted.</p>
+<p class="ai-metric">Bounce -20% · Conversion 1% → 2.3% · SQL rate 20% → 35%</p>
+</div>
+<div class="ai-card">
+<p class="card-title" style="margin-bottom:0.75rem">Compliance Audit Tool</p>
+<p class="body-text">Built an internal tool that audits client accounts for compliance gaps before they turn into support tickets, and surfaces cross-sell openings for the account team.</p>
+<p class="ai-metric">100+ clients audited · NPS +0.5 · 40+ cross-sells surfaced</p>
+</div>
+<div class="ai-card">
+<p class="card-title" style="margin-bottom:0.75rem">Writing Scorecard</p>
+<p class="body-text">Built a scoring tool that checks copy against brand voice rules before it ships, cutting review cycles across the team.</p>
+<p class="ai-metric">2× faster delivery · Under 2 weeks concept to launch</p>
+</div>
+<div class="ai-card">
+<p class="card-title" style="margin-bottom:0.75rem">This Website</p>
+<p class="body-text">Designed, coded, and shipped mishrawrites.com end to end, brand system, copy, and case data included, without hiring a designer or developer.</p>
+<p class="ai-metric">$7 total build cost</p>
+<p style="margin-top:0.75rem"><a class="label label-accent" href="blog-post-01-how-i-built-this-site.html" style="text-decoration:none">Read the full story on Monoblog →</a></p>
+</div>
+</div>
+<div style="margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)">
+<p class="label label-dim" style="margin-bottom:0.5rem">Daily stack</p>
+<div class="stack-row"><span class="stack-tag">Claude</span><span class="stack-tag">ChatGPT</span><span class="stack-tag">Gemini</span><span class="stack-tag">Perplexity</span><span class="stack-tag">Canva</span><span class="stack-tag">Brevo</span><span class="stack-tag">Codex</span><span class="stack-tag">Monday</span><span class="stack-tag">Pangram</span></div>
+<p class="label label-dim" style="margin:1.5rem 0 0.5rem">Monthly stack</p>
+<div class="stack-row"><span class="stack-tag">Semrush</span><span class="stack-tag">Surfer SEO</span><span class="stack-tag">Unbounce</span><span class="stack-tag">Jasper</span><span class="stack-tag">Notion</span><span class="stack-tag">Paradigm AI</span><span class="stack-tag">Browse AI</span><span class="stack-tag">Brand24</span></div>
+</div>
+</div>
+</section>
+<!-- VOICE PREVIEW -->
+<section id="voice-preview">
+<div class="wrap">
+<p class="fig-label"><span>Voices from the Work</span></p>
+<h2 class="sec-title">What people who built <span class="accent">things with me say.</span></h2>
+<div class="voice-preview-grid">
+<div class="voice-card">
+<p class="voice-quote">"Gaurav is one of the most versatile and hard working executive I have come across. At H&amp;R Block he was thrown in a manner of speaking to the wolves having to design solutions and execute campaigns without much support, but rather than shying away from it, <strong>he took the onus of getting it done and got the tag - Doer attached to him.</strong> He has grown phenomenally in terms of his knowledge on media buying, events, social media, branding and has served as a tremendous asset to me and the marketing team. I am sure he will grow by leaps and bounds in his career."</p>
+<p class="voice-attr">Rahul Kohli · AI Native Marketing Leader · Ex - IBM, H&amp;R Block, UAE Exchange · 10x Fintech &amp; SAAS Growth across US, APAC, Middle East, Europe · Direct manager at H&amp;R Block · Nov 2017 · <a href="https://www.linkedin.com/in/kohlirahul/" rel="noreferrer" target="_blank">LinkedIn ↗</a></p>
+</div>
+<div class="voice-card">
+<p class="voice-quote">"Gaurav is a skilled marketing professional with a solid understanding of how to grow a brand sustainably using a mix of data, content and media in his approach.<br/><br/>During my time at Fittr, I have seen him as <strong>a proactive, hands-on professional</strong>, managing integrated marketing campaigns with multiple stakeholders and vendors without compromising on quality and timely delivery.<br/><br/>Aside from a very strong operational understanding of the nuances of top funnel marketing, his constant hustle and pursuit of excellence in every project he works on is an asset to any organization.<br/><br/>Would recommend him to anybody wanting a sound brand marketing professional with multiple areas of functional expertise."</p>
+<p class="voice-attr">Lionel Gurjao · Brand &amp; Product Strategy · Direct manager at FITTR · Dec 2023 · <a href="https://www.linkedin.com/in/lionelgurjao/" rel="noreferrer" target="_blank">LinkedIn ↗</a></p>
+</div>
+</div>
+<div class="voice-cta-row">
+<a class="btn btn-ghost" href="about.html#recommendations">Read all recommendations →</a>
+</div>
+</div>
+</section>
+<!-- MANIFESTO / CTA -->
+<div class="manifesto-wrap">
+<div class="wrap-sm" style="padding-top:0;padding-bottom:0">
+<p class="label label-dim on-dark" style="margin-bottom:3rem">What I'm Hired For</p>
+<p class="manifesto-text">I get hired to find out what people really think of a brand, and to build what changes it: the insight, the creative, the content and community that carry it, and the team that keeps it growing.<br/><br/><strong>Twelve years of turning research into brands people choose.</strong></p>
+<div style="display:flex;gap:1rem;margin-top:3rem;flex-wrap:wrap">
+<a class="btn btn-ghost-invert" href="contact.html">Let's Talk</a>
+<a class="btn btn-ghost-invert" href="case-studies.html">See the Work</a>
+</div>
+</div>
+</div>
+</main>
+<footer class="site-footer mw-footer"><div class="mw-foot-id"><span class="footer-mark">Gaurav M.</span><span class="mw-foot-line">Brand &amp; Product Strategy, Bengaluru</span></div><nav aria-label="Footer" class="mw-foot-nav"><a href="work.html">Work</a><a href="case-studies.html">Case Studies</a><a href="blog.html">Monoblog</a><a href="about.html">About</a><a href="brand-kit.html">Brand Kit</a><a href="contact.html">Contact</a><a href="mailto:gaurav@mishrawrites.com">gaurav@mishrawrites.com</a><a href="https://www.linkedin.com/in/mishrawrites/" rel="noreferrer" target="_blank">LinkedIn</a></nav></footer>
+<script>
+// Sticky CTA
+const cta=document.getElementById("stickyCta");
+window.addEventListener("scroll",()=>{cta.classList.toggle("visible",window.scrollY>300)});
+// Mobile nav toggle
+const navToggle=document.getElementById("navToggle"),navLinks=document.getElementById("navLinks");
+if(navToggle){navToggle.addEventListener("click",()=>{navToggle.classList.toggle("active");navLinks.classList.toggle("open")});navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{navToggle.classList.remove("active");navLinks.classList.remove("open")}))}
+</script>
+<script>
+function animateCounters(){
+  document.querySelectorAll(".stat-num[data-target]").forEach(el=>{
+    const target=parseInt(el.dataset.target),suffix=el.dataset.suffix||"",prefix=el.dataset.prefix||"";
+    let s=0;const dur=1200,step=16,inc=target/(dur/step);
+    const t=setInterval(()=>{s=Math.min(s+inc,target);el.textContent=prefix+Math.floor(s)+suffix;if(s>=target)clearInterval(t)},step);
+  });
+}
+const io=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){animateCounters();io.unobserve(x.target)}})},{threshold:0.3});
+const hero=document.getElementById("hero");if(hero)io.observe(hero);
+setTimeout(animateCounters,500);
+</script>
+<script id="mw-menu">(function(){var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');if(!t||!l)return;
+var n=t.cloneNode(true);t.parentNode.replaceChild(n,t);t=n;t.setAttribute('aria-controls','navLinks');
+function set(o){var nv=t.closest('nav');if(nv)nv.classList.toggle('menu-open',o);l.classList.toggle('open',o);t.classList.toggle('active',o);t.setAttribute('aria-expanded',o?'true':'false');t.setAttribute('aria-label',o?'Close menu':'Open menu');}
+set(false);t.addEventListener('click',function(){set(!l.classList.contains('open'))});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){set(false);t.focus();}});
+l.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){set(false)})});})();</script>
+<script async="" data-goatcounter="https://mishrawrites.goatcounter.com/count" src="//gc.zgo.at/count.js"></script></body></html>

@@ -19,7 +19,7 @@
     "data-repo-id": REPO_ID,
     "data-category": "Announcements",
     "data-category-id": CATEGORY_ID,
-    "data-mapping": "pathname",
+    "data-mapping": host.getAttribute("data-term") ? "specific" : "pathname",
     "data-strict": "1",
     "data-reactions-enabled": "1",
     "data-emit-metadata": "0",
@@ -28,6 +28,8 @@
     "data-lang": "en",
     "data-loading": "lazy"
   };
+  // Posts moved to /monoblog/<slug>/ keep their old thread via data-term (the old pathname).
+  if (host.getAttribute("data-term")) attrs["data-term"] = host.getAttribute("data-term");
   for (var k in attrs) s.setAttribute(k, attrs[k]);
   host.appendChild(s);
 })();
