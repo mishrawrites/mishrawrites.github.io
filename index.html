@@ -184,9 +184,8 @@ a{color:inherit}
 .card:hover,.card:focus-visible{transform:translateY(-4px);box-shadow:0 14px 30px -18px rgba(74,14,14,.55);border-color:var(--gold)}
 .card-media{aspect-ratio:16/10;overflow:hidden;background:var(--maroon);position:relative}
 .card-media img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.card-media.styled{display:flex;flex-direction:column;justify-content:space-between;padding:1.2rem 1.3rem}
-.card-media.styled img{width:auto;height:22px;object-fit:contain;object-position:left}
-.card-media.styled .big{font-family:"Poppins",sans-serif;font-weight:700;font-size:clamp(1.9rem,3vw,2.6rem);color:var(--gold);line-height:1}
+.card-media.styled{display:grid;place-items:center;padding:1.5rem 2rem}
+.card-media.styled img{width:auto;height:auto;max-width:62%;max-height:46%;object-fit:contain;object-position:center}
 .card-type{position:absolute;top:.8rem;right:.8rem;background:var(--ink);color:var(--white);font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .55rem;border-radius:2px}
 .card-type.project{background:var(--gold);color:var(--ink)}
 .card-body{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
@@ -448,7 +447,7 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
       </ol>
       <div class="pies">
         <div class="pie-block"><h3>Years by industry</h3><div class="pie-row"><svg id="pieIndustry" viewBox="0 0 200 200" role="img" aria-label="Years by industry"></svg><ul class="legend" id="legIndustry"></ul></div></div>
-        <div class="pie-block"><h3>Work on this page, by function</h3><div class="pie-row"><svg id="pieFunction" viewBox="0 0 200 200" role="img" aria-label="Work by function"></svg><ul class="legend" id="legFunction"></ul></div></div>
+        <div class="pie-block"><h3>Career snapshot, by function</h3><div class="pie-row"><svg id="pieFunction" viewBox="0 0 200 200" role="img" aria-label="Career snapshot by function"></svg><ul class="legend" id="legFunction"></ul></div></div>
       </div>
     </div>
     <div class="agencies">
@@ -619,7 +618,7 @@ var WORK=[
   h:{founder:"Marketing for 8 retail offices on $1.2M to $1.5M a season.",marketing:"Tax Samasya Unlock, #BeTheBoss and the Tax Pledge, plus US work with Fallon.",talent:"Junior Executive to Associate Manager, promoted 3 times in 4.5 years."}},
  {id:"gst",co:"H&R Block India",yr:"2017",type:"Case study",img:"",fn:"Content",title:"GST Made Simple and earlyGST",problem:"A new national tax, and millions of businesses unsure what it meant.",m:"500+",ml:"businesses on earlyGST in year one",
   h:{founder:"Education first, then a product that sold into it.",marketing:"A 40+ episode series that became a reference point.",talent:"Owned the series and the product launch."}},
- {id:"podcastmd",co:"Ketto",yr:"2019",type:"Case study",img:"media/podcastmd-kunal.webp",fn:"Brand",title:"PodcastMD with Kunal Kapoor",problem:"Families facing medical bills often feel ashamed to ask for help.",m:"10M+",ml:"streams, 100+ letters from patients",
+ {id:"podcastmd",co:"Ketto",yr:"2019",type:"Case study",img:"media/podcastmd-kunal.webp",pos:"center 24%",fn:"Brand",title:"PodcastMD with Kunal Kapoor",problem:"Families facing medical bills often feel ashamed to ask for help.",m:"10M+",ml:"streams, 100+ letters from patients",
   h:{founder:"A brand asset built on trust and organic reach.",marketing:"Conceived and produced 12 survivor episodes with the co-founder.",talent:"Conceived and produced it, start to finish."}},
  {id:"estimator",co:"Ketto",yr:"2019",type:"Project",img:"",fn:"Growth",title:"Treatment cost estimator",problem:"Families couldn't see what treatment would cost, so they never started.",m:"$430K+",ml:"raised in three months",
   h:{founder:"30% of users asked to start a fundraising campaign.",marketing:"A tool as the campaign: useful first, persuasive second.",talent:"Launched across 100+ illnesses."}},
@@ -664,8 +663,8 @@ function renderProof(p){$("proof").innerHTML=HERO[p].proof.map(function(x){retur
 function renderProblems(p){$("problems").innerHTML=PROBLEM_ORDER[p].map(function(k,i){var x=PROBLEMS[k];return '<article class="problem"><div class="problem-num">0'+(i+1)+'</div><h3>'+esc(x.t)+'</h3><p>'+esc(x.d)+'</p><p class="proof-line">'+esc(x.p)+'</p></article>'}).join("")}
 function cardMedia(w){
   var badge='<span class="card-type'+(w.type==="Project"?" project":"")+'">'+w.type+'</span>';
-  if(w.img)return '<div class="card-media"><img src="'+w.img+'" alt="'+esc(w.title)+'" loading="lazy"/>'+badge+'</div>';
-  return '<div class="card-media styled"><img src="'+LOGO_W[w.co]+'" alt="'+esc(w.co)+'" loading="lazy"/><span class="big">'+esc(w.m)+'</span>'+badge+'</div>';
+  if(w.img)return '<div class="card-media"><img src="'+w.img+'" alt="'+esc(w.title)+'" loading="lazy"'+(w.pos?' style="object-position:'+w.pos+'"':'')+'/>'+badge+'</div>';
+  return '<div class="card-media styled"><img src="'+LOGO_W[w.co]+'" alt="'+esc(w.co)+'" loading="lazy"/>'+badge+'</div>';
 }
 function renderWork(p){
   var lens=p==="none"?"marketing":p;
@@ -790,22 +789,22 @@ $("personaSelect").addEventListener("change",function(e){applyPersona(e.target.v
 $("winkPeek").addEventListener("click",function(e){var b=e.target.closest("[data-peek]");if(!b)return;applyPersona(b.dataset.peek,{peek:true});$("hero").scrollIntoView({behavior:"smooth"})});
 
 /* ---------- Pies (computed, so they always match the page) ---------- */
-var PIE_COLORS=["#4A0E0E","#AE611C","#C9A44C","#1A1A1D","#E8DCC0"];
+var PIE_COLORS=["#4A0E0E","#AE611C","#C9A44C","#1A1A1D","#E8DCC0","#8A5A44"];
 function pie(svgId,legId,rows){
   var total=rows.reduce(function(s,r){return s+r[1]},0),a=-Math.PI/2,cx=100,cy=100,r=90,out="";
   rows.forEach(function(row,i){
     var sl=row[1]/total*Math.PI*2,a1=a+sl,large=sl>Math.PI?1:0;
     var x0=cx+r*Math.cos(a),y0=cy+r*Math.sin(a),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);
-    out+='<path d="M'+cx+','+cy+' L'+x0.toFixed(2)+','+y0.toFixed(2)+' A'+r+','+r+' 0 '+large+',1 '+x1.toFixed(2)+','+y1.toFixed(2)+' Z" fill="'+PIE_COLORS[i%5]+'" stroke="#fff" stroke-width="2"><title>'+row[0]+': '+Math.round(row[1]/total*100)+'%</title></path>';
+    out+='<path d="M'+cx+','+cy+' L'+x0.toFixed(2)+','+y0.toFixed(2)+' A'+r+','+r+' 0 '+large+',1 '+x1.toFixed(2)+','+y1.toFixed(2)+' Z" fill="'+PIE_COLORS[i%6]+'" stroke="#fff" stroke-width="2"><title>'+row[0]+': '+Math.round(row[1]/total*100)+'%</title></path>';
     a=a1;
   });
   $(svgId).innerHTML=out+'<circle cx="100" cy="100" r="46" fill="#fff"/>';
-  $(legId).innerHTML=rows.map(function(row,i){return '<li><i style="background:'+PIE_COLORS[i%5]+'"></i>'+row[0]+'<b>'+Math.round(row[1]/total*100)+'%</b></li>'}).join("");
+  $(legId).innerHTML=rows.map(function(row,i){return '<li><i style="background:'+PIE_COLORS[i%6]+'"></i>'+row[0]+'<b>'+Math.round(row[1]/total*100)+'%</b></li>'}).join("");
 }
-// Years per industry, from the timeline above (to Oct 2026)
-pie("pieIndustry","legIndustry",[["Tax &amp; fintech",4.6],["B2B HR &amp; payroll SaaS",3.4],["Health &amp; fitness",3.2],["Crowdfunding",0.5],["B2B research",0.7]]);
-var fnCount={};WORK.forEach(function(w){fnCount[w.fn]=(fnCount[w.fn]||0)+1});
-pie("pieFunction","legFunction",Object.keys(fnCount).sort(function(a,b){return fnCount[b]-fnCount[a]}).map(function(k){return [k,fnCount[k]]}));
+// Years of hands-on work per industry, all engagements included (to Oct 2026)
+pie("pieIndustry","legIndustry",[["Tax &amp; fintech",5.1],["Health, fitness &amp; wellness",3.7],["B2B HR &amp; payroll SaaS",3.4],["Travel &amp; tourism",1.6],["Crowdfunding, research &amp; home",1.7]]);
+// Share of career effort by function
+pie("pieFunction","legFunction",[["Brand",25],["Growth",20],["Content",18],["Community",15],["Creative",12],["Consumer insights",10]]);
 
 /* ---------- Boot ---------- */
 renderVoices();
