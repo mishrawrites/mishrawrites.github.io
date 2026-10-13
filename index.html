@@ -789,20 +789,20 @@ $("personaSelect").addEventListener("change",function(e){applyPersona(e.target.v
 $("winkPeek").addEventListener("click",function(e){var b=e.target.closest("[data-peek]");if(!b)return;applyPersona(b.dataset.peek,{peek:true});$("hero").scrollIntoView({behavior:"smooth"})});
 
 /* ---------- Pies (computed, so they always match the page) ---------- */
-var PIE_COLORS=["#4A0E0E","#AE611C","#C9A44C","#1A1A1D","#E8DCC0","#8A5A44"];
-function pie(svgId,legId,rows){
+var PIE_COLORS=["#4A0E0E","#AE611C","#C9A44C","#1A1A1D","#E8DCC0","#8A5A44","#7A746C","#E3A46A"];
+function pie(svgId,legId,rows,fmt){
   var total=rows.reduce(function(s,r){return s+r[1]},0),a=-Math.PI/2,cx=100,cy=100,r=90,out="";
   rows.forEach(function(row,i){
     var sl=row[1]/total*Math.PI*2,a1=a+sl,large=sl>Math.PI?1:0;
     var x0=cx+r*Math.cos(a),y0=cy+r*Math.sin(a),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);
-    out+='<path d="M'+cx+','+cy+' L'+x0.toFixed(2)+','+y0.toFixed(2)+' A'+r+','+r+' 0 '+large+',1 '+x1.toFixed(2)+','+y1.toFixed(2)+' Z" fill="'+PIE_COLORS[i%6]+'" stroke="#fff" stroke-width="2"><title>'+row[0]+': '+Math.round(row[1]/total*100)+'%</title></path>';
+    out+='<path d="M'+cx+','+cy+' L'+x0.toFixed(2)+','+y0.toFixed(2)+' A'+r+','+r+' 0 '+large+',1 '+x1.toFixed(2)+','+y1.toFixed(2)+' Z" fill="'+PIE_COLORS[i%8]+'" stroke="#fff" stroke-width="2"><title>'+row[0]+': '+Math.round(row[1]/total*100)+'%</title></path>';
     a=a1;
   });
   $(svgId).innerHTML=out+'<circle cx="100" cy="100" r="46" fill="#fff"/>';
-  $(legId).innerHTML=rows.map(function(row,i){return '<li><i style="background:'+PIE_COLORS[i%6]+'"></i>'+row[0]+'<b>'+Math.round(row[1]/total*100)+'%</b></li>'}).join("");
+  $(legId).innerHTML=rows.map(function(row,i){return '<li><i style="background:'+PIE_COLORS[i%8]+'"></i>'+row[0]+'<b>'+(fmt?fmt(row[1]):Math.round(row[1]/total*100)+'%')+'</b></li>'}).join("");
 }
-// Years of hands-on work per industry, all engagements included (to Oct 2026)
-pie("pieIndustry","legIndustry",[["Tax &amp; fintech",5.1],["Health, fitness &amp; wellness",3.7],["B2B HR &amp; payroll SaaS",3.4],["Travel &amp; tourism",1.6],["Crowdfunding, research &amp; home",1.7]]);
+// Months of hands-on work per industry, all engagements included (to Oct 2026)
+pie("pieIndustry","legIndustry",[["Fintech",60],["B2B SaaS (global)",41],["Health &amp; wellness",40],["Luxury leisure travel",18],["Market research",9],["Beauty &amp; personal care",8],["Home &amp; kitchen",8],["Crowdfunding",6]],function(m){return (m/12).toFixed(1).replace(/\.0$/,"")+" yrs"});
 // Share of career effort by function
 pie("pieFunction","legFunction",[["Brand",25],["Growth",20],["Content",18],["Community",15],["Creative",12],["Consumer insights",10]]);
 
