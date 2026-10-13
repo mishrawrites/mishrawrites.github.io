@@ -123,6 +123,11 @@ a{color:inherit}
 .factsheet dt{color:var(--gold);font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding-top:.75rem}
 .factsheet div:last-child dt,.factsheet div:last-child dd{border-bottom:0}
 .factsheet dl>div{display:contents}
+.cities{margin-top:.45rem}
+.cities summary{cursor:pointer;color:var(--gold);font-weight:600;font-size:.8rem;width:max-content}
+.cities summary:hover{text-decoration:underline}
+.cities ul{list-style:none;display:grid;gap:.35rem;margin-top:.55rem;font-size:.82rem}
+.cities b{display:block;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600}
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr;gap:2rem;padding-top:2.5rem}
   .hero-side{order:-1;align-items:flex-start;flex-direction:row}
@@ -339,7 +344,18 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
           <div><dt>Markets</dt><dd>India, plus global work across 70+ countries and US campaign support</dd></div>
           <div><dt>Education</dt><dd>MBA, Balaji Institute of Technology &amp; Management, Pune</dd></div>
           <div><dt>Notice period</dt><dd>30 days</dd></div>
-          <div><dt>Based in</dt><dd>Bengaluru, India</dd></div>
+          <div><dt>Location</dt><dd>Based in Bengaluru. Open to relocating across South India, Pune and Goa.
+            <details class="cities"><summary>See all 16 cities</summary>
+              <ul>
+                <li><b>Karnataka</b>Bengaluru, Mysuru, Mangaluru</li>
+                <li><b>Maharashtra</b>Pune, Pimpri-Chinchwad, Nashik, Chhatrapati Sambhajinagar</li>
+                <li><b>Tamil Nadu</b>Chennai, Coimbatore</li>
+                <li><b>Telangana</b>Hyderabad</li>
+                <li><b>Andhra Pradesh</b>Visakhapatnam, Vijayawada</li>
+                <li><b>Kerala</b>Kochi, Thiruvananthapuram, Kozhikode</li>
+                <li><b>Goa</b>Goa</li>
+              </ul>
+            </details></dd></div>
         </dl>
       </div>
       <div class="hero-ctas swap" id="heroCtas">
