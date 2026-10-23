@@ -28,7 +28,7 @@
   "worksFor": {"@type": "Organization", "name": "TransPerfect Paybooks"},
   "alumniOf": [{"@type": "Organization", "name": "FITTR"}, {"@type": "Organization", "name": "H&R Block India"}, {"@type": "Organization", "name": "Ketto"}],
   "knowsAbout": ["Brand strategy", "Positioning", "Creative direction", "Content marketing", "Community building", "Growth marketing", "Go-to-market"],
-  "address": {"@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN"},
+  "address": {"@type": "PostalAddress", "addressCountry": "IN"},
   "email": "mailto:gaurav@mishrawrites.com",
   "sameAs": ["https://www.linkedin.com/in/mishrawrites/", "https://github.com/mishrawrites"]
 }
@@ -160,7 +160,7 @@ a{color:inherit}
 
 /* HUSTLE BAND */
 #hustle{background:var(--ink);color:var(--white)}
-.hustle-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:center}
+.hustle-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
 .hustle-quote{font-family:"Poppins",sans-serif;font-weight:300;font-size:clamp(1.3rem,2.4vw,1.85rem);line-height:1.5}
 .hustle-quote strong{font-weight:600;color:var(--gold)}
 .hustle-list{list-style:none;display:grid;gap:.8rem}
@@ -204,7 +204,15 @@ a{color:inherit}
 .card-hook{font-size:.86rem;line-height:1.55;font-weight:500}
 .card-cta{margin-top:auto;padding-top:.6rem;font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--rust)}
 .card-cta::after{content:" →"}
-.talent-line{margin-top:1.4rem;font-size:.9rem;line-height:1.7;max-width:900px;padding:1rem 1.2rem;border-left:3px solid var(--gold);background:var(--white)}
+.tiers-wrap{margin-top:1.6rem}
+.tiers-head{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.7rem}
+.tiers{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.tiers li{background:var(--white);padding:1rem 1rem 1.1rem;display:flex;flex-direction:column;gap:.2rem;min-width:0}
+.tiers b{font-family:"Poppins",sans-serif;font-weight:700;font-size:1.5rem;color:var(--maroon);line-height:1.1}
+.tiers em{font-style:normal;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--rust)}
+.tiers span{font-size:.8rem;color:var(--muted);line-height:1.5;margin-top:.2rem}
+@media(max-width:900px){.tiers{grid-template-columns:repeat(2,1fr)}.tiers li:last-child{grid-column:1/-1}}
+.talent-line{margin-top:1rem;font-size:.9rem;line-height:1.7;max-width:900px;padding:1rem 1.2rem;border-left:3px solid var(--gold);background:var(--white)}
 .talent-line b{font-family:"Poppins",sans-serif;font-weight:600}
 .work-note{margin-top:1rem;font-size:.85rem;color:var(--muted)}
 @media(max-width:1000px){.track{grid-auto-columns:calc((100% - 1.25rem)/2)}}
@@ -354,13 +362,13 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
           <div><dt>Looking for</dt><dd>Senior manager, lead or head roles in brand, marketing, growth, community, content or creative direction</dd></div>
           <div><dt>Team</dt><dd>Hired 16 at FITTR inside a 30-person marketing function; managed 50+ influencers and several agencies</dd></div>
           <div><dt>Budget</dt><dd>Up to about $4.3M a year in marketing spend</dd></div>
-          <div><dt>Industries</dt><dd>Health &amp; fitness, tax &amp; fintech, crowdfunding, B2B HR &amp; payroll SaaS, personal care, kitchen and home, family fintech, premium travel</dd></div>
+          <div><dt>Industries</dt><dd>Health &amp; fitness, tax &amp; fintech, crowdfunding, B2B SaaS, personal care, kitchen and home, personal finance, premium travel</dd></div>
           <div><dt>Markets</dt><dd>India, plus global work across 70+ countries and US campaign support</dd></div>
-          <div><dt>Education</dt><dd>MBA, Balaji Institute of Technology &amp; Management, Pune</dd></div>
+          <div><dt>Education</dt><dd>MBA in Business &amp; Marketing, Balaji Institute of Technology &amp; Management, Pune</dd></div>
           <div><dt>Notice period</dt><dd>30 days, negotiable</dd></div>
           <div><dt>Phone</dt><dd><a href="tel:+917387888951">+91 73878 88951</a></dd></div>
-          <div><dt>Location</dt><dd>Based in Bengaluru. Open to relocating across South India, Pune and Goa.
-            <details class="cities"><summary>See all 16 cities</summary>
+          <div><dt>Location</dt><dd>India
+            <details class="cities"><summary>See 16 preferred cities</summary>
               <ul>
                 <li><b>Karnataka</b>Bengaluru, Mysuru, Mangaluru</li>
                 <li><b>Maharashtra</b>Pune, Pimpri-Chinchwad, Nashik, Chhatrapati Sambhajinagar</li>
@@ -424,13 +432,14 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
     <div class="hustle-grid">
       <div>
         <p class="eyebrow on-dark">How I work</p>
-        <p class="hustle-quote">I'm a hustler. I figure things out fast, learn what I don't know, and ship the best version I can, then make it better. <strong>A convention is just an experiment that worked once.</strong> I like running the next one.</p>
+        <p class="hustle-quote">You get a brand lead who learns a new category quickly and puts a working version in market early, then keeps making it better. <strong>I treat every convention as an experiment that worked once,</strong> and I run the next one.</p>
       </div>
       <ul class="hustle-list">
-        <li><b>$68</b>An AI pre-sales engine for seven markets, built in weeks.</li>
-        <li><b>$7</b>This website, designed, written and shipped with AI.</li>
-        <li><b>1 empty room</b>Turned into H&amp;R Block India's content studio, 500+ videos later.</li>
-        <li><b>$0 ad spend</b>Launched FITTR Online PT to a waitlist from the community first.</li>
+        <li><b>20+ campaigns</b>Across TV, OTT, cinema, outdoor and digital, from brief to rollout.</li>
+        <li><b>50+ celebrities, creators and networks</b>Including KL Rahul, Suniel Shetty, Nas Daily and Kunal Kapoor.</li>
+        <li><b>$4.3M a year</b>In marketing spend managed at peak, including a $1.3M brand campaign.</li>
+        <li><b>81% awareness lift</b>And a 62% positive shift in brand perception, from Tax Samasya Unlock.</li>
+        <li><b>A team of 20</b>Built at FITTR, 16 of them hired by me, inside a 30-person marketing function.</li>
       </ul>
     </div>
   </div>
@@ -461,7 +470,17 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
       </div>
     </div>
     <div class="track swap" id="track" tabindex="0" aria-label="Case studies and projects"></div>
-    <p class="talent-line" id="talentLine" hidden><b>Talent I've worked with.</b> FITTR: KL Rahul, Suniel Shetty, Vidyut Jammwal and Nas Daily (paid collaborations); Milind Soman, Ritu, Geeta and Babita Phogat, Abhishek Upmanyu and Karunesh Talwar (events). Ketto: Kunal Kapoor.</p>
+    <div class="tiers-wrap" id="talentLine" hidden>
+      <p class="tiers-head">Influencers and talent I've worked with</p>
+      <ul class="tiers">
+        <li><b>500+</b><em>Micro</em><span>Under 10K followers. Mostly barter, across FITTR and Ketto.</span></li>
+        <li><b>500+</b><em>Mini</em><span>10K to 50K followers. Mostly barter, across H&amp;R Block, FITTR and Ketto.</span></li>
+        <li><b>100+</b><em>Mid-tier</em><span>50K to 500K followers, across H&amp;R Block, FITTR and Ketto.</span></li>
+        <li><b>20+</b><em>Large</em><span>500K to 1M followers, across H&amp;R Block, FITTR and Ketto.</span></li>
+        <li><b>10+</b><em>Mega</em><span>1M+ followers, for FITTR and Ketto.</span></li>
+      </ul>
+      <p class="talent-line"><b>Named talent.</b> FITTR: KL Rahul, Suniel Shetty, Vidyut Jammwal and Nas Daily (paid collaborations); Milind Soman, Ritu, Geeta and Babita Phogat, Abhishek Upmanyu and Karunesh Talwar (events). Ketto: Kunal Kapoor.</p>
+    </div>
     <p class="work-note">Case studies go deep. Projects are shorter wins. Both come with the full story on request.</p>
   </div>
 </section>
@@ -526,7 +545,7 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
       <div class="about-text">
         <p>I started in 2014 as a primary researcher, sitting across from people and asking what they really thought of the brands they bought. I never stopped asking.</p>
         <p>At H&amp;R Block I turned tax, a subject nobody wants to think about, into content a country searched for. At Ketto I made it easier for families to ask for help. At FITTR I took a six-pack brand to wellbeing for everyone and grew a community across 70+ countries. At TransPerfect Paybooks I moved a payroll brand upmarket and built an AI engine that finds buyers in seven markets every day.</p>
-        <p>The method doesn't change: find the gap between how a brand sees itself and how its customers see it, then close it with creative, content and community that scale. I'm based in Bengaluru, and I'm ready for the next full-time role where I can do that at a bigger scale.</p>
+        <p>The method doesn't change: find the gap between how a brand sees itself and how its customers see it, then close it with creative, content and community that scale. I'm ready for the next full-time role where I can do that at a bigger scale.</p>
       </div>
       <div>
         <div class="cred-nums">
@@ -581,7 +600,7 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
 </main>
 
 <footer class="foot">
-  <span>© <span id="yr">2026</span> Gaurav Mishra · Bengaluru</span>
+  <span>© <span id="yr">2026</span> Gaurav Mishra · India</span>
   <nav aria-label="Footer"><a href="/monoblog/">Monoblog</a><a href="/Gaurav-Mishra-CV.pdf">CV</a><a href="mailto:gaurav@mishrawrites.com">Email</a><a href="https://www.linkedin.com/in/mishrawrites/" rel="noopener" target="_blank">LinkedIn</a></nav>
 </footer>
 
@@ -649,7 +668,7 @@ var PROBLEM_ORDER={none:["brand","creative","growth","launch"],founder:["growth"
 /* ---------- Work cards ---------- */
 var LOGO_W={"FITTR":"fittr-white.png","H&R Block India":"hrblock-white.png","H&R Block US":"hrblock-white.png","Ketto":"ketto-white.png","TransPerfect Paybooks":"tppaybooks-white.png"};
 var WORK=[
- {id:"fmf",co:"FITTR",yr:"2021",type:"Case study",img:"media/fittr-fitness-made-forever.webp",fn:"Brand",title:"Fitness Made Forever",problem:"India saw FITTR as a six-pack app for people who were already fit.",m:"100M+",ml:"reach on a $1.3M budget",
+ {id:"fmf",co:"FITTR",yr:"2021",type:"Case study",img:"media/fittr-fitness-made-forever.webp",v:"https://www.youtube.com/watch?v=cDWXfntKsxI",fn:"Brand",title:"Fitness Made Forever",problem:"India saw FITTR as a six-pack app for people who were already fit.",m:"100M+",ml:"reach on a $1.3M budget",
   h:{founder:"A repositioning that widened the market for FITTR.",marketing:"From my brief to a campaign on TV, OTT, cinema, print and outdoor, extended with KL Rahul.",talent:"Owned end to end: research, positioning, creative direction and rollout."}},
  {id:"community",co:"FITTR",yr:"2020–23",type:"Case study",img:"media/fittr-nasdaily.webp",fn:"Community",title:"An 800K-member community",problem:"Paid acquisition was getting expensive, and the community barely reached beyond India.",m:"200K → 800K+",ml:"members in 70+ countries",
   h:{founder:"Members came in at about $6 each.",marketing:"Local groups, creators, Nas Daily and 30+ events a year, run as one engine.",talent:"Inherited a team of 4, hired 16, managed about $4.3M a year in spend."}},
@@ -676,7 +695,7 @@ var WORK=[
  {id:"appcampaigns",co:"FITTR",yr:"2021–22",type:"Project",img:"media/fittr-my-best-begins-now.webp",v:"https://www.youtube.com/watch?v=UGzQN6attcU",fn:"Growth",title:"The app campaigns, 2021 to 2022",problem:"Each campaign had to bring in paying users.",m:"~$130 to $160",ml:"per paying customer",
   h:{founder:"Four campaigns at about $65K to $130K each, measured on paying users.",marketing:"My Best Begins Now, Now or Never, Surround Yourself with the Right People, and Become Who You Were Born to Be.",talent:"Owned the campaigns and their economics."}},
  {id:"connectfest",co:"FITTR",yr:"Dec 2022",type:"Project",img:"",fn:"Community",title:"FITTR Connect Fest '22",problem:"An online community that rarely met in person.",m:"30+",ml:"events a year, with Connect Fest as the flagship",
-  h:{founder:"Brought an online community offline at 30+ events a year, with Connect Fest as the flagship.",marketing:"MMA, box cricket and conversations with Milind Soman and the Phogat sisters, with Abhishek Upmanyu and Karunesh Talwar on stage.",talent:"Oversaw the 2022 edition in Cavelossim, Goa, with Grand Gigi's, ICN India and Street Beats Crew, and built the sponsor deck for the next one."}},
+  h:{founder:"Ran 1 mega, 3 to 5 medium and 30+ local events a year.",marketing:"MMA, box cricket and conversations with Milind Soman and the Phogat sisters, with Abhishek Upmanyu and Karunesh Talwar on stage.",talent:"Oversaw the 2022 edition in Cavelossim, Goa, with Grand Gigi's, ICN India and Street Beats Crew, and built the sponsor deck for the next one."}},
  {id:"taxsamasya",co:"H&R Block India",yr:"2016",type:"Project",img:"",fn:"Brand",title:"Tax Samasya Unlock",problem:"Tax is boring and painful, so people avoid talking about it.",m:"81%",ml:"awareness lift in the target audience",
   h:{founder:"A 62% positive shift in brand perception after the campaign.",marketing:"A musical parody built around a jingle people repeated.",talent:"Owned the campaign from brief to rollout."}},
  {id:"taxpledge",co:"H&R Block India",yr:"2015",type:"Project",img:"",fn:"Brand",title:"#TaxPledge",problem:"Indians treat tax as a chore, yet take pride in being responsible citizens.",m:"200%",ml:"spike in users completing their filing",
