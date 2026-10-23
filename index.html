@@ -123,6 +123,7 @@ a{color:inherit}
 .factsheet dt{color:var(--gold);font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding-top:.75rem}
 .factsheet div:last-child dt,.factsheet div:last-child dd{border-bottom:0}
 .factsheet dl>div{display:contents}
+.factsheet dd a{color:inherit;text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:3px}
 .cities{margin-top:.45rem}
 .cities summary{cursor:pointer;color:var(--gold);font-weight:600;font-size:.8rem;width:max-content}
 .cities summary:hover{text-decoration:underline}
@@ -138,7 +139,7 @@ a{color:inherit}
 }
 @media(max-width:620px){.chooser-opts{grid-template-columns:1fr}}
 
-/* WINK — the "see what I did there" note */
+/* WINK: the "see what I did there" note */
 .wink{display:none;background:var(--paper);border-bottom:1px solid var(--line)}
 .wink.show{display:block}
 .wink-inner{max-width:1200px;margin:0 auto;padding:1.6rem var(--gutter);display:flex;gap:1.4rem;align-items:flex-start}
@@ -203,6 +204,8 @@ a{color:inherit}
 .card-hook{font-size:.86rem;line-height:1.55;font-weight:500}
 .card-cta{margin-top:auto;padding-top:.6rem;font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--rust)}
 .card-cta::after{content:" →"}
+.talent-line{margin-top:1.4rem;font-size:.9rem;line-height:1.7;max-width:900px;padding:1rem 1.2rem;border-left:3px solid var(--gold);background:var(--white)}
+.talent-line b{font-family:"Poppins",sans-serif;font-weight:600}
 .work-note{margin-top:1rem;font-size:.85rem;color:var(--muted)}
 @media(max-width:1000px){.track{grid-auto-columns:calc((100% - 1.25rem)/2)}}
 @media(max-width:640px){.track{grid-auto-columns:86%}}
@@ -219,6 +222,16 @@ a{color:inherit}
 .tl-role{font-size:.88rem}
 .tl-note{font-size:.8rem;color:var(--muted);margin-top:.2rem}
 .pies{display:grid;gap:2rem}
+.ind-grid{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.ind-grid li{background:var(--white);padding:.9rem 1rem;display:flex;flex-direction:column;gap:.25rem;min-width:0}
+.ind-grid b{font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--rust)}
+.ind-grid span{font-family:"Poppins",sans-serif;font-weight:600;font-size:.92rem;line-height:1.35;color:var(--maroon)}
+.fn-bars{list-style:none;display:grid;gap:.55rem}
+.fn-bars li{display:grid;grid-template-columns:8.5rem 1fr 2.6rem;align-items:center;gap:.7rem;font-size:.85rem}
+.fn-bars i{display:block;height:10px;background:var(--line);border-radius:2px;overflow:hidden}
+.fn-bars i s{display:block;height:100%;background:var(--maroon)}
+.fn-bars b{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+@media(max-width:420px){.ind-grid{grid-template-columns:1fr}.fn-bars li{grid-template-columns:7rem 1fr 2.4rem}}
 .pie-block h3{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem}
 .pie-row{display:flex;align-items:center;gap:1.4rem}
 .pie-row svg{width:130px;height:130px;flex:none}
@@ -287,6 +300,7 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
 .modal-head{background:var(--maroon);color:var(--white);padding:1.5rem 1.6rem 1.3rem;position:relative}
 .modal-head p{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
 .modal-head h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:1.3rem;line-height:1.3;margin-top:.35rem;padding-right:2rem}
+.modal-head .sub a{color:var(--gold);font-weight:600}
 .modal-head .sub{font-size:.88rem;color:#F3EBDD;text-transform:none;letter-spacing:0;font-weight:400;margin-top:.6rem;line-height:1.6}
 .modal-x{position:absolute;top:.9rem;right:.9rem;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:transparent;color:var(--white);font-size:1.2rem;cursor:pointer}
 .modal-x:hover{background:var(--white);color:var(--ink)}
@@ -331,8 +345,8 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
       <p class="hello" id="hello" aria-live="polite"></p>
       <h1 class="hero-name">Gaurav Mishra</h1>
       <p class="hero-roles">Brand &amp; product strategist, obsessed with customers. Looking for senior roles in brand, marketing, growth, community, content and creative direction.</p>
-      <p class="hero-head swap" id="heroHead">Twelve years of finding out what customers <strong>really</strong> think, then building the brand, content and community that changes it.</p>
-      <p class="hero-lead swap" id="heroLead">FITTR, H&amp;R Block, Ketto and TransPerfect Paybooks. Research first, numbers always, and a habit of building the thing myself when nobody else will.</p>
+      <p class="hero-head swap" id="heroHead">Twelve years of finding out what customers <strong>really</strong> think, then building the brand that changes it.</p>
+      <p class="hero-lead swap" id="heroLead">FITTR, H&amp;R Block, Ketto and TransPerfect Paybooks. Research first, numbers always.</p>
       <div class="factsheet swap" id="factsheet" aria-label="Fact sheet">
         <dl>
           <div><dt>Experience</dt><dd>12+ years, 2014 to now, across 5 companies</dd></div>
@@ -340,10 +354,11 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
           <div><dt>Looking for</dt><dd>Senior manager, lead or head roles in brand, marketing, growth, community, content or creative direction</dd></div>
           <div><dt>Team</dt><dd>Hired 16 at FITTR inside a 30-person marketing function; managed 50+ influencers and several agencies</dd></div>
           <div><dt>Budget</dt><dd>Up to about $4.3M a year in marketing spend</dd></div>
-          <div><dt>Industries</dt><dd>Health &amp; fitness, tax &amp; fintech, crowdfunding, B2B HR &amp; payroll SaaS</dd></div>
+          <div><dt>Industries</dt><dd>Health &amp; fitness, tax &amp; fintech, crowdfunding, B2B HR &amp; payroll SaaS, personal care, kitchen and home, family fintech, premium travel</dd></div>
           <div><dt>Markets</dt><dd>India, plus global work across 70+ countries and US campaign support</dd></div>
           <div><dt>Education</dt><dd>MBA, Balaji Institute of Technology &amp; Management, Pune</dd></div>
-          <div><dt>Notice period</dt><dd>30 days</dd></div>
+          <div><dt>Notice period</dt><dd>30 days, negotiable</dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+917387888951">+91 73878 88951</a></dd></div>
           <div><dt>Location</dt><dd>Based in Bengaluru. Open to relocating across South India, Pune and Goa.
             <details class="cities"><summary>See all 16 cities</summary>
               <ul>
@@ -365,9 +380,9 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
       <div class="chooser" id="chooser">
         <p class="chooser-q" id="chooserQ">Who's reading? <span>Pick one and this page rearranges itself for you.</span></p>
         <div class="chooser-opts" role="group" aria-labelledby="chooserQ">
-          <button class="chooser-opt" data-persona="founder" aria-pressed="false"><b>Founder / Co-founder / CEO</b><small>Will he grow the business?</small></button>
-          <button class="chooser-opt" data-persona="marketing" aria-pressed="false"><b>Chief / Head of Marketing or Brand</b><small>Will he raise the bar on my team?</small></button>
-          <button class="chooser-opt" data-persona="talent" aria-pressed="false"><b>HR / Talent Acquisition</b><small>Does he fit the role? The facts, fast.</small></button>
+          <button class="chooser-opt" data-persona="founder" aria-pressed="false"><b>Founder / Co-founder / CEO</b><small>Growth and the business case</small></button>
+          <button class="chooser-opt" data-persona="marketing" aria-pressed="false"><b>Chief / Head of Marketing or Brand</b><small>Creative craft and team leadership</small></button>
+          <button class="chooser-opt" data-persona="talent" aria-pressed="false"><b>HR / Talent Acquisition</b><small>The facts for screening, fast</small></button>
         </div>
       </div>
     </div>
@@ -415,6 +430,7 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
         <li><b>$68</b>An AI pre-sales engine for seven markets, built in weeks.</li>
         <li><b>$7</b>This website, designed, written and shipped with AI.</li>
         <li><b>1 empty room</b>Turned into H&amp;R Block India's content studio, 500+ videos later.</li>
+        <li><b>$0 ad spend</b>Launched FITTR Online PT to a waitlist from the community first.</li>
       </ul>
     </div>
   </div>
@@ -445,6 +461,7 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
       </div>
     </div>
     <div class="track swap" id="track" tabindex="0" aria-label="Case studies and projects"></div>
+    <p class="talent-line" id="talentLine" hidden><b>Talent I've worked with.</b> FITTR: KL Rahul, Suniel Shetty, Vidyut Jammwal and Nas Daily (paid collaborations); Milind Soman, Ritu, Geeta and Babita Phogat, Abhishek Upmanyu and Karunesh Talwar (events). Ketto: Kunal Kapoor.</p>
     <p class="work-note">Case studies go deep. Projects are shorter wins. Both come with the full story on request.</p>
   </div>
 </section>
@@ -453,18 +470,31 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
 <section id="career" aria-labelledby="careerTitle">
   <div class="wrap">
     <p class="eyebrow">Career in a snap</p>
-    <h2 class="h2" id="careerTitle">Twelve years, five companies, <em>one throughline.</em></h2>
+    <h2 class="h2" id="careerTitle">Twelve years across <em>five companies.</em></h2>
     <div class="career-grid">
       <ol class="tl">
         <li class="now"><p class="tl-when">May 2023 – now</p><p class="tl-co">TransPerfect Paybooks</p><p class="tl-role">Senior Manager, Brand &amp; Marketing</p><p class="tl-note">Upmarket repositioning, a 43-country brand extension, an AI pre-sales engine.</p></li>
-        <li><p class="tl-when">Mar 2020 – May 2023</p><p class="tl-co">FITTR</p><p class="tl-role">Brand Manager</p><p class="tl-note">Rebrand, brand film, community from 200K to 800K+, 16 hires.</p></li>
+        <li><p class="tl-when">Mar 2020 – May 2023</p><p class="tl-co">FITTR</p><p class="tl-role">Brand Manager</p><p class="tl-note">Rebrand, brand campaign, community from 200K to 800K+, 16 hires.</p></li>
         <li><p class="tl-when">Sep 2019 – Feb 2020</p><p class="tl-co">Ketto</p><p class="tl-role">Brand Strategy Manager</p><p class="tl-note">PodcastMD and the treatment cost estimator.</p></li>
         <li><p class="tl-when">Mar 2015 – Sep 2019</p><p class="tl-co">H&amp;R Block India</p><p class="tl-role">Junior Executive to Assistant Manager, Brand Communication</p><p class="tl-note">Three promotions in 4.5 years. Content Lab, Knowledge Center, 200M+ reach.</p></li>
         <li><p class="tl-when">Jul 2014 – Mar 2015</p><p class="tl-co">SalesNXT</p><p class="tl-role">Primary Researcher to Business Development</p><p class="tl-note">Where research became the habit.</p></li>
       </ol>
       <div class="pies">
-        <div class="pie-block"><h3>Years by industry</h3><div class="pie-row"><svg id="pieIndustry" viewBox="0 0 200 200" role="img" aria-label="Years by industry"></svg><ul class="legend" id="legIndustry"></ul></div></div>
-        <div class="pie-block"><h3>Career snapshot, by function</h3><div class="pie-row"><svg id="pieFunction" viewBox="0 0 200 200" role="img" aria-label="Career snapshot by function"></svg><ul class="legend" id="legFunction"></ul></div></div>
+        <div class="pie-block"><h3>Proof by industry</h3>
+          <ul class="ind-grid">
+            <li><b>Fintech</b><span>200M+ people reached</span></li>
+            <li><b>Health &amp; wellness</b><span>$2.65M → $13.5M ARR in three years</span></li>
+            <li><b>B2B SaaS (global)</b><span>$37 → $143 MRR per new India client</span></li>
+            <li><b>Crowdfunding</b><span>$430K+ raised through one tool in 3 months</span></li>
+            <li><b>Market research</b><span>Primary studies for brands in the US, UK, Australia and Canada</span></li>
+            <li><b>Personal care</b><span>Brand foundation through to marketplace and quick-commerce launch</span></li>
+            <li><b>Kitchen &amp; home</b><span>Category-entry research across major metros</span></li>
+            <li><b>Premium travel</b><span>Brand, content and performance for buyers in Canada, the US, Europe and Australia</span></li>
+          </ul>
+        </div>
+        <div class="pie-block"><h3>Career snapshot, by function</h3>
+          <ul class="fn-bars" id="fnBars"></ul>
+        </div>
       </div>
     </div>
     <div class="agencies">
@@ -491,7 +521,7 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
 <section id="about" aria-labelledby="aboutTitle">
   <div class="wrap">
     <p class="eyebrow on-dark">About Gaurav Mishra</p>
-    <h2 class="h2 on-dark" id="aboutTitle">Customer first. Numbers always. <em>Built, not borrowed.</em></h2>
+    <h2 class="h2 on-dark" id="aboutTitle">Research first, <em>numbers always.</em></h2>
     <div class="about-grid">
       <div class="about-text">
         <p>I started in 2014 as a primary researcher, sitting across from people and asking what they really thought of the brands they bought. I never stopped asking.</p>
@@ -506,6 +536,8 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
           <div><b>800+</b><span>alliances managed at H&amp;R Block</span></div>
           <div><b>70+</b><span>countries reached through community</span></div>
           <div><b>10+</b><span>industry and company awards</span></div>
+          <div><b>1,000+</b><span>influencers, micro to mega</span></div>
+          <div><b>50+</b><span>celebrities, creators and networks</span></div>
         </div>
         <ul class="awards">
           <li><strong>Marketing Guru Award (Global), H&amp;R Block, 2018</strong>, chosen from 20 nominations across 5 countries</li>
@@ -533,9 +565,10 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
     <div class="contact-grid">
       <div>
         <p class="eyebrow">Let's talk</p>
-        <h2 class="h2 swap" id="contactTitle">Have a role in mind? <em>Let's talk about it.</em></h2>
+        <h2 class="h2 swap" id="contactTitle">Let's talk about <em>the role you have in mind.</em></h2>
         <p class="lede swap" id="contactLede">Leave your details and I'll get back to you within 24 hours.</p>
         <ul class="contact-links">
+          <li><span>Phone</span><a href="tel:+917387888951">+91 73878 88951</a></li>
           <li><span>Email</span><a href="mailto:gaurav@mishrawrites.com">gaurav@mishrawrites.com</a></li>
           <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/mishrawrites/" rel="noopener" target="_blank">linkedin.com/in/mishrawrites</a></li>
           <li><span>CV</span><a href="/Gaurav-Mishra-CV.pdf" data-goatcounter-click="cv-contact">Download the CV (PDF)</a></li>
@@ -556,7 +589,8 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
 <dialog id="ask" aria-labelledby="askTitle">
   <div class="modal-head">
     <p id="askCo">Case study</p>
-    <h3 id="askTitle">Want the full story?</h3>
+    <h3 id="askTitle">Get the full story</h3>
+    <p class="sub" id="askWatch" hidden><a id="askWatchLink" href="#" rel="noopener" target="_blank">Watch the campaign on YouTube ↗</a></p>
     <p class="sub">The problem and the result are public. The how, from the research to the brief to what I'd do differently, is what I bring to the job. Leave your details and I'll walk you through it in a 20-minute call.</p>
     <button class="modal-x" id="askClose" aria-label="Close">×</button>
   </div>
@@ -579,47 +613,47 @@ var HERO={
   none:{
     head:document.getElementById("heroHead").innerHTML,
     lead:document.getElementById("heroLead").innerHTML,
-    proof:[["200M+","people reached, H&amp;R Block India"],["200K → 800K+","FITTR community, 70+ countries"],["100M+","reach for FITTR's brand film"],["$68 → ~$500K","AI-built pipeline at Paybooks"]]
+    proof:[["200M+","people reached, H&amp;R Block India"],["200K → 800K+","FITTR community, 70+ countries"],["100M+","reach for FITTR's brand campaign"],["$68 → ~$500K","AI-built pipeline at Paybooks"]]
   },
   founder:{
     head:"You need growth that <strong>doesn't stop</strong> when the ad budget does.",
-    lead:"I grow companies from the brand out: positioning that widens the market, then content and community engines that keep bringing customers in at a fraction of paid cost. I'm looking for a senior role where I own the outcome, not just the calendar.",
-    proof:[["$2.65M → $13.5M","FITTR company ARR across my three years there"],["$6 vs $47","cost per user, community vs paid, at FITTR"],["$37 → $143","MRR per new India client after repositioning Paybooks"],["$68 → ~$500K","pipeline from an AI pre-sales engine I built"]],
+    lead:"I grow companies from the brand out: positioning that widens the market, then content and community engines that keep bringing customers in at a fraction of paid cost. I'm looking for a senior role where I own the outcome.",
+    proof:[["$2.65M → $13.5M","FITTR company ARR across my three years there"],["4.9x","LTV to CAC on FITTR Online PT"],["$430K+","raised in 3 months through Ketto's treatment cost estimator"],["24%","of FITTR revenue from Online PT, a line I co-created"]],
     work:["Work that moved <em>revenue.</em>","Each card shows the business problem and what it returned. The playbook behind it comes with me. Tap any card and I'll walk you through it."],
-    contact:["Building something? <em>Let's talk growth.</em>","Tell me where the business is and where it needs to go. I'll reply within 24 hours."]
+    contact:["Let's talk about <em>your growth plans.</em>","Tell me where the business is and where it needs to go. I'll reply within 24 hours."]
   },
   marketing:{
     head:"A brand lead who starts with <strong>research</strong> and ends with work people remember.",
-    lead:"Insight first, then the brief, then the creative, carried across TV, OTT, cinema, outdoor, social and community. I've hired and led a 16-person team, run $4.3M a year in spend, and directed a film that reached 100M+ people. Hand me your hardest brand problems.",
+    lead:"Insight first, then the brief, then the creative, carried across TV, OTT, cinema, outdoor, social and community. I've hired and led a 16-person team, run $4.3M a year in spend, and directed a campaign that reached 100M+ people. Hand me your hardest brand problems.",
     proof:[["100M+","reach for Fitness Made Forever, on $1.3M"],["200M+","people reached by H&amp;R Block India campaigns"],["16","hires across content, social, design, video, community and performance"],["10+","industry and company awards"]],
     work:["Brand work, <em>backed by the numbers.</em>","The brief, the creative and what it moved. The craft behind each one is a conversation I'd enjoy. Tap any card to ask."],
-    contact:["Building a team? <em>Let's talk brand.</em>","Tell me about the brand and the gap you're trying to close. I'll reply within 24 hours."]
+    contact:["Let's talk about <em>your brand and team.</em>","Tell me about the brand and the gap you're trying to close. I'll reply within 24 hours."]
   },
   talent:{
     head:"The short version, so you can <strong>screen me in a minute.</strong>",
     lead:"Everything a shortlist needs is below. The CV has the detail, and the cards further down show scope and results for each role.",
     proof:[["12+ years","brand, marketing and growth, 2014 to now"],["5 companies","B2C and B2B, India and global"],["3 promotions","in 4.5 years at H&amp;R Block"],["8","LinkedIn recommendations from managers and peers"]],
     work:["Scope, ownership <em>and results.</em>","What I owned in each role and what it delivered. Tap any card if you'd like me to walk the hiring manager through it."],
-    contact:["Have a role open? <em>Let's set up a call.</em>","Share your details and the role. I'll reply within 24 hours with my availability."]
+    contact:["Let's set up a call about <em>your open role.</em>","Share your details and the role. I'll reply within 24 hours with my availability."]
   }
 };
 
 var PROBLEMS={
   brand:{t:"Founders describe one brand. Customers describe another.",d:"The product is strong but the story drifted. I start with research that names the gap, then build the insight the brand can own.",p:"FITTR: from a six-pack app to wellbeing for everyone"},
   creative:{t:"Creative that ships and gets scrolled past.",d:"I rebuild the brief around what the audience actually needs, then carry it through ads, films, TV, OTT, cinema, outdoor and the street.",p:"Fitness Made Forever: 100M+ reach on a $1.3M budget"},
-  growth:{t:"Growth that only works while paid media runs.",d:"Content, social and community engines that keep acquiring customers long after a campaign ends, at a fraction of paid cost.",p:"FITTR community at $6 per user vs $47 on paid"},
+  growth:{t:"Growth that only works while paid media runs.",d:"Content, social and community engines that keep acquiring customers long after a campaign ends, at a fraction of paid cost.",p:"FITTR community at about $6 per member"},
   launch:{t:"A new product or market with no story yet.",d:"Naming, brand architecture, pricing, packaging and go-to-market, so a launch lands with a reason to buy.",p:"Paybooks Global People Solution across 43 countries"}
 };
 var PROBLEM_ORDER={none:["brand","creative","growth","launch"],founder:["growth","launch","brand","creative"],marketing:["brand","creative","growth","launch"],talent:["brand","creative","growth","launch"]};
 
 /* ---------- Work cards ---------- */
-var LOGO_W={"FITTR":"fittr-white.png","H&R Block India":"hrblock-white.png","Ketto":"ketto-white.png","TransPerfect Paybooks":"tppaybooks-white.png"};
+var LOGO_W={"FITTR":"fittr-white.png","H&R Block India":"hrblock-white.png","H&R Block US":"hrblock-white.png","Ketto":"ketto-white.png","TransPerfect Paybooks":"tppaybooks-white.png"};
 var WORK=[
  {id:"fmf",co:"FITTR",yr:"2021",type:"Case study",img:"media/fittr-fitness-made-forever.webp",fn:"Brand",title:"Fitness Made Forever",problem:"India saw FITTR as a six-pack app for people who were already fit.",m:"100M+",ml:"reach on a $1.3M budget",
-  h:{founder:"A repositioning that widened the market, not just the reach.",marketing:"From my brief to a film on TV, OTT, cinema, print and outdoor, extended with KL Rahul.",talent:"Owned end to end: research, positioning, creative direction and rollout."}},
+  h:{founder:"A repositioning that widened the market for FITTR.",marketing:"From my brief to a campaign on TV, OTT, cinema, print and outdoor, extended with KL Rahul.",talent:"Owned end to end: research, positioning, creative direction and rollout."}},
  {id:"community",co:"FITTR",yr:"2020–23",type:"Case study",img:"media/fittr-nasdaily.webp",fn:"Community",title:"An 800K-member community",problem:"Paid acquisition was getting expensive, and the community barely reached beyond India.",m:"200K → 800K+",ml:"members in 70+ countries",
-  h:{founder:"Members came in at about $6 each, against $47 on paid performance.",marketing:"Local groups, creators, Nas Daily and 30+ events a year, run as one engine.",talent:"Inherited a team of 4, hired 16, managed about $4.3M a year in spend."}},
- {id:"tc",co:"FITTR",yr:"Seasons 10–18",type:"Case study",img:"media/fittr-tc17-breakyourbarriers.webp",fn:"Community",title:"The Transformation Challenge",problem:"A 12-week challenge that lived only inside the existing community.",m:"45M+",ml:"reach and 2M+ app downloads",
+  h:{founder:"Members came in at about $6 each.",marketing:"Local groups, creators, Nas Daily and 30+ events a year, run as one engine.",talent:"Inherited a team of 4, hired 16, managed about $4.3M a year in spend."}},
+ {id:"tc",co:"FITTR",yr:"Seasons 10–18",type:"Case study",img:"media/fittr-tc17-breakyourbarriers.webp",v:"https://www.youtube.com/watch?v=fr6pLDoVQQg",fn:"Community",title:"The Transformation Challenge",problem:"A 12-week challenge that lived only inside the existing community.",m:"45M+",ml:"reach and 2M+ app downloads",
   h:{founder:"Grew into about 20% of all customer acquisition.",marketing:"Taken beyond the app with Suniel Shetty and Vidyut Jammwal.",talent:"Nine seasons, run as a repeatable programme."}},
  {id:"onlinept",co:"FITTR",yr:"2020–23",type:"Case study",img:"media/fittr-online-pt.webp",fn:"Growth",title:"FITTR Online PT",problem:"COVID shut the gyms. Coaches and clients needed a new way to train.",m:"24%",ml:"of company revenue",
   h:{founder:"About 4.9x LTV to CAC, with 60–70% of revenue from outside India.",marketing:"A coach marketplace people trusted enough to train with from home.",talent:"Co-created it and scaled it from an idea to a core revenue line."}},
@@ -630,15 +664,29 @@ var WORK=[
  {id:"fitshop",co:"FITTR",yr:"2021–22",type:"Case study",img:"media/fittr-brand.webp",fn:"Growth",title:"FITSHOP, and the call to close it",problem:"A merchandise store grew out of the app's rewards counter.",m:"Closed",ml:"on the numbers",
   h:{founder:"Knowing when to stop is part of the job.",marketing:"Built the store, read the numbers, recommended closing it.",talent:"Built it, measured it and made the call."}},
  {id:"hrbcontent",co:"H&R Block India",yr:"2015–19",type:"Case study",img:"",fn:"Content",title:"Content Lab and Knowledge Center",problem:"People searched for tax help every season and found someone else.",m:"<50K → 30M",ml:"organic visits per season",
-  h:{founder:"Organic became about 25% of revenue, with 50%+ category search share.",marketing:"500+ videos and 500+ articles from a studio in an empty meeting room.",talent:"Built and led a team of 4 plus 20 interns."}},
+  h:{founder:"Organic became about 25% of revenue, with 50%+ category search share.",marketing:"500+ videos and 500+ articles from a studio in an empty meeting room. Taxpedia, the series from that studio, drew 70M+ organic views over 3 years.",talent:"Built and led a team of 4 plus 20 interns."}},
  {id:"hrbcampaigns",co:"H&R Block India",yr:"2015–19",type:"Case study",img:"media/hrblock-india-film.webp",fn:"Brand",title:"Making tax worth talking about",problem:"Tax is a category nobody wants to think about.",m:"200M+",ml:"people reached across India",
   h:{founder:"Marketing for 8 retail offices on $1.2M to $1.5M a season.",marketing:"Tax Samasya Unlock, #BeTheBoss and the Tax Pledge, plus US work with Fallon.",talent:"Junior Executive to Assistant Manager, promoted 3 times in 4.5 years."}},
  {id:"gst",co:"H&R Block India",yr:"2017",type:"Case study",img:"",fn:"Content",title:"GST Made Simple and earlyGST",problem:"A new national tax, and millions of businesses unsure what it meant.",m:"500+",ml:"businesses on earlyGST in year one",
-  h:{founder:"Education first, then a product that sold into it.",marketing:"A 40+ episode series that became a reference point.",talent:"Owned the series and the product launch."}},
+  h:{founder:"earlyGST, a B2B SaaS brand extension, launched with GST in July 2017. I led its go-to-market until Aug 2019.",marketing:"A 40+ episode series that became a reference point.",talent:"Owned the series and the product launch."}},
  {id:"podcastmd",co:"Ketto",yr:"2019",type:"Case study",img:"media/podcastmd-kunal.webp",pos:"center 24%",fn:"Brand",title:"PodcastMD with Kunal Kapoor",problem:"Families facing medical bills often feel ashamed to ask for help.",m:"10M+",ml:"streams, 100+ letters from patients",
   h:{founder:"A brand asset built on trust and organic reach.",marketing:"Conceived and produced 12 survivor episodes with the co-founder.",talent:"Conceived and produced it, start to finish."}},
  {id:"estimator",co:"Ketto",yr:"2019",type:"Project",img:"",fn:"Growth",title:"Treatment cost estimator",problem:"Families couldn't see what treatment would cost, so they never started.",m:"$430K+",ml:"raised in three months",
   h:{founder:"30% of users asked to start a fundraising campaign.",marketing:"A tool as the campaign: useful first, persuasive second.",talent:"Launched across 100+ illnesses."}},
+ {id:"appcampaigns",co:"FITTR",yr:"2021–22",type:"Project",img:"media/fittr-my-best-begins-now.webp",v:"https://www.youtube.com/watch?v=UGzQN6attcU",fn:"Growth",title:"The app campaigns, 2021 to 2022",problem:"Each campaign had to bring in paying users.",m:"~$130 to $160",ml:"per paying customer",
+  h:{founder:"Four campaigns at about $65K to $130K each, measured on paying users.",marketing:"My Best Begins Now, Now or Never, Surround Yourself with the Right People, and Become Who You Were Born to Be.",talent:"Owned the campaigns and their economics."}},
+ {id:"connectfest",co:"FITTR",yr:"Dec 2022",type:"Project",img:"",fn:"Community",title:"FITTR Connect Fest '22",problem:"An online community that rarely met in person.",m:"30+",ml:"events a year, with Connect Fest as the flagship",
+  h:{founder:"Brought an online community offline at 30+ events a year, with Connect Fest as the flagship.",marketing:"MMA, box cricket and conversations with Milind Soman and the Phogat sisters, with Abhishek Upmanyu and Karunesh Talwar on stage.",talent:"Oversaw the 2022 edition in Cavelossim, Goa, with Grand Gigi's, ICN India and Street Beats Crew, and built the sponsor deck for the next one."}},
+ {id:"taxsamasya",co:"H&R Block India",yr:"2016",type:"Project",img:"",fn:"Brand",title:"Tax Samasya Unlock",problem:"Tax is boring and painful, so people avoid talking about it.",m:"81%",ml:"awareness lift in the target audience",
+  h:{founder:"A 62% positive shift in brand perception after the campaign.",marketing:"A musical parody built around a jingle people repeated.",talent:"Owned the campaign from brief to rollout."}},
+ {id:"taxpledge",co:"H&R Block India",yr:"2015",type:"Project",img:"",fn:"Brand",title:"#TaxPledge",problem:"Indians treat tax as a chore, yet take pride in being responsible citizens.",m:"200%",ml:"spike in users completing their filing",
+  h:{founder:"1,000+ video pledges and 2M+ organic reach, with a government collaboration.",marketing:"Vox-pops, an animated film and a pledge citizens and influencers shared themselves.",talent:"Owned the campaign end to end."}},
+ {id:"betheboss",co:"H&R Block India",yr:"2017",type:"Project",img:"",fn:"Brand",title:"#BeTheBoss",problem:"For women and senior citizens, filing taxes meant depending on someone else.",m:"350%",ml:"rise in women users, with a surge in corporate tie-ups",
+  h:{founder:"A 170% spike in premium users choosing assisted service over DIY.",marketing:"Two stereotype-breaking films on financial independence, with a 29% positive shift in perception among women and senior citizens.",talent:"Ran the campaign for tax season 2017."}},
+ {id:"taxeswon",co:"H&R Block US",yr:"Supported",type:"Project",img:"media/hrblock-get-your-taxes-won.webp",fn:"Brand",title:"Get Your Taxes Won",problem:"H&R Block's Super Bowl campaign, starring Jon Hamm and made with Fallon.",m:"Super Bowl",ml:"campaign with Jon Hamm",
+  h:{founder:"Supported the US team on adaptation, media planning and spend monitoring.",marketing:"Worked alongside Fallon on a Super Bowl campaign starring Jon Hamm.",talent:"Supported adaptation, media planning and spend monitoring."}},
+ {id:"paybooksfilms",co:"TransPerfect Paybooks",yr:"Dec 2023",type:"Project",img:"",fn:"Brand",title:"Three films for small-business owners",problem:"Payroll and compliance stress small-business owners carry every month.",m:"3,000+",ml:"MQLs in 3 months at about $21 each",
+  h:{founder:"A film-led demand campaign across performance media, collaborations, events and gated content.",marketing:"Cake, Lunch and Taxman: three live-action films from one insight.",talent:"Led it from insight and creative direction to production, edit, launch and scale-up."}},
  {id:"upmarket",co:"TransPerfect Paybooks",yr:"2023–now",type:"Case study",img:"",fn:"Brand",title:"Taking a payroll brand upmarket",problem:"An India-first payroll brand that mostly attracted small, price-sensitive clients.",m:"$37 → $143",ml:"MRR per new India client",
   h:{founder:"India CAC fell from $680 to $545 after the rebrand.",marketing:"Built on 70 ICP interviews and an NPS programme across 600 clients.",talent:"Led the research, rebrand, pricing and packaging."}},
  {id:"aiengine",co:"TransPerfect Paybooks",yr:"2026",type:"Case study",img:"",fn:"Growth",title:"The AI pre-sales engine",problem:"Employer of Record buyers rarely search until they need it, so someone has to find them.",m:"$68",ml:"build cost · 9 pipelines worth ~$500K",
@@ -655,10 +703,10 @@ var WORK=[
   h:{founder:"A content series that grew the audience 10x without paid media.",marketing:"50 personal and 11 team stories, told in the first person.",talent:"Created and ran the series."}}
 ];
 var ORDER={
- none:["fmf","community","aiengine","calculator","hrbcontent","upmarket","podcastmd","tc","onlinept","hrbcampaigns","estimator","hart","ambassador","gps","migration","humans","gst","fitshop","scorecard"],
- founder:["aiengine","calculator","community","onlinept","upmarket","migration","hart","estimator","hrbcontent","fmf","tc","fitshop","gps","ambassador","podcastmd","humans","hrbcampaigns","gst","scorecard"],
- marketing:["fmf","community","tc","hrbcampaigns","hrbcontent","podcastmd","ambassador","humans","scorecard","upmarket","aiengine","onlinept","hart","gps","estimator","gst","migration","fitshop","calculator"],
- talent:["fmf","community","hrbcontent","upmarket","aiengine","calculator","onlinept","podcastmd","tc","hrbcampaigns","gps","ambassador","hart","estimator","migration","humans","gst","fitshop","scorecard"]
+ none:["fmf","community","taxsamasya","connectfest","hrbcontent","podcastmd","appcampaigns","tc","onlinept","taxpledge","betheboss","hrbcampaigns","taxeswon","estimator","ambassador","hart","gst","fitshop","upmarket","aiengine","paybooksfilms","calculator","gps","migration","humans","scorecard"],
+ founder:["community","onlinept","appcampaigns","estimator","fmf","tc","hrbcontent","taxsamasya","hart","fitshop","ambassador","podcastmd","connectfest","taxpledge","betheboss","hrbcampaigns","gst","taxeswon","aiengine","calculator","upmarket","migration","paybooksfilms","gps","scorecard","humans"],
+ marketing:["fmf","community","taxsamasya","taxpledge","connectfest","tc","appcampaigns","hrbcampaigns","betheboss","taxeswon","hrbcontent","podcastmd","ambassador","humans","paybooksfilms","scorecard","upmarket","aiengine","onlinept","hart","gps","estimator","gst","migration","calculator","fitshop"],
+ talent:["fmf","community","hrbcontent","taxsamasya","connectfest","upmarket","aiengine","onlinept","podcastmd","tc","appcampaigns","taxpledge","betheboss","hrbcampaigns","paybooksfilms","calculator","gps","ambassador","hart","estimator","migration","humans","gst","taxeswon","fitshop","scorecard"]
 };
 
 var VOICES=[
@@ -713,6 +761,7 @@ function applyPersona(p,opts){
       ?'<a class="btn btn-primary" href="/Gaurav-Mishra-CV.pdf" data-goatcounter-click="cv-hero-talent">Download CV</a><a class="btn btn-ghost" href="#contact">Set up a call</a>'
       :'<a class="btn btn-primary" href="#work">See the work</a><a class="btn btn-ghost" href="/Gaurav-Mishra-CV.pdf" data-goatcounter-click="cv-hero">Download CV</a>';
     renderProof(p);renderProblems(p);renderWork(p);
+    $("talentLine").hidden=p!=="marketing";
     if(h.work){$("workTitle").innerHTML=h.work[0];$("workLede").textContent=h.work[1];$("contactTitle").innerHTML=h.contact[0];$("contactLede").textContent=h.contact[1]}
     main.classList.remove("swapping");
   },opts.instant?0:180);
@@ -796,7 +845,8 @@ trackEl.addEventListener("click",function(e){
   var w=WORK.filter(function(x){return x.id===c.dataset.id})[0];
   askTopic=w.title+" ("+w.co+")";
   $("askCo").textContent=w.co+" · "+w.type;
-  $("askTitle").textContent="Want the story behind "+w.title+"?";
+  $("askTitle").textContent="Get the story behind "+w.title;
+  $("askWatch").hidden=!w.v;if(w.v)$("askWatchLink").href=w.v;
   askForm.querySelector(".form-status").textContent="";
   if(dlg.showModal)dlg.showModal();else dlg.setAttribute("open","");
   track("case-open-"+w.id);
@@ -809,23 +859,10 @@ document.querySelectorAll(".chooser-opt").forEach(function(b){b.addEventListener
 $("personaSelect").addEventListener("change",function(e){applyPersona(e.target.value)});
 $("winkPeek").addEventListener("click",function(e){var b=e.target.closest("[data-peek]");if(!b)return;applyPersona(b.dataset.peek,{peek:true});$("hero").scrollIntoView({behavior:"smooth"})});
 
-/* ---------- Pies (computed, so they always match the page) ---------- */
-var PIE_COLORS=["#4A0E0E","#AE611C","#C9A44C","#1A1A1D","#E8DCC0","#8A5A44","#7A746C","#E3A46A"];
-function pie(svgId,legId,rows,fmt){
-  var total=rows.reduce(function(s,r){return s+r[1]},0),a=-Math.PI/2,cx=100,cy=100,r=90,out="";
-  rows.forEach(function(row,i){
-    var sl=row[1]/total*Math.PI*2,a1=a+sl,large=sl>Math.PI?1:0;
-    var x0=cx+r*Math.cos(a),y0=cy+r*Math.sin(a),x1=cx+r*Math.cos(a1),y1=cy+r*Math.sin(a1);
-    out+='<path d="M'+cx+','+cy+' L'+x0.toFixed(2)+','+y0.toFixed(2)+' A'+r+','+r+' 0 '+large+',1 '+x1.toFixed(2)+','+y1.toFixed(2)+' Z" fill="'+PIE_COLORS[i%8]+'" stroke="#fff" stroke-width="2"><title>'+row[0]+': '+Math.round(row[1]/total*100)+'%</title></path>';
-    a=a1;
-  });
-  $(svgId).innerHTML=out+'<circle cx="100" cy="100" r="46" fill="#fff"/>';
-  $(legId).innerHTML=rows.map(function(row,i){return '<li><i style="background:'+PIE_COLORS[i%8]+'"></i>'+row[0]+'<b>'+(fmt?fmt(row[1]):Math.round(row[1]/total*100)+'%')+'</b></li>'}).join("");
-}
-// Months of hands-on work per industry, all engagements included (to Oct 2026)
-pie("pieIndustry","legIndustry",[["Fintech",60],["B2B SaaS (global)",41],["Health &amp; wellness",40],["Luxury leisure travel",18],["Market research",9],["Beauty &amp; personal care",8],["Home &amp; kitchen",8],["Crowdfunding",6]],function(m){return (m/12).toFixed(1).replace(/\.0$/,"")+" yrs"});
+/* ---------- Career snapshot ---------- */
 // Share of career effort by function
-pie("pieFunction","legFunction",[["Brand",25],["Growth",20],["Content",18],["Community",15],["Creative",12],["Consumer insights",10]]);
+var FN=[["Brand",25],["Growth",20],["Content",18],["Community",15],["Creative",12],["Consumer insights",10]];
+$("fnBars").innerHTML=FN.map(function(r){return '<li><span>'+r[0]+'</span><i><s style="width:'+(r[1]/FN[0][1]*100)+'%"></s></i><b>'+r[1]+'%</b></li>'}).join("");
 
 /* ---------- Boot ---------- */
 renderVoices();
