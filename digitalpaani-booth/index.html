@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow">
+<title>DigitalPaani booth concept · Gaurav Mishra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root {
+  --navy: #002454; --teal: #5AABB0; --teal-l: #95CFD3; --teal-xl: #BDE3E6; --tint: #E8F5F6;
+  --sage: #8AB878; --paper: #F7F6F2; --white: #FFFFFF; --ink: #1A1A1A;
+  --sans: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --r: 6px; --wrap: 1280px; --gut: max(20px, env(safe-area-inset-left, 0px));
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.75; overflow-x: hidden; }
+img, svg { max-width: 100%; display: block; }
+.num { font-family: var(--mono); font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-left: var(--gut); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+
+/* 0 concept strip */
+.strip { background: var(--tint); color: var(--navy); font-size: 13px; line-height: 1.5; text-align: center; padding-block: 8px; }
+
+/* header */
+.top { display: flex; align-items: center; justify-content: space-between; padding-block: 18px; gap: 16px; }
+.top img { height: 40px; width: auto; }
+.tag { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: .14em; color: var(--navy); border: 1px solid var(--teal-xl); border-radius: var(--r); padding: 5px 10px; white-space: nowrap; }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 12px 24px; border-radius: var(--r); border: 0; background: var(--navy); color: var(--paper); font: 700 17px/1.2 var(--sans); cursor: pointer; text-decoration: none; }
+.btn:hover { background: #193650; }
+.btn.light { background: var(--paper); color: var(--navy); }
+.btn.light:hover { background: var(--white); }
+.btn.ghost { background: transparent; color: var(--navy); border: 1.5px solid var(--navy); }
+
+/* 1 hero */
+.hero { display: grid; gap: 32px; padding-block: 16px 56px; align-items: center; }
+.eyebrow { font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: .16em; color: var(--navy); }
+h1 { font-weight: 800; color: var(--navy); font-size: clamp(26px, 7.1vw, 64px); line-height: 1.06; letter-spacing: -.02em; margin-top: 12px; text-wrap: balance; }
+.sub { font-size: clamp(17px, 2vw, 20px); line-height: 1.6; margin-top: 18px; max-width: 34em; }
+.hero .btn { margin-top: 28px; }
+.panel { position: relative; background: var(--navy); border-radius: var(--r); overflow: hidden; aspect-ratio: 1 / .95; max-width: 100%; }
+.grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(90,171,176,.13) 1px, transparent 1px), linear-gradient(90deg, rgba(90,171,176,.13) 1px, transparent 1px); background-size: 28px 28px; }
+.panel svg.tank { position: absolute; left: 4%; right: 4%; bottom: 3%; width: 92%; height: auto; }
+.card { position: absolute; right: 5%; top: 6%; background: var(--white); color: var(--navy); border-radius: var(--r); padding: 14px 18px; box-shadow: 0 14px 30px rgba(0,0,0,.28); min-width: 0; }
+.card .lab { font-family: var(--mono); font-weight: 500; font-size: 10.5px; letter-spacing: .14em; color: var(--navy); opacity: .85; }
+.card .row { display: flex; align-items: baseline; gap: 14px; margin-top: 6px; }
+.card .met { font-family: var(--mono); font-weight: 500; font-size: 13px; letter-spacing: .08em; }
+.card .val { font-family: var(--mono); font-weight: 600; font-size: clamp(30px, 4vw, 44px); line-height: 1; }
+
+/* x-ray draw-in */
+.xr { stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 600ms ease-out; }
+.xf { opacity: 0; transition: opacity 400ms ease-out; }
+.drawn .xr { stroke-dashoffset: 0; }
+.drawn .xf { opacity: 1; }
+.rise { opacity: 0; transform: translateY(18px); transition: opacity 500ms ease-out, transform 500ms ease-out; }
+.risen { opacity: 1; transform: none; }
+
+/* 2 desk */
+.desk { padding-block: 24px 64px; }
+h2 { font-weight: 800; color: var(--navy); font-size: clamp(24px, 4.2vw, 36px); line-height: 1.15; letter-spacing: -.01em; text-wrap: balance; }
+.choices { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.choice { min-height: 48px; padding: 10px 20px; border-radius: var(--r); border: 1.5px solid var(--navy); background: var(--white); color: var(--navy); font: 600 16px/1.2 var(--sans); cursor: pointer; }
+.choice[aria-pressed="true"] { background: var(--navy); color: var(--paper); }
+.mantra { margin-top: 20px; background: var(--white); border: 1px solid var(--teal-xl); border-radius: var(--r); display: grid; }
+.step { padding: 20px 22px; border-top: 1px solid var(--tint); }
+.step:first-child { border-top: 0; }
+.step .k { font-family: var(--mono); font-weight: 500; font-size: 11.5px; letter-spacing: .16em; color: var(--navy); opacity: .8; }
+.step p { margin-top: 6px; font-size: 18px; line-height: 1.55; color: var(--ink); }
+.step.fix { background: var(--tint); border-radius: 0 0 var(--r) var(--r); }
+.step.fix p { color: var(--navy); font-weight: 500; }
+
+/* 3 see understand act */
+.navy { background: var(--navy); color: var(--paper); position: relative; overflow: hidden; }
+.navy .grid-bg { opacity: 1; }
+.sua { position: relative; padding-block: 64px; }
+.sua .head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.sua .head img { height: 34px; width: auto; }
+.sua h2 { color: var(--paper); }
+.sua-grid { display: grid; gap: 28px; margin-top: 32px; align-items: center; }
+.steps { display: grid; gap: 14px; counter-reset: s; }
+.sstep { border: 1px solid rgba(149,207,211,.35); border-radius: var(--r); padding: 18px 20px; background: rgba(0,36,84,.6); opacity: .45; transition: opacity 400ms ease-out, border-color 400ms ease-out; }
+.sstep.on { opacity: 1; border-color: var(--teal); }
+.sstep .k { font-family: var(--mono); font-weight: 600; font-size: 12px; letter-spacing: .16em; color: var(--teal-l); }
+.sstep p { margin-top: 4px; font-size: 19px; line-height: 1.45; font-weight: 600; }
+.stage { position: relative; aspect-ratio: 1 / .9; border: 1px solid rgba(149,207,211,.25); border-radius: var(--r); }
+.stage svg.tank { position: absolute; left: 5%; bottom: 4%; width: 90%; height: auto; }
+.stage .card { top: 8%; }
+.pill { position: absolute; left: 50%; bottom: 7%; transform: translate(-50%, 14px); opacity: 0; transition: opacity 400ms ease-out, transform 400ms ease-out; background: var(--sage); color: var(--navy); font-family: var(--mono); font-weight: 600; font-size: 14px; letter-spacing: .1em; padding: 10px 16px; border-radius: 999px; white-space: nowrap; box-shadow: 0 10px 24px rgba(0,0,0,.3); }
+.pill.on { opacity: 1; transform: translate(-50%, 0); }
+
+/* 4 proof */
+.proof { padding-block: 56px; }
+.proof ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 12px; margin-top: 20px; }
+.proof li { background: var(--white); border: 1px solid var(--teal-xl); border-radius: var(--r); padding: 18px; display: grid; gap: 4px; align-content: start; }
+.proof .big { font-family: var(--mono); font-weight: 600; font-size: 30px; line-height: 1.1; color: var(--navy); }
+.proof .what { font-size: 15px; line-height: 1.45; }
+.proof .where { font-family: var(--mono); font-weight: 500; font-size: 11px; letter-spacing: .14em; color: var(--navy); opacity: .8; }
+
+/* 5 close */
+.close { position: relative; padding-block: 64px; text-align: left; }
+.close p { font-weight: 800; font-size: clamp(24px, 4vw, 40px); line-height: 1.15; max-width: 22em; color: var(--paper); text-wrap: balance; }
+.close .btn { margin-top: 28px; }
+
+/* 7 footer */
+footer { padding-block: 28px 40px; font-size: 13px; line-height: 1.6; color: var(--navy); display: grid; gap: 6px; }
+footer .note { background: var(--tint); border-radius: var(--r); padding: 10px 14px; }
+
+/* 6 modal */
+.backdrop[hidden] { display: none; }
+.backdrop { position: fixed; inset: 0; background: rgba(0,20,48,.6); display: grid; place-items: center; padding: 20px; z-index: 50; }
+.dialog { background: var(--paper); color: var(--ink); border-radius: var(--r); max-width: 460px; width: 100%; padding: 28px 24px 24px; box-shadow: 0 30px 60px rgba(0,0,0,.35); }
+.dialog h3 { font-weight: 800; color: var(--navy); font-size: 22px; line-height: 1.2; }
+.dialog p { margin-top: 10px; font-size: 16px; line-height: 1.6; }
+.dialog .acts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.dialog .mail { font-family: var(--mono); font-size: 13px; margin-top: 12px; color: var(--navy); user-select: all; }
+
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1.05fr .95fr; gap: 56px; padding-block: 40px 80px; }
+  .mantra { grid-template-columns: repeat(3, 1fr); }
+  .step { border-top: 0; border-left: 1px solid var(--tint); }
+  .step:first-child { border-left: 0; }
+  .step.fix { border-radius: 0 var(--r) var(--r) 0; }
+  .sua-grid { grid-template-columns: .9fr 1.1fr; gap: 48px; }
+  .top img { height: 46px; }
+  h1 { text-wrap: wrap; font-size: 62px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .xr, .xf, .rise, .sstep, .pill { transition: none !important; }
+  .xr { stroke-dashoffset: 0; } .xf { opacity: 1; } .rise { opacity: 1; transform: none; }
+  .sstep { opacity: 1; } .pill { opacity: 1; transform: translate(-50%, 0); }
+}
+</style>
+</head>
+<body>
+<div class="strip">Concept by Gaurav Mishra for DigitalPaani's Head of Brand &amp; Creative Storytelling assignment. Not an official DigitalPaani page.</div>
+
+<header class="wrap top">
+  <img src="assets/dp-logo.png" alt="DigitalPaani" width="332" height="130">
+  <span class="tag">CONCEPT · LIVE DEMO</span>
+</header>
+
+<main>
+<section class="wrap hero" aria-labelledby="hero-h">
+  <div>
+    <p class="eyebrow">FROM BOOTH [NO.] · [EXPO NAME], MUMBAI</p>
+    <h1 id="hero-h">Know what your plant needs before it fails.</h1>
+    <p class="sub">Our AI watches your plant in real time, flags problems early and tells your operators the one fix. Live at about <span class="num">100</span> sites across India.</p>
+    <button class="btn js-cta" type="button">Book a plant walkthrough <span aria-hidden="true">→</span></button>
+  </div>
+  <div class="panel" id="hero-panel" role="img" aria-label="A treatment tank cut open with teal x-ray lines, and a card reading chemical dosing down 48 percent at a food and beverage plant">
+    <div class="grid-bg"></div>
+    <svg class="tank" viewBox="0 0 1000 800" aria-hidden="true" focusable="false"></svg>
+    <div class="card rise" id="hero-card">
+      <div class="lab">FOOD &amp; BEVERAGE PLANT</div>
+      <div class="row"><span class="met">CHEMICAL DOSING</span><span class="val">↓48%</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap desk" aria-labelledby="desk-h">
+  <h2 id="desk-h">What's on your desk today?</h2>
+  <div class="choices" role="group" aria-label="Pick the problem on your desk">
+    <button class="choice" type="button" aria-pressed="false" data-k="notice">Pollution board notice</button>
+    <button class="choice" type="button" aria-pressed="false" data-k="shift">Missed shift</button>
+    <button class="choice" type="button" aria-pressed="true" data-k="bill">Chemical bill</button>
+  </div>
+  <div class="mantra" aria-live="polite">
+    <div class="step"><div class="k">NAME IT</div><p id="m-name"></p></div>
+    <div class="step"><div class="k">UNBLAME IT</div><p id="m-unblame"></p></div>
+    <div class="step fix"><div class="k">FIX IT</div><p id="m-fix"></p></div>
+  </div>
+</section>
+
+<section class="navy" aria-labelledby="sua-h">
+  <div class="grid-bg"></div>
+  <div class="wrap sua">
+    <div class="head">
+      <h2 id="sua-h">See. Understand. Act.</h2>
+      <img src="assets/dp-logo-white.png" alt="DigitalPaani" width="331" height="130">
+    </div>
+    <div class="sua-grid">
+      <div class="steps">
+        <div class="sstep" data-s="1"><div class="k">SEE</div><p>We look inside your equipment.</p></div>
+        <div class="sstep" data-s="2"><div class="k">UNDERSTAND</div><p>We find the one thing that matters.</p></div>
+        <div class="sstep" data-s="3"><div class="k">ACT</div><p>Your team gets one clear fix.</p></div>
+      </div>
+      <div class="stage" id="stage" role="img" aria-label="The same tank: x-ray lines show the inside, a card shows chemical dosing down 48 percent, and an action reads adjust dosing now">
+        <svg class="tank" viewBox="0 0 1000 800" aria-hidden="true" focusable="false"></svg>
+        <div class="card rise" id="stage-card">
+          <div class="lab">FOOD &amp; BEVERAGE PLANT</div>
+          <div class="row"><span class="met">CHEMICAL DOSING</span><span class="val">↓48%</span></div>
+        </div>
+        <div class="pill" id="pill">ADJUST DOSING → NOW</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap proof" aria-labelledby="proof-h">
+  <h2 id="proof-h">Measured at plants like yours</h2>
+  <ul>
+    <li><span class="big">48%</span><span class="what">less chemical dosing</span><span class="where">F&amp;B PLANT</span></li>
+    <li><span class="big">21 → 14</span><span class="what">manpower, with a <span class="num">33%</span> efficiency gain</span><span class="where">CETP</span></li>
+    <li><span class="big">24%</span><span class="what">less water loss</span><span class="where">TOWNSHIP</span></li>
+    <li><span class="big">5</span><span class="what">airports live</span><span class="where">AIRPORTS</span></li>
+    <li><span class="big">~100</span><span class="what">live sites across India</span><span class="where">OVERALL</span></li>
+  </ul>
+</section>
+
+<section class="navy" aria-label="Book a walkthrough">
+  <div class="grid-bg"></div>
+  <div class="wrap close">
+    <p>Bring your toughest plant problem. We'll show you the fix on your own data.</p>
+    <button class="btn light js-cta" type="button">Book a plant walkthrough <span aria-hidden="true">→</span></button>
+  </div>
+</section>
+</main>
+
+<footer class="wrap">
+  <p class="note">Concept by Gaurav Mishra for DigitalPaani's Head of Brand &amp; Creative Storytelling assignment. Not an official DigitalPaani page.</p>
+  <p>Built by Gaurav Mishra · <a href="https://mishrawrites.com/">mishrawrites.com</a></p>
+</footer>
+
+<div class="backdrop" id="modal" hidden>
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modal-h" aria-describedby="modal-p">
+    <h3 id="modal-h">This is a concept</h3>
+    <p id="modal-p">In the live version, this books a walkthrough with DigitalPaani's team. This page is a concept I built for my assignment.</p>
+    <div class="acts">
+      <a class="btn" href="mailto:gaurav@mishrawrites.com?subject=DigitalPaani%20booth%20concept">Talk to Gaurav about this concept</a>
+      <button class="btn ghost" type="button" id="modal-close">Close</button>
+    </div>
+    <p class="mail">gaurav@mishrawrites.com</p>
+  </div>
+</div>
+
+<!-- The tank, drawn once and reused: a solid shell with a teal x-ray cutaway (See). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="conc" x1="0" x2="1"><stop offset="0" stop-color="#5d6b77"/><stop offset=".35" stop-color="#9aa6af"/><stop offset=".6" stop-color="#b9c2c8"/><stop offset="1" stop-color="#4c5964"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5AABB0" stop-opacity=".55"/><stop offset="1" stop-color="#002454" stop-opacity=".9"/></linearGradient>
+    <clipPath id="cut"><path d="M500 160 L860 160 L860 640 Q680 700 500 700 Z"/></clipPath>
+    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#5AABB0" stroke-opacity=".25" stroke-width="1"/></pattern>
+    <g id="tank">
+      <ellipse cx="500" cy="700" rx="360" ry="70" fill="#2b3640"/>
+      <path d="M140 160 L140 700 Q500 780 860 700 L860 160 Z" fill="url(#conc)"/>
+      <ellipse cx="500" cy="160" rx="360" ry="70" fill="#c9d0d5"/>
+      <ellipse cx="500" cy="160" rx="330" ry="58" fill="url(#water)"/>
+      <path d="M120 150 Q500 70 880 150" fill="none" stroke="#dfe4e7" stroke-width="5"/>
+      <path d="M60 90 H260 V200" fill="none" stroke="#dfe4e7" stroke-width="12" stroke-linecap="round"/>
+      <rect x="30" y="40" width="80" height="110" rx="10" fill="#e3e8eb"/><rect x="42" y="70" width="56" height="14" rx="4" fill="#002454" fill-opacity=".5"/>
+      <g clip-path="url(#cut)">
+        <rect x="500" y="150" width="380" height="560" fill="#002454" fill-opacity=".92"/>
+        <rect class="xf" x="500" y="150" width="380" height="560" fill="url(#g)"/>
+        <rect class="xf" x="500" y="250" width="380" height="460" fill="#5AABB0" fill-opacity=".12"/>
+        <path class="xr" pathLength="1" d="M500 250 Q600 238 700 250 T880 250" fill="none" stroke="#5AABB0" stroke-width="3"/>
+        <path class="xr" pathLength="1" d="M680 170 V560" stroke="#5AABB0" stroke-width="5"/>
+        <path class="xr" pathLength="1" d="M600 560 h160" stroke="#5AABB0" stroke-width="4"/>
+        <path class="xr" pathLength="1" d="M620 540 l60 20 l60 -20" fill="none" stroke="#5AABB0" stroke-width="4"/>
+        <path class="xr" pathLength="1" d="M620 580 l60 -20 l60 20" fill="none" stroke="#5AABB0" stroke-width="4"/>
+        <path class="xf" d="M520 640 h340 M540 660 h300" stroke="#5AABB0" stroke-width="3" stroke-dasharray="10 8"/>
+        <g class="xf" fill="#5AABB0" fill-opacity=".7">
+          <circle cx="530" cy="300" r="3"/><circle cx="583" cy="397" r="4"/><circle cx="636" cy="494" r="5"/><circle cx="689" cy="591" r="3"/>
+          <circle cx="742" cy="388" r="4"/><circle cx="795" cy="485" r="5"/><circle cx="848" cy="582" r="3"/><circle cx="571" cy="379" r="4"/>
+          <circle cx="624" cy="476" r="5"/><circle cx="777" cy="573" r="3"/><circle cx="830" cy="370" r="4"/><circle cx="553" cy="467" r="5"/>
+        </g>
+        <circle class="xr" pathLength="1" cx="800" cy="330" r="16" fill="none" stroke="#8AB878" stroke-width="5"/>
+        <circle class="xf" cx="800" cy="330" r="5" fill="#8AB878"/>
+      </g>
+      <path class="xf" d="M500 160 L500 700" stroke="#5AABB0" stroke-width="3" stroke-dasharray="14 10"/>
+    </g>
+  </defs>
+</svg>
+
+<script>
+(() => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tpl = document.getElementById('tank');
+  document.querySelectorAll('svg.tank').forEach((svg) => { const g = tpl.cloneNode(true); g.removeAttribute('id'); svg.appendChild(g); });
+  const wait = (ms) => new Promise((r) => setTimeout(r, reduced ? 0 : ms));
+
+  // 1 hero: linework draws in, then the card rises
+  const heroPanel = document.getElementById('hero-panel');
+  const heroCard = document.getElementById('hero-card');
+  (async () => { await wait(150); heroPanel.classList.add('drawn'); await wait(600); heroCard.classList.add('risen'); })();
+
+  // 2 what's on your desk
+  const N = (n) => '<span class="num">' + n + '</span>';
+  const COPY = {
+    bill: ['Your chemical bill keeps climbing.',
+           'Your team doses by habit, because nobody can see what the water needs.',
+           'Our AI sets dosing to what the water needs. ' + N('48%') + ' less chemical dosing at a food &amp; beverage plant.'],
+    shift: ['One missed shift puts the whole plant at risk.',
+            "It isn't your people. The plant asks for more rounds than any team can cover.",
+            'Our AI watches between rounds and tells the team on shift exactly what to do. A CETP went from ' + N('21') + ' to ' + N('14') + ' people, with a ' + N('33%') + ' efficiency gain.'],
+    notice: ['A notice usually means the problem started weeks ago.',
+             'Nobody missed it on purpose. Nobody could see it.',
+             'Our AI flags problems before they turn into failures, so you fix them before they reach a report.'],
+  };
+  const choices = [...document.querySelectorAll('.choice')];
+  const show = (k) => {
+    choices.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.k === k)));
+    const [a, b, c] = COPY[k];
+    document.getElementById('m-name').textContent = a;
+    document.getElementById('m-unblame').textContent = b;
+    document.getElementById('m-fix').innerHTML = c;
+  };
+  choices.forEach((b) => b.addEventListener('click', () => show(b.dataset.k)));
+  show('bill');
+
+  // 3 see, understand, act on scroll
+  const stage = document.getElementById('stage');
+  const steps = [...document.querySelectorAll('.sstep')];
+  const stageCard = document.getElementById('stage-card');
+  const pill = document.getElementById('pill');
+  let played = false;
+  const play = async () => {
+    if (played) return; played = true;
+    steps[0].classList.add('on'); stage.classList.add('drawn'); await wait(700);
+    steps[1].classList.add('on'); stageCard.classList.add('risen'); await wait(700);
+    steps[2].classList.add('on'); pill.classList.add('on');
+  };
+  if ('IntersectionObserver' in window && !reduced) {
+    const io = new IntersectionObserver((es) => { if (es.some((e) => e.isIntersecting)) { play(); io.disconnect(); } }, { threshold: 0.35 });
+    io.observe(stage);
+  } else { play(); }
+
+  // 6 modal: focus trapped, Esc closes, focus returns
+  const modal = document.getElementById('modal');
+  const closeBtn = document.getElementById('modal-close');
+  let opener = null;
+  const focusables = () => [...modal.querySelectorAll('a[href], button')];
+  const open = (e) => { opener = e.currentTarget; modal.hidden = false; document.body.style.overflow = 'hidden'; focusables()[0].focus(); };
+  const close = () => { modal.hidden = true; document.body.style.overflow = ''; if (opener) opener.focus(); };
+  document.querySelectorAll('.js-cta').forEach((b) => b.addEventListener('click', open));
+  closeBtn.addEventListener('click', close);
+  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+  document.addEventListener('keydown', (e) => {
+    if (modal.hidden) return;
+    if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+    if (e.key === 'Tab') {
+      const f = focusables(), first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+})();
+</script>
+</body>
+</html>
