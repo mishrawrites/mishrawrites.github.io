@@ -1,0 +1,45 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1A1A1D;--maroon:#4A0E0E;--gold:#C9A44C;--copper:#AE611C;--paper:#FFFFFF;--soft:#F6F3EC;--line:#E6DCC4}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Poppins",sans-serif;font-size:16px;line-height:1.65;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-left:16px;padding-right:16px}
+@media(min-width:720px){.wrap{padding-left:32px;padding-right:32px}}
+body>nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 16px;background:var(--paper);border-bottom:1px solid var(--line)}
+@media(min-width:720px){body>nav{padding:1.1rem 32px}}
+.nav-logo{font-weight:700;font-size:1.05rem;text-decoration:none}
+.nav-link{font-family:"Montserrat",sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--copper)}
+.label{font-family:"Montserrat",sans-serif;font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--copper)}
+h1{font-weight:700;font-size:clamp(2rem,5vw,3.1rem);line-height:1.1;margin:.5rem 0 1rem;color:var(--maroon)}
+.brief{max-width:68ch;font-size:1.05rem;color:#333}
+.meta{margin-top:1rem;font-family:"Montserrat",sans-serif;font-size:.8rem;color:#6b6b6b}
+.hero,.brand-head{padding-top:3rem;padding-bottom:2rem}
+.back{display:inline-block;margin-bottom:1.5rem;font-family:"Montserrat",sans-serif;font-size:.8rem;font-weight:600;text-decoration:none;color:var(--copper)}
+.group{padding-top:1.5rem;padding-bottom:1.5rem;border-top:1px solid var(--line)}
+.group h2{font-family:"Montserrat",sans-serif;font-weight:600;font-size:1.35rem;margin-bottom:1.2rem}
+.group h2 span{display:block;font-size:.85rem;font-weight:500;color:#6b6b6b}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+@media(min-width:720px){.cards{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:18px}}
+.card{display:flex;flex-direction:column;text-decoration:none;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper);transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.thumb{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:var(--paper);padding:12px}
+.thumb img{width:100%;height:100%;object-fit:contain}
+.cname{padding:.7rem .8rem 0;font-weight:600;font-size:.98rem}
+.ccat{padding:0 .8rem .8rem;font-size:.78rem;color:#6b6b6b}
+.grid{display:grid;grid-template-columns:1fr;gap:18px;padding-bottom:2rem}
+@media(min-width:600px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:960px){.grid{grid-template-columns:repeat(3,1fr)}}
+.shot{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper)}
+.shot a{display:flex;align-items:center;justify-content:center;aspect-ratio:4/5;padding:16px;cursor:zoom-in}
+.shot img{width:100%;height:100%;object-fit:contain}
+.shot figcaption{padding:.7rem .9rem;font-size:.85rem;border-top:1px solid var(--line);background:var(--soft)}
+.pager{display:flex;justify-content:space-between;gap:1rem;padding-top:1.5rem;padding-bottom:3rem;border-top:1px solid var(--line);font-family:"Montserrat",sans-serif;font-size:.85rem;font-weight:600}
+.pager a{text-decoration:none;color:var(--maroon)}
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem;padding:1.5rem 16px;background:var(--ink);color:#ddd;font-size:.8rem}
+@media(min-width:720px){footer{padding:1.5rem 32px}}
+footer a{color:var(--gold);text-decoration:none}
+dialog{border:none;padding:0;background:transparent;max-width:min(92vw,1100px);max-height:92vh;margin:auto}
+dialog::backdrop{background:rgba(26,26,29,.88)}
+dialog img{display:block;max-width:100%;max-height:82vh;margin:0 auto;background:#fff;border-radius:4px}
+dialog p{color:#fff;text-align:center;padding:.6rem;font-size:.9rem}
+dialog button{position:fixed;top:12px;right:16px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
