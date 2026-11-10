@@ -215,6 +215,7 @@ a{color:inherit}
 .talent-line{margin-top:1rem;font-size:.9rem;line-height:1.7;max-width:900px;padding:1rem 1.2rem;border-left:3px solid var(--gold);background:var(--white)}
 .talent-line b{font-family:"Poppins",sans-serif;font-weight:600}
 .work-note{margin-top:1rem;font-size:.85rem;color:var(--muted)}
+.adv-note{margin-top:.35rem}.adv-note a{color:var(--rust);font-weight:500;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}.adv-note a:hover{border-bottom-color:currentColor}
 @media(max-width:1000px){.track{grid-auto-columns:calc((100% - 1.25rem)/2)}}
 @media(max-width:640px){.track{grid-auto-columns:86%}}
 
@@ -482,6 +483,7 @@ dialog::backdrop{background:rgba(26,26,29,.72)}
       <p class="talent-line"><b>Named talent.</b> FITTR: KL Rahul, Suniel Shetty, Vidyut Jammwal and Nas Daily (paid collaborations); Milind Soman, Ritu, Geeta and Babita Phogat, Abhishek Upmanyu and Karunesh Talwar (events). Ketto: Kunal Kapoor.</p>
     </div>
     <p class="work-note">Case studies go deep. Projects are shorter wins. Both come with the full story on request.</p>
+    <p class="work-note adv-note" id="advNote"><a href="/advisory/" data-goatcounter-click="advisory-work">Also: packaging for regional food and dairy <span style="white-space:nowrap">brands →</span></a></p>
   </div>
 </section>
 
@@ -781,6 +783,7 @@ function applyPersona(p,opts){
       :'<a class="btn btn-primary" href="#work">See the work</a><a class="btn btn-ghost" href="/Gaurav-Mishra-CV.pdf" data-goatcounter-click="cv-hero">Download CV</a>';
     renderProof(p);renderProblems(p);renderWork(p);
     $("talentLine").hidden=p!=="marketing";
+    $("advNote").hidden=p==="talent";
     if(h.work){$("workTitle").innerHTML=h.work[0];$("workLede").textContent=h.work[1];$("contactTitle").innerHTML=h.contact[0];$("contactLede").textContent=h.contact[1]}
     main.classList.remove("swapping");
   },opts.instant?0:180);
