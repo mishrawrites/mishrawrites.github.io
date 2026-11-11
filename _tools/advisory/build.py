@@ -5,7 +5,11 @@ manifest: {"items": {slug: [[src_path, caption], ...]}, "tags": {slug: [advisory
 import json, os, sys, html, math, shutil
 from PIL import Image, ImageChops, ImageDraw, ImageFont
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from content import BRANDS, SECTION, ROLE, ALSO, HOLD, ADVISORY
+from content import BRANDS, SECTION, ALSO, HOLD, ADVISORY
+from content2 import ROLE, SHORT, LABELS
+SCOPE = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'scope.json')))
+SHORTLAB = dict(zip(LABELS, ['Identity', 'Positioning', 'Packaging', 'Go-to-market', 'Retail & outdoor', 'Digital & content', 'Influencers', 'Campaigns']))
+CARDPRI = [0, 5, 4, 3, 6, 7, 1, 2]
 BRANDS = {k: v for k, v in BRANDS.items() if k not in HOLD}
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 M = json.load(open(sys.argv[1]))
@@ -70,7 +74,7 @@ GROUPS = [('Dairy', 'Milk, ghee and milk sweets'), ('Bakery', 'Bread, buns and t
 
 def score(slug):
     n, g, c, brief, _, scope, url = BRANDS[slug]
-    return len(M['tags'].get(slug) or ADVISORY.get(slug, [])) + len(scope or []) + len(M['items'].get(slug, [])) / 100
+    return len(SCOPE.get(slug, [])) * 100 + len(M['tags'].get(slug) or ADVISORY.get(slug, [])) + len(scope or []) + len(M['items'].get(slug, [])) / 100
 
 order = sorted(BRANDS, key=lambda s: (-score(s), BRANDS[s][0]))
 # clear old brand folders that are no longer listed
@@ -125,10 +129,8 @@ for i, slug in enumerate(order):
             cols = {1: 1, 2: 2, 3: 3, 4: 2}.get(n, 3 if n % 3 == 0 else (2 if n % 2 == 0 else 3))
             gm = math.exp(sum(math.log(asp[k]) for k in others) / n)
             g += f'<div class="row cols-{cols}{" solo" if n == 1 else ""}" style="--ar:{round(min(1.33, max(0.75, gm)), 3)}">' + ''.join(fig(k, n == 1) for k in others) + '</div>'
-    tags = M['tags'].get(slug) or ADVISORY.get(slug, [])
-    facts = ''
-    if tags: facts += f'<div><dt>Advisory</dt><dd>{E(" · ".join(tags))}</dd></div>'
-    if scope: facts += f'<div><dt>Studio scope</dt><dd>{E(" · ".join(scope))}</dd></div>'
+    labs = SCOPE.get(slug, [])
+    facts = f'<div><dt>Scope</dt><dd><ul class="scope">' + ''.join(f'<li>{E(x)}</li>' for x in labs) + '</ul></dd></div>' if labs else ''
     link = f'<p class="case"><a href="{url}" target="_blank" rel="noopener">Full case study at Black Buck Studios →</a></p>' if url else ''
     prev = order[i - 1]; nxt = order[(i + 1) % len(order)]
     count = f'{len(shots)} {"image" if len(shots) == 1 else "images"}' if shots else 'Images to follow'
@@ -136,7 +138,7 @@ for i, slug in enumerate(order):
 <a class="back" href="/advisory/">← All brands</a>
 <p class="label">{E(group)} · {E(cat)}</p>
 <h1>{E(name)}</h1>
-<p class="brief">{E(brief)}</p>
+<p class="brief">{E(SHORT.get(slug, brief))}</p>
 {f'<dl class="facts">{facts}</dl>' if facts else ''}
 {link}
 <p class="meta">{count}</p>
@@ -145,8 +147,8 @@ for i, slug in enumerate(order):
 <nav class="pager wrap"><a href="/advisory/{prev}/">← {E(BRANDS[prev][0])}</a><a href="/advisory/{nxt}/">{E(BRANDS[nxt][0])} →</a></nav>
 '''
     os.makedirs(f'{adv}/{slug}', exist_ok=True)
-    open(f'{adv}/{slug}/index.html', 'w').write(HEAD.format(title=f'{E(name)} · {SECTION} · Gaurav Mishra', desc=E(brief[:150]), section=SECTION) + body + FOOT)
-    cards.append((slug, name, group, cat, len(shots)))
+    open(f'{adv}/{slug}/index.html', 'w').write(HEAD.format(title=f'{E(name)} · {SECTION} · Gaurav Mishra', desc=E(SHORT.get(slug, brief)[:150]), section=SECTION) + body + FOOT)
+    cards.append((slug, name, group, cat, len(shots), [SHORTLAB[x] for x in sorted(labs, key=lambda l: CARDPRI.index(LABELS.index(l)))][:2]))
 
 present = [gname for gname, _ in GROUPS if any(c[2] == gname for c in cards)]
 sec = '<div class="filters wrap" role="group" aria-label="Filter by category"><button class="on" data-f="all">All <span>' + str(len(cards)) + '</span></button>'
@@ -154,8 +156,8 @@ for gname in present:
     sec += f'<button data-f="{gname.lower()}">{gname} <span>{sum(1 for c in cards if c[2] == gname)}</span></button>'
 ncards = len(cards)
 sec += '</div>\n<section class="cards wrap' + (' c3' if ncards % 4 and ncards % 3 == 0 else '') + (' odd' if ncards % 2 else '') + '">'
-for s, n, gname, c, k in cards:
-    cnt = f'{k} {"image" if k == 1 else "images"}' if k else 'Images to follow'
+for s, n, gname, c, k, top in cards:
+    cnt = ' · '.join(top)
     sec += (f'<a class="card" data-g="{gname.lower()}" href="/advisory/{s}/"><span class="thumb"><img src="/media/advisory/{s}/cover.webp" alt="" loading="lazy" width="800" height="800"/></span>'
             f'<span class="ctext"><span class="cgroup">{gname}</span><span class="cname">{E(n)}</span><span class="ccat">{E(c)}</span><span class="ccount">{cnt}</span></span></a>')
 sec += '</section>\n'
@@ -167,7 +169,7 @@ intro = f'''<header class="hero wrap">
 <p class="label">{SECTION}</p>
 <h1>Packs that have to win on a crowded shelf.</h1>
 <p class="brief">{role}</p>
-<p class="brief">The brands below are the studio's clients, most of them family-run food businesses in Maharashtra. Each page has a short brief, what the advisory covered and the work the studio team delivered.</p>
+<p class="brief">The brands below are the studio's clients, most of them family-run food businesses in Maharashtra. Each page has a short brief and the scope of the work.</p>
 <p class="meta">{len(cards)} brands · {total} images</p>
 </header>
 '''

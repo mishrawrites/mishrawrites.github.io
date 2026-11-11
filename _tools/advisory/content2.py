@@ -1,0 +1,36 @@
+# Round 3: one Scope row, short briefs, new role line. Standing rule: no ownership claims; no em dashes.
+ROLE = ("Black Buck Studios brings its client work to me. Strategy, plans, pitches and key deliverables come through me "
+        "before they reach the client, and I sit in the strategic meetings. The studio's designers and producers run the day-to-day work.")
+LABELS = ["Brand identity strategy & building", "Positioning & messaging", "Packaging & range design", "Launch & go-to-market",
+          "Retail & outdoor", "Digital & content", "Influencer marketing", "Campaigns & activations"]
+SHORT = {
+"balaji-bakers": "A 25-year-old bakery and namkeen maker from Chalkaranji, Kolhapur, that wanted to move its old packaging into a premium segment. One master brand now runs from Kolhapuri bhadang to pav and cupcakes, carried from the pack into outlets, media and festive campaigns.",
+"vardhaman": "A pure vegetarian, 100% Jain bakery baking with whole wheat, jaggery, jowar and nachani. Plain, transparent packs hid that quality. A new identity puts the grains up front, on shelf, outdoors and online.",
+"bliss-bite": "A local snack business with basic labels, rebuilt as a fruit drinks brand. Four flavours, a colour each, launched with retail branding and tastings in residential societies.",
+"benifizz": "Apple cider vinegar drinks in seven-plus flavours, sold as a healthy alternative to cold drinks. The brand had to say health and fizz at once, from the name to the can.",
+"be-testee": "A Pune food business, Jaiswal's Brothers, with recipes but no brand. Be Testee gave its pickles and sauces a name and packs that sell the occasion, not just the ingredient.",
+"kentys": "Kenty's, from Kuch Agro, sells chips, snacks, namkeen, noodles and soft drinks with roots in Kutch. A chef mascot and one system hold a fast-growing range together, on shelf and online.",
+"dely-bites": "Instant dessert mixes for family celebrations. The packs sell the moment to make them for, not the recipe.",
+"aarogyavel": "A Pune cold-pressed oil maker that began by supplying family and friends. A name, an identity and one bottle system took 13 products to a wider market.",
+"mallows": "A sauces and spreads maker whose good products were held back by local sticker labels. Printed packs, a website and a film on how the products are made built the trust the labels could not.",
+"two-brothers": "An ECOCERT-certified organic farm in Bhodani, Pune, known for cultured ghee from free-grazed Gir cows. The farm story leads, on the label and online.",
+"santkrupa": "A regional dairy promising milk as pure as gold. One family look now covers milk, shrikhand, basundi and dahi, with room for new and festive packs.",
+"wheatfresh": "A whole wheat atta in 5 kg and 10 kg bags, bought on trust. The brand leads with grain, flour and soft rotis, on the bag and online, with a sister label, Silver Fresh.",
+"dudulish": "A shrikhand brand chasing a younger buyer. A cow mascot and loud fruit flavours move shrikhand from festival sweet to everyday treat.",
+"prasanna-milk": "Buffalo milk, ghee, an Uplift chocolate milk and Ganeshotsav modak under one dairy name. Each pack has its own job and one story behind the range.",
+"devgiri": "The cooperative milk union of Chhatrapati Sambhajinagar (Aurangabad) district. A cooperative's range now speaks as one consumer brand, from pouch to delivery van.",
+"srikrishna": "A dairy making milk products since 1989, moving its sweets and butter into a premium range that can sit beside national brands at a higher price.",
+"trimurti-bhel": "A bhel and farsan brand marking 25 years. One Marathi line, a mix of tasty things, only Trimurti Bhel, runs from the pouch to the shelf and the truck.",
+"gogri": "A Mumbai-marketed ghee and paneer label built on taste, wellness and purity, with a back of pack that stays clear at 400 g.",
+"puro": "A clean, modern turmeric positioned to sell online. Shown here is the first design option, on jar and pouch.",
+"lokmangal": "The food brand of Lokmangal Agro Industries, Solapur. The mixes carry a picture recipe in Marathi, because a first-time buyer has to succeed to buy again.",
+"prasanna-bakery": "Toast, khari, cookies and cupcakes, the things bought with chai, in one system a buyer can shop without reading.",
+"mangal": "A sugar mill's output turned into a baking pantry brand, priced well above loose sugar.",
+"mega-kate": "Two buyers under one badge: a baked, not fried, snack for kids with a toy inside, and a moong dal namkeen for the family.",
+"raju": "Five-rupee namkeen for neighbourhood shops, where the pack is the only advertising.",
+"energy": "Daily milk and taak pouches, bought in seconds, so each pack carries one message.",
+"muffets-and-tuffets": "A bread brand with a storybook name, kept playful on the pack.",
+"someshwar": "A farsan maker marking 30 years, with a pouch that shows what to make with it.",
+"oonas": "A new entrant in milk and milk products with plans but no brand. OONAS launched across 23 products on one idea, transparency, with the line Sahi bhi and Real bhi.",
+"kutwals-fisheries": "A full identity for a live-fish retailer.",
+}
