@@ -3,7 +3,17 @@
 SECTION = "Brand and packaging advisory"
 ROLE = ("I advise Black Buck Studios on its client work. I stay close to the clients on strategy and direction; "
         "the studio's designers and producers run the day-to-day work.")
-ALSO = ["Lakshminarayan Chiwda", "Manikchand Oxyrich"]
+ALSO = ["Lakshminarayan Chiwda", "Manikchand Oxyrich", "Kutwal's Fisheries"]
+# Brands kept in content but not published yet
+HOLD = {"oonas", "kutwals-fisheries"}
+# Advisory rows for brands that were not in the tagging round (set by Claude, approved by Gaurav)
+ADVISORY = {
+ "wheatfresh": ["Product packaging", "Brand identity", "Story and narrative", "E-commerce listing photos and design", "Website", "Social media"],
+ "vardhaman": ["Positioning", "Brand identity", "Messaging", "Product packaging", "Retail and outdoor branding", "Product content", "Social media", "Website"],
+ "bliss-bite": ["Brand identity", "Positioning", "Product packaging", "Range architecture", "Launch", "Trade marketing and point of sale", "Retail and fleet branding", "Go-to-market"],
+ "benifizz": ["Brand identity", "Positioning", "Messaging", "Product packaging", "Range architecture", "Story and narrative", "Retail and fleet branding"],
+ "oonas": ["Brand identity", "Positioning", "Messaging", "Product packaging", "Range architecture", "Go-to-market"],
+}
 
 # id: (name, group, category, brief, advisory tags, studio scope, agency url)
 BRANDS = {
@@ -86,7 +96,7 @@ BRANDS = {
  "A Pune maker of cold-pressed oils that began by supplying family and friends and needed a brand to reach a wider market. The studio team created the name (arogya, health, plus vel, time), the logo and packaging for 13 products across oils, jaggery, organic sugar, grains and pulses: one bottle system with Marathi first for the home shelf and a colour per oil. It carried into marketing collateral, a stall and retail space, and tasting events in residential societies.",
  None,["Brand naming","Logo design","Packaging for 13 products","Marketing collateral","Stall and retail space design","Society tasting events"],"https://blackbuckstudios.com/aarogyavel-oil/"),
 "wheatfresh": ("WheatFresh","Pantry","Whole wheat atta",
- "Bhos's WheatFresh is a whole wheat atta sold in 5 kg and 10 kg bags. An atta bag is chosen on trust, so the front leads with the grain, the flour and a stack of soft rotis under a rising-sun mark, with the product name in English and Hindi. The studio team designed the bags front and back, including the nutrition panel, and a sister label, Silver Fresh MP wheat atta, that promises soft rotis.",
+ "Bhos's WheatFresh is a whole wheat atta sold in 5 kg and 10 kg bags. An atta bag is chosen on trust, so the front leads with the grain, the flour and a stack of soft rotis under a rising-sun mark, with the product name in English and Hindi. The studio team designed the logo and the bags front and back, including the nutrition panel, plus a sister label, Silver Fresh MP wheat atta, and carried the brand story into listing photos and designs for online stores, a website and social media.",
  None,None,None),
 "puro": ("Puro","Pantry","Turmeric",
  "A clean, modern take on everyday turmeric, positioned to sell online through e-commerce and quick-commerce listings and product content. Shown here is the first design option: one design on a jar and a stand-up pouch, with three benefit icons and a single promise, 100% natural.",

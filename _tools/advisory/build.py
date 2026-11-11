@@ -5,7 +5,8 @@ manifest: {"items": {slug: [[src_path, caption], ...]}, "tags": {slug: [advisory
 import json, os, sys, html, math, shutil
 from PIL import Image, ImageChops, ImageDraw, ImageFont
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from content import BRANDS, SECTION, ROLE, ALSO
+from content import BRANDS, SECTION, ROLE, ALSO, HOLD, ADVISORY
+BRANDS = {k: v for k, v in BRANDS.items() if k not in HOLD}
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 M = json.load(open(sys.argv[1]))
 E = html.escape
@@ -69,7 +70,7 @@ GROUPS = [('Dairy', 'Milk, ghee and milk sweets'), ('Bakery', 'Bread, buns and t
 
 def score(slug):
     n, g, c, brief, _, scope, url = BRANDS[slug]
-    return len(M['tags'].get(slug, [])) + len(scope or []) + len(M['items'].get(slug, [])) / 100
+    return len(M['tags'].get(slug) or ADVISORY.get(slug, [])) + len(scope or []) + len(M['items'].get(slug, [])) / 100
 
 order = sorted(BRANDS, key=lambda s: (-score(s), BRANDS[s][0]))
 # clear old brand folders that are no longer listed
@@ -124,7 +125,7 @@ for i, slug in enumerate(order):
             cols = {1: 1, 2: 2, 3: 3, 4: 2}.get(n, 3 if n % 3 == 0 else (2 if n % 2 == 0 else 3))
             gm = math.exp(sum(math.log(asp[k]) for k in others) / n)
             g += f'<div class="row cols-{cols}{" solo" if n == 1 else ""}" style="--ar:{round(min(1.33, max(0.75, gm)), 3)}">' + ''.join(fig(k, n == 1) for k in others) + '</div>'
-    tags = M['tags'].get(slug, [])
+    tags = M['tags'].get(slug) or ADVISORY.get(slug, [])
     facts = ''
     if tags: facts += f'<div><dt>Advisory</dt><dd>{E(" · ".join(tags))}</dd></div>'
     if scope: facts += f'<div><dt>Studio scope</dt><dd>{E(" · ".join(scope))}</dd></div>'
@@ -151,7 +152,8 @@ present = [gname for gname, _ in GROUPS if any(c[2] == gname for c in cards)]
 sec = '<div class="filters wrap" role="group" aria-label="Filter by category"><button class="on" data-f="all">All <span>' + str(len(cards)) + '</span></button>'
 for gname in present:
     sec += f'<button data-f="{gname.lower()}">{gname} <span>{sum(1 for c in cards if c[2] == gname)}</span></button>'
-sec += '</div>\n<section class="cards wrap">'
+ncards = len(cards)
+sec += '</div>\n<section class="cards wrap' + (' c3' if ncards % 4 and ncards % 3 == 0 else '') + (' odd' if ncards % 2 else '') + '">'
 for s, n, gname, c, k in cards:
     cnt = f'{k} {"image" if k == 1 else "images"}' if k else 'Images to follow'
     sec += (f'<a class="card" data-g="{gname.lower()}" href="/advisory/{s}/"><span class="thumb"><img src="/media/advisory/{s}/cover.webp" alt="" loading="lazy" width="800" height="800"/></span>'
@@ -171,7 +173,7 @@ intro = f'''<header class="hero wrap">
 '''
 FILTER = '''
 const fb=document.querySelectorAll('.filters button');
-function setF(f){fb.forEach(b=>b.classList.toggle('on',b.dataset.f===f));document.querySelectorAll('.card').forEach(c=>c.hidden=!(f==='all'||c.dataset.g===f));}
+function setF(f){fb.forEach(b=>b.classList.toggle('on',b.dataset.f===f));document.querySelectorAll('.card').forEach(c=>c.hidden=!(f==='all'||c.dataset.g===f));document.querySelector('.cards').classList.toggle('filtered',f!=='all');}
 fb.forEach(b=>b.addEventListener('click',()=>{setF(b.dataset.f);history.replaceState(null,'',b.dataset.f==='all'?location.pathname:'#'+b.dataset.f);}));
 if(location.hash)setF(location.hash.slice(1));
 '''
