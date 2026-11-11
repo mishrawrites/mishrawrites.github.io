@@ -6,7 +6,7 @@ import json, os, sys, html, math, shutil
 from PIL import Image, ImageChops, ImageDraw, ImageFont
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from content import BRANDS, SECTION, ALSO, HOLD, ADVISORY
-from content2 import ROLE, SHORT, LABELS
+from content2 import ROLE, SHORT, LABELS, HOW
 SCOPE = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'scope.json')))
 SHORTLAB = dict(zip(LABELS, ['Identity', 'Positioning', 'Packaging', 'Go-to-market', 'Retail & outdoor', 'Digital & content', 'Influencers', 'Campaigns']))
 CARDPRI = [0, 5, 4, 3, 6, 7, 1, 2]
@@ -161,24 +161,26 @@ for s, n, gname, c, k, top in cards:
     sec += (f'<a class="card" data-g="{gname.lower()}" href="/advisory/{s}/"><span class="thumb"><img src="/media/advisory/{s}/cover.webp" alt="" loading="lazy" width="800" height="800"/></span>'
             f'<span class="ctext"><span class="cgroup">{gname}</span><span class="cname">{E(n)}</span><span class="ccat">{E(c)}</span><span class="ccount">{cnt}</span></span></a>')
 sec += '</section>\n'
+sec += f'<section class="how wrap"><h2>How this work happens</h2><p>{{HOWTXT}}</p>'
 if ALSO:
-    sec += f'<p class="also wrap">Also advised through the studio: {E(" and ".join([", ".join(ALSO[:-1]), ALSO[-1]] if len(ALSO) > 1 else ALSO))}.</p>\n'
+    sec += f'<p class="also">Also advised through the studio: {E(", ".join(ALSO[:-1]) + " and " + ALSO[-1] if len(ALSO) > 1 else ALSO[0])}.</p>'
+sec += '</section>\n'
 total = sum(c[4] for c in cards)
-role = E(ROLE).replace('Black Buck Studios', '<a href="https://blackbuckstudios.com/" target="_blank" rel="noopener">Black Buck Studios</a>', 1)
 intro = f'''<header class="hero wrap">
 <p class="label">{SECTION}</p>
 <h1>Packs that have to win on a crowded shelf.</h1>
-<p class="brief">{role}</p>
-<p class="brief">The brands below are the studio's clients, most of them family-run food businesses in Maharashtra. Each page has a short brief and the scope of the work.</p>
+<p class="brief">{E(ROLE)}</p>
+<p class="brief">Each page has a short brief and the scope of the work.</p>
 <p class="meta">{len(cards)} brands · {total} images</p>
 </header>
 '''
+how = E(HOW).replace('Black Buck Studios', '<a href="https://blackbuckstudios.com/" target="_blank" rel="noopener">Black Buck Studios</a>', 1)
 FILTER = '''
 const fb=document.querySelectorAll('.filters button');
 function setF(f){fb.forEach(b=>b.classList.toggle('on',b.dataset.f===f));document.querySelectorAll('.card').forEach(c=>c.hidden=!(f==='all'||c.dataset.g===f));document.querySelector('.cards').classList.toggle('filtered',f!=='all');}
 fb.forEach(b=>b.addEventListener('click',()=>{setF(b.dataset.f);history.replaceState(null,'',b.dataset.f==='all'?location.pathname:'#'+b.dataset.f);}));
 if(location.hash)setF(location.hash.slice(1));
 '''
-open(f'{adv}/index.html', 'w').write(HEAD.format(title=f'{SECTION} · Gaurav Mishra', desc='Brand and packaging advisory for food and FMCG brands, with Black Buck Studios.', section=SECTION)
-                                     + intro + sec + FOOT.replace('</script>', FILTER + '</script>'))
+open(f'{adv}/index.html', 'w').write(HEAD.format(title=f'{SECTION} · Gaurav Mishra', desc='Brand and packaging advisory for food and FMCG brands.', section=SECTION)
+                                     + intro + sec.replace('{HOWTXT}', how) + FOOT.replace('</script>', FILTER + '</script>'))
 print('built', len(cards), 'brands,', total, 'images; order:', ', '.join(order))

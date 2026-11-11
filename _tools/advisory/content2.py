@@ -1,6 +1,9 @@
 # Round 3: one Scope row, short briefs, new role line. Standing rule: no ownership claims; no em dashes.
-ROLE = ("Black Buck Studios brings its client work to me. Strategy, plans, pitches and key deliverables come through me "
-        "before they reach the client, and I sit in the strategic meetings. The studio's designers and producers run the day-to-day work.")
+ROLE = ("I advise on brand and packaging for food and FMCG brands, most of them family-run businesses in Maharashtra. "
+        "Strategy, plans, pitches and key deliverables come through me before they reach the client. "
+        "A design studio's team runs the day-to-day work.")
+HOW = ("These brands are clients of Black Buck Studios, Pune. The studio's founder, Dattatraya Todkar, brings its client work to me, "
+       "and I sit in the strategic meetings. The studio's designers and producers run the day-to-day work.")
 LABELS = ["Brand identity strategy & building", "Positioning & messaging", "Packaging & range design", "Launch & go-to-market",
           "Retail & outdoor", "Digital & content", "Influencer marketing", "Campaigns & activations"]
 SHORT = {
