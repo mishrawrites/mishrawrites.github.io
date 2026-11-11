@@ -56,3 +56,14 @@ dialog::backdrop{background:rgba(26,26,29,.88)}
 dialog img{display:block;max-width:100%;max-height:82vh;margin:0 auto;background:#fff;border-radius:4px}
 dialog p{color:#fff;text-align:center;padding:.6rem;font-size:.9rem}
 dialog button{position:fixed;top:12px;right:16px;background:none;border:none;color:#fff;font-size:2rem;cursor:pointer}
+.hero a{color:var(--copper)}
+.hero .brief+.brief{margin-top:.7rem}
+.facts{display:grid;grid-template-columns:1fr;gap:.6rem;margin-top:1.2rem;max-width:68ch;border-top:1px solid var(--line);padding-top:1rem}
+.facts div{display:grid;grid-template-columns:8.5rem minmax(0,1fr);gap:1rem}
+@media(max-width:600px){.facts div{grid-template-columns:1fr;gap:.15rem}}
+.facts dt{font-family:"Montserrat",sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--copper);padding-top:.15rem}
+.facts dd{margin:0;font-size:.95rem;color:#333}
+.case{margin-top:1rem;font-family:"Montserrat",sans-serif;font-size:.85rem;font-weight:600}
+.case a{color:var(--maroon);text-decoration:none;border-bottom:1px solid var(--gold)}
+.case a:hover{border-bottom-color:var(--maroon)}
+.also{padding-bottom:3rem;margin-top:-1.5rem;font-size:.9rem;color:#555}
