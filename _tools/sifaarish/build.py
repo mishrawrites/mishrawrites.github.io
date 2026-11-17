@@ -235,7 +235,7 @@ for i, (big, small, paras, ch, art) in enumerate(ENTRIES):
 rules = ''.join(f'<li>{E(r)}</li>' for r in RULES)
 sources = ''.join(f'<li><a href="{u}" target="_blank" rel="noopener">{E(t)}</a></li>' for t, u in SOURCES)
 words = sum(len(p.split()) for e in ENTRIES for p in e[2]) + sum(len(r.split()) for r in RULES) + 80
-mins = max(1, round(words / 220))
+mins = 5  # set by Gaurav to match the LinkedIn post
 
 LIVE_JS = r'''
 (function(){
