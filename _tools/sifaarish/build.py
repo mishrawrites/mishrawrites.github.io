@@ -62,7 +62,7 @@ SOURCES = [
  ("The Four Minute Men and the Committee on Public Information, 1917", "https://daily.jstor.org/the-us-propaganda-machine-of-world-war-i"),
  ("Edward Bernays: the committee's Latin American bureau, Torches of Freedom, United Fruit, his 1965 memoir and the Goebbels story", "https://en.wikipedia.org/wiki/Edward_Bernays"),
  ("Torches of Freedom, Easter Sunday 1929", "https://en.wikipedia.org/wiki/Torches_of_Freedom"),
- ("\"More Doctors Smoke Camels\": the convention surveys", "https://tobacco.stanford.edu/ad_tags/doctor/page/2/"),
+ ("\"More Doctors Smoke Camels\": the convention surveys", "https://tobacco.stanford.edu/cigarettes/doctors-smoking/more-doctors-smoke-camels/"),
  ("The doctors' campaigns and their end in the early 1950s (American Journal of Public Health)", "https://pmc.ncbi.nlm.nih.gov/articles/PMC1470496"),
  ("United Fruit, the press tours and the 1954 coup in Guatemala", "https://en.wikipedia.org/wiki/1954_Guatemalan_coup_d%27%C3%A9tat"),
  ("Doctors in India may not endorse products: Indian Medical Council (Professional Conduct, Etiquette and Ethics) Regulations, 2002, clause 6.8.1(h), added 2009", "https://bpni.org/News/Ethics-Regulations-MCI.pdf"),
