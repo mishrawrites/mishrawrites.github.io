@@ -253,7 +253,7 @@ PANEL_JS = r'''
  document.getElementById('pv-none').addEventListener('click',function(){document.querySelectorAll('.pv input').forEach(function(cb){cb.checked=false;document.body.classList.remove(cb.value)})});
 })();
 '''
-layers_on = ' '.join(k for k, _ in LAYERS) if PREVIEW else 'v-timeline v-chain v-art-ad v-art-phone v-live'
+layers_on = ' '.join(k for k, _ in LAYERS)
 panel = ''
 if PREVIEW:
     panel = ('<div class="pv" role="group" aria-label="Preview layers"><b>Visual layers</b>' +
