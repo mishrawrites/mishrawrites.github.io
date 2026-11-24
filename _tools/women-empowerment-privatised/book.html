@@ -44,6 +44,7 @@ h3 .ico{color:var(--copper);font-size:1.25em}
 .cover .by{margin-top:22px;font-family:var(--label);font-weight:600;font-size:.85rem;letter-spacing:.08em;color:#E9D7B5}
 .toc ol{list-style:none;margin:8px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .toc li a{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink);background:#fff;height:100%}
+.toc li:last-child:nth-child(odd){grid-column:1/-1}
 .toc li a:hover{border-color:var(--copper)}
 .toc .n{font-weight:800;color:var(--gold);font-size:1.2rem;min-width:1.7em;font-variant-numeric:tabular-nums;line-height:1.3}
 .toc .t{font-weight:600;line-height:1.3;font-size:.95rem}
@@ -110,6 +111,10 @@ a.lg:hover{border-color:var(--copper)}
 .tool p{margin:4px 0 6px;font-size:.84rem;line-height:1.5;color:var(--soft)}
 .tool a{display:inline-flex;align-items:center;gap:5px;font-family:var(--label);font-weight:700;font-size:.72rem;text-decoration:none}
 .mk .cat{text-align:left}.mk .cat .ico{font-size:1.7rem;color:var(--copper)}
+.author{display:grid;grid-template-columns:96px 1fr;gap:24px;align-items:start;margin-top:8px}
+.author .mono{width:96px;height:96px;border-radius:50%;background:var(--maroon);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:2rem;letter-spacing:.02em}
+.author h2{margin:0 0 4px}.author .role{font-family:var(--label);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--copper);margin-bottom:14px}
+.author .ask{font-family:var(--serif);font-size:1.2rem;color:var(--maroon);margin:16px 0 14px}.author .phone{font-size:.85rem;color:var(--soft);margin-top:10px}
 .receipt{display:grid;grid-template-columns:auto 1fr;gap:14px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:16px 18px;margin:24px 0}
 .k{display:flex;align-items:center;gap:6px;font-family:var(--label);font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:4px}
 .receipt p{margin:0;font-size:.93rem;line-height:1.6}
@@ -197,12 +202,12 @@ a:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
 .tablewrap{overflow-x:auto}
 .end{background:var(--ink);color:#d9d2c5;text-align:center;font-size:.85rem}
 .end a{color:var(--gold)}
-@media (max-width:700px){
+@media screen and (max-width:700px){
  body{font-size:16px;padding-block:0}
  .page{margin-bottom:12px;box-shadow:none}
  .in{padding:36px max(20px,env(safe-area-inset-right,0px)) 40px max(20px,env(safe-area-inset-left,0px))}
  .cover{min-height:0;aspect-ratio:auto}.cover-in{padding:28px 22px 32px}
- .toc ol,.who,.stats,.bill{grid-template-columns:1fr}
+ .toc ol,.who,.stats,.bill,.author{grid-template-columns:1fr}
  .parts{grid-template-columns:repeat(2,1fr)}
  .grades,.tiles,.mini{grid-template-columns:1fr}
  .cats{grid-template-columns:repeat(2,1fr)}.tools{grid-template-columns:1fr}
@@ -309,6 +314,7 @@ a:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
     <li><a href="#t11"><span class="n">11</span><span class="t">One I worked on<small>FITTR</small></span></a></li>
     <li><a href="#p4"><span class="n"><svg class="ico"><use href="#i-bulb"/></svg></span><span class="t">Ten rules for a women's health brand<small>The playbook</small></span></a></li>
     <li><a href="#p5"><span class="n"><svg class="ico"><use href="#i-search"/></svg></span><span class="t">Look before you research<small>Free data, rules and the metrics people miss</small></span></a></li>
+    <li><a href="#author"><span class="n"><svg class="ico"><use href="#i-people"/></svg></span><span class="t">About the author<small>Who wrote this, and how to reach him</small></span></a></li>
     <li><a href="#src"><span class="n"><svg class="ico"><use href="#i-clip"/></svg></span><span class="t">Sources and credits<small>Check everything</small></span></a></li>
   </ol>
 </div></nav>
@@ -316,14 +322,14 @@ a:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
 <section class="page" id="open"><div class="in">
   <div class="eyebrow"><svg class="ico"><use href="#i-mega"/></svg>Prologue</div>
   <h2>Have you heard this one?</h2>
-  <p class="lead">Have you heard of a brand that didn't really want to sell to half of its audience? It had the product. It had the chance. And it still chose the smaller half, because it felt that was the right thing to do, not just the profitable one.</p>
+  <p class="lead">Have you heard of a brand that didn't really want to sell to half of its audience? It had the product. It had the chance. And it still chose the half everyone else ignored, because it felt that was the right thing to do, not just the profitable one.</p>
   <p>It's 2005. Two-wheelers in India are a boys' club. The bike belongs to the brother. The scooter belongs to the father. The girl gets the back seat, sitting sideways, holding on.</p>
   <p>A scooter company sits in a room with a bunch of college girls and asks them about fun. One of them says the thing that becomes the brief: boys have more fun because boys have wheels.</p>
   <figure class="fig"><img src="img/hero.jpg" alt="Priyanka Chopra on the Hero Honda Pleasure scooter, 2006 film"><figcaption>Hero Honda Pleasure, 2006. Film frame · FCB Ulka</figcaption></figure>
   <p>Now, a sensible marketer sells that scooter to everyone. Bigger market, bigger numbers, bigger bonus. Hero Honda did something stranger. It built the whole story around her: a scooter for her, ads with Priyanka Chopra riding it, and showrooms run by women so she wouldn't have to explain herself to a salesman who'd rather talk to her brother. The line was a question: <span class="loud">WHY SHOULD BOYS HAVE ALL THE FUN?</span></p>
   <p class="heckle">(So it was charity?)</p>
   <p>No. That's the best part. It sold. Roughly 92,000 scooters and a 7.5% market share in the first year, by the company's own numbers.</p>
-  <p>That is what this book is about. Not "women empowerment" the hashtag. The real thing, done by brands, sometimes for the right reasons, sometimes for the quarter, and sometimes so well that the government copied it years later.</p>
+  <p>That is what this book is about. Not "women empowerment" the hashtag. The real thing, done by brands, sometimes for the right reasons, sometimes for the quarter, and sometimes so early that the law caught up years later.</p>
   <p>Some brands tried. Some made a difference. A few made a film, collected an award and went home. I'll tell you which was which, show you the receipts, and tell you the awkward parts nobody puts in the case study. Then I'll show you how it's done.</p>
   <p>Grab a chai. This one's long, on purpose.</p>
 </div></section>
@@ -411,7 +417,7 @@ a:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
     <p>Zomato wasn't first, and we should say it. Bihar gave its women employees period leave in 1992. Two Mumbai firms, Culture Machine and Gozoop, did it in 2017. Ikea had gender-neutral parental leave in India two years before Zomato. But nobody had made it national news.</p>
     <p>What made it land was the last paragraph of the CEO's memo. He spoke to the men. That one paragraph did more educating than a thousand Women's Day posts.</p>
     <p>Then the awkward bits. The policy split Indian women: some said it would get them hired less. And the 2019 parental leave didn't reach Zomato's delivery partners, the people on the bikes in the rain. Karnataka made one day a month mandatory in 2025, covering private employers. The Supreme Court in 2026 called voluntary policies "excellent" but refused to make leave national, warning it could hurt women's hiring.</p>
-    <div class="receipt"><span class="badge bA">A</span><div><div class="k"><svg class="ico"><use href="#i-receipt"/></svg>The receipt · for the policy and the debate</div><p>Swiggy, BYJU's and others followed. The states followed. Causation, nobody can prove.</p></div></div>
+    <div class="receipt"><span class="badge bC">C</span><div><div class="k"><svg class="ico"><use href="#i-receipt"/></svg>The receipt · C for impact, though the policy itself is on record</div><p>Swiggy, BYJU's and others followed. The states followed. Did Zomato cause that? Nobody can prove it, so it gets a C like everyone else who can't.</p></div></div>
     <div class="lesson"><div class="k"><svg class="ico"><use href="#i-bulb"/></svg>The lesson</div><p>A policy is a campaign nobody can accuse of femvertising. And the line you write for the men in the room may matter more than the policy itself.</p></div>
     <div class="watch"><a href="https://www.aljazeera.com/news/2020/8/12/zomatos-period-leave-policy-triggers-debate-among-indian-women" target="_blank" rel="noopener"><svg class="ico"><use href="#i-read"/></svg>Read the debate · Al Jazeera</a><a class="ghost" href="https://amp.cnn.com/cnn/2019/06/05/business/zomato-parental-leave-india" target="_blank" rel="noopener"><svg class="ico"><use href="#i-read"/></svg>Parental leave · CNN</a></div>
   </div>
@@ -545,12 +551,12 @@ a:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
     <div class="rung r2"><svg class="ico"><use href="#i-mega"/></svg><i>STEP 2</i><b>Talk about the norm</b><span>Question the rule around her: the pickle, the laundry, the second wedding. Most brands stop here, make a film and go home.</span></div>
     <div class="rung r3"><svg class="ico"><use href="#i-doc"/></svg><i>STEP 3</i><b>Change a condition</b><span>Change something in her life that outlives the ad: a women-run showroom, a school programme, a leave policy.</span></div>
   </div>
-  <p>The stories you remember all reached step 3. The ones that backfired stalled at step 2.</p>
+  <p>Plenty of memorable films stopped at step 2: Tanishq, Vicks, Nike. That's fine for a film. But the stories that changed something in her life all reached step 3, and only step 3 outlives the campaign. The ones that backfired tripped on step 2 itself.</p>
 
   <h3><svg class="ico"><use href="#i-scale"/></svg>Habit 2 · They moved before the government did</h3>
   <div class="threads" role="img" aria-label="A private move came first; the public rule followed years later">
     <div class="thead"><span></span><span>Private move</span><span></span><span>Public rule</span></div>
-    <div class="thread"><div class="t"><svg class="ico"><use href="#i-baby"/></svg>Maternity</div><div class="box priv"><b>Tata Steel maternity benefit</b>1928 · Flipkart: six months, 2015</div><div class="arrow">→</div><div class="box pub"><b>Maternity made law</b>1946, by Tata Steel's account · 26 weeks from the 2017 amendment</div></div>
+    <div class="thread"><div class="t"><svg class="ico"><use href="#i-baby"/></svg>Maternity</div><div class="box priv"><b>Tata Steel maternity benefit</b>1928 · Flipkart: six months, 2015</div><div class="arrow">→</div><div class="box pub"><b>Maternity made law</b>Bombay, 1929 · national Maternity Benefit Act, 1961 · 26 weeks from the 2017 amendment</div></div>
     <div class="thread"><div class="t"><svg class="ico"><use href="#i-calendar"/></svg>Period leave</div><div class="box priv"><b>Culture Machine, Gozoop</b>2017, first private firms · Zomato, 10 days a year, 2020</div><div class="arrow">→</div><div class="box pub"><b>State rules</b>Kerala 2023, Odisha 2024 · Karnataka, private firms too, 2025</div></div>
     <div class="thread"><div class="t"><svg class="ico"><use href="#i-school"/></svg>Period education</div><div class="box priv"><b>Whisper school programme</b>Since 1995 · curriculum push with UNESCO</div><div class="arrow">→</div><div class="box pub"><b>Supreme Court, January 2026</b>Free pads and toilets in schools · boys must be taught too</div></div>
   </div>
@@ -616,6 +622,21 @@ a:focus-visible{outline:2px solid var(--copper);outline-offset:3px}
   <h3><svg class="ico"><use href="#i-chart"/></svg>C. Things founders forget to measure</h3>
   <div class="cats mk"><div class="cat"><svg class="ico"><use href="#i-bag"/></svg><b>Who buys, and who uses</b><span>Mother, husband, chemist. Measure each one separately. They want different things.</span></div><div class="cat"><svg class="ico"><use href="#i-scale"/></svg><b>Your denominator</b><span>"Hygienic method" or "pads"? The same market looks huge or tiny depending on the word. Say which one you used.</span></div><div class="cat"><svg class="ico"><use href="#i-girl"/></svg><b>The age of first need</b><span>If periods can start at eight, your funnel starts before then, with her mother.</span></div><div class="cat"><svg class="ico"><use href="#i-map"/></svg><b>Regional-language share</b><span>How much of your category's search and conversation is not in English? It is usually more than the plan assumes.</span></div><div class="cat"><svg class="ico"><use href="#i-calendar"/></svg><b>Seasonality</b><span>Monsoon, exams, festivals and weddings move these categories. Trends will show you when.</span></div><div class="cat"><svg class="ico"><use href="#i-x"/></svg><b>Pledge versus practice</b><span>Views and pledges are what people say. Repeat purchase is what they do. Report both.</span></div><div class="cat"><svg class="ico"><use href="#i-repeat"/></svg><b>Repeat, read early</b><span>"Second order", "switched from", "bought again" in reviews show retention long before your sales data does.</span></div><div class="cat"><svg class="ico"><use href="#i-unlock"/></svg><b>Why she left</b><span>Ask the women who stopped buying, not only the ones who stayed.</span></div></div>
   <p class="closer">Spend a weekend on this before you brief anyone. If you still need a study after that, you will know exactly what to ask it.</p>
+</div></section>
+<section class="page" id="author"><div class="in">
+  <div class="eyebrow"><svg class="ico"><use href="#i-people"/></svg>About the author</div>
+  <div class="author">
+    <div class="mono" aria-hidden="true">GM</div>
+    <div>
+      <h2>Gaurav Mishra</h2>
+      <p class="role">Brand &amp; product strategist · Brand, marketing and growth</p>
+      <p>I'm a brand and product strategist, obsessed with customers. For twelve years I've been finding out what customers really think, then building the brand that changes it, across FITTR, H&amp;R Block, Ketto and TransPerfect Paybooks. Research first, numbers always.</p>
+      <p>I'm open to senior roles in brand, marketing, growth, community, content and creative direction.</p>
+      <p class="ask">Hiring, or sitting on a brief you'd like a second pair of eyes on? Write to me.</p>
+      <div class="watch"><a href="mailto:gaurav@mishrawrites.com?subject=About%20your%20e-book"><svg class="ico"><use href="#i-mail"/></svg>gaurav@mishrawrites.com</a><a class="ghost" href="https://mishrawrites.com/Gaurav-Mishra-CV.pdf" target="_blank" rel="noopener"><svg class="ico"><use href="#i-doc"/></svg>Read my CV</a><a class="ghost" href="https://mishrawrites.com" target="_blank" rel="noopener"><svg class="ico"><use href="#i-map"/></svg>mishrawrites.com</a></div>
+      <p class="phone">+91 73878 88951</p>
+    </div>
+  </div>
 </div></section>
 <section class="page" id="src"><div class="in">
   <div class="eyebrow"><svg class="ico"><use href="#i-clip"/></svg>Sources and image credits</div>

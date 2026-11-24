@@ -99,9 +99,72 @@ web = (head + book_head.replace('</style>', SITE_CSS + '</style>') + '</head>\n<
 out = os.path.join(ROOT, 'monoblog', SLUG, 'index.html')
 open(out, 'w', encoding='utf8').write(web)
 
-# print version: book only (its own footer kept), assets resolved from the site folder
-pr = ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
-      f'<title>{TITLE}</title><base href="file://{os.path.join(ROOT, "monoblog", SLUG)}/">' + book_head +
-      '<style>@page{size:820px 1160px;margin:0}body{padding:0;background:#fff}.page{margin:0;box-shadow:none}#src{break-after:auto}</style></head><body>' + book_body + '</body></html>')
-open(os.path.join(HERE, '_print.html'), 'w', encoding='utf8').write(pr)
+# ---- print edition (A4). Three parts, merged by pdf.js: cover, body (running footer), back cover.
+BASE = f'<base href="file://{os.path.join(ROOT, "monoblog", SLUG)}/">'
+PRINT_CSS = """
+@page{size:A4;margin:16mm 15mm 17mm}
+html{font-size:11.5px}
+body{background:#fff;padding:0;font-size:11.4px;line-height:1.55;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{max-width:none;margin:0;box-shadow:none;overflow:visible;break-before:page;background:#fff}
+.in{padding:0}
+.part{height:262mm;min-height:0;aspect-ratio:auto;border-radius:6px;overflow:hidden;background:var(--maroon)}
+.part .in{padding:16mm 14mm}
+.part .big{font-size:9rem}
+.chap .in{padding-top:9mm}
+.opener{padding:0}
+.frame img{aspect-ratio:auto;height:68mm;object-fit:cover}
+.fig img{height:46mm;object-fit:cover}.fig{margin:12px 0}
+.stats{gap:8px;margin:4px 0 12px}.stat{padding:12px}.stat b{font-size:1.9rem}.chart{padding:12px 14px 6px;margin:10px 0 14px}.bar{margin:6px 0}.track{height:22px}
+.tool{padding:9px 12px;gap:10px}.tool p{font-size:.8rem;margin:2px 0 4px;line-height:1.4}.tools{gap:7px}.tg{margin:12px 0 7px}
+.cat{padding:10px}.cats{gap:8px;margin:10px 0 14px}.cat span{font-size:.72rem}
+h3{margin:20px 0 8px}
+#t2 .frame img{height:52mm}#t2 .fig img{height:34mm}
+.mini img{height:28mm}
+.receipt{padding:10px 14px;margin:14px 0}.lesson{padding:12px 16px;margin:14px 0}.lesson p{font-size:1.15rem}
+p{margin:0 0 .8em}.meta{margin-bottom:12px}.logos{margin:-4px 0 14px;padding:8px 0}.lg{height:40px}.lg img{height:28px}
+.chap h2{margin:4px 0 4px}
+.num{left:14px;bottom:-28px;font-size:5.6rem;text-shadow:0 3px 0 #fff,0 -3px 0 #fff,3px 0 0 #fff,-3px 0 0 #fff}
+.artboard{aspect-ratio:auto;height:68mm}
+h2{font-size:2.3rem}.chap h2{font-size:2.1rem}
+.receipt,.lesson,.tool,.cat,.rung,.billc,.thread,.rules li,.stat,.fig,.mini a,.logos,.grade,.who>div,.tear,.order,.chart,.mine,.closer,.author,.toc li,.parts,tr,.bar,.ladder,.heckle{break-inside:avoid}
+h2,h3,h4,.tg,.eyebrow,.meta,.climb,.thead{break-after:avoid}
+p{orphans:3;widows:3}
+.tablewrap{overflow:visible}
+.watch a{padding:6px 11px;font-size:.72rem}
+#toolkit .tools{gap:8px}
+.toc li:last-child:nth-child(odd){grid-column:1/-1}
+"""
+def doc(body, extra):
+    return ('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+            f'<title>{TITLE}</title>' + BASE + book_head + '<style>' + extra + '</style></head><body>' + body + '</body></html>')
+cover_html = re.search(r'<header class="page cover">.*?</header>', book_body, re.S).group(0)
+sprite = re.search(r'<svg width="0" height="0".*?</svg>', book_body, re.S).group(0)
+body_only = re.sub(r'<header class="page cover">.*?</header>', '', book_body, flags=re.S)
+body_only = re.sub(r'<footer class="page end">.*?</footer>', '', body_only, flags=re.S)
+COVER_CSS = """@page{size:A4;margin:0}html,body{margin:0;padding:0;background:#4A0E0E;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cover{width:210mm;height:297mm;min-height:0;aspect-ratio:auto;margin:0;box-shadow:none;display:flex;flex-direction:column}
+.mosaic{padding:6mm 6mm 0;gap:3mm}.cover-in{padding:0 16mm 18mm;margin-top:auto}
+.cover h1{font-size:5.2rem}.cover .sub{font-size:1.6rem}.cover .by{font-size:1rem;margin-top:10mm}
+.free{display:inline-block;margin-top:6mm;font-family:var(--label);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#4A0E0E;background:var(--gold);padding:6px 12px;border-radius:3px}"""
+cover_print = cover_html.replace('<div class="by">', '<span class="free">Free e-book · 2026</span><div class="by">')
+BACK = f"""<section class="back"><div class="bk">
+<div class="eyebrow">Thanks for reading</div>
+<p class="t">{TITLE}</p>
+<div class="who2"><div class="mono">GM</div><div><b>Gaurav Mishra</b><span>Brand &amp; product strategist · open to senior roles in brand, marketing and growth</span></div></div>
+<p class="c">gaurav@mishrawrites.com<br>+91 73878 88951</p>
+<p class="site">mishrawrites.com</p>
+<p class="small">Read it online, with every film and source linked:<br>mishrawrites.com/monoblog/women-empowerment-privatised</p>
+<p class="small">Free to share. Please credit mishrawrites.com.</p></div></section>"""
+BACK_CSS = """@page{size:A4;margin:0}html,body{margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.back{width:210mm;height:297mm;background:#4A0E0E;color:#F6E9D6;display:flex;align-items:flex-end}
+.bk{padding:0 18mm 22mm}.back .eyebrow{color:var(--gold)}
+.back .t{font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1.05;color:#fff;margin:6mm 0 12mm;max-width:14ch}
+.who2{display:flex;gap:14px;align-items:center}.who2 .mono{width:64px;height:64px;border-radius:50%;background:var(--gold);color:#4A0E0E;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.4rem}
+.who2 b{display:block;color:#fff;font-size:1.3rem}.who2 span{display:block;font-size:.95rem;color:#E9D7B5;max-width:42ch}
+.back .c{font-size:1.05rem;margin:9mm 0 2mm;line-height:1.6}
+.back .site{font-family:var(--display);font-weight:800;font-size:2.4rem;color:var(--gold);margin:4mm 0 8mm}
+.back .small{font-size:.82rem;color:#D9C7A8;margin:0 0 3mm}"""
+open(os.path.join(HERE, '_print_cover.html'), 'w', encoding='utf8').write(doc(sprite + cover_print, COVER_CSS))
+open(os.path.join(HERE, '_print_body.html'), 'w', encoding='utf8').write(doc(body_only, PRINT_CSS))
+open(os.path.join(HERE, '_print_back.html'), 'w', encoding='utf8').write(doc(BACK, BACK_CSS))
 print('wrote', out)

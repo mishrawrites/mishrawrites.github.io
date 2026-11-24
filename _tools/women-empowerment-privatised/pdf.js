@@ -1,14 +1,26 @@
-// Renders the PDF and the share image. Run after build.py:
-//   NODE_PATH=$(npm root -g) node _tools/women-empowerment-privatised/pdf.js
-const {chromium}=require('playwright');const path=require('path');
+// Renders the A4 PDF (cover + body with running footer + back cover) and the share image.
+// Run after build.py:  NODE_PATH=$(npm root -g) node _tools/women-empowerment-privatised/pdf.js
+const {chromium}=require('playwright');const path=require('path');const fs=require('fs');const {execFileSync}=require('child_process');
 (async()=>{const here=__dirname, root=path.resolve(here,'..','..'), slug='women-empowerment-privatised';
 const b=await chromium.launch();
-const p=await b.newPage({viewport:{width:820,height:1160}});
-await p.goto('file://'+here+'/_print.html',{waitUntil:'networkidle'});
-await p.evaluate(()=>document.fonts.ready);
-await p.pdf({path:path.join(root,'monoblog',slug,slug+'.pdf'),width:'820px',height:'1160px',printBackground:true,margin:{top:0,bottom:0,left:0,right:0}});
+async function render(file,out,opts){const p=await b.newPage();await p.goto('file://'+path.join(here,file),{waitUntil:'networkidle'});await p.evaluate(()=>document.fonts.ready);
+ await p.pdf(Object.assign({path:path.join(here,out),format:'A4',printBackground:true,preferCSSPageSize:true},opts));await p.close();}
+const foot=`<div style="width:100%;margin:0 15mm;padding-top:2mm;border-top:0.5px solid #E7DCC6;font-family:Helvetica,Arial,sans-serif;font-size:7.5px;color:#7A746C;display:flex;justify-content:space-between;align-items:center">
+<span>Women Empowerment! Privatised. · Gaurav Mishra</span><span style="color:#AE611C;font-weight:bold;letter-spacing:.4px">mishrawrites.com</span><span class="pageNumber"></span></div>`;
+await render('_print_cover.html','_p1.pdf',{});
+await render('_print_body.html','_p2.pdf',{displayHeaderFooter:true,headerTemplate:'<span></span>',footerTemplate:foot});
+await render('_print_back.html','_p3.pdf',{});
+const out=path.join(root,'monoblog',slug,slug+'.pdf');
+execFileSync('python3',['-c',`import sys
+from pypdf import PdfWriter
+w=PdfWriter()
+for f in sys.argv[1:4]: w.append(f)
+w.add_metadata({'/Title':'Women Empowerment! Privatised.','/Author':'Gaurav Mishra','/Subject':'Brands that tried, and brands that made a difference. mishrawrites.com','/Keywords':'brand, marketing, women, India, period care, mishrawrites.com'})
+w.write(sys.argv[4])`,path.join(here,'_p1.pdf'),path.join(here,'_p2.pdf'),path.join(here,'_p3.pdf'),out]);
+for(const f of ['_p1.pdf','_p2.pdf','_p3.pdf'])fs.unlinkSync(path.join(here,f));
+// share image
 const o=await b.newPage({viewport:{width:1200,height:630}});
-const fs=require('fs');const img=f=>'data:image/jpeg;base64,'+fs.readFileSync(path.join(root,'monoblog',slug,'img',f)).toString('base64');
+const img=f=>'data:image/jpeg;base64,'+fs.readFileSync(path.join(root,'monoblog',slug,'img',f)).toString('base64');
 await o.setContent(`<html><head><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&family=Montserrat:wght@700&family=Fraunces:ital,opsz,wght@1,9..144,400&display=swap"></head>
 <body style="margin:0;width:1200px;height:630px;background:#4A0E0E;display:grid;grid-template-columns:660px 540px;overflow:hidden">
 <div style="padding:56px 48px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff">
